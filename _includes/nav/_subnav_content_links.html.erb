@@ -1,0 +1,34 @@
+<% active_item = defined?(highlight) ? highlight : 0 %>
+<% if @audience == :lenders %>
+  <% if @loggedin %>
+
+    <ul>
+      <li <%= active_item == 1 ? 'class="active"' : '' %>><a href="dashboard.html">Dashboard</a></li>
+      <li <%= active_item == 2 ? 'class="active"' : '' %>><a href="statements.html">Statements</a></li>
+      <li <%= active_item == 3 ? 'class="active"' : '' %>><a href="lend.html">Lend money</a></li>
+      <li <%= active_item == 4 ? 'class="active"' : '' %>><a href="withdraw.html">Withdraw money</a></li>
+    </ul>
+
+  <% else %>
+
+    <ul>
+      <li <%= active_item == 1 ? 'class="active"' : '' %>><a href="lending.html">Lending</a></li>
+      <li <%= active_item == 2 ? 'class="active"' : '' %>><a href="how-lending-works.html">How lending works</a></li>
+      <li <%= active_item == 3 ? 'class="active"' : '' %>><a href="who-are-zopa.html">Who are Zopa?</a></li>
+      <li <%= active_item == 4 ? 'class="active"' : '' %>><a href="why-choose-us.html">Why choose us?</a></li>
+    </ul>
+
+  <% end %>
+<% else %>
+
+  <% if @loggedin %>
+
+    <ul>
+      <li <%= active_item == 1 ? 'class="active"' : '' %>><a href="dashboard.html">Dashboard</a></li>
+      <li <%= active_item == 2 ? 'class="active"' : '' %>><a href="faqs.html">FAQs</a></li>
+      <li <%= active_item == 3 ? 'class="active"' : '' %>><a href="top-ups.html">Top ups</a></li>
+      <li <%= active_item == 4 ? 'class="active"' : '' %>><a href="tell-a-friend.html">Tell a friend</a></li>
+    </ul>
+
+  <% end %>
+<% end %>

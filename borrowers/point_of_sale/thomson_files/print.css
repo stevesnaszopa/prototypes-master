@@ -1,0 +1,175 @@
+/* Print CSS Document */
+
+.print-only {
+	display: block;
+}
+
+#wrapper {
+	box-shadow: none;
+}
+
+a.switch, #search, #utils, #quick-search, .share-this, #footer-seo, .popup, .beta, .message-window, .cookie, #logo a, .notification {
+	display:none !important;
+}
+
+#content #breadcrumbs {
+	border-bottom: 1px solid #bbb;
+	padding: 8px 0 14px 0;
+	margin-bottom:24px;
+	color:#acacac !important;
+}
+
+#header:before {
+	display: block;
+	margin-bottom: 10px;
+	padding: 3px 5px;
+}
+
+#header #logo img.print-only {
+	position:relative;
+	top:0;
+	padding-bottom:12px;
+	border-radius:0 !important;
+	padding:0;
+	margin:0;
+}
+
+#nav {
+	overflow:hidden;
+	left:60px;
+}
+
+#header #nav ul li {
+	border-radius:0 !important;
+	border:0 !important;
+}
+
+#header #nav ul li a, .page-tabs ul.tabs li a {
+	color:#119ca6 !important;
+	box-shadow:0 0 0 #fff inset !important;
+	border-radius:0 !important;
+	border:0 !important;
+}
+
+#header #nav ul li.active a, .page-tabs ul.tabs .active a {
+	color:#ccc !important;
+	box-shadow:0 0 0 #fff inset !important;
+	border-radius:0 !important;
+	border:0 !important;
+}
+
+.page-tabs {
+	margin:-4px 0 14px 0;
+}
+
+div, h1, h2, h3, h4, p, table {
+	position:static;
+	left:0;
+	margin-left:0 !important;
+}
+
+.span, .span-two-third, .span-three-quarter {
+	padding-left:0;
+	float:none;
+	clear:both;
+	width:100% !important;
+}
+
+#content .sidebar {
+	float:right;
+	clear:right;
+}
+
+#content .overlap-70, #content .overlap-no-margin-bottom {
+	margin-top:1px;
+}
+
+#content .main .panel.labeled.image-left h3 {
+	margin-top:0;
+}
+
+#content .thumbnail-map {
+	width:317px !important;
+}
+
+#content .sidebar .span-third .boxout {
+	padding-left:0;
+}
+
+ul.square {
+	list-style-type:none;
+	margin-left:0;
+	padding-left:0;
+}
+
+ul.square li:before {
+	content:"• ";
+}
+
+.span .slideshow .viewport, .span-two-third .slideshow .viewport {
+	left:0;
+}
+
+.deals table td span.flying-from {
+	padding-left:0;
+}
+
+h1 {
+	padding:12px 0 6px 0;
+}
+
+.lower {
+	float:left;
+	clear:both;
+}
+
+#footer {
+	padding-top:30px;
+}
+
+.span.shadow {
+	padding-left:0;
+}
+
+.span.shadow .span {
+	padding-left:0;
+}
+
+#firstchoice.ie8 #wrapper #content .page-tabs {
+	margin:4px 0 14px 0;
+}
+
+.result-list li .copy {
+	margin-left: 10px !important;
+}
+
+#listDiv {
+	margin-bottom: 10mm;
+}
+.product .image-container{
+	overflow: hidden;
+}
+
+/* Location page print issue IE8*/
+.ie8 .weather-chart div div {
+	display: none;
+}
+.ie8 .weather-chart .weather-data {
+	display: block;
+}
+.ie8 .weather-chart svg {
+	display: none;
+}
+.ie8 .weather-chart {
+	height: 250px;
+}
+.ie8 #rf_check{
+	display: none;
+}
+.ie8 .span-third label {
+	display: none;
+}
+.ie8 .weather-chart .weather-data {
+	float: left;
+}
+/* Location page print issue IE8*/

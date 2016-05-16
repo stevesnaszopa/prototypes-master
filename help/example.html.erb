@@ -1,0 +1,49 @@
+<% @loggedin = true # remove this line if the page is for logged-out pages %>
+<% @audience = :lenders # remove this line if the page should be in the borrower section %>
+<% # @bodyclass = 'has-hero' %>
+<% # @pagetitle = 'Payday loans!!!' %>
+
+<% content_for :subnav do %>
+  <%= render :partial => "/_includes/nav/subnav_content", locals: { highlight: 2 } %>
+<% end %>
+
+
+<div class="section">
+  <div>
+    <h1>Here goes your main content</h1>
+    <p class="intro">Intro</p>
+    <p>
+      <%= lorem_date("%A, %d %B %Y") %><br />
+      <%= lorem_name %>
+    </p>
+
+  </div>
+</div>
+
+<div class="section">
+  <div>
+    <h2>New section</h2>
+
+    <p><%= lorem_sentences(3) %></p>
+  </div>
+</div>
+
+<div class="section">
+  <div>
+    <h2>New section</h2>
+
+    <p>Some more stuff...</p>
+  </div>
+</div>
+
+
+<% content_for :styles do %>
+  <style>
+    /* put some CSS here */
+  </style>
+<% end %>
+<% content_for :scripts do %>
+  <script>
+    // put some JS here
+  </script>
+<% end %>

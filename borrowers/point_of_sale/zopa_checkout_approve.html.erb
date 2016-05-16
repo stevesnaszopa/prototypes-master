@@ -1,0 +1,309 @@
+<!--STYLE-->
+    <style>
+
+    @media screen {
+      .block-label {
+        display: inline-block;
+        margin-right: .5em;
+      }
+      #find_address {
+        display: inline-block;
+        padding-top: 1.6em;
+      }
+      .select-group label {
+        position: absolute;
+        left: -99999em;
+        top: 0;
+      }
+
+      .loan-quote table {
+        width: 100%;
+        border: 0;
+        margin-bottom: 0;
+      }
+
+      .loan-quote table td {
+        text-align: right;
+        color: #8c9500;
+        font-weight: 600;
+        padding-right: 0;
+      }
+
+      .loan-quote .result.box {
+        padding-bottom: 0;
+        box-sizing:400px;
+      }
+
+      .loan-quote .explanation.box {
+        padding: 0;
+        display: flex;
+        align-items: content-box;
+        width:400px;
+      }
+
+      .loan-quote table tr.sum {
+        border-top: 2px solid #C5C6C1;
+      }
+
+      .loan-quote table th {
+        font-weight: normal;
+        padding-left: 0;
+      }
+
+      .loan-quote table td,
+      .loan-quote table th {
+        border: 0;
+        background-color: transparent;
+      }
+
+      .loan-quote .quote table th,
+      .loan-quote .quote table td {
+        border-bottom: 1px solid #fff;
+      }
+
+      .loan-quote .wrapper {
+        padding-left: 1.25em;
+        padding-right: 1.25em;
+
+        margin-left: -1.25em;
+        margin-right: -1.25em;
+      }
+
+      .loan-quote .wrapper.quote
+      { background-color: #F8FAEC; }
+      .loan-quote .result.box > div {
+        max-width: 25em;
+      }
+
+      .loan-quote + h1 {
+        margin-top: 2em;
+      }
+
+      .row .loan-quote{
+        margin-right:0em;
+      }
+      table tr#deposit{
+        font-size: 1.8em;
+        font-weight: 700;
+      }
+
+      input[type='radio'], input[type='checkbox'] {
+        display: inline;
+        height: 10px;
+      }
+
+      form label,
+      span.label {
+        font-size: 14px;
+        display: block;
+        padding-bottom: 3px;
+      }
+      #summary-panel .round_value{
+        margin: 0 0 0 0;
+      }
+
+    }
+  </style>
+
+  <!--OPEN SECTION TAG-->
+<div class="section" style="width: 920px; margin: 0 auto; background: white !important;">
+  <div>
+    <h1>Finish your holiday loan application</h1>
+
+    <p class="intro">
+      Please review your quote and read and sign the loan agreements below.
+      <br/>
+      <br/>
+    </p>
+
+
+    <div class="row group loan-quote equalHeights">
+    <div class="group" style="min-height">
+    </div>
+
+  <div id="bigform" style="xmin-height" class="col">
+         <!--FINANCIAL SUMMARY -->
+  <div id="summary-panel" style="width: 100%; max-width: 25em;">
+
+    <div class="totalPrice">
+
+      <h2>Your finance plan </h2>
+
+        <%= render "calculations" %>
+          <div class="calculation wrapper">
+              <table>
+                <tbody>
+                  <tr class="sum">
+                    <th>Total cost of holiday</th>
+                    <td>&pound;3,000.00</td>
+                  </tr>
+                  <tr>
+                    <th>Deposit paid</th>
+                    <td><%= number_to_currency @deposit %></td>
+                  </tr>
+                  <tr>
+                    <th>Monthly installments (x12)</th>
+                    <td><%= number_to_currency @monthly %></td>
+                  </tr>
+                  <tr>
+                    <th>APR</th>
+                    <td>0%</td>
+                  </tr>
+                  <tr class="sum">
+                    <th><strong>Zopa finance</strong></th>
+                    <td>
+                      <span class="total"><span class="round_value"><%= number_to_currency @loan %></span>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th> </th>
+                    <td><h6 class="note">*Good news: no charges for early repayment</h6></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+ </div>
+
+
+    <!--ADDED FORM-->
+  <div class="item open">
+    <form class="loan_application" method="get" action="thomson_approved.html">
+      <h3>Contracts</h3>
+      <div class="item-content">
+        <fieldset>
+          <div class="key-facts-wrapper">
+            <input type="hidden" name="deposit" value="<%= params['deposit'] %>" />
+            <h2>Key Facts</h2>
+
+              <p>These explanations will help you understand important elements of the Key Facts.</p>
+              <ul>
+                <li>
+                  <strong>Missed payments:</strong> Interest will continue to build up, which you’ll need to pay.
+                  After 2 months of missed payments your loan will be passed to a debt collection agency
+                  and your credit file will be negatively marked.
+                  We reserve the right to charge fees and any legal or debt counselling costs may be added to your debt.
+                </li><br/>
+
+                <li>
+                  <strong>Cancellations:</strong> You can cancel your loan within 14 days of approval.
+                  You’ll need to notify us and repay all credit and interest that’s built up.
+                </li>
+              </ul>
+
+              <p>Note: A mark on your credit file may affect your access to and cost of loans and credit in the future.</p>
+              <p>Got a question about any of this? Call (02075806060) or email (contactus@zopa.com) us.</p>
+
+                  <p><a href="https://secure2.zopa.com/loan_applications/e7a486d7-501b-e511-81c0-005056993e1b/quote#key-facts" class="show-once button minor " aria-controls="key-facts" aria-live="polite" aria-expanded="false" style="display: none;">Read Zopa's Key Facts</a></p>
+
+                 <div class="iframe">
+                   <%= render 'zopa_checkout_approve_files/quote.html.erb' %>
+                 </div>
+
+                <div class="info box" id="key-facts" aria-expanded="true" style="display: block;">
+                  <p>
+                    <a href="./zopa_checkout_approve_files/quote.html" id="print-key-facts" target="_blank" title="opens in a new window">Open Key Facts in a new window</a>
+                  </p>
+                </div>
+
+                <div class="row group done">
+                  <p class="">
+                    <span class="radiocheck">
+                      <input class="accept-key-facts_temp" name="loan_application[contract_institution]_temp" type="checkbox" value="1">
+                      <label class="accept-institution-contract-label" for="loan_application_contract_institution">
+                        I've read and agree to the Key Facts, which explain the details of the loan contract
+                      </label>
+                    </span>
+                  </p>
+
+              </div>
+            </div>
+
+            <div class="loan-conditions-wrapper">
+              <h2>Loan Conditions</h2>
+                  <p><a href="https://secure2.zopa.com/loan_applications/e7a486d7-501b-e511-81c0-005056993e1b/quote#loan-conditions" class="show-once button minor" aria-controls="loan-conditions" aria-live="polite" aria-expanded="false" style="display: none;">Read Zopa's Loan Conditions</a></p>
+
+                  <div class="iframe">
+                   <%= render 'zopa_checkout_approve_files/quote1.html.erb' %>
+                 </div>
+                  <p>
+                    <a href="./zopa_checkout_approve_files/quote1.html.erb" id="print-loan-conditions" target="_blank" title="opens in a new window">Open Loan Conditions in a new window</a>
+                  </p>
+
+                <div class="row group done">
+                  <p class="">
+                    <span class="radiocheck">
+                        <input class="accept-loan-conditions" id="loan_application_contract" name="loan_application[contract]" type="checkbox" >
+
+                      <label for="loan_application_contract">
+                        I've read and agree to the Zopa Loan Conditions,
+                        which govern my Loan Contract with each of my Lenders
+                         which is regulated by the Consumer Credit Act 1974.
+                      </label>
+                    </span>
+                  </p>
+                </div>
+            </div>
+
+            <h2>Bank details and Direct Debit Agreement</h2>
+            <p>Please provide bank details for a <strong>current account</strong> on which you are named.</p>
+            <ul>
+              <li>We will transfer the loan money into this account</li>
+              <li>We will set up a Direct Debit for <strong>your monthly repayments</strong> on this account</li>
+              <li>No early repayment fees</li>
+            </ul>
+            <div class="row group">
+              <div class="col">
+                <p class="col">
+                  <label for="direct_debit_account_number">Account number</label>
+                  <input autocomplete="off" id="direct_debit_account_number" maxlength="8" name="direct_debit[account_number]"  title="Enter an 8-digit bank account number" type="text" value="">
+                </p>
+                <p class="sort-code col">
+                  <label for="sort_code">Sort code</label>
+                  <input autocomplete="off" data-automation="ZA.account_sort_code_1" id="direct_debit_sort_code_0" maxlength="2" name="direct_debit[sort_code][0]" pattern="[0-9]{2}" placeholder="00" title="Enter the first 2 digits of your sort code" type="text">
+                  -
+                  <input autocomplete="off" data-automation="ZA.account_sort_code_2" id="direct_debit_sort_code_1" maxlength="2" name="direct_debit[sort_code][1]" pattern="[0-9]{2}" placeholder="00" title="Enter the middle 2 digits of your sort code" type="text">
+                  -
+                  <input autocomplete="off" data-automation="ZA.account_sort_code_3" id="direct_debit_sort_code_2" maxlength="2" name="direct_debit[sort_code][2]" pattern="[0-9]{2}" placeholder="00" title="Enter the last 2 digits of your sort code" type="text">
+                </p>
+              </div>
+              <p class="col">
+                <label for="direct_debit_account_holder_name">Name on account</label>
+                <input autocomplete="off" data-automation="ZA.account_holder_name" id="direct_debit_account_holder_name" maxlength="100" name="direct_debit[account_holder_name]">
+              </p>
+            </div>
+        </fieldset>
+      </div>
+        <div class="bookHoliday" align="center">
+              <input class="button cta jumbo" type="submit" value="Complete application" style="height:auto;"/>
+              <br/>
+        </div>
+    </form>
+  </div>
+
+    <!--END DETAILS-->
+   </div>
+  </div>
+</div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+    document.getElementById("to_approve").onclick = function () {
+    window.location.href = "./zopa_checkout_deposit.html";
+    return false;
+    };
+
+</script>
+
+
+
+    </div>
+  </div>
+

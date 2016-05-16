@@ -1,0 +1,24 @@
+- @products = [ |
+  {slug: "access", name: "Zopa Access", description: "You want access to your money quickly with no early access fee. You like the added provision of Safeguard to manage risk.", rate: "3.6", access: "Free access", risk: "Safeguarded loans", active: "true", default: "true"}, |
+  {slug: "safeguard", name: "Zopa Classic", description: "You want to commit your money and accept that there's a 1% access fee, in exchange for higher predicted returns. You like the Safeguard provision.", rate: "4.7", access: "1% early access fee", risk: "Safeguarded loans", active: "true", default: "false"}, |
+  {slug: "plus", name: "Zopa Markets", description: "You're happy to balance slightly higher risks with no Safeguard cover and a 1% access fee in exchange for significantly higher predicted returns.", rate: "7.4", access: "1% early access fee", risk: "Non-safeguarded loans. Higher risk markers", active: "false", default: "false"}] |
+.section
+  %div(style="width:100%;max-width:960px;")
+    .comparison-cards
+      %dl.titles
+        %dt
+        %dt.great-if{data:{title: "Great if..."}} Great if...
+        %dt{data:{title: "Rate"}} Rate*
+        %dt{data:{title: "Access"}}  Access
+        %dt.info-risk{data:{title: "Risk"}}  Risk
+        %dt 
+      -  @products.each do |p|
+        %dl.product-card{id: "zopa-product-" + p[:slug] }
+          %dd=p[:name]
+          %dd.great-if{data:{title: "Great if..."}}
+            %p=p[:description] 
+          %dd{data:{title: "Rate"}}=p[:rate] + "%"
+          %dd{data:{title: "Access"}}=p[:access]
+          %dd.info-risk{data:{title: "Risk"}}=p[:risk]
+          %dd
+            %a.button.minor Find out more

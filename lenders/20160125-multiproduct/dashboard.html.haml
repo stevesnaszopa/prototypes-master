@@ -1,0 +1,117 @@
+- @pagetitle = 'Dashboard || My Zopa'
+- content_for :mainnav do
+  = render "mainnav"
+- content_for :subnav do
+  = render "subnav"
+- content_for :styles do
+  = stylesheet_link_tag "content/multiproduct"
+- content_for :scripts do
+  = javascript_include_tag "content/expand"
+- @products = [{ name: "Access", rate: "3.6", terms: "1-5 year A* to C risk market SafeGuarded loans and no fee charged for selling loans", balance: "5000", lentout: "4300", matched: "0", r_queued: "400", n_queued: "300", r_earnings: "40", r_lending: "35" },{ name: "Standard", rate: "4.7", terms: "1-5 year A* to C risk market SafeGuarded loans with a 1% fee charged for any sale of loans", balance: "3000", lentout: "3000", matched: "0", r_queued: "0", n_queued: "0", r_earnings: "20", r_lending: "15" , default: "true" },{ name: "High Return", rate: "7.3", terms: "1-5 year A* to E Non-SafeGuarded loans with a 1% fee charged for any sale of loans, and a minimum balance of £2000", balance: "8000", lentout: "7200", matched: "300", r_queued: "250", n_queued: "250", r_earnings: "14", r_lending: "7" }]
+- @balance_percent = "40%"
+- @balance_used = "7000"
+.section
+  %div
+    .important.box.product-group{id: "products-isa"}
+      %h3 My Zopa ISA
+      .info.box.allowance-box
+        %h3 Allowance used
+        .isa-balance(style="width:#{@balance_percent};")
+          %span £#{@balance_used}
+      - @products.each do |p|
+        // This should be a partial "_product_unit" or similar
+        .info.box.product-unit
+          .product-title
+            %h3.title
+              %span.name
+                =p[:name]
+                %span.tooltip
+                  %span.top.left=p[:terms]
+            %h3.balance
+              =precede ("£") do
+                =p[:balance]
+              - if p[:default] == "true"
+                %sup> *
+          .product-actions
+            %a.expand Expand
+          .cB
+          .product-expand
+            .product-summary
+              =render "dummy-summary", locals: {rate: p[:rate], lentout: p[:lentout], matched: p[:matched], r_queued: p[:r_queued], n_queued: p[:n_queued]}
+            .product-glance
+              .card-rate
+                .card-title
+                .card-value
+                  =succeed ("%") do
+                    =p[:rate]
+                .card-info
+                .card-action
+              .card-recent-earnings
+                .card-title
+                .card-value
+                  =precede ("£") do
+                    =p[:r_earnings]
+                .card-info
+                .card-action
+              .card-recent-lending
+                .card-title
+                .card-value
+                  =precede ("£") do
+                    =p[:r_lending]
+                .card-info
+                .card-action
+          - if p[:default] == "true"
+            .product-default
+              %p
+                *Default product, money you transfer in to Zopa will go here.
+                %a Change Default Funding Destination
+
+    .standard.box.product-group{id: "products-standard"}
+      %h3 My Standard Zopa
+      - @products.each do |p|
+        // This should be a partial "_product_unit" or similar
+        .info.box.product-unit
+          .product-title
+            %h3.title
+              %span.name
+                =p[:name]
+                %span.tooltip
+                  %span.top.left=p[:terms]
+            %h3.balance
+              =precede ("£") do
+                =p[:balance]
+              - if p[:default] == "true"
+                %sup> *
+          .product-actions
+            %a.expand Expand
+          .cB
+          .product-expand
+            .product-summary
+              =render "dummy-summary", locals: {rate: p[:rate], lentout: p[:lentout], matched: p[:matched], r_queued: p[:r_queued], n_queued: p[:n_queued]}
+            .product-glance
+              .card-rate
+                .card-title
+                .card-value
+                  =succeed ("%") do
+                    =p[:rate]
+                .card-info
+                .card-action
+              .card-recent-earnings
+                .card-title
+                .card-value
+                  =precede ("£") do
+                    =p[:r_earnings]
+                .card-info
+                .card-action
+              .card-recent-lending
+                .card-title
+                .card-value
+                  =precede ("£") do
+                    =p[:r_lending]
+                .card-info
+                .card-action
+          - if p[:default] == "true"
+            .product-default
+              %p
+                *Default product, money you transfer in to Zopa will go here.
+                %a Change Default Funding Destination

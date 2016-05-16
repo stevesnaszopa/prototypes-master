@@ -1,0 +1,1096 @@
+
+
+<!--START OF PAGE -->
+<div class="span no-bottom-margin header-spacing">
+
+<div class="clear-both"></div>
+	<h1 class="fs32px">Book your holiday</h1>
+</div>
+		<form id="CheckoutPaymentDetailsForm" name="CheckoutPaymentDetailsForm" method="get" action="zopa_checkout.html" novalidate="">
+
+			<div class="content-section">
+
+				<div id="errorMsg"></div>
+				<div class="info-section timer">
+	<div class="icon clock">30:00</div>
+	<h5>Please complete this page within 30 minutes.</h5>
+	<p>After 30 minutes this page will timeout and you will have to re-enter any details.</p>
+</div>
+
+				<div class="mask-interactivity"></div>
+
+
+<div class="item" id="important_infosection">
+	<h3 class="item-toggle" onclick="displayImportantInfo('importantInfo');">
+		Important Information<span class="floatRight posAbsolute"><label class="confirmed mr30px">confirmed</label></span><i></i>
+	</h3>
+	<div class="disNone" id="importantInfo">
+
+		<p>CHECK IN LATE FRIDAY DEPART EARLY HOURS SATURDAY. HOLD BAGGAGE ALLOWANCE IS 15KG, EXTRA WEIGHT CAN BE PRE-BOOKED </p>
+
+		<div class="address-check">
+			<input id="imp-info" required="true" name="imp-info-confirm" class="checkBox" checked="checked" disabled="disabled" type="checkbox"> <label for="imp-info"><span></span><strong>
+				&nbsp;I can confirm that I have read and understood the above information</strong></label>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<div class="item open">
+	<h3 class="item-toggle">Your holiday<span class="passengers-count">
+
+	2 Adults
+
+	<a href="https://www.thomson.co.uk/destinations/book/passengerdetails" class="changeClass">CHANGE</a></span></h3>
+
+	<div class="item-content selectedSection">
+		<div class="fl width98per">
+
+			<div class="payment-passenger-details">
+	<h5>flights</h5>
+	<h6 class="sub-details">
+		<span class="disBlock"><strong>London Gatwick - Tenerife South</strong></span>
+		<span class="disBlock">Fri 26 Jun 2015: 18:50 - 23:15</span>
+		<span class="disBlock">Sat 04 Jul 2015: 00:15 - 04:20</span>
+		<span class="disBlock"><a class="cb fl changeFlights" href="http://www.thomson.co.uk/destinations/book/flightoptions">Change flights</a></span>
+	</h6>
+</div>
+
+			<div class="payment-passenger-details">
+				<h5>hotel</h5>
+				<h6 class="sub-details">
+					<span class="disBlock">
+						<span class="pass_details">Hotel Catalonia Las Vegas</span>
+					</span>
+					<span class="disBlock">
+						<span class="pass_type">in Puerto de la Cruz, Tenerife</span>
+					</span>
+					<span class="disBlock">Deluxe double with balcony</span>
+					<span class="disBlock">
+						<a class="back-to-review" href="http://www.thomson.co.uk/destinations/bookaccommodation?productCode=002615&amp;tab=overview&amp;noOfAdults=2&amp;noOfChildren=0&amp;childrenAge=&amp;duration=7&amp;airports[]=LGW%7CLTN%7CSEN%7CSTN&amp;units[]=002615:HOTEL:HOTEL&amp;flexibleDays=3&amp;flexibility=true&amp;when=28-06-2015&amp;noOfSeniors=0&amp;multiSelect=true&amp;packageId=002615TMLTEN1435276290000014352762900000TOM45621435962900000014359629000000TOM4563BC133&amp;index=1&amp;bb=HB&amp;price=pp">Back to hotel overview</a>
+					</span>
+				</h6>
+			</div>
+
+
+<div class="payment-passenger-details">
+
+    <h5>EXTRAS
+    </h5>
+	<h6 class="sub-details">
+	  <ul class="item-list">
+			<li>
+				<span class="fl">World care fund donation
+					<span onmouseover="totalprice_displayTooltipInfo_mouseover('worldcare_tooltip');" onmouseout="totalprice_displayTooltipInfo_mouseout('worldcare_tooltip');" class="question">?
+					</span>
+					<div class="tooltip_extra disNone fl" id="worldcare_tooltip">
+							<p class="fl textleft">By contributing to our world care fund, you can help support sustainable tourism and clean energy projects around the world.</p>
+							<span class="arrow_fo"></span>
+					</div>
+				</span>
+				<span class="fr capitalize">&pound;2.00</span>
+			</li>
+			<li>
+				<span class="fl">Car Hire</span>
+				<span class="fr capitalize">&pound;60.00</span>
+			</li>
+	  </ul>
+	  <span class="disBlock"><a class="cb fl changeFlights" href="http://www.thomson.co.uk/destinations/book/extraoptions">Change extras</a></span>
+
+	</h6>
+
+</div>
+
+
+		</div>
+	</div>
+</div>
+
+<div class="item open">
+	<h3>
+		Payment<span class="secured-section">Secure online payment</span>
+	</h3>
+	<div class="item-content">
+		<div class="item-content-payment">
+			<div class="payment-section">
+	<h5 class="pl10px"></h5>
+</div>
+<div class="payment-details" id="full-amt" xonclick="selectedpaymentMode(this.id)">
+	<div class="pb10px overflowHidden" onclick="updatePaymentInfo('fullCost')">
+		<div class="initialAmount">
+			<input checked="checked" id="full" name="depositType" class="radioBtn" value="fullCost" type="radio"><label class="margin0px floatLeft radioBtn" for="full"><span class="radioBtn" for="full"></span></label>
+
+		<div class="moreAmount">
+			<h5>total price </h5>
+			<a class="TotalAmntToBePay"><span class="currencySymbol">&pound;</span>3000.00</a>
+		</div>
+	</div>
+</div>
+<input name="total_transamt" id="total_transamt" value="NA" type="hidden">
+<input id="payment_0_totalTrans" value="1" name="payment_totalTrans" type="hidden">
+<script type="text/javascript" src="thomson_files/functions_depositSection.js"></script>
+
+			<div class="clear"></div>
+			<script type="text/javascript" src="thomson_files/functions_paymentMethods.js"></script>
+
+
+<div class="payment-section mt15px">
+	<h5 class="pl10px">How would you like to pay?</h5>
+</div>
+<div class="pb12px fl">
+	<input name="payment_0_type" id="payment_0_type" type="hidden">
+
+    <a href = "#seepayment">
+	   <div class="paycard-details " id="debitcardType" onclick="displayCreditCharges(this.id)">
+		<input id="debit" name="cardtype" class="radioBtn" value="Debit" onclick="displayCreditCharges(debit)" type="radio">
+		<label for="debit" class="radioBtn"><span for="debit" class="radioBtn"></span></label>
+		<h2 class="card-type">debit card</h2>
+		<span class="cardCharges"> No extra charge </span>
+		<img src="assets/debit-card-icon-small.png" alt="debit card icon" style="padding-left:35px; padding-top:10px">
+	   </div>
+     </a>
+	 <a href = "#seepayment">
+       <div class="paycard-details" id="creditcardType" onclick="displayCreditCharges(this.id)">
+    		<input id="credit" name="cardtype" class="radioBtn" value="Credit" type="radio">
+    		<label for="credit" class="radioBtn"><span for="credit" class="radioBtn"></span></label>
+    		<h2 class="card-type">credit card</h2>
+    		<span class="cardCharges"> +2% credit card surcharge</span>
+    		<img src="assets/credit-card-icon-small.png" alt="debit card icon" style="padding-left:35px; padding-top:10px">
+	   </div>
+      </a>
+      <a href = "#seepayment">
+    	<div class="paycard-details padding10pxnoBottom" id="zopabutton" onclick="displayCreditCharges(this.id)">
+            <input checked="checked" id="zopa" class="radioBtn" value="Zopa" name="cardtype" onclick="displayCreditCharges(debit)" type="radio">
+        		<img src="zopa_logo1.png" />
+        		<h4 class="mt16px zopa">
+        			<span class="gift-text">
+        			Pay for your holiday in 12 easy monthly installments with <strong>0% APR </strong>from <a href="http://zopa.com">Zopa</a></span>
+        		</h4>
+    	</div>
+      </a>
+</div>
+
+<!--YOU ARE ABOUT TO PAY STRIP-->
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+
+<!--SELECT OPTION JAVASCRIPT-->
+<script type="text/javascript" src="thomson_files/functions_cardDetails.js"></script>
+
+<!--CREDIT CARD FORM -->
+<div class="clear"></div>
+<a class="calculatoranchor" name = "seepayment"></a>
+<div id="cardpaymentbox" >
+    <div class="item open">
+    	<h3>Your Card Details</h3>
+    	<div class="item-content fl">
+    		<div class="card-details-entry">
+    				<div class="card-details-entry-section fl">
+
+    					<div id="creditPaymentTypeCode" style="display: none;">
+    						<p>Card type</p>
+    						<div class="cardtype-select">
+    						<select id="payment_type_credit" class="cardType fl" name="payment_0_type" onchange="checkIssueNumberEnabled(this.value)">
+    							<option id="pleaseSelect" value="PleaseSelect" selected="selected">Select type of credit card</option>
+
+    									<option value="MASTERCARD|Dcard">
+    										MasterCard&nbsp;Credit
+    									</option>
+
+
+    									<option value="VISA|Dcard">
+    										VISA&nbsp;-&nbsp;Credit
+    									</option>
+
+    									<option value="AMERICAN_EXPRESS|Dcard">
+    										American&nbsp;Express
+    									</option>
+
+    						</select>
+    						</div> <span class="visa"></span> <span class="delta"></span> <span class="mastercard"></span> <span class="maestro"></span> <span class="amexcard"></span>
+    					</div>
+
+    					<div id="debitPaymentTypeCode" style="display: none;">
+    						<p>Card Type</p>
+    						<div class="cardtype-select">
+    						<select id="payment_type_debit" class="cardType fl" name="payment_0_type" onchange="checkIssueNumberEnabled(this.value)">
+    							<option id="pleaseSelect" value="PleaseSelect" selected="selected">Select type of debit card</option>
+
+    									<option value="DEBIT_MASTERCARD|Dcard">
+    										MasterCard&nbsp;Debit
+    									</option>
+
+    									<option value="VISA_DELTA|Dcard">
+    										VISA/Delta&nbsp;-&nbsp;Debit
+    									</option>
+
+    									<option value="SWITCH|Dcard">
+    										Maestro
+    									</option>
+
+    									<option value="VISA_ELECTRON|Dcard">
+    										Visa&nbsp;Electron
+    									</option>
+
+    						</select>
+    						</div>
+    						<span class="visa"></span> <span class="delta"></span> <span class="mastercard"></span> <span class="maestro"></span> <span class="amexcard"></span>
+    					</div>
+
+    					<div id="zopaTypeCode" style="display: none;"></div>
+    				</div>
+    				<div class="card-details-entry-section fl">
+    					<p>Card Number</p>
+    					<div class="fl">
+    						<input name="payment_0_cardNumber" id="cardNumber" class="ccnumber fl" size="31" maxlength="20" onblur="allnumeric(this.id); displayCardType();" regexerror="Please enter card number into the field (e.g. '123456789098765')." regex="^[0-9]+$" requirederror="Your Card Number needs to be entered" required="true" autocomplete="off" type="text">
+    					</div>
+    					<span id="card-img" class="card-img ml15px"></span> <span id="card-desc" class="card-detect"></span>
+    				</div>
+    				<div class="card-details-entry-section fl">
+    					<p>Name on Card</p>
+    					<div class="fl">
+    						<input class="name_on_card fl" name="payment_0_nameOnCard" id="cardholderName" onblur="allCharacters(this.id);" onfocus="tooltip(this.id);" regexerror="Please enter your name into the field (e.g. 'Smith Deremy')." regex="^[A-Za-z]+$" requirederror="Your Name needs to be entered" required="true" maxlength="80" autocomplete="off" type="text">
+    					</div>
+    					<!-- <span class="info-icon" id="cardname-details"
+    						onmouseover="tooltip(this.id);"
+    						onmouseout="closeTooltip(this.id);"> </span> -->
+    					<span class="info-icon" onmouseover="displayTooltipInfo_mouseover('nameonCard');" onmouseout="displayTooltipInfo_mouseout('nameonCard');">
+    						<div class="tooltip fl disNone" id="nameonCard">
+    							<p class="width200px textleft">
+
+    										Please enter the name as it appears on the card
+
+
+    								<!-- Please enter the name as it
+    								appears on the card -->
+    							</p>
+    							<span class="arrow"></span>
+    						</div>
+    					</span>
+
+
+    				</div>
+    				<div class="card-details-entry-section fl">
+    					<p>Expiry Date</p>
+    					<div class="fl">
+
+    					<div class="styled-select">
+    					<select style="width:75px" name="payment_0_expiryMonth" id="FieldExpiryDateMonth" onblur="getMonth(this.id);" class="title">
+
+
+    								<option value="" selected="selected">MM</option>
+
+    									<option value="01">
+    										01
+    									</option>
+
+    									<option value="02">
+    										02
+    									</option>
+
+    									<option value="03">
+    										03
+    									</option>
+
+    									<option value="04">
+    										04
+    									</option>
+
+    									<option value="05">
+    										05
+    									</option>
+
+    									<option value="06">
+    										06
+    									</option>
+
+    									<option value="07">
+    										07
+    									</option>
+
+
+    									<option value="08">
+    										08
+    									</option>
+
+
+    									<option value="09">
+    										09
+    									</option>
+
+
+    									<option value="10">
+    										10
+    									</option>
+
+
+    									<option value="11">
+    										11
+    									</option>
+
+
+    									<option value="12">
+    										12
+    									</option>
+
+    					</select>
+    					</div>
+
+    					<div class="styled-select">
+    					<select style="width:75px" id="FieldExpiryDateYear" name="payment_0_expiryYear" onblur="getMonth();" onfocus="getMonth('true');" class="title">
+
+
+    							<option value="" selected="selected">YY</option>
+
+    							<option value="15">
+    								15
+    							</option>
+
+    							<option value="16">
+    								16
+    							</option>
+
+    							<option value="17">
+    								17
+    							</option>
+
+    							<option value="18">
+    								18
+    							</option>
+
+    							<option value="19">
+    								19
+    							</option>
+
+    							<option value="20">
+    								20
+    							</option>
+
+    							<option value="21">
+    								21
+    							</option>
+
+    							<option value="22">
+    								22
+    							</option>
+
+    							<option value="23">
+    								23
+    							</option>
+
+    							<option value="24">
+    								24
+    							</option>
+
+    							<option value="25">
+    								25
+    							</option>
+
+    							<option value="26">
+    								26
+    							</option>
+
+    					</select>
+    					</div>
+    				</div>
+    				</div>
+    				<div class="clear"></div>
+    				<div class="card-details-entry-section disNone fl" id="issueNumber">
+    					<p>Issue Number</p>
+    					<div class="fl">
+    						<input id="issuenum" name="payment_0_issueNumber" class="cvv fl" maxlength="2" autocomplete="off" onblur="validateISSUE(this.id);" type="text">
+    					</div>
+    					<span class="info-icon" onmouseover="displayTooltipInfo_mouseover('issueNum');" onmouseout="displayTooltipInfo_mouseout('issueNum');">
+    						<div class="tooltip fl disNone" id="issueNum">
+    							<p class="fl issueToolClass textleft">
+    								Please enter the issue number on the front of the card (if applicable).
+
+    							</p>
+    							<span class="arrow"></span>
+    						</div>
+    					</span>
+    				</div>
+    				<div class="clear"></div>
+    				<input style="visibility: hidden;" class="disNone" type="password">
+    				<div class="card-details-entry-section fl width59per cardDetailSecurity">
+    					<p>Security Code</p>
+    					<div class="fl entrySession">
+    						<input id="cvv" class="cvv fl" name="payment_0_securityCode" onblur="validateCVV(this.id)" onfocus="tooltip(this.id);" regexerror="Please enter numeric characters into the field for CVV code only (e.g. '243')." regex="^[0-9]+$" requirederror="Your CVV code" required="true" maxlength="4" value="" autocomplete="off" type="password">
+    					</div>
+    					<!-- <span class="info-icon" id="cvv-details"
+    						onmouseover="tooltip(this.id);"
+    						onmouseout="closeTooltip(this.id);"></span> -->
+    					<span class="info-icon" onmouseover="displayTooltipInfo_mouseover('cvvDetails');" onmouseout="displayTooltipInfo_mouseout('cvvDetails');">
+    						<div class="tooltip_security fl disNone" id="cvvDetails">
+    							<p class="width75px fl textleft"> This should be the last few digits on the back of your card
+
+    							<!-- This should be the last
+    								digits on the back of your card. -->
+    							</p>
+    							<span class="card-back fl"></span> <span class="arrow"></span>
+    						</div>
+    					</span>
+
+    					<a href="#" class="helping-links fl ml5px pt5px disNone">
+    						What's this?</a>
+    				</div>
+
+    <div class="card-links mt15px">
+
+                <div class="american-express-link">
+    				<p>
+    					<a href="javascript:newPopup('https://network.americanexpress.com/uk/en/safekey/');">Learn More</a>
+    				</p>
+    			</div>
+
+    </div>
+
+    <div id="american-express-stickey" class="tooltip fl disNone">
+      <div>
+        <div>
+          <div>
+            <div>
+              <h3>American Express SafeKey</h3>
+              <a id="amexDetailsClose" href="#" title="Close overlay">Close</a></div>
+             <p class="amextext">We've introduced American Express SafeKey -
+     a security programme created by American Express to give you peace of
+    mind when shopping online. All you need to do is register once whilst
+    paying on our website. You'll be asked to set up a password that you can
+     then use for any future payments you make with your card on
+    participating websites.
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    		</div>
+  </div>
+</div>
+<div class="clear"></div>
+    <!--END OF CREDIT CARD FORM -->
+</div> <!--Cardpaymentbox div-->
+
+
+
+<!--ALL SLIDER CODE -->
+  <div class="clear"></div>
+  <div class="item open" id="calculatorbox" style="display:none">
+	<div class="item-content fl">
+	  <div class="fl sliderposition">
+        <form action="url" method="get" name="payment" value="#deposit.value" target="_self">
+          <fieldset class="row group">
+          <div>
+              <span class="fl">
+                <strong>How much of a deposit do you want to pay? &pound; </strong>
+                <input id="deposit" name="deposit" type="number" value="1500">
+                <span onmouseover="totalprice_displayTooltipInfo_mouseover('deposit_tooltip');" onmouseout="totalprice_displayTooltipInfo_mouseout('deposit_tooltip');" class="question">?
+                </span>
+                 <div style="clear:both"></div>
+                <div class="tooltip_extra disNone fl" id="deposit_tooltip" style="float:right; margin-left:460px; margin-top:0px">
+                  <p class="fl textright">Choose an amount between &pound;300 and &pound;2000 to pay now and pay the rest later, with Zopa.</p>
+                </div>
+              </span>
+              <p></p>
+
+          </div>
+
+           <div class="slider-container">
+              <button class="round" id="decrease" data-trackinglabel="Amount (decrease)" type="button" title="Decrease amount">-</button>
+              <input class="range-slider" data-trackinglabel="Amount (slider)" id="amount-slider" type="range" min="300" max="2000" step="50">
+              <button class="round" id="increase" data-trackinglabel="Amount (increase)" type="button" title="Increase amount">+</button>
+            </div> <!-- END SLIDER CONTAINER-->
+
+              <!--FINANCIAL SUMMARY -->
+              <div class="allresults" id="summary-panel" style="width: 100%; max-width: 37em;">
+
+                <div id="summaryresults" class="totalPrice">
+
+                  <h2>Breakdown of costs</h2>
+                      <div class="calculation wrapper">
+                          <table>
+                            <tbody>
+                              <tr class="sum">
+                                <th>Total cost of holiday</th>
+                                <td style="text-align:right;">&pound;<span id="totalcost" >3000</span></td>
+                              </tr>
+                              <tr class="sum">
+                                <th>Zopa finance</th>
+                                <td style="text-align:right;">- &pound;<span id="zopafinance">1,500</span></td>
+                              </tr>
+                              <tr class="sum">
+                                <th>APR</th>
+                                <td style="text-align:right;"><span id="zopafinance">0%</span></td>
+                              </tr>
+                              <tr>
+                                <th><strong>Monthly installments (x12)</strong></th>
+                                <td style="text-align:right;"><strong>&pound;<span id="monthly">125</span></td>
+                              </tr>
+                              <tr class="sum" id="deposit">
+                                <th><strong>Deposit to pay</strong></th>
+                                <td style="text-align:right;">
+                                    <strong>&pound;<span id="deposittopay">1500</span></strong>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              </div>
+          </fieldset>
+        </form>
+      </div> <!-- F1 box-->
+    </div><!-- 2nd F1 box-->
+
+      <!--STYLE SLIDER -->
+    <style>
+
+       /* Customise the slider */
+
+        #amount-slider {
+          -webkit-appearance: none;
+          width:86%;
+          outline:none;
+          border-width: 0;
+          padding-top:15px;
+          background-color: transparent;
+        }
+
+        #amount-slider::-webkit-slider-thumb{
+          -webkit-appearance: none;
+          margin-top: -18px;
+          box-shadow: inset 1px 1px 1px 0px rgba(255, 255, 255, 0.5), 2px 2px 2px 0px rgba(0, 0, 0, 0.5);
+          background: #2aa1df url("assets/slider-pound-sign.png") no-repeat center;
+          width: 38.25px;
+          height: 38.25px;
+          border-radius: 50%;
+          border: none;
+          cursor: pointer
+        }
+
+        #amount-slider::-webkit-slider-runnable-track {
+          -webkit-appearance: none;
+          height: 7px;
+          background-color: #a3a1a1;
+          border-radius: 3px;
+          box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0.5), 0px 1px 0px 1px rgba(255, 255, 255, 0.5);
+        }
+
+        .slider-container{
+          margin:8px;
+          xposition:fixed;
+        }
+
+
+        /*Customise slider buttons */
+        button .round{
+          width:10%;
+          float:right;
+        }
+
+        /*Customise the input */
+        input#deposit {
+          width: 25%;
+          display:inline;
+        }
+
+        input#deposit span{
+          font-size: 2.45em;
+          font-weight:bold;
+        }
+
+        /*Customise the results */
+
+        div#results span{
+          font-weight: 2.45em;
+          font-weight:bold;
+          text-align: center;
+          display:inline;
+        }
+
+        .results{
+          margin-top:10px;
+        }
+
+        /*Submit button */
+        #submitdeposit{
+          display: block;
+          margin-right:35%;
+          margin-left:35%;
+        }
+
+        /*Round buttons */
+        input.round, button.round, a.button.round, .button.round {
+		    min-width: 0;
+		    border-radius: 50%;
+		    width: 1.71em;
+		    height: 1.71em;
+		    margin-bottom: 23px;
+		    text-align: center;
+		    vertical-align: middle;
+		}
+
+        /*Change summarybox after submit button clicked */
+
+        .textselected{
+          color:black;
+          font-weight: 800;
+        }
+        .boxselected{
+          background-color: white;
+        }
+
+    </style>
+
+ <!--SLIDER JS-->
+ <script src="thomson_files/depositslider.js"></script>
+
+
+<div class="clear"></div>
+
+	<script type="text/javascript">
+
+
+
+
+		 var leadTitle = "Mr";
+		 var leadForeName = "Joe";
+		 var leadLastName = "Blogs";
+
+
+
+
+
+
+
+
+ //setTitle();
+function setTitle(){
+	 var titles = document.getElementById("title");
+	for (var i = 0; i < titles.options.length; i++)
+	{
+		if (titles.options[i].value == leadTitle)
+		titles.options[i].selected = true;
+	}
+}
+
+function checkBox(){
+		var temp=document.getElementById("cardHolderCheck");
+		if(temp.checked == false){
+			return true;
+		}
+		return false;
+
+}
+
+function showDiv()
+	{
+		var temp=document.getElementById("cardHolderCheck");
+		if(temp.checked == true)
+		{
+			document.getElementById("enter-card-details").style.display='none';
+			document.getElementById("leadPassenger-details").style.display='block';
+			setTitle();
+
+			document.getElementById("firstName").value=leadForeName;
+			document.getElementById("surName").value=leadLastName;
+			document.getElementById("houseDetails1").value="30";
+			document.getElementById("StreetLine1").value="Millbank";
+			document.getElementById("Streetline2").value="";
+			document.getElementById("townorcity").value="London";
+			document.getElementById("county").value="London";
+			document.getElementById("postalCode").value="SW1 1AA";
+
+		}
+		else
+		{
+			document.getElementById('enter-card-details').style.display='block';
+
+			document.getElementById('leadPassenger-details').style.display='none';
+			document.getElementById("title").value='';
+
+			removeDiv(document.getElementById("styled-select"));
+
+			document.getElementById("firstName").value='';
+			removeDiv(document.getElementById("firstName"));
+
+			document.getElementById("surName").value='';
+			removeDiv(document.getElementById("surName"));
+
+			document.getElementById("houseDetails1").value='';
+			removeDiv(document.getElementById("houseDetails1"));
+
+			document.getElementById("StreetLine1").value='';
+			removeDiv(document.getElementById("StreetLine1"));
+
+			document.getElementById("Streetline2").value='';
+			removeDiv(document.getElementById("Streetline2"));
+
+			document.getElementById("townorcity").value='';
+			removeDiv(document.getElementById("townorcity"));
+
+			document.getElementById("county").value='';
+			removeDiv(document.getElementById("county"));
+
+			document.getElementById("postalCode").value='';
+			removeDiv(document.getElementById("postalCode"));
+		}
+
+		function removeDiv(nodeRef){
+		var inputField = nodeRef;
+		var text = nodeRef.value;
+		var createSpan = document.createElement('span');
+		createSpan.innerHTML = "";
+		createSpan.id = " ";
+		createSpan.className += "";
+		if (inputField.parentNode.children.length > 1) {
+		var next = inputField.nextSibling;
+		while (next && next.nodeType !== -1) {
+			if (createSpan.id == "validation-pass") {
+				next.parentNode.removeChild(next.nextSibling);
+			}
+			else {
+				var getNextsibling = next.nextSibling;
+
+				if (getNextsibling ) {
+				if(getNextsibling.id == 'placeholder-houseDetails' || getNextsibling.id == 'placeholder-StreetLine1' || getNextsibling.id == 'placeholder-Streetline2' || getNextsibling.id == 'placeholder-townorcity' || getNextsibling.id == 'placeholder-county' || getNextsibling.id == 'placeholder-postalCode'){
+					 if(getNextsibling.nextSibling){
+						getNextsibling.parentNode.removeChild(getNextsibling.nextSibling);
+						document.getElementById(getNextsibling.id).style.display='block';
+					}
+					return;
+				}
+					getNextsibling.parentNode.removeChild(getNextsibling);
+				}
+				else {
+					next.parentNode.removeChild(next);
+				}
+			}
+			break;
+		}
+		}
+		}
+
+	}
+    </script>
+
+		<div class="clear"></div>
+	</div>
+
+<!-- NEED SPACE HERE -->
+<div class="content-section">
+
+	</div>
+<div id="dpn" class="posFix">
+    <div id="DPNoverlay" class="web_dialog datapolicies">
+		<div class="web_dialog_title">
+			Data Protection Notice <a class="remove fr" href="#" onclick="closeDPNOverlay()">close</a>
+		</div>
+
+			<div class="we_dialog_description">
+				We'd like to contact you from time to time with details of offers,
+goods and services, new products, and events and competitions we think
+will be of interest to you.
+			</div>
+			<div class="communication fl paddlef">
+ 				<span class="Trailored sectionTitle fl">
+ 					If you'd prefer not to get these, you can opt out
+ 				</span>
+			</div>
+			<div class="commAccept fl paddlef">
+				<input class="checkBoxRef" name="communicateByEmail" id="communicate_selection_email" type="checkbox"> <label for="communicate_selection_email"><span></span></label>
+				<span class="commAcceptDesc">
+					I don't want to receive emails or SMS with details of offers, goods and services, new products, or events and competitions.</span>
+			</div>
+			<div class="commAccept fl paddlef">
+				<input class="checkBoxRef" name="communicateByPhone" id="communicate_selection_phone" type="checkbox"> <label for="communicate_selection_phone"><span></span></label>
+				<span class="commAcceptDesc">
+					I don't want to be contacted by telephone with details of offers,
+goods and services, new products, or events and competitions.</span>
+			</div>
+			<div class="commAccept fl paddlef">
+				<input class="checkBoxRef" name="communicateByPost" id="communicate_selection_post" type="checkbox"> <label for="communicate_selection_post"><span></span></label>
+				<span class="commAcceptDesc">
+					I don't want to receive information by post of offers, goods and services, new products, or events and competitions.</span>
+			</div>
+
+		<div class="communicationAcceptance fl paddlef">
+			<div class="sectionTitle">
+				Carefully selected companies outside our holiday group would like to
+ get in touch from time to time with news about their products and
+services.
+			</div>
+
+			<div class="commAccept fl">
+				<input name="chkThirdPartyMarketingAllowed" id="travelAcpt" type="checkbox"> <label for="travelAcpt"><span></span></label>
+				<span class="commAcceptDesc">
+					No thanks, I don't want to receive information of products and services from carefully selected companies
+				</span>
+			</div>
+
+			<div class="clear"></div>
+			<div class="border-divider"></div>
+
+		</div>
+
+
+		<div class="button-section paddlef">
+			<div class="fl">
+				<a class="cancel" href="#" onclick="closeDPNOverlay()">CANCEL</a>
+
+			</div>
+			<div class="fr rightSection">
+                <a class="okbutton" onclick="okButtonclick(this)">OK</a>
+			</div>
+		</div>
+	</div>
+
+				</div>
+<div id="sessionTime" class="posFix">
+<div id="sessionTimeTextbox" class="sessionTimeText">
+	<div class="session_dialog_title fl">
+				 <div class="sessionText fl">Are you still there?</div>
+				 <a class="remove fr" href="#" onclick="closesessionTime()">close</a>
+	</div>
+	<div class="session_dialog_timeOut_content_container fl">
+			<div class="SesTimeoutImg fl">
+					<div class="sessionoutWarnClock fl"></div>
+					<div class="clear"></div>
+					<span class="sesDisTime">Timeout in</span>
+					<span id="sessiontimeDisplay" class="sesDisTime"></span>
+					<div class="clear"></div>
+			</div>
+			<div class="session_dialog_timeOut_content">
+				This page will soon be timing out for security reasons. Let us know that <br> you're still here , otherwise you'll have to re-enter your details.
+			</div>
+			<div class="clear"></div>
+			<div class="sessionTimeTextbox_border-divider"></div>
+	</div>
+	<div class="activestate fr">
+				 <a class="button fr" href="#" onclick="activestate()">I'm still here</a>
+	</div>
+</div>
+</div>
+
+<div class="posFix" id="sessionTimeout">
+<div class="sessionTimeOutText" id="sessionTimeOutTextbox">
+<div class="session_dialog_title fl">
+			 <div class="sessionText fl">Sorry, this page has timed out!</div>
+			 <a onclick="reloadPage()" class="remove fr">close</a>
+</div>
+<div class="session_dialog_timeOut_content_container fl">
+<div class="sessiontimeout_content fl">
+Unfortunately this page has timed out for security reasons.Don't worry,
+we're not going to make you start over again, but we do need you to
+re-enter your details on this page. If you don't want to continue you
+can go to the <a href="#" onclick="homepage()">homepage</a>.
+</div>
+<div class="clear"></div>
+<div class="border-divider_sessiontimeout"></div>
+</div>
+<div class="activestate fr">
+			 <a onclick="reloadPage()" class="button fr">ok</a>
+</div>
+</div>
+</div>
+ <!--SUBMIT BUTTON-->
+  <div id="modal" class="web_dialog_overlay"></div>
+
+        <div class="buttonToolTip tooltip fl  disNone" id="errorMessageToolTip">
+            <h3 class="error-message-text">Hold on there...</h3>
+            <h5 class="error-message-subText">some details still haven't been entered, or are currently invalid</h5>
+          <span class="arrow"></span>
+        </div>
+
+        <div class="bookHoliday" align="center">
+            <input class="button cta jumbo" type="submit" value="Book this holiday" style="height:auto;"/>
+            <br/>
+        </div>
+  </div>
+
+</form>
+
+<!--FIX-->
+</div>
+
+
+<!--SUMMARY COLUMN-->
+<div id="summary-panel">
+
+<div class="totalPrice">
+	<span class="info-block">TOTAL PRICE
+		<span class="question" onmouseover="totalprice_displayTooltipInfo_mouseover('total_payment');" onmouseout="totalprice_displayTooltipInfo_mouseout('total_payment');">?</span>
+	</span>
+
+	<div class="tooltip_price disNone fl" id="total_payment">
+		<p class="fl textleft">
+
+				</p><ul class="item-list">
+					<li>
+						<span class="fl">
+								PRICE BREAKDOWN
+						</span>
+						<span class="fr"></span>
+					</li>
+
+						<li>
+							<span class="fl">
+								Online Discount
+							</span>
+							<span class="fr">
+										&pound;84.00
+
+							</span>
+						</li>
+
+						<li>
+							<span class="fl">
+								Basic Holiday
+							</span>
+							<span class="fr">
+
+
+
+
+										&pound;822.00
+
+
+							</span>
+						</li>
+
+						<li>
+							<span class="fl">
+								Options &amp; Extras (total)
+							</span>
+							<span class="fr">
+										&pound;62.00
+							</span>
+						</li>
+
+					<li>
+						<span class="fl">
+								TOTAL PRICE
+						</span>
+						<span class="fr">&pound;3000.00</span>
+					</li>
+				</ul>
+
+		<p></p>
+		<span class="arrow_price"></span>
+	</div>
+	<span class="total"><span class="currency">&pound;</span>
+		<span class="round_value">3000</span>.<span class="decimal_value">00</span>
+	</span>
+	<span class="splitPrice">
+
+
+
+
+
+			<span class="pp textNormal disBlock">&pound;
+				1500.00 per person</span>
+
+				<span class="discount textNormal">
+				Includes &pound;148.00 discount
+				</span>
+
+	</span>
+	<div class="clear"></div>
+	<span class="people">
+
+	2 Adults
+
+	</span>
+</div>
+
+
+<div class="priceBrk">
+	<h3>
+		<span class="icon price"></span><span class="title">PRICE
+			BREAKDOWN</span>
+	</h3>
+	<div class="noAccrodDef loaded">
+
+
+			<ul class="item-list">
+
+					<li><span class="fl">Online Discount</span> <span class="fr">
+
+
+									<span class="pinkText">-&pound;148.00</span>
+
+
+
+
+					</span></li>
+
+					<li><span class="fl">Basic Holiday</span> <span class="fr">
+
+				&pound;2822.00
+
+
+					</span></li>
+
+					<li><span class="fl">Options &amp; Extras (total)</span> <span class="fr">
+
+
+				&pound;326.00
+
+
+					</span></li>
+
+				<div class="grandTotal">
+					<span class="lable fl">TOTAL PRICE</span> <span class="price fr"><span class="breakdown_symbol">&pound;</span>
+						<span class="breakdown_round_value">3000</span><span class="breakdown_decimal_value">.00</span>
+					</span>
+				</div>
+				<div class="fl cb paxSplit">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						2
+
+							Adults
+
+
+
+
+
+
+				</div>
+				<div class="grandTotalBG"></div>
+			</ul>
+
+	</div>
+</div>
+
+</div>
+
+
+
+	</div>

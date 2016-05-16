@@ -1,0 +1,67 @@
+
+@media screen {
+
+  #header .mainnav.piazza-nav {
+    background-color: #485263;
+
+    a {
+      color: $color-bg-action;
+    }
+    a:hover,
+    a:active,
+    a:focus,
+    a.selected {
+      color: #fff !important;
+    }
+
+    ul li.active a,
+    ul li.selected a {
+      color: #fff;
+
+      &:after {
+        background-image: shared-image-url("layout/caret-nav-loggedin.png");
+      }
+    }
+
+    ul li.active.secondary a:after,
+    ul li.selected.secondary a:after {
+      display: none;
+    }
+
+    ul li.signout a span,
+    ul li.signin a span {
+      background-image: image-url("icons/padlock-lightblue.png");
+    }
+  }
+
+  .loans #header .mainnav.piazza-nav li.borrower,
+  .lending #header .mainnav.piazza-nav li.lender {
+    a {
+      color: #fff !important;
+
+      &:after {
+        background-image: shared-image-url("layout/caret-nav-loggedin.png");
+      }
+    }
+  }
+
+  /* could be in basic.scss but cannot be used (yet) within Brochureware */
+  a[target="_blank"] {
+    background: transparent shared-image-url('icons/external.png') no-repeat right center;
+    padding: 0 15px 0 0;
+  }
+
+} /* @media screen */
+
+
+/* size XS (e.g. phones)
+********************************************************************/
+
+@media only screen and (max-width: $screensize-xs) {
+
+  #header .piazza-nav ul li.primary a {
+    border-color: #566674;
+  }
+
+} /* @media screen */
+

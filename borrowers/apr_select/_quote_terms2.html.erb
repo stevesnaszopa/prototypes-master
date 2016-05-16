@@ -1,0 +1,76 @@
+<form action="/borrow" method="get" id="loan-calculator">
+
+  <fieldset id="slider_calc" class="multi-options" data-loan-size="10000" data-loan-term="60" data-loan-market="A*">
+    <h3>
+      <span>I want to get a loan for</span>
+
+      <span class="">£<input class="borrow-amount validate[custom[integer],min[1000],max[25000],]" type="number" value="10000" data-maxlength="5" step="100" min="1000" max="25000" name="amount" id="amount" data-trackinglabel="Amount" title="Amount" /></span>
+    </h3>
+
+    <input type="hidden" name="zp_source" value="referrer-organic" />
+
+    <script type="text/html" data-inline="true">
+      <div class="slider-container">
+        <button class="decrease round" data-trackinglabel="Amount (decrease)" type="button" title="Decrease amount" aria-controls="slider_calc_results amount amount-slider">-</button>
+        <input class="range-slider" data-trackinglabel="Amount (slider)" title="Amount" id="amount-slider" type="range" min="1000" max="25000" step="100" aria-controls="slider_calc_results amount" aria-live="polite" />
+        <button class="increase round" data-trackinglabel="Amount (increase)" type="button" title="Increase amount" aria-controls="slider_calc_results amount amount-slider">+</button>
+      </div>
+    </script>
+
+
+    <div class="sentences-results content group" id="slider_calc_results">
+      <table class="rows">
+        <thead>
+        <tr>
+          <th>Term</th>
+          <th>APR</th>
+          <th>Monthly cost</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% values.each_with_index do |val, index| %>
+          <tr class="" data-index="0">
+            <td>
+              <span class="radiocheck">
+                <input type="radio" <%= val == values.last ? 'checked=checked' : ''%> name="<%= "rate-#{name}" %>" value="12"  id="<%= "rate-#{name}-#{index}" %>" />
+                <label for="<%= "rate-#{name}-#{index}" %>"><%= val[:term] %></label>
+              </span>
+            </td>
+            <td><span class="apr"><%= val[:apr] %></span></td>
+            <td>£<span class="monthly-repayment"><%= val[:cost] %></span></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <p class="intro">
+        <a href="#" class="button">Get a quote today</a>
+      </p>
+
+      <div class="rep-apr">
+        <h3>Representative example</h3>
+        <div class=" slider-sentences">
+          <p>
+            A loan of <span class="amount"><%= rep_apr[:amount] %></span> over
+            <span class="term"><%= rep_apr[:term] %></span> will cost you
+            <span class="monthly-repayment"><%= rep_apr[:cost] %></span>&#xa0;per&#xa0;month at a representative
+            <span class="apr"><%= rep_apr[:apr]%></span>&#xa0;APR.
+          </p>
+
+          <p>
+            The total cost after <span class="term"><%= rep_apr[:term] %></span> is
+            <span class="total-repayment"><%= rep_apr[:total_cost] %></span>, which includes
+            <span class="total-interest"><%= rep_apr[:interest] %></span> interest at
+            <span class="lending-rate"><%= rep_apr[:interest_rate]%></span> fixed and
+            a <span class="fee"><%= rep_apr[:fee] %></span> fee.
+            The total amount of credit is <span class="total-credit"><%= rep_apr[:total_credit] %></span>.
+          </p>
+        </div>
+        <p class="hint">The rate and fee you are offered will depend on your individual circumstances</p>
+
+      </div>
+
+    </div>
+
+  </fieldset>
+
+</form>

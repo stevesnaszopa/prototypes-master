@@ -1,0 +1,15 @@
+- @pagetitle = 'Our Products || My Zopa'
+- content_for :mainnav do
+  = render "mainnav"
+- content_for :subnav do
+  = render "subnav"
+- content_for :styles do
+  = stylesheet_link_tag "content/comparison_tables"
+.group
+  .section.hero
+    %div
+      %p.back.only-screensize-xs
+        %span.a11y Back to
+        %a{:href => "/dashboard.html"} Dashboard
+      %h1 Our Products
+  =render "comparison_table"

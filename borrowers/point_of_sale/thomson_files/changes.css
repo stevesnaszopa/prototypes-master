@@ -1,0 +1,32 @@
+
+.calculation th,
+.calculation td{
+  padding: 5px;
+}
+
+
+#summaryresults .calculation td{
+  text-align: right;
+}
+
+.radiocheck label{
+  display:inline;
+}
+
+ h6.note {
+  font-size: 11px;
+  margin-bottom: 3px;
+}
+
+.fl.sliderposition{
+  margin-left: 102px;
+}
+
+#summaryresults table {
+  width: 75%;
+}
+
+img.paidbyzopa {
+  padding-left: 80px;
+  padding-top: 20px;
+}

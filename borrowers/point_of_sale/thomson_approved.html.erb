@@ -1,0 +1,139 @@
+<% content_for :styles do %>
+  <style>
+    #summary-panel {
+      width: 50%;
+    }
+    #summary-panel li {
+      font-size: 14px;
+    }
+  </style>
+<% end %>
+
+
+<div class="content-section">
+  <h1 class="fs32px">Your holiday is booked</h1>
+
+  <p class="intro">We've sent you a confirmation email. If you need any help or have a question about your Zopa Retail Finance contract visit our website <a href="https://www.zopa.com/">zopa.com</a> or contact us on 0207 580 6060.</p>
+
+
+	<form id="CheckoutPaymentDetailsForm" name="CheckoutPaymentDetailsForm" method="post" action="javascript:makePayment();" novalidate="">
+
+				<div class="info-section timer" style="background-color:#d6feda; ">
+		      <h5>An email confirmation is on its way to you.</h5>
+        </div>
+
+				<div class="mask-interactivity"></div>
+        <div class="clear"></div>
+        <div class="clear"></div>
+
+
+<div class="item open">
+  <h3 class="item-toggle">Your holiday<span class="passengers-count">
+
+  2 Adults
+
+  <a href="" class="changeClass">BOOKED</a></span></h3>
+
+  <div class="item-content selectedSection">
+    <div class="fl width98per">
+
+      <div class="payment-passenger-details">
+  <h5>flights</h5>
+  <h6 class="sub-details">
+    <span class="disBlock"><strong>London Gatwick - Tenerife South</strong></span>
+    <span class="disBlock">Fri 26 Jun 2015: 18:50 - 23:15</span>
+    <span class="disBlock">Sat 04 Jul 2015: 00:15 - 04:20</span>
+  </h6>
+</div>
+
+      <div class="payment-passenger-details">
+        <h5>hotel</h5>
+        <h6 class="sub-details">
+          <span class="disBlock">
+            <span class="pass_details">Hotel Catalonia Las Vegas</span>
+          </span>
+          <span class="disBlock">
+            <span class="pass_type">in Puerto de la Cruz, Tenerife</span>
+          </span>
+          <span class="disBlock">Deluxe double with balcony</span>
+        </h6>
+      </div>
+
+
+<div class="payment-passenger-details">
+
+    <h5>EXTRAS
+    </h5>
+  <h6 class="sub-details">
+    <ul class="item-list">
+      <li>
+        <span class="fl">World care fund donation
+          <span onmouseover="totalprice_displayTooltipInfo_mouseover('worldcare_tooltip');" onmouseout="totalprice_displayTooltipInfo_mouseout('worldcare_tooltip');" class="question">?
+          </span>
+          <div class="tooltip_extra disNone fl" id="worldcare_tooltip">
+              <p class="fl textleft">By contributing to our world care fund, you can help support sustainable tourism and clean energy projects around the world.</p>
+              <span class="arrow_fo"></span>
+          </div>
+        </span>
+        <span class="fr capitalize">&pound;2.00</span>
+      </li>
+      <li>
+        <span class="fl">Car Hire</span>
+        <span class="fr capitalize">&pound;60.00</span>
+      </li>
+    </ul>
+
+  </h6>
+
+</div>
+
+
+		</div>
+	</div>
+</div>
+</form>
+
+<div class="item open">
+	<h3>
+		Your payment summary<span class="secured-section">Financed by Zopa</span>
+	</h3>
+	<div class="item-content">
+		<div class="item-content-payment" style="padding:0;">
+
+        <div id="summary-panel">
+          <div class="priceBrk">
+
+          	  <div class="noAccrodDef loaded">
+
+                <%= render "calculations" %>
+          			<ul class="item-list">
+                    <li><span class="fl">Deposit paid:</span> <span class="fr"><%= number_to_currency @deposit %></span></li>
+          					<li><span class="fl">Total loan:</span> <span class="fr"><%= number_to_currency @loan %></span></li>
+          					<li><span class="fl">APR</span> <span class="fr">
+                        <span class="">0%</span> </span></li>
+          					<li><span class="fl">Monthly cost:</span> <span class="fr"><%= number_to_currency @monthly %></span></li>
+                    <li><span class="fl">First payment due:</span> <span class="fr"> 31st Sept</span></li>
+          				<div class="grandTotal">
+          					<span class="lable fl">COST:</span> <span class="price fr"><span class="breakdown_symbol"></span>
+          						<span class="breakdown_round_value">£3,000</span></span>
+          					</span>
+          				</div>
+          				<div class="fl cb paxSplit">
+          					<br />
+          				</div>
+          			</ul>
+              </div>
+
+             </div> <!--priceBrk-->
+          </div> <!--summary-panel-->
+
+         <!--ZOPA LOAN-->
+         <img class="paidbyzopa" src="assets/zopa-logo.png" alt="Zopa logo" width="230px">
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="clear"></div>
+<div class="clear"></div>

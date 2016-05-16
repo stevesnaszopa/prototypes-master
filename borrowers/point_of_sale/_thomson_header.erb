@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" id="firstchoice" class="ie6 "> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" id="firstchoice" class="ie7 "> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" id="firstchoice" class="ie8 "> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" id="firstchoice" class="ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="" id="firstchoice" lang="en"><!--<![endif]--><head>
+
+
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><script src="Thomson%20_%20Payment%20Details_files/ga.js"></script><script src="Thomson%20_%20Payment%20Details_files/d6df495f8171eb65e37dced6af018d85.js"></script><script src="Thomson%20_%20Payment%20Details_files/4a446ea276d9fe1888b5220f95c042e0.js"></script><script src="Thomson%20_%20Payment%20Details_files/0abb118629badb8d2a935c5f828a0bae.js"></script><script src="Thomson%20_%20Payment%20Details_files/d60210c8b91f8d96ca7776199d4eff61.js"></script><script src="Thomson%20_%20Payment%20Details_files/1547deafe86d84c9f3825019ffebbc5a.js"></script><script src="Thomson%20_%20Payment%20Details_files/85a484dbb3c196e61a56fcb315dbde40.js" async="" type="text/javascript"></script><script src="Thomson%20_%20Payment%20Details_files/serverComponent.php"></script>
+<link href="Thomson%20_%20Payment%20Details_files/main.css" rel="stylesheet" type="text/css">
+<link href="Thomson%20_%20Payment%20Details_files/main_header.css" rel="stylesheet" type="text/css">
+<link href="Thomson%20_%20Payment%20Details_files/print.css" rel="stylesheet" type="text/css" media="print">
+<!--[if lt IE 9]>
+	<link rel="stylesheet" type="text/css" href="/cms-cps/thomson/css/ie8-and-down.css" />
+<![endif]-->
+
+<!--    -- listing properties --
+Built-By=bob
+Created-By=16.0-b13 (Sun Microsystems Inc.)
+Version=34.00.00
+Manifest-Version=1.0
+Ant-Version=Apache Ant 1.7.0
+Built-Date=May 21 2015 1453
+Session Id=F44AB73867829F2A09C057F453B40ADC.iscapecommonpaymentserverp86a -->
+
+<title>Holidayz | Payment Details</title>
+<!--#endif-->
+		<!--[if IE 7 ]><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /><![endif]-->
+		<!--[if IE 8 ]><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" /><![endif]-->
+		<!--[if IE 9 ]><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" /><![endif]-->
+		<!--[if (gt IE 9)|!(IE)]><!--><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><!--<![endif]-->
+		<meta charset="utf-8">
+
+<style>
+	.env {
+	    left: 0;
+	    width: 78%;
+	    text-align: center;
+	    font-size: .8em;
+	    margin-left: 1%;
+	    border-radius: .2em;
+	    color: #fff;
+	    font-weight: 600;
+	    padding: .3em;
+	    background-color: rgba(255,130,0,0.8);
+	}
+</style>
+
+<script type="text/javascript" src="Thomson%20_%20Payment%20Details_files/functions_thomson_paymentPage.js"></script>
+<script type="text/javascript" src="Thomson%20_%20Payment%20Details_files/functions_manualAddress.js"></script>
+
+<script type="text/javascript" language="javascript">
+	 //seconds
+	var session_timeout= 12900;
+	var IDLE_TIMEOUT = (12900)-(600);
+	var _idleSecondsCounter = 0;
+	var IDLE_TIMEOUT_millisecond = IDLE_TIMEOUT *1000;
+	var url="http://www.thomson.co.uk/destinations/bookaccommodation?productCode=002615&tab=overview&noOfAdults=2&noOfChildren=0&childrenAge=&duration=7&airports[]=LGW|LTN|SEN|STN&units[]=002615:HOTEL:HOTEL&flexibleDays=3&flexibility=true&when=28-06-2015&noOfSeniors=0&multiSelect=true&packageId=002615TMLTEN1435276290000014352762900000TOM45621435962900000014359629000000TOM4563BC133&index=1&bb=HB&price=pp";
+	var sessionTimeOutFlag =  false;
+
+	function noback(){
+		window.history.forward();
+		$('FieldExpiryDateMonth').selectedIndex = 0;
+		$('FieldExpiryDateYear').selectedIndex  = 0;
+		document.getElementById("tandc-info").checked=false;
+	}
+
+	window.setInterval(CheckIdleTime, 1000);
+	window.alertMsg();
+	function alertMsg(){
+
+	var myvar = setTimeout(function(){
+	document.getElementById("sessionTime").style.visibility = "visible";
+	document.getElementById("modal").style.visibility = "visible";
+	document.getElementById("sessionTimeTextbox").style.visibility = "visible";
+
+	var count = Math.round((session_timeout - _idleSecondsCounter)/60);
+	document.getElementById("sessiontimeDisplay").innerHTML = count +"mins";
+	},IDLE_TIMEOUT_millisecond);
+
+	}
+
+	function CheckIdleTime() {
+    _idleSecondsCounter++;
+
+    if (  _idleSecondsCounter >= session_timeout) {
+
+    	if (window.sessionTimeOutFlag == false){
+		document.getElementById("sessionTime").style.visibility = "hidden";
+		document.getElementById("modal").style.visibility = "hidden";
+		document.getElementById("sessionTimeTextbox").style.visibility = "hidden";
+		document.getElementById("sessionTimeout").style.visibility = "visible";
+		document.getElementById("modal").style.visibility = "visible";
+		document.getElementById("sessionTimeOutTextbox").style.visibility = "visible";
+    	}else{
+    		document.getElementById("sessionTimeout").style.visibility = "hidden";
+    		document.getElementById("modal").style.visibility = "visible";
+    		document.getElementById("sessionTimeOutTextbox").style.visibility = "hidden";
+
+
+    	}
+	   //navigate to technical difficulty page
+
+		}
+	}
+	function closesessionTime()
+	{
+
+		document.getElementById("sessionTime").style.visibility = "hidden";
+		document.getElementById("modal").style.visibility = "hidden";
+		document.getElementById("sessionTimeTextbox").style.visibility = "hidden";
+
+	}
+	function reloadPage(){
+		window.sessionTimeOutFlag= true;
+		document.getElementById("sessionTimeout").style.visibility = "hidden";
+		document.getElementById("modal").style.visibility = "hidden";
+		document.getElementById("sessionTimeOutTextbox").style.visibility = "hidden";
+		window.noback();
+		window.location.replace(window.url);
+		return(false);
+
+	}
+	function homepage()
+	{
+		url="https://www.zopa.com"
+		window.noback();
+	
+		window.location.replace(url);
+	}
+	function activestate()
+	{
+
+		document.getElementById("sessionTime").style.visibility = "hidden";
+		document.getElementById("modal").style.visibility = "hidden";
+		document.getElementById("sessionTimeTextbox").style.visibility = "hidden";
+		window.ajaxForCounterReset();
+		window.alertMsg();
+		window._idleSecondsCounter = 0;
+	}
+	function ajaxForCounterReset() {
+		var token = "0de24243-73bf-4a6d-a428-024d24eea7e5";
+		var url = "/cps/SessionTimeOutServlet?tomcat=cpsp86a";
+		var request = new Ajax.Request(url, {
+			method : "POST"
+		});
+		window._idleSecondsCounter = 0;
+
+	}
+
+	function newPopup(url) {
+		var win = window.open(url,"","width=700,height=600,scrollbars=yes,resizable=yes");
+	    if (win && win.focus) win.focus();
+	}
+
+
+	function makePayment() {
+		document.getElementById('errorMessageToolTip').style.display = "none";
+		if( document.getElementById("errorMsg") ){
+			document.getElementById("errorMsg").style.display = "none";
+		}
+		var isvalid = true,
+		cardValid = false;
+		if(allnumeric('cardNumber') && validateCVV('cvv') && allCharacters('cardholderName') && getMonth('FieldExpiryDateMonth') || validateISSUE('issuenum') ){
+			cardValid = true;
+		}
+		if(checkBox()){
+			isvalid = isValid();
+		}
+		if(!isvalid || !cardValid){
+			document.getElementById('errorMessageToolTip').style.display = "block";
+		}
+		var paymentForm = $('CheckoutPaymentDetailsForm');
+		var element = paymentForm.serialize();
+		elementstring = element
+				+ "&token=0de24243-73bf-4a6d-a428-024d24eea7e5&b=32000&tomcat=cpsp86a";
+		var url = "/cps/processPostPayment?token=0de24243-73bf-4a6d-a428-024d24eea7e5&b=32000&tomcat=cpsp86a";
+		elementstring = elementstring.replace("&title=&", "&title=" + leadTitle + "&");
+		elementstring = elementstring.replace("payment_0_type=&", "");
+		elementstring = elementstring.replace("payment_0_type=PleaseSelect&", "");
+		elementstring = elementstring.replace("payment_0_type=PleaseSelect&", "");
+		if(isvalid && cardValid){
+			document.getElementById("modal").style.visibility = "visible";
+			var request = new Ajax.Request(url, {
+				method : "POST",
+				parameters : elementstring,
+				onSuccess : showThreeDOverlay
+			});
+		}
+	}
+
+	function isValid(){
+		var firstName =  checkFName("firstName"),
+			title = checkTitle("styled-select"),
+			surName = checkName("surName"),
+			houseName = housenameCheck("houseDetails1"),
+			street1 = streetline1Check("StreetLine1"),			
+			street2 = streetline2Check("Streetline2"),
+			town = townorcityCheck("townorcity"),
+			county = testCounty("county"),
+			postCode = testPostCode("postalCode");
+
+		 if(!firstName || !title || !surName || !houseName || !street1 || !street2 || !town || !county || !postCode){
+			return false;
+		 }
+		 return true;
+		}
+
+</script>
+
+	 
+
+
+
+
+ 
+ 
+<script type="text/javascript">
+ var clientApp = "THOMSON ";
+ var clientDomainURL = "https://www.zopa.com";
+ var isPromotionalcodeApplied = "";
+ var themePath = '';
+ var promoCodeValidated = false;
+ var tomcatInstance= "&tomcat=cpsp86a" ;
+ var token = "0de24243-73bf-4a6d-a428-024d24eea7e5" ;
+ var isNewHoliday = 'true';
+ var errorFields = "";
+ var paymenttypeoptions = new Array();
+ var preLdDepositOptions="";
+
+ setSummaryPanelCollapsable( false );
+
+
+
+
+
+
+
+ var tandCurl = ""+"https://www.thomson.co.uk/thomson/page/byo/tandc/tandc.page?date=2015-06-26&lang=en&accommInvSys=TRACS&flightInvSys=TRACS&depDate=2015-06-26";
+ var configurableCardCharge = "2.00,0.00,95.00";
+
+
+///Define a javascript object for using thru out the page
+ var newHoliday  = "true";
+ var PaymentInfo = {};
+
+PaymentInfo.totalAmount ="2900";
+PaymentInfo.payableAmount = "2900";
+
+PaymentInfo.calculatedPayableAmount = "2900";
+PaymentInfo.calculatedTotalAmount = "2900";
+
+//PaymentInfo.maxCardChargeAmount = "";
+
+PaymentInfo.calculatedDiscount = "0";
+
+//Let us give default values
+if(trimSpaces(PaymentInfo.calculatedDiscount)=="")
+{
+  PaymentInfo.calculatedDiscount = 0.0;
+}
+
+PaymentInfo.chargePercent = 0.0;
+PaymentInfo.selectedCardType = 'PleaseSelect';
+
+var depositAmountsMap = new Map();
+     
+     depositAmountsMap.put('fullCost', 1*PaymentInfo.totalAmount  - 1*PaymentInfo.calculatedDiscount);
+
+var cardChargeMap = new Map();
+     cardChargeMap.put('PleaseSelect', configurableCardCharge);
+       
+         cardChargeMap.put('VISA', '2.00,0.00,95.00,VISA&amp;nbsp;-&amp;nbsp;Credit,Credit,');
+       
+         cardChargeMap.put('MAESTRO', '0.00,0.00,0.00,TUI&amp;nbsp;Gift&amp;nbsp;Card,');
+       
+         cardChargeMap.put('MASTERCARD', '2.00,0.00,95.00,MasterCard&amp;nbsp;Credit,Credit,');
+       
+         cardChargeMap.put('VISA_DELTA', '0.00,0.00,0.00,VISA/Delta&amp;nbsp;-&amp;nbsp;Debit,Debit,');
+       
+         cardChargeMap.put('VISA_ELECTRON', '0.00,0.00,0.00,Visa&amp;nbsp;Electron,Debit,');
+       
+         cardChargeMap.put('DEBIT_MASTERCARD', '0.00,0.00,0.00,MasterCard&amp;nbsp;Debit,Debit,');
+       
+         cardChargeMap.put('SWITCH', '0.00,0.00,0.00,Maestro,Debit,');
+       
+         cardChargeMap.put('AMERICAN_EXPRESS', '2.00,0.00,95.00,American&amp;nbsp;Express,Credit,');
+       
+
+var issueNumberDetailsMap = new Map();
+     
+       issueNumberDetailsMap.put('MASTERCARD', 'false');
+     
+       issueNumberDetailsMap.put('DEBIT_MASTERCARD', 'false');
+     
+       issueNumberDetailsMap.put('VISA', 'false');
+     
+       issueNumberDetailsMap.put('VISA_DELTA', 'false');
+     
+       issueNumberDetailsMap.put('SWITCH', 'true');
+     
+       issueNumberDetailsMap.put('AMERICAN_EXPRESS', 'false');
+     
+       issueNumberDetailsMap.put('VISA_ELECTRON', 'false');
+     
+       issueNumberDetailsMap.put('MAESTRO', 'true');
+     
+
+var threeDCards = new Map();
+        
+            threeDCards.put("VISA","visagroup");
+        
+            threeDCards.put("MAESTRO","");
+        
+            threeDCards.put("MASTERCARD","mastercardgroup");
+        
+            threeDCards.put("VISA_DELTA","visagroup");
+        
+            threeDCards.put("VISA_ELECTRON","visagroup");
+        
+            threeDCards.put("DEBIT_MASTERCARD","mastercardgroup");
+        
+            threeDCards.put("SWITCH","");
+        
+            threeDCards.put("AMERICAN_EXPRESS","americanexpressgroup");
+        
+
+ //Payment constants used thru out the page
+var payableConstants  =
+                  {
+                         FULL_COST                                     : "fullCost",
+                      CARD_TYPE_ID                                : "payment_type_0",
+
+                        calculatePayableAmountClassName   :	 "calPayableAmount",
+                        PAYABLE_AMT_CLASS                    : "calPayableAmount",
+                        TOTAL_AMOUNT_CLASS                  :"totalAmountClass",
+
+                        DEFAULT_SECURITY_CODE_LEN    : 4,
+                        DEFAULT_CARD_SELECTION          : ""
+                  };
+var bookingConstants = {PAY_CLASS:"pay",
+        PAY_DESCRIPTION:"Pay"};
+
+var addressConstants =
+    {
+        ADDRESSLINE1 : '',
+        ADDRESSLINE2 : '',
+        CITY : '',
+        COUNTY : '',
+        COUNTRY : '',
+        COUNTRY_CODE : '',
+        POST_CODE : ''
+    };
+</script>
+
+
+  <input id="currencyText" value="£" type="hidden">
+
+    
+
+	<div id="wrapper">
+		
+<!--[if lt IE 7 ]> <html lang="en" id="firstchoice" class="ie6 "> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" id="firstchoice" class="ie7 "> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" id="firstchoice" class="ie8 "> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" id="firstchoice" class="ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->  <!--<![endif]-->
+
+	<title></title>
+	<!--[if IE 7 ]><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /><![endif]-->
+	<!--[if IE 8 ]><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" /><![endif]-->
+	<!--[if IE 9 ]><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" /><![endif]-->
+	<!--[if (gt IE 9)|!(IE)]><!--><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><!--<![endif]-->
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width,  itial-scale=1">
+
+
+	<link rel="icon" type="image/png" href="http://www.konstantin-kirsch.de/wp-content/themes/atahualpa333/images/favicon/fff-weather_sun.ico">
+
+		<!--[if lte IE 9]>
+			<link rel="shortcut icon" href="/cms-cps/thomson/images/favicon.ico" type="image/x-icon" />
+			<link rel="icon" href="/cms-cps/thomson/images/favicon.ico" />
+			<![endif]-->
+
+			<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+
+			<!-- javascript -->
+
+			<script>
+			var ensLinkTrack = function(){};
+			</script>
+		
+		
+			<div id="wrapper">
+				<div id="header">
+					<div class="beta">
+						<span class="env">PROTOTYPE</span>
+						<p class="tell-us">
+							<a href="PLACEHOLDER" target="_blank" class="ensLinkTrack">Tell us what you think</a> or <a href="PLACEHOLDER" target="_blank" class="ensLinkTrack">Report a problem</a>
+						</p>
+						<a href="#" class="button">Switch to main site</a>
+					</div>
+					<div class="message-window" style="display:none" id="tellUsWhatYouThink">
+						<a href="#" class="close ensLinkTrack"> <span class="text">Close</span></a>
+						<div class="message-content small-pop beta-pop">
+							<h3>Before you go...</h3>
+							<p>We'd love to know what you made of the new site:</p>
+							<ul>
+								<li><a target="_blank" href="PLACEHOLDER" class="ensLinkTrack">Tell us what you think</a></li>
+								<li><a target="_blank" href="PLACEHOLDER" class="ensLinkTrack">Switch to our main site</a></li>
+							</ul>
+						</div>
+					</div>
+					<div id="utils">
+						<ul>
+							<!-- <li><a target="_blank" href="http://www.thomson.co.uk/destinations/faqCategories">Ask a Question</a></li> -->
+							<li><a target="_blank" class="ensLinkTrack" title="Statement on Cookies" href="http://www.thomson.co.uk/editorial/legal/statement-on-cookies.html">Statement on Cookies</a></li>
+							<li><a target="_blank" class="ensLinkTrack" title="Travel alerts" href="http://www.thomson.co.uk/editorial/alerts/thomsonfly-travel-alert.html">Travel alerts</a></li>
+							<li><a target="_blank" class="ensLinkTrack" title="API login" href="http://eapi.thomson.co.uk/">API login</a></li>
+							<li><a target="_blank" class="ensLinkTrack" title="API login" href="http://www.thomson.co.uk/managemybooking/">Manage my booking</a></li>
+						</ul>
+					</div>
+
+					<div id="logo">
+						<img src="assets/holidayz-logo.jpg" alt="exciting new holiday company logo">
+
+					</div>
+					<div id="nav">
+						<ul>
+							<li class="homepage-main-nav"><a target="_blank" class="ensLinkTrack" href="PLACEHOLDER">Holidays</a></li>
+							<li class="cruise-main-nav"><a target="_blank" class="ensLinkTrack" href="PLACEHOLDER">Cruises</a></li>
+							<li class="flights-main-nav"><a target="_blank" class="ensLinkTrack" href="PLACEHOLDER">Flights</a></li>
+							<li class="hotels-main-nav"><a target="_blank" class="ensLinkTrack" href="PLACEHOLDER">Deals</a></li>
+							<li class="dest-main-nav"><a target="_blank" class="ensLinkTrack" href="PLACEHOLDER">Destinations</a></li>
+							<li class="extra-main-nav"><a target="_blank" class="ensLinkTrack" href="PLACEHOLDER">Extras</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		
+	
+		<div><style type="text/css">#mboxImported-default-TH_PromoStrip-0 {clear:both;}</style></div>
+		<div style="visibility: visible; display: block;" class="mboxDefault">&nbsp;</div>
+		<script type="text/javascript">
+		mboxCreate("TH_PromoStrip");
+		</script><div id="mboxMarker-default-TH_PromoStrip-0" style="visibility:hidden;display:none">&nbsp;</div><script src="Thomson%20_%20Payment%20Details_files/standard"></script><div style="visibility: hidden; display: none" id="mboxImported-default-TH_PromoStrip-0"><!-- Offer Id: 96532  --><script type="text/javascript">
+/*T&T Metadata v3 ==>Response Plugin*/
+window.ttMETA=(typeof(window.ttMETA)!="undefined")?window.ttMETA:[];window.ttMETA.push({"CampaignName":"Thomson Beach - Seasonal Searched - S15 & W15 - 23/06/2015","CampaignId":"44966","RecipeName":"Summer 15","RecipeId":"14","OfferId":"247","OfferName":"Default Content","MboxName":"TH_PromoStrip"});
+</script><!-- Offer Id: 62893  --><script>
+
+function tryAgain(args,_this) { var self = arguments.callee; var func = args.callee; func.current = (func.current || 0) + self.interval; if (func.current <= self.max) { setTimeout( function() { func.apply( (_this||{}),Array.prototype.slice.call(args)) } ,self.interval); return true; } else return false; };
+		tryAgain.max = 29000; 
+		tryAgain.interval = 500;
+		
+function setCookie(cname,cvalue,exdays)
+{
+var d = new Date();
+d.setTime(d.getTime()+(exdays*24*60*60*1000));
+var expires = "expires="+d.toGMTString();
+document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+function getCookie(c,notFoundString){var dc=document.cookie;if(dc.indexOf(c)!=-1){var cs=dc.split(c)[1];return (cs.substr(0,1)=="="?cs.substr(1):cs).split(';')[0];};return (notFoundString || "");};
+
+
+mboxFactoryDefault.addOnLoad(function(){
+	
+	var get_count= getCookie("count");
+	if(get_count==""){
+			 setCookie("count",0,"1");
+			 get_count=0;
+			}
+	 
+	function mboxTrack(mbox) {
+    var d = new Date();
+    var ub = mboxFactoryDefault.getUrlBuilder().clone();
+    ub.addParameter("mbox", mbox);
+    ub.addParameter('mboxTime', d.getTime() - (d.getTimezoneOffset() * 60000));
+    ub.addParameters(Array.prototype.slice.call(arguments).slice(1));
+    var img = new Image();
+    img.src = ub.buildUrl().replace("/mbox/undefined", "/mbox/ajax");
+    img.style.display = "none";
+    if (document.body) document.body.insertBefore(img,document.body.firstChild);
+}
+
+function check_dojo()
+{
+if(typeof(dojo) !== "undefined") {
+	//console.log('loaded');
+  			 // dojo has been loaded		 
+			 	dojo.require("dojox.NodeList.delegate");
+				 dojo.ready(function(){
+ 					 dojo.query(".sub-col.search-col").delegate("#tui_searchPanel_view_SubmitButton_0", "onclick", function(evt){
+					 var new_count= parseInt(get_count)+parseInt(1);
+  			   		 mboxTrack("search_track","profile.searchVolume="+new_count);
+					 setCookie("count",new_count,"1");
+					// console.log("clicked " + dojo.attr(this, "id")+ new_count);
+     				 dojo.stopEvent(evt);
+ 						 																										});
+					 });
+	}
+else{setTimeout(check_dojo,500)}
+}
+
+check_dojo();
+	})
+
+</script></div>
+		
+
+
+<div class="span no-bottom-margin header-spacing">
+	<ul id="indicators" class="breadcrumbs-spacing">
+
+		
+		
+				
+				
+
+				
+				
+		
+		  
+		  <li class="indicator  w-20 z-5 first completed"><i class="arrow in "></i><a href="http://www.thomson.co.uk/destinations/bookaccommodation?productCode=002615&amp;tab=overview&amp;noOfAdults=2&amp;noOfChildren=0&amp;childrenAge=&amp;duration=7&amp;airports[]=LGW%7CLTN%7CSEN%7CSTN&amp;units[]=002615:HOTEL:HOTEL&amp;flexibleDays=3&amp;flexibility=true&amp;when=28-06-2015&amp;noOfSeniors=0&amp;multiSelect=true&amp;packageId=002615TMLTEN1435276290000014352762900000TOM45621435962900000014359629000000TOM4563BC133&amp;index=1&amp;bb=HB&amp;price=pp" class="ensLinkTrack" data-componentid="bookflowStepIndicator_comp"><span class="">HOTEL</span></a>
+		<i class="arrow out "></i></li>
+		  	
+		
+		
+		
+				
+				
+
+				
+				
+		
+		  
+		  <li class="indicator  w-20 z-4 completed"><i class="arrow in "></i><a href="http://www.thomson.co.uk/destinations/book/flightoptions" class="ensLinkTrack" data-componentid="bookflowStepIndicator_comp"><span class="">FLIGHTS</span></a>
+		<i class="arrow out "></i></li>
+		  	
+		
+		
+		
+				
+				
+
+				
+				
+		
+		  
+		  <li class="indicator  w-20 z-3 completed"><i class="arrow in "></i><a href="http://www.thomson.co.uk/destinations/book/roomoptions" class="ensLinkTrack" data-componentid="bookflowStepIndicator_comp"><span class="">ROOM &amp; BOARD</span></a>
+		<i class="arrow out "></i></li>
+		  	
+		
+		
+		
+				
+				
+
+				
+				
+		
+		  
+		  <li class="indicator  w-20 z-2 completed"><i class="arrow in "></i><a href="http://www.thomson.co.uk/destinations/book/extraoptions" class="ensLinkTrack" data-componentid="bookflowStepIndicator_comp"><span class="">EXTRAS</span></a>
+		<i class="arrow out "></i></li>
+		  	
+		
+		
+		
+				
+				
+				
+
+				
+		
+		  
+		  <li class="indicator  w-20 z-1 last active"><i class="arrow in "></i><a href="https://pay.thomson.co.uk/cps/pageRender?b=32000&amp;token=0de24243-73bf-4a6d-a428-024d24eea7e5&amp;tomcat=cpsp86a" class="ensLinkTrack" data-componentid="bookflowStepIndicator_comp"><span class="">BOOK</span></a>
+		<i class="arrow out "></i></li>
+		  	
+		  
+</ul>
+<div class="clear-both"></div>
+	<h1 class="fs32px">Book your holiday</h1>
+</div>

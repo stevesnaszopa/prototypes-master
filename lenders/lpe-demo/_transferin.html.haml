@@ -1,0 +1,29 @@
+- @products = [{slug: "access", name: "Zopa Access", description: "Risk Markets: A* to C, Safeguarded Loans, Target Rate: 3.6%, Free sale of all non-arrears loans", active: "true", default: "true"},{slug: "safeguard", name: "Zopa SafeGuard", description: "Risk Markets: A* to C, Safeguarded Loans, Target Rate: 4.7%, 1% sale fee of all non-arrears loans", active: "true", default: "false"},{slug: "plus", name: "Zopa Plus", description: "Risk Markets: A* to E, Non-Safeguarded Loans, Target Rate: 7.4%, 1% sale fee of all non-arrears loans", active: "false", default: "false"}]
+.section
+  %div
+    %form.lending-options{"accept-charset" => "UTF-8", :action => "/offer/update_term", :autocomplete => "off", :method => "get"}
+      %div{:style => "margin:0;padding:0;display:inline"}
+        %input{:name => "utf8", :type => "hidden", :value => "✔"}/
+      %fieldset.done.options
+        %h2 Change Default Accounts
+        - @products.each do |p|
+          - unique = "option-#{p[:slug]}"
+          - wrapper_class = p[:active] == "true" ? "active" : "inactive"
+          %p{class: wrapper_class}
+            %span.radiocheck
+              - if p[:default] == "true"
+                %input(type="radio" value="#{p[:slug]}" name="option" id="#{unique}" checked)/
+              - else
+                %input(type="radio" value="#{p[:slug]}" name="option" id="#{unique}")/
+              %label{for: unique}
+                %span
+                  %span=p[:name]
+                  -if p[:active] == "false"
+                    %span> *
+                %span.tooltip
+                  %span.top.left=p[:description]
+            -if p[:active] == "false"
+              %span.hint.smallprint
+                %i * Selecting this account will create it and set it as your default choice for new money. You will be able to manage it from here and access it from your dashboard.
+        %p
+          %input{type: "submit", name: "input-submit", id: "input-submit", value: "Save Default Account"}

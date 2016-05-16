@@ -1,0 +1,8 @@
+- active_nav = nil unless active_nav.present?
+%ul
+  %li{:class => ("active" if active_nav == "lending")}
+    %a{href: "dashboard.html"} Lending Summary
+  %li{:class => ("active" if active_nav == "reports")}
+    %a{href: "statements.html"} Reports
+  %li{:class => ("active" if active_nav == "manage")}
+    %a{href: "manage.html"} Manage Lending

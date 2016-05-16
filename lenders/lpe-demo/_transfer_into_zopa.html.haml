@@ -1,0 +1,39 @@
+- account == "standard"
+%h3{:style => "display: inline;"}
+  Transfer money into your 
+  = !params[:isa]? "Standard" : "ISA"
+  Zopa
+.product-actions{:style => "display: inline; float: right; padding-bottom: 15px;"}
+  %a.show-more{:href => "#show-transfer-into-#{account}-details"}
+    %span Show
+    details
+%hr/
+.transfer-expand{:id => "show-transfer-into-#{account}-details"}
+  .info.box Stuff
+  -#.info.box
+    - account == :isa ? default_product = @isa_products.find { |product| product[:default_funding_preference] == true } : default_product = @standard_products.find { |product| product[:default_funding_preference] == true }
+    %p
+      %span
+        = default_product[:product_name]
+        is the default account for #{account == :isa ? "ISA" : "non-ISA"}. Use the details below to lend out in this option.
+    %table.raw{:style => "width: 50%"}
+      %thead.a11y
+        %tr
+          %th{:scope => "col"} Account name
+          %th{:scope => "col"} Account number
+          %th{:scope => "col"} Sort code
+          %th{:scope => "col"} Unique reference
+      %tbody
+        %tr
+          %th Account name
+          %td Zopa Ltd.
+        %tr
+          %th Account number
+          %td 10212420
+        %tr
+          %th Sort code
+          %td 16-00-30
+        %tr
+          %th Unique reference
+          %td= current_member.lending_bacs_reference
+    = render partial: "transfer_money_buttons"

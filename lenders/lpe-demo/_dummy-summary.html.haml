@@ -1,0 +1,85 @@
+#lending-account-details
+  %table.alt.rows
+    %thead.a11y
+      %tr
+        %th.number Amount
+        %th Description
+    %tbody
+      %tr
+        %td.number
+          =precede ('£') do
+            =lentout
+        %td
+          %p.group
+            Lent out
+            at
+            %strong
+              =succeed ('%') do
+                =rate
+            %span.tooltip{:tabindex => "0"}
+              %span.top.center{:role => "tooltip"} This is the average rate of all your money that’s currently lent out. It does not take account of any Rate Promises or bonuses.
+            %a.show-more.expanded{"aria-controls" => "recent-lending-details", "aria-live" => "polite", :href => "#recent-lending-details"}
+              %span Hide
+              recent lending
+          #recent-lending-details.see-above.left-corner{"aria-expanded" => "true", :style => "display: block;"}
+            %table.rows
+              %tbody
+                %tr
+                  %td
+                    Last 7 days
+                  %td.number
+                    £10.00
+                %tr
+                  %td
+                    Last 30 days
+                  %td.number
+                    £110.00
+                %tr
+                  %td.more{:colspan => "2"}
+                    %a{:href => "/lending/loan_book"} View my loan book
+      %tr
+        %td.number
+          =precede ('£') do
+            =n_queued
+        %td
+          %p.group
+            Queued to lend
+            %span.hint
+              £1.3m
+              from all lenders at 5.0%
+            %a.show-more{"aria-controls" => "queue-details", "aria-live" => "polite", :href => "#queue-details"}
+              %span Show
+              %span.hide queue
+              details
+          #queue-details.see-above.left-corner{"aria-expanded" => "false", :style => "display: none;"}
+            %table.rows
+              %thead.a11y
+                %tr
+                  %th.number Amount
+                  %th Description
+              %tbody
+                %tr
+                  %td.number
+                    £8.11
+                  %td
+                    Under £10 in processing
+                    %span.tooltip{:tabindex => "0"}
+                      %span.top.center{:role => "tooltip"}
+                        New money and repayments will go through processing to be matched to borrowers. This step diversifies your money and gives you a blend of rates.
+                        £10 is the minimum amount you can lend at any one time. Smaller amounts will remain in processing.
+                    %span.hint
+                      %span £1.15m
+                      from all lenders,
+                      \~£482k being lent per day
+                %tr
+                  %td.number
+                    =precede ('£') do
+                      =r_queued
+                  %td
+                    %span.tooltip{:tabindex => "0"}
+                      %span.top.center{:role => "tooltip"}
+                        Money repaid by borrowers in the queue to be processed and re-lent. Re-lending is prioritised ahead of new money and will be lent out faster.
+                    %span.hint
+                      £0.00 from all lenders
+            %p
+              %a{:href => "/about_lending#how-lending-works"} Learn about the queue

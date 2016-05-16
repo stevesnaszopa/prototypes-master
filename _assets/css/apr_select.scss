@@ -1,0 +1,69 @@
+@function shared-image-url($url) {
+  @return url('/_assets/img/' + $url);
+}
+
+@import "variables";
+
+@media screen {
+
+ul.nav-tabs.v2 > li > span {
+  display: block;
+  border: 2px solid $color-bg-action;
+  border-bottom-color: $color-border;
+  letter-spacing: -0.04em;
+  font-size: $size-h2;
+  border-radius: .35em .35em 0 0;
+  padding: .1em .65em;
+  margin-right: .4em;
+  color: $color-action;
+}
+
+ul.nav-tabs.v2 > li > span,
+ul.nav-tabs.v2 > li > span > a:link,
+ul.nav-tabs.v2 > li > span > a:visited {
+  text-decoration: none;
+  background-color: $color-background;
+}
+
+ul.nav-tabs.v2 > li > span:hover,
+ul.nav-tabs.v2 > li > span:hover > a,
+ul.nav-tabs.v2 > li > span:active,
+ul.nav-tabs.v2 > li > span:active > a,
+ul.nav-tabs.v2 > li > span:focus,
+ul.nav-tabs.v2 > li > span:focus > a {
+  text-decoration: none;
+  background-color: $color-bg-action;
+}
+
+ul.nav-tabs.v2 > .active > span {
+  color: $color-text;
+  background-color: #fff;
+  border-color: $color-border;
+  border-bottom-color: transparent;
+  cursor: default;
+}
+
+  ul.nav-tabs.v2 .tooltip {
+    font-size: 55%;
+  }
+}
+
+@media only screen and (max-width: $screensize-s) {
+
+  ul.nav-tabs.v2 > li > span {
+    font-size: $size-h3;
+  }
+
+} /* /@media */
+
+@media only screen and (max-width: $screensize-xs) {
+
+  ul.nav-tabs.v2 > li > span {
+    font-size: $size-h3*0.7;
+  }
+
+  ul.nav-tabs.v2 .tooltip {
+    font-size: 100%;
+  }
+
+} /* /@media */

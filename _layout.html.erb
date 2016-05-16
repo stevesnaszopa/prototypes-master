@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--[if lte IE 7]><html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" class="no-js oldie"><![endif]-->
+<!--[if IE 8]><html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" class="no-js ie8"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" class="no-js"><!--<![endif]-->
+  <head>
+    <title><%= @pagetitle ? @pagetitle : 'Zopa prototype' %></title>
+    <%= render "/_includes/layout/head" %>
+  </head>
+  <body class="<%= @loggedin ? 'logged-in' : 'logged-out' %> <%= @audience == :lenders ? 'lending' : 'loans' %> <%= @bodyclass %>">
+
+    <%= render "/_includes/layout/header" %>
+
+    <div id="content">
+      <div class="group">
+
+        <%= yield %>
+
+      </div>
+    </div>
+
+    <%= render "/_includes/layout/footer" %>
+    <%= render "/_includes/layout/scripts" %>
+
+  </body>
+</html>

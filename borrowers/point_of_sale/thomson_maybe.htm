@@ -1,0 +1,3024 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" id="firstchoice" class="ie6 "> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" id="firstchoice" class="ie7 "> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" id="firstchoice" class="ie8 "> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" id="firstchoice" class="ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="" id="firstchoice" lang="en"><!--<![endif]--><head>
+
+
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><script src="Thomson%20_%20Payment%20Details_files/ga.js"></script><script src="Thomson%20_%20Payment%20Details_files/d6df495f8171eb65e37dced6af018d85.js"></script><script src="Thomson%20_%20Payment%20Details_files/4a446ea276d9fe1888b5220f95c042e0.js"></script><script src="Thomson%20_%20Payment%20Details_files/0abb118629badb8d2a935c5f828a0bae.js"></script><script src="Thomson%20_%20Payment%20Details_files/d60210c8b91f8d96ca7776199d4eff61.js"></script><script src="Thomson%20_%20Payment%20Details_files/1547deafe86d84c9f3825019ffebbc5a.js"></script><script src="Thomson%20_%20Payment%20Details_files/85a484dbb3c196e61a56fcb315dbde40.js" async="" type="text/javascript"></script><script src="Thomson%20_%20Payment%20Details_files/serverComponent.php"></script>
+<link href="Thomson%20_%20Payment%20Details_files/main.css" rel="stylesheet" type="text/css">
+<link href="Thomson%20_%20Payment%20Details_files/main_header.css" rel="stylesheet" type="text/css">
+<link href="Thomson%20_%20Payment%20Details_files/print.css" rel="stylesheet" type="text/css" media="print">
+<!--[if lt IE 9]>
+	<link rel="stylesheet" type="text/css" href="/cms-cps/thomson/css/ie8-and-down.css" />
+<![endif]-->
+
+<!--    -- listing properties --
+Built-By=bob
+Created-By=16.0-b13 (Sun Microsystems Inc.)
+Version=34.00.00
+Manifest-Version=1.0
+Ant-Version=Apache Ant 1.7.0
+Built-Date=May 21 2015 1453
+Session Id=F44AB73867829F2A09C057F453B40ADC.iscapecommonpaymentserverp86a -->
+
+<title>Thomson | Payment Details</title>
+<!--#endif-->
+		<!--[if IE 7 ]><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /><![endif]-->
+		<!--[if IE 8 ]><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" /><![endif]-->
+		<!--[if IE 9 ]><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" /><![endif]-->
+		<!--[if (gt IE 9)|!(IE)]><!--><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><!--<![endif]-->
+		<meta charset="utf-8">
+
+
+
+<script type="text/javascript" src="Thomson%20_%20Payment%20Details_files/functions_thomson_paymentPage.js"></script>
+<script type="text/javascript" src="Thomson%20_%20Payment%20Details_files/functions_manualAddress.js"></script>
+
+<script type="text/javascript" language="javascript">
+	 //seconds
+	var session_timeout= 12900;
+	var IDLE_TIMEOUT = (12900)-(600);
+	var _idleSecondsCounter = 0;
+	var IDLE_TIMEOUT_millisecond = IDLE_TIMEOUT *1000;
+	var url="http://www.thomson.co.uk/destinations/bookaccommodation?productCode=002615&tab=overview&noOfAdults=2&noOfChildren=0&childrenAge=&duration=7&airports[]=LGW|LTN|SEN|STN&units[]=002615:HOTEL:HOTEL&flexibleDays=3&flexibility=true&when=28-06-2015&noOfSeniors=0&multiSelect=true&packageId=002615TMLTEN1435276290000014352762900000TOM45621435962900000014359629000000TOM4563BC133&index=1&bb=HB&price=pp";
+	var sessionTimeOutFlag =  false;
+
+	function noback(){
+		window.history.forward();
+		$('FieldExpiryDateMonth').selectedIndex = 0;
+		$('FieldExpiryDateYear').selectedIndex  = 0;
+		document.getElementById("tandc-info").checked=false;
+	}
+
+	window.setInterval(CheckIdleTime, 1000);
+	window.alertMsg();
+	function alertMsg(){
+
+	var myvar = setTimeout(function(){
+	document.getElementById("sessionTime").style.visibility = "visible";
+	document.getElementById("modal").style.visibility = "visible";
+	document.getElementById("sessionTimeTextbox").style.visibility = "visible";
+
+	var count = Math.round((session_timeout - _idleSecondsCounter)/60);
+	document.getElementById("sessiontimeDisplay").innerHTML = count +"mins";
+	},IDLE_TIMEOUT_millisecond);
+
+	}
+
+	function CheckIdleTime() {
+    _idleSecondsCounter++;
+
+    if (  _idleSecondsCounter >= session_timeout) {
+
+    	if (window.sessionTimeOutFlag == false){
+		document.getElementById("sessionTime").style.visibility = "hidden";
+		document.getElementById("modal").style.visibility = "hidden";
+		document.getElementById("sessionTimeTextbox").style.visibility = "hidden";
+		document.getElementById("sessionTimeout").style.visibility = "visible";
+		document.getElementById("modal").style.visibility = "visible";
+		document.getElementById("sessionTimeOutTextbox").style.visibility = "visible";
+    	}else{
+    		document.getElementById("sessionTimeout").style.visibility = "hidden";
+    		document.getElementById("modal").style.visibility = "visible";
+    		document.getElementById("sessionTimeOutTextbox").style.visibility = "hidden";
+
+
+    	}
+	   //navigate to technical difficulty page
+
+		}
+	}
+	function closesessionTime()
+	{
+
+		document.getElementById("sessionTime").style.visibility = "hidden";
+		document.getElementById("modal").style.visibility = "hidden";
+		document.getElementById("sessionTimeTextbox").style.visibility = "hidden";
+
+	}
+	function reloadPage(){
+		window.sessionTimeOutFlag= true;
+		document.getElementById("sessionTimeout").style.visibility = "hidden";
+		document.getElementById("modal").style.visibility = "hidden";
+		document.getElementById("sessionTimeOutTextbox").style.visibility = "hidden";
+		window.noback();
+		window.location.replace(window.url);
+		return(false);
+
+	}
+	function homepage()
+	{
+		url="https://www.thomson.co.uk"
+		window.noback();
+	
+		window.location.replace(url);
+	}
+	function activestate()
+	{
+
+		document.getElementById("sessionTime").style.visibility = "hidden";
+		document.getElementById("modal").style.visibility = "hidden";
+		document.getElementById("sessionTimeTextbox").style.visibility = "hidden";
+		window.ajaxForCounterReset();
+		window.alertMsg();
+		window._idleSecondsCounter = 0;
+	}
+	function ajaxForCounterReset() {
+		var token = "0de24243-73bf-4a6d-a428-024d24eea7e5";
+		var url = "/cps/SessionTimeOutServlet?tomcat=cpsp86a";
+		var request = new Ajax.Request(url, {
+			method : "POST"
+		});
+		window._idleSecondsCounter = 0;
+
+	}
+
+	function newPopup(url) {
+		var win = window.open(url,"","width=700,height=600,scrollbars=yes,resizable=yes");
+	    if (win && win.focus) win.focus();
+	}
+
+
+	function makePayment() {
+		document.getElementById('errorMessageToolTip').style.display = "none";
+		if( document.getElementById("errorMsg") ){
+			document.getElementById("errorMsg").style.display = "none";
+		}
+		var isvalid = true,
+		cardValid = false;
+		if(allnumeric('cardNumber') && validateCVV('cvv') && allCharacters('cardholderName') && getMonth('FieldExpiryDateMonth') || validateISSUE('issuenum') ){
+			cardValid = true;
+		}
+		if(checkBox()){
+			isvalid = isValid();
+		}
+		if(!isvalid || !cardValid){
+			document.getElementById('errorMessageToolTip').style.display = "block";
+		}
+		var paymentForm = $('CheckoutPaymentDetailsForm');
+		var element = paymentForm.serialize();
+		elementstring = element
+				+ "&token=0de24243-73bf-4a6d-a428-024d24eea7e5&b=32000&tomcat=cpsp86a";
+		var url = "/cps/processPostPayment?token=0de24243-73bf-4a6d-a428-024d24eea7e5&b=32000&tomcat=cpsp86a";
+		elementstring = elementstring.replace("&title=&", "&title=" + leadTitle + "&");
+		elementstring = elementstring.replace("payment_0_type=&", "");
+		elementstring = elementstring.replace("payment_0_type=PleaseSelect&", "");
+		elementstring = elementstring.replace("payment_0_type=PleaseSelect&", "");
+		if(isvalid && cardValid){
+			document.getElementById("modal").style.visibility = "visible";
+			var request = new Ajax.Request(url, {
+				method : "POST",
+				parameters : elementstring,
+				onSuccess : showThreeDOverlay
+			});
+		}
+	}
+
+	function isValid(){
+		var firstName =  checkFName("firstName"),
+			title = checkTitle("styled-select"),
+			surName = checkName("surName"),
+			houseName = housenameCheck("houseDetails1"),
+			street1 = streetline1Check("StreetLine1"),			
+			street2 = streetline2Check("Streetline2"),
+			town = townorcityCheck("townorcity"),
+			county = testCounty("county"),
+			postCode = testPostCode("postalCode");
+
+		 if(!firstName || !title || !surName || !houseName || !street1 || !street2 || !town || !county || !postCode){
+			return false;
+		 }
+		 return true;
+		}
+
+</script>
+
+	 
+
+
+
+
+ 
+ 
+<script type="text/javascript">
+ var clientApp = "THOMSON ";
+ var clientDomainURL = "https://www.thomson.co.uk";
+ var isPromotionalcodeApplied = "";
+ var themePath = '';
+ var promoCodeValidated = false;
+ var tomcatInstance= "&tomcat=cpsp86a" ;
+ var token = "0de24243-73bf-4a6d-a428-024d24eea7e5" ;
+ var isNewHoliday = 'true';
+ var errorFields = "";
+ var paymenttypeoptions = new Array();
+ var preLdDepositOptions="";
+
+ setSummaryPanelCollapsable( false );
+
+
+
+
+
+
+
+ var tandCurl = ""+"https://www.thomson.co.uk/thomson/page/byo/tandc/tandc.page?date=2015-06-26&lang=en&accommInvSys=TRACS&flightInvSys=TRACS&depDate=2015-06-26";
+ var configurableCardCharge = "2.00,0.00,95.00";
+
+
+///Define a javascript object for using thru out the page
+ var newHoliday  = "true";
+ var PaymentInfo = {};
+
+PaymentInfo.totalAmount ="2900";
+PaymentInfo.payableAmount = "2900";
+
+PaymentInfo.calculatedPayableAmount = "2900";
+PaymentInfo.calculatedTotalAmount = "2900";
+
+//PaymentInfo.maxCardChargeAmount = "";
+
+PaymentInfo.calculatedDiscount = "0";
+
+//Let us give default values
+if(trimSpaces(PaymentInfo.calculatedDiscount)=="")
+{
+  PaymentInfo.calculatedDiscount = 0.0;
+}
+
+PaymentInfo.chargePercent = 0.0;
+PaymentInfo.selectedCardType = 'PleaseSelect';
+
+var depositAmountsMap = new Map();
+     
+     depositAmountsMap.put('fullCost', 1*PaymentInfo.totalAmount  - 1*PaymentInfo.calculatedDiscount);
+
+var cardChargeMap = new Map();
+     cardChargeMap.put('PleaseSelect', configurableCardCharge);
+       
+         cardChargeMap.put('VISA', '2.00,0.00,95.00,VISA&amp;nbsp;-&amp;nbsp;Credit,Credit,');
+       
+         cardChargeMap.put('MAESTRO', '0.00,0.00,0.00,TUI&amp;nbsp;Gift&amp;nbsp;Card,');
+       
+         cardChargeMap.put('MASTERCARD', '2.00,0.00,95.00,MasterCard&amp;nbsp;Credit,Credit,');
+       
+         cardChargeMap.put('VISA_DELTA', '0.00,0.00,0.00,VISA/Delta&amp;nbsp;-&amp;nbsp;Debit,Debit,');
+       
+         cardChargeMap.put('VISA_ELECTRON', '0.00,0.00,0.00,Visa&amp;nbsp;Electron,Debit,');
+       
+         cardChargeMap.put('DEBIT_MASTERCARD', '0.00,0.00,0.00,MasterCard&amp;nbsp;Debit,Debit,');
+       
+         cardChargeMap.put('SWITCH', '0.00,0.00,0.00,Maestro,Debit,');
+       
+         cardChargeMap.put('AMERICAN_EXPRESS', '2.00,0.00,95.00,American&amp;nbsp;Express,Credit,');
+       
+
+var issueNumberDetailsMap = new Map();
+     
+       issueNumberDetailsMap.put('MASTERCARD', 'false');
+     
+       issueNumberDetailsMap.put('DEBIT_MASTERCARD', 'false');
+     
+       issueNumberDetailsMap.put('VISA', 'false');
+     
+       issueNumberDetailsMap.put('VISA_DELTA', 'false');
+     
+       issueNumberDetailsMap.put('SWITCH', 'true');
+     
+       issueNumberDetailsMap.put('AMERICAN_EXPRESS', 'false');
+     
+       issueNumberDetailsMap.put('VISA_ELECTRON', 'false');
+     
+       issueNumberDetailsMap.put('MAESTRO', 'true');
+     
+
+var threeDCards = new Map();
+        
+            threeDCards.put("VISA","visagroup");
+        
+            threeDCards.put("MAESTRO","");
+        
+            threeDCards.put("MASTERCARD","mastercardgroup");
+        
+            threeDCards.put("VISA_DELTA","visagroup");
+        
+            threeDCards.put("VISA_ELECTRON","visagroup");
+        
+            threeDCards.put("DEBIT_MASTERCARD","mastercardgroup");
+        
+            threeDCards.put("SWITCH","");
+        
+            threeDCards.put("AMERICAN_EXPRESS","americanexpressgroup");
+        
+
+ //Payment constants used thru out the page
+var payableConstants  =
+                  {
+                         FULL_COST                                     : "fullCost",
+                      CARD_TYPE_ID                                : "payment_type_0",
+
+                        calculatePayableAmountClassName   :	 "calPayableAmount",
+                        PAYABLE_AMT_CLASS                    : "calPayableAmount",
+                        TOTAL_AMOUNT_CLASS                  :"totalAmountClass",
+
+                        DEFAULT_SECURITY_CODE_LEN    : 4,
+                        DEFAULT_CARD_SELECTION          : ""
+                  };
+var bookingConstants = {PAY_CLASS:"pay",
+        PAY_DESCRIPTION:"Pay"};
+
+var addressConstants =
+    {
+        ADDRESSLINE1 : '',
+        ADDRESSLINE2 : '',
+        CITY : '',
+        COUNTY : '',
+        COUNTRY : '',
+        COUNTRY_CODE : '',
+        POST_CODE : ''
+    };
+</script>
+
+
+  <input id="currencyText" value="£" type="hidden">
+
+    
+
+	<div id="wrapper">
+		
+<!--[if lt IE 7 ]> <html lang="en" id="firstchoice" class="ie6 "> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" id="firstchoice" class="ie7 "> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" id="firstchoice" class="ie8 "> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" id="firstchoice" class="ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->  <!--<![endif]-->
+
+	<title></title>
+	<!--[if IE 7 ]><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /><![endif]-->
+	<!--[if IE 8 ]><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" /><![endif]-->
+	<!--[if IE 9 ]><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" /><![endif]-->
+	<!--[if (gt IE 9)|!(IE)]><!--><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><!--<![endif]-->
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width,  itial-scale=1">
+
+
+	<link rel="icon" type="image/png" href="https://pay.thomson.co.uk/cms-cps/thomson/images/favicon.png">
+
+		<!--[if lte IE 9]>
+			<link rel="shortcut icon" href="/cms-cps/thomson/images/favicon.ico" type="image/x-icon" />
+			<link rel="icon" href="/cms-cps/thomson/images/favicon.ico" />
+			<![endif]-->
+
+			<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+
+			<!-- javascript -->
+
+			<script>
+			var ensLinkTrack = function(){};
+			</script>
+		
+		
+			<div id="wrapper">
+				<div id="header">
+					<div class="beta">
+						<p>Welcome to our brand new website.</p>
+						<p class="tell-us">
+							<a href="http://www.thomson.co.uk/beta/send-us-an-email/provide-feedback.html" target="_blank" class="ensLinkTrack">Tell us what you think</a> or <a href="http://www.thomson.co.uk/beta/send-us-an-email/provide-feedback.html" target="_blank" class="ensLinkTrack">Report a problem</a>
+						</p>
+						<a href="#" class="button">Switch to main site</a>
+					</div>
+					<div class="message-window" style="display:none" id="tellUsWhatYouThink">
+						<a href="#" class="close ensLinkTrack"> <span class="text">Close</span></a>
+						<div class="message-content small-pop beta-pop">
+							<h3>Before you go...</h3>
+							<p>We'd love to know what you made of the new site:</p>
+							<ul>
+								<li><a target="_blank" href="http://www.thomson.co.uk/" class="ensLinkTrack">Tell us what you think</a></li>
+								<li><a target="_blank" href="http://www.thomson.co.uk/?customer=switch" class="ensLinkTrack">Switch to our main site</a></li>
+							</ul>
+						</div>
+					</div>
+					<div id="utils">
+						<ul>
+							<!-- <li><a target="_blank" href="http://www.thomson.co.uk/destinations/faqCategories">Ask a Question</a></li> -->
+							<li><a target="_blank" class="ensLinkTrack" title="Statement on Cookies" href="http://www.thomson.co.uk/editorial/legal/statement-on-cookies.html">Statement on Cookies</a></li>
+							<li><a target="_blank" class="ensLinkTrack" title="Travel alerts" href="http://www.thomson.co.uk/editorial/alerts/thomsonfly-travel-alert.html">Travel alerts</a></li>
+							<li><a target="_blank" class="ensLinkTrack" title="API login" href="http://eapi.thomson.co.uk/">API login</a></li>
+							<li><a target="_blank" class="ensLinkTrack" title="API login" href="http://www.thomson.co.uk/managemybooking/">Manage my booking</a></li>
+						</ul>
+					</div>
+
+					<div id="logo">
+						<a target="_blank" class="ensLinkTrack" href="http://www.thomson.co.uk/">Thomson</a>
+
+					</div>
+					<div id="nav">
+						<ul>
+							<li class="homepage-main-nav"><a target="_blank" class="ensLinkTrack" href="http://www.thomson.co.uk/destinations/holidays.html">Holidays</a></li>
+							<li class="cruise-main-nav"><a target="_blank" class="ensLinkTrack" href="http://www.thomson.co.uk/cruise.html">Cruises</a></li>
+							<li class="flights-main-nav"><a target="_blank" class="ensLinkTrack" href="http://flights.thomson.co.uk/en/index.html">Flights</a></li>
+							<li class="hotels-main-nav"><a target="_blank" class="ensLinkTrack" href="http://www.thomson.co.uk/deals.html">Deals</a></li>
+							<li class="dest-main-nav"><a target="_blank" class="ensLinkTrack" href="http://www.thomson.co.uk/destinations/holiday-destinations.html">Destinations</a></li>
+							<li class="extra-main-nav"><a target="_blank" class="ensLinkTrack" href="http://www.thomson.co.uk/holiday-extras.html">Extras</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		
+	
+		<div><style type="text/css">#mboxImported-default-TH_PromoStrip-0 {clear:both;}</style></div>
+		<div style="visibility: visible; display: block;" class="mboxDefault">&nbsp;</div>
+		<script type="text/javascript">
+		mboxCreate("TH_PromoStrip");
+		</script><div id="mboxMarker-default-TH_PromoStrip-0" style="visibility:hidden;display:none">&nbsp;</div><script src="Thomson%20_%20Payment%20Details_files/standard"></script><div style="visibility: hidden; display: none" id="mboxImported-default-TH_PromoStrip-0"><!-- Offer Id: 96532  --><script type="text/javascript">
+/*T&T Metadata v3 ==>Response Plugin*/
+window.ttMETA=(typeof(window.ttMETA)!="undefined")?window.ttMETA:[];window.ttMETA.push({"CampaignName":"Thomson Beach - Seasonal Searched - S15 & W15 - 23/06/2015","CampaignId":"44966","RecipeName":"Summer 15","RecipeId":"14","OfferId":"247","OfferName":"Default Content","MboxName":"TH_PromoStrip"});
+</script><!-- Offer Id: 62893  --><script>
+
+function tryAgain(args,_this) { var self = arguments.callee; var func = args.callee; func.current = (func.current || 0) + self.interval; if (func.current <= self.max) { setTimeout( function() { func.apply( (_this||{}),Array.prototype.slice.call(args)) } ,self.interval); return true; } else return false; };
+		tryAgain.max = 29000; 
+		tryAgain.interval = 500;
+		
+function setCookie(cname,cvalue,exdays)
+{
+var d = new Date();
+d.setTime(d.getTime()+(exdays*24*60*60*1000));
+var expires = "expires="+d.toGMTString();
+document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+function getCookie(c,notFoundString){var dc=document.cookie;if(dc.indexOf(c)!=-1){var cs=dc.split(c)[1];return (cs.substr(0,1)=="="?cs.substr(1):cs).split(';')[0];};return (notFoundString || "");};
+
+
+mboxFactoryDefault.addOnLoad(function(){
+	
+	var get_count= getCookie("count");
+	if(get_count==""){
+			 setCookie("count",0,"1");
+			 get_count=0;
+			}
+	 
+	function mboxTrack(mbox) {
+    var d = new Date();
+    var ub = mboxFactoryDefault.getUrlBuilder().clone();
+    ub.addParameter("mbox", mbox);
+    ub.addParameter('mboxTime', d.getTime() - (d.getTimezoneOffset() * 60000));
+    ub.addParameters(Array.prototype.slice.call(arguments).slice(1));
+    var img = new Image();
+    img.src = ub.buildUrl().replace("/mbox/undefined", "/mbox/ajax");
+    img.style.display = "none";
+    if (document.body) document.body.insertBefore(img,document.body.firstChild);
+}
+
+function check_dojo()
+{
+if(typeof(dojo) !== "undefined") {
+	//console.log('loaded');
+  			 // dojo has been loaded		 
+			 	dojo.require("dojox.NodeList.delegate");
+				 dojo.ready(function(){
+ 					 dojo.query(".sub-col.search-col").delegate("#tui_searchPanel_view_SubmitButton_0", "onclick", function(evt){
+					 var new_count= parseInt(get_count)+parseInt(1);
+  			   		 mboxTrack("search_track","profile.searchVolume="+new_count);
+					 setCookie("count",new_count,"1");
+					// console.log("clicked " + dojo.attr(this, "id")+ new_count);
+     				 dojo.stopEvent(evt);
+ 						 																										});
+					 });
+	}
+else{setTimeout(check_dojo,500)}
+}
+
+check_dojo();
+	})
+
+</script></div>
+		
+
+
+<div class="span no-bottom-margin header-spacing">
+	<ul id="indicators" class="breadcrumbs-spacing">
+
+		
+		
+				
+				
+
+				
+				
+		
+		  
+		  <li class="indicator  w-20 z-5 first completed"><i class="arrow in "></i><a href="http://www.thomson.co.uk/destinations/bookaccommodation?productCode=002615&amp;tab=overview&amp;noOfAdults=2&amp;noOfChildren=0&amp;childrenAge=&amp;duration=7&amp;airports[]=LGW%7CLTN%7CSEN%7CSTN&amp;units[]=002615:HOTEL:HOTEL&amp;flexibleDays=3&amp;flexibility=true&amp;when=28-06-2015&amp;noOfSeniors=0&amp;multiSelect=true&amp;packageId=002615TMLTEN1435276290000014352762900000TOM45621435962900000014359629000000TOM4563BC133&amp;index=1&amp;bb=HB&amp;price=pp" class="ensLinkTrack" data-componentid="bookflowStepIndicator_comp"><span class="">HOTEL</span></a>
+		<i class="arrow out "></i></li>
+		  	
+		
+		
+		
+				
+				
+
+				
+				
+		
+		  
+		  <li class="indicator  w-20 z-4 completed"><i class="arrow in "></i><a href="http://www.thomson.co.uk/destinations/book/flightoptions" class="ensLinkTrack" data-componentid="bookflowStepIndicator_comp"><span class="">FLIGHTS</span></a>
+		<i class="arrow out "></i></li>
+		  	
+		
+		
+		
+				
+				
+
+				
+				
+		
+		  
+		  <li class="indicator  w-20 z-3 completed"><i class="arrow in "></i><a href="http://www.thomson.co.uk/destinations/book/roomoptions" class="ensLinkTrack" data-componentid="bookflowStepIndicator_comp"><span class="">ROOM &amp; BOARD</span></a>
+		<i class="arrow out "></i></li>
+		  	
+		
+		
+		
+				
+				
+
+				
+				
+		
+		  
+		  <li class="indicator  w-20 z-2 completed"><i class="arrow in "></i><a href="http://www.thomson.co.uk/destinations/book/extraoptions" class="ensLinkTrack" data-componentid="bookflowStepIndicator_comp"><span class="">EXTRAS</span></a>
+		<i class="arrow out "></i></li>
+		  	
+		
+		
+		
+				
+				
+				
+
+				
+		
+		  
+		  <li class="indicator  w-20 z-1 last active"><i class="arrow in "></i><a href="https://pay.thomson.co.uk/cps/pageRender?b=32000&amp;token=0de24243-73bf-4a6d-a428-024d24eea7e5&amp;tomcat=cpsp86a" class="ensLinkTrack" data-componentid="bookflowStepIndicator_comp"><span class="">BOOK</span></a>
+		<i class="arrow out "></i></li>
+		  	
+		  
+</ul>
+<div class="clear-both"></div>
+	<h1 class="fs32px">Book your holiday</h1>
+</div>
+		<form id="CheckoutPaymentDetailsForm" name="CheckoutPaymentDetailsForm" method="post" action="javascript:makePayment();" novalidate="">
+			
+			<div class="content-section">
+				
+				<div id="errorMsg"></div>
+				<div class="info-section timer" style="background-color:#d6d8fe">
+		<h5 style="float:left;width:83%;font-size:16px; padding-top:10px">Zopa are currently reviewing your application under ref no:<strong>C93JQH</strong>.  When done, you will get an email with a link back to this page and you can complete your purchase. Don't worry we've saved all your booking details.</h5><img style="float:right" src="assets/zopa-logo.png" width="100" />
+</div>
+
+				<div class="mask-interactivity"></div>
+
+				<div class="item open">
+	<h3>
+		Payment<span class="secured-section">Secure online payment</span>
+	</h3>
+	<div class="item-content">
+		<div class="item-content-payment">
+			<div class="payment-section">
+	<h5 class="pl10px">How much do you want to pay today?</h5>
+</div>
+
+
+
+
+
+
+<div class="payment-details" id="full-amt" onclick="selectedpaymentMode(this.id)">
+	<div class="pb10px overflowHidden" onclick="updatePaymentInfo('fullCost')">
+		<div class="initialAmount">
+			<input checked="checked" id="full" name="depositType" class="radioBtn" value="fullCost" type="radio"><label class="margin0px floatLeft radioBtn" for="full"><span class="radioBtn" for="full"></span></label>
+			<h1>
+				Pay all £2900.00
+			</h1>
+			<span class="payment-subText">£<span id="creditCardChargeAmt_fullCost">2958.00</span> if paying with a credit card
+			</span>
+		</div>
+		<div class="moreAmount">
+			<h5>further payments</h5>
+			<a>None</a>
+		</div>
+		<div class="moreAmount">
+			<h5>total price</h5>
+			<a class="TotalAmntToBePay"><span class="currencySymbol">£</span>2900.00</a>
+		</div>
+	</div>
+</div>
+<input name="total_transamt" id="total_transamt" value="NA" type="hidden">
+<input id="payment_0_totalTrans" value="1" name="payment_totalTrans" type="hidden">
+<script type="text/javascript" src="Thomson%20_%20Payment%20Details_files/functions_depositSection.js"></script>
+
+			<div class="clear"></div>
+			<script type="text/javascript" src="Thomson%20_%20Payment%20Details_files/functions_paymentMethods.js"></script>
+
+
+
+
+<div class="payment-section mt15px">
+	<h5 class="pl10px">How would you like to pay?</h5>
+</div>
+<div class="pb12px fl">
+	<input name="payment_0_type" id="payment_0_type" type="hidden">
+	<div class="paycard-details " id="debitcardType" onclick="displayCreditCharges(this.id)">
+		<input checked="checked" id="debit" name="cardtype" class="radioBtn" value="Debit" onclick="displayCreditCharges(debit)" type="radio">
+		<label for="debit" class="radioBtn"><span for="debit" class="radioBtn"></span></label>
+		<h2 class="card-type">debit card</h2>
+		<span class="cardCharges"> No extra charge </span>
+		<h4 class="mt16px">
+			<span>There is no extra charge if paying by debit card. We accept all major debit cards.</span>
+		</h4>
+	</div>
+	<div class="paycard-details" id="creditcardType" onclick="displayCreditCharges(this.id)">
+		<input id="credit" name="cardtype" class="radioBtn" value="Credit" type="radio">
+		<label for="credit" class="radioBtn"><span for="credit" class="radioBtn"></span></label>
+		<h2 class="card-type">credit card</h2>
+		<span class="cardCharges"> +2% credit card surcharge</span>
+		<h4 class="mt16px">
+			<span class="credit-text">There is a 2% surcharge (which is capped at £95.00) if paying by credit card. We accept all major credit cards.</span>
+		</h4>
+	</div>
+	
+</div>
+
+			<div class="clear"></div>
+			<div style="display: none;" class="finalAmtConfirmation disNone" id="creditCardCharges">
+				<span class="subchargesSection">Includes 2% Credit Card
+					surcharge
+				</span>
+			</div>
+			<div class="clear"></div>
+			
+		</div>
+	</div>
+</div>
+				
+<div class="item" id="important_infosection">
+	<h3 class="item-toggle" onclick="displayImportantInfo('importantInfo');">
+		Important Information<span class="floatRight posAbsolute"><label class="confirmed mr30px">confirmed</label></span><i></i>
+	</h3>
+	<div class="disNone" id="importantInfo">
+	
+		<p>CHECK IN LATE FRIDAY DEPART EARLY HOURS SATURDAY. HOLD BAGGAGE ALLOWANCE IS 15KG, EXTRA WEIGHT CAN BE PRE-BOOKED </p>
+	
+		<div class="address-check">
+			<input id="imp-info" required="true" name="imp-info-confirm" class="checkBox" checked="checked" disabled="disabled" type="checkbox"> <label for="imp-info"><span></span><strong>
+				&nbsp;I can confirm that I have read and understood the above information</strong></label>
+		</div>
+	</div>
+</div>
+
+
+				<!-- <div class="item open">
+	<h3 class="item-toggle">Discount code<span class="floatRight disNone"><label class="confirmed mr30px">applied</label></span><i></i></h3>
+	<div class="item-content">
+		<input type="text" class="textfield" placeholder="Enter your promo code"><span class="button small">Apply Discount</span>
+		<a href="">What is a discount code <span class="question">?</span></a>
+	</div>
+</div>-->
+
+				
+
+
+
+
+
+    
+    
+            
+            
+                
+            
+            
+    
+    
+            
+            
+                
+            
+            
+    
+
+<div class="item open">
+	<h3 class="item-toggle">Passengers<span class="passengers-count">
+	 
+	2
+        
+		Adults
+		
+	
+	
+	
+	
+	
+	<a href="https://www.thomson.co.uk/destinations/book/passengerdetails" class="changeClass">Change</a></span></h3>
+
+	<div class="item-content selectedSection">
+		<div class="fl width98per">
+
+			<div class="payment-passenger-details">
+	<h5>lead passenger</h5>
+
+	<h4>
+	
+      
+        
+        <span class="disBlock"><label>Mr  Joe Bloggs</label></span>
+       
+      
+        
+      
+    <br>
+	
+		<span class="address-details disBlock">30</span>
+	</h4>
+	<h6 class="sub-details">
+		<span class="disBlock">Millbank
+		
+		<span class="disBlock">London</span>
+		<span class="disBlock">London</span>
+		<span class="disBlock">SW1 1AA</span>
+		<!--<br />
+		<span  class="phone disBlock">01234567890</span>
+		
+		<span  class="email">joe@example.com</span>
+		-->
+	</span></h6>
+</div>
+
+			<div class="payment-passenger-details">
+				<h5>other passengers</h5>
+				<h6 class="sub-details">
+				
+				  
+				   
+				  
+				   
+					<span class="disBlock"><span class="pass_details">Miss  Alice Example</span><span class="pass_type">
+					
+					
+					ADULT
+					
+					</span></span>
+				   
+				  
+				  
+				</h6>
+
+				<h6>
+				
+				
+				  
+				  
+				  
+				  
+				  
+				</h6>
+			</div>
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			
+			
+			
+			 			
+				
+<div class="payment-passenger-details">
+
+    <h5>Room 1 
+    <span>
+    
+    
+    	
+    		Twin room without balcony
+    	
+    
+     
+    </span>
+    </h5>
+	<h6 class="sub-details">
+    
+	  <span class="disBlock"><span class="room_details">Mr.Joe Bloggs</span></span>
+	
+	  <span class="disBlock"><span class="room_details">Miss.Alice Example</span></span>
+	
+	</h6>
+
+</div>
+
+			
+		</div>
+		<div class="pb12px fl passenger-contact-details">
+			
+				<span class="phone disBlock">01234567890</span>
+			
+			
+				<span class="email">joe@example.com</span>
+			
+		</div>
+	</div>
+</div>
+
+
+				
+
+
+
+
+	
+
+<script type="text/javascript" src="Thomson%20_%20Payment%20Details_files/functions_cardDetails.js"></script>
+
+
+<script>
+ TUIGiftCardNumber = "677713" ;
+</script>
+<div class="clear"></div>
+<div class="item open">
+	<h3>Your Card Details</h3>
+	<div class="item-content fl">
+		<div class="card-details-entry">
+				<div class="card-details-entry-section fl">
+
+					<div id="creditPaymentTypeCode" style="display: none;">
+						<p>Card type</p>
+						<div class="cardtype-select">
+						<select id="payment_type_credit" class="cardType fl" name="payment_0_type" onchange="checkIssueNumberEnabled(this.value)">
+							<option id="pleaseSelect" value="PleaseSelect" selected="selected">Select type of credit card</option>
+							
+								
+									<option value="MASTERCARD|Dcard">
+										MasterCard&nbsp;Credit
+									</option>
+								
+							
+								
+							
+								
+									<option value="VISA|Dcard">
+										VISA&nbsp;-&nbsp;Credit
+									</option>
+								
+							
+								
+							
+								
+							
+								
+									<option value="AMERICAN_EXPRESS|Dcard">
+										American&nbsp;Express
+									</option>
+								
+							
+								
+							
+								
+							
+						</select>
+						</div> <span class="visa"></span> <span class="delta"></span> <span class="mastercard"></span> <span class="maestro"></span> <span class="amexcard"></span>
+					</div>
+
+					<div id="debitPaymentTypeCode" style="display: none;">
+						<p>Card Type</p>
+						<div class="cardtype-select">
+						<select id="payment_type_debit" class="cardType fl" name="payment_0_type" onchange="checkIssueNumberEnabled(this.value)">
+							<option id="pleaseSelect" value="PleaseSelect" selected="selected">Select type of debit card</option>
+							
+								
+							
+								
+									<option value="DEBIT_MASTERCARD|Dcard">
+										MasterCard&nbsp;Debit
+									</option>
+								
+							
+								
+							
+								
+									<option value="VISA_DELTA|Dcard">
+										VISA/Delta&nbsp;-&nbsp;Debit
+									</option>
+								
+							
+								
+									<option value="SWITCH|Dcard">
+										Maestro
+									</option>
+								
+							
+								
+							
+								
+									<option value="VISA_ELECTRON|Dcard">
+										Visa&nbsp;Electron
+									</option>
+								
+							
+								
+							
+						</select>
+						</div>
+						<span class="visa"></span> <span class="delta"></span> <span class="mastercard"></span> <span class="maestro"></span> <span class="amexcard"></span>
+					</div>
+
+					<div id="giftPaymentTypeCode" style="display: none;"></div>
+				</div>
+				<div class="card-details-entry-section fl">
+					<p>Card Number</p>
+					<div class="fl">
+						<input name="payment_0_cardNumber" id="cardNumber" class="ccnumber fl" size="31" maxlength="20" onblur="allnumeric(this.id); displayCardType();" regexerror="Please enter card number into the field (e.g. '123456789098765')." regex="^[0-9]+$" requirederror="Your Card Number needs to be entered" required="true" autocomplete="off" type="text">
+					</div>
+					<span id="card-img" class="card-img ml15px"></span> <span id="card-desc" class="card-detect"></span>
+				</div>
+				<div class="card-details-entry-section fl">
+					<p>Name on Card</p>
+					<div class="fl">
+						<input class="name_on_card fl" name="payment_0_nameOnCard" id="cardholderName" onblur="allCharacters(this.id);" onfocus="tooltip(this.id);" regexerror="Please enter your name into the field (e.g. 'Smith Deremy')." regex="^[A-Za-z]+$" requirederror="Your Name needs to be entered" required="true" maxlength="80" autocomplete="off" type="text">
+					</div>
+					<!-- <span class="info-icon" id="cardname-details"
+						onmouseover="tooltip(this.id);"
+						onmouseout="closeTooltip(this.id);"> </span> -->
+					<span class="info-icon" onmouseover="displayTooltipInfo_mouseover('nameonCard');" onmouseout="displayTooltipInfo_mouseout('nameonCard');">
+						<div class="tooltip fl disNone" id="nameonCard">
+							<p class="width200px textleft">
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										Please enter the name as it appears on the card
+									
+								
+									
+								
+									
+								
+								<!-- Please enter the name as it
+								appears on the card -->
+							</p>
+							<span class="arrow"></span>
+						</div>
+					</span>
+
+
+				</div>
+				<div class="card-details-entry-section fl">
+					<p>Expiry Date</p>
+					<div class="fl">
+					
+					<div class="styled-select">
+					<select name="payment_0_expiryMonth" id="FieldExpiryDateMonth" onblur="getMonth(this.id);" class="title">
+						
+							
+								<option value="" selected="selected">MM</option>
+							
+							
+						
+
+						
+						
+							
+							
+								
+								
+									<option value="01">
+										01
+									</option>
+								
+							
+						
+							
+							
+								
+								
+									<option value="02">
+										02
+									</option>
+								
+							
+						
+							
+							
+								
+								
+									<option value="03">
+										03
+									</option>
+								
+							
+						
+							
+							
+								
+								
+									<option value="04">
+										04
+									</option>
+								
+							
+						
+							
+							
+								
+								
+									<option value="05">
+										05
+									</option>
+								
+							
+						
+							
+							
+								
+								
+									<option value="06">
+										06
+									</option>
+								
+							
+						
+							
+							
+								
+								
+									<option value="07">
+										07
+									</option>
+								
+							
+						
+							
+							
+								
+								
+									<option value="08">
+										08
+									</option>
+								
+							
+						
+							
+							
+								
+								
+									<option value="09">
+										09
+									</option>
+								
+							
+						
+							
+							
+								
+								
+									<option value="10">
+										10
+									</option>
+								
+							
+						
+							
+							
+								
+								
+									<option value="11">
+										11
+									</option>
+								
+							
+						
+							
+							
+								
+								
+									<option value="12">
+										12
+									</option>
+								
+							
+						
+					</select>
+					</div>
+					
+					<div class="styled-select">
+					<select id="FieldExpiryDateYear" name="payment_0_expiryYear" onblur="getMonth();" onfocus="getMonth('true');" class="title">
+						
+							
+								<option value="" selected="selected">YY</option>
+							
+							
+						
+						
+							<option value="15">
+								15
+							</option>
+						
+							<option value="16">
+								16
+							</option>
+						
+							<option value="17">
+								17
+							</option>
+						
+							<option value="18">
+								18
+							</option>
+						
+							<option value="19">
+								19
+							</option>
+						
+							<option value="20">
+								20
+							</option>
+						
+							<option value="21">
+								21
+							</option>
+						
+							<option value="22">
+								22
+							</option>
+						
+							<option value="23">
+								23
+							</option>
+						
+							<option value="24">
+								24
+							</option>
+						
+							<option value="25">
+								25
+							</option>
+						
+							<option value="26">
+								26
+							</option>
+						
+					</select>
+					</div>
+				</div>
+				</div>
+				<div class="clear"></div>
+				<div class="card-details-entry-section disNone fl" id="issueNumber">
+					<p>Issue Number</p>
+					<div class="fl">
+						<input id="issuenum" name="payment_0_issueNumber" class="cvv fl" maxlength="2" autocomplete="off" onblur="validateISSUE(this.id);" type="text">
+					</div>
+					<span class="info-icon" onmouseover="displayTooltipInfo_mouseover('issueNum');" onmouseout="displayTooltipInfo_mouseout('issueNum');">
+						<div class="tooltip fl disNone" id="issueNum">
+							<p class="fl issueToolClass textleft">
+								Please enter the issue number on the front of the card (if applicable).
+
+							</p>
+							<span class="arrow"></span>
+						</div>
+					</span>
+				</div>
+				<div class="clear"></div>
+				<input style="visibility: hidden;" class="disNone" type="password">
+				<div class="card-details-entry-section fl width59per cardDetailSecurity">
+					<p>Security Code</p>
+					<div class="fl entrySession">
+						<input id="cvv" class="cvv fl" name="payment_0_securityCode" onblur="validateCVV(this.id)" onfocus="tooltip(this.id);" regexerror="Please enter numeric characters into the field for CVV code only (e.g. '243')." regex="^[0-9]+$" requirederror="Your CVV code" required="true" maxlength="4" value="" autocomplete="off" type="password">
+					</div>
+					<!-- <span class="info-icon" id="cvv-details"
+						onmouseover="tooltip(this.id);"
+						onmouseout="closeTooltip(this.id);"></span> -->
+					<span class="info-icon" onmouseover="displayTooltipInfo_mouseover('cvvDetails');" onmouseout="displayTooltipInfo_mouseout('cvvDetails');">
+						<div class="tooltip_security fl disNone" id="cvvDetails">
+							<p class="width75px fl textleft">
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										This should be the last few digits on the back of your card
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+								<!-- This should be the last
+								digits on the back of your card. -->
+							</p>
+							<span class="card-back fl"></span> <span class="arrow"></span>
+						</div>
+					</span>
+
+					<a href="#" class="helping-links fl ml5px pt5px disNone">
+						What's this?</a>
+				</div>
+				
+
+
+
+<div class="card-links mt15px">
+    
+        
+        
+        
+            <div class="american-express-link">
+				<p>
+					<a href="javascript:newPopup('https://network.americanexpress.com/uk/en/safekey/');">Learn More</a>
+				</p>
+			</div>
+        
+    
+        
+        
+        <div class="verified-visa-link">
+			<p>
+				<a href="javascript:newPopup('http://www.visaeurope.com/en/cardholders/verified_by_visa.aspx');">Learn More</a>
+			</p>
+		</div>
+        
+        
+    
+        
+            <div class="master-card-link">
+				<p>
+					<a href="javascript:newPopup('http://www.mastercard.co.uk/securecode.html');">Learn More</a>
+				</p>
+			</div>
+        
+        
+        
+    
+</div>
+ 
+
+<div id="visa-card-stickey" class="tooltip fl disNone">
+  <div>
+    <div>
+      <div>
+        <div>
+          <h3>Verified by Visa</h3>
+          <a id="visaDetailsClose" href="#" title="Close overlay">Close</a></div>
+         <p class="visatext">We've introduced Verified by Visa - a 
+security programme created by Visa to give you peace of mind when 
+shopping online. All you need to do is register once whilst paying on 
+our website. You'll be asked to set up a password that you can then use 
+for any future payments you make with your card on participating 
+websites.
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="american-express-stickey" class="tooltip fl disNone">
+  <div>
+    <div>
+      <div>
+        <div>
+          <h3>American Express SafeKey</h3>
+          <a id="amexDetailsClose" href="#" title="Close overlay">Close</a></div>
+         <p class="amextext">We've introduced American Express SafeKey -
+ a security programme created by American Express to give you peace of 
+mind when shopping online. All you need to do is register once whilst 
+paying on our website. You'll be asked to set up a password that you can
+ then use for any future payments you make with your card on 
+participating websites.
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="master-card-stickey" class="tooltip fl disNone">
+  <div>
+    <div>
+      <div>
+        <div>
+          <h3>MasterCard SecureCode</h3>
+          <a id="masterCardDetailsClose" href="#" title="Close overlay">Close</a></div>
+         <p>We've introduced MasterCard SecureCode - a security 
+programme created by MasterCard to give you peace of mind when shopping 
+online. All you need to do is register once whilst paying on our 
+website. You'll be asked to set up a password that you can then use for 
+any future payments you make with your card on participating websites.
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+		</div>
+	</div>
+</div>
+<div class="clear"></div>
+
+				<script type="text/javascript">
+ 
+ 
+        
+        
+		 var leadTitle = "Mr";
+		 var leadForeName = "Joe";
+		 var leadLastName = "Blogs";
+		
+        
+		
+       
+      
+        
+      
+ 
+ //setTitle();
+function setTitle(){
+	 var titles = document.getElementById("title");
+	for (var i = 0; i < titles.options.length; i++)
+	{
+		if (titles.options[i].value == leadTitle)
+		titles.options[i].selected = true;
+	}
+}
+
+function checkBox(){
+		var temp=document.getElementById("cardHolderCheck");
+		if(temp.checked == false){
+			return true;
+		}
+		return false;
+
+}
+
+function showDiv()
+	{
+		var temp=document.getElementById("cardHolderCheck");
+		if(temp.checked == true)
+		{
+			document.getElementById("enter-card-details").style.display='none';
+			document.getElementById("leadPassenger-details").style.display='block';
+			setTitle();
+
+			document.getElementById("firstName").value=leadForeName;
+			document.getElementById("surName").value=leadLastName;
+			document.getElementById("houseDetails1").value="30";
+			document.getElementById("StreetLine1").value="Millbank";
+			document.getElementById("Streetline2").value="";
+			document.getElementById("townorcity").value="London";
+			document.getElementById("county").value="London";
+			document.getElementById("postalCode").value="SW1 1AA";
+
+		}
+		else
+		{
+			document.getElementById('enter-card-details').style.display='block';
+
+			document.getElementById('leadPassenger-details').style.display='none';
+			document.getElementById("title").value='';
+
+			removeDiv(document.getElementById("styled-select"));
+
+			document.getElementById("firstName").value='';
+			removeDiv(document.getElementById("firstName"));
+
+			document.getElementById("surName").value='';
+			removeDiv(document.getElementById("surName"));
+
+			document.getElementById("houseDetails1").value='';
+			removeDiv(document.getElementById("houseDetails1"));
+
+			document.getElementById("StreetLine1").value='';
+			removeDiv(document.getElementById("StreetLine1"));
+
+			document.getElementById("Streetline2").value='';
+			removeDiv(document.getElementById("Streetline2"));
+
+			document.getElementById("townorcity").value='';
+			removeDiv(document.getElementById("townorcity"));
+
+			document.getElementById("county").value='';
+			removeDiv(document.getElementById("county"));
+
+			document.getElementById("postalCode").value='';
+			removeDiv(document.getElementById("postalCode"));
+		}
+
+		function removeDiv(nodeRef){
+		var inputField = nodeRef;
+		var text = nodeRef.value;
+		var createSpan = document.createElement('span');
+		createSpan.innerHTML = "";
+		createSpan.id = " ";
+		createSpan.className += "";
+		if (inputField.parentNode.children.length > 1) {
+		var next = inputField.nextSibling;
+		while (next && next.nodeType !== -1) {
+			if (createSpan.id == "validation-pass") {
+				next.parentNode.removeChild(next.nextSibling);
+			}
+			else {
+				var getNextsibling = next.nextSibling;
+
+				if (getNextsibling ) {
+				if(getNextsibling.id == 'placeholder-houseDetails' || getNextsibling.id == 'placeholder-StreetLine1' || getNextsibling.id == 'placeholder-Streetline2' || getNextsibling.id == 'placeholder-townorcity' || getNextsibling.id == 'placeholder-county' || getNextsibling.id == 'placeholder-postalCode'){
+					 if(getNextsibling.nextSibling){
+						getNextsibling.parentNode.removeChild(getNextsibling.nextSibling);
+						document.getElementById(getNextsibling.id).style.display='block';
+					}
+					return;
+				}
+					getNextsibling.parentNode.removeChild(getNextsibling);
+				}
+				else {
+					next.parentNode.removeChild(next);
+				}
+			}
+			break;
+		}
+		}
+		}
+
+	}
+
+
+
+</script>
+ <div class="item open">
+	<h3>Card Holder Address<span class="privacy-section"></span></h3>
+	<div class="item-content pb12px fl cps-item-content">
+		<div class="address-check">
+			<input id="cardHolderCheck" checked="checked" onclick="showDiv();" name="card-holder-address-checkbox" type="checkbox">
+			<label for="cardHolderCheck"><span></span></label>
+			<span class="address-checkbox">Same address as the lead passenger - Mr Joe Bloggs</span>
+		</div>
+		<div class="clear"></div>
+			<div class="card-holder-address-details" id="leadPassenger-details">
+			
+			<span class="disBlock">30</span>
+	    	<span class="disBlock">Millbank</span>
+	    	<span class="disBlock"></span>
+	    	<span class="disBlock">London</span>
+	    	<span class="disBlock">London</span>
+	    	<span class="disBlock">SW1 1AA</span>
+
+			</div>
+			<div class="clear"></div>
+		<script type="text/javascript" src="Thomson%20_%20Payment%20Details_files/functions_validatePostcode.js"></script>
+<script type="text/javascript" src="Thomson%20_%20Payment%20Details_files/functions_manualAddress_002.js"></script>
+<div class="card-holder-address disNone overflowHidden" id="enter-card-details">
+	<div class="card-holder-entries fl">
+		<p>Title</p>
+		<div class="styled-select" id="styled-select">
+		<select name="title" id="title" class="title" onchange="checkTitle();">
+			<option selected="selected" value="">Select</option>
+			<option value="Mr">Mr.</option>
+			<option value="Miss">Miss.</option>
+			<option value="Ms">Ms.</option>
+			<option value="Mrs">Mrs.</option>
+			<option value="Dr">Dr.</option>
+			<option value="Prof">Prof.</option>
+			<option value="Rev">Rev.</option>
+		</select>
+		</div>
+	</div>
+	<div class="clear-both"></div>
+	<div class="card-holder-entries fl">
+		<p>First Name</p>
+		<input id="firstName" name="firstName" class="fl firstname" onblur="checkFName(this.id);" regexerror="Please enter only English alphabetic characters in the First Name." regex="^[A-Za-z ]+$" requirederror="Your First Name" required="true" value="Alan" maxlength="15" type="text">
+	</div>
+	<div class="card-holder-entries fl">
+		<p>Surname</p>
+		<input name="surName" id="surName" class="fl surname" onblur="checkName(this.id);" regexerror="Please enter only English alphabetic characters in the Last Name." regex="^[A-Za-z ]+$" requirederror="Your last Name" required="true" value="Jones" maxlength="15" type="text">
+	</div>
+	<div class="card-holder-entries fl">
+		<p>Address</p>
+		<input name="payment_0_street_address1" id="houseDetails1" maxlength="20" class="fl housename" onfocus="if (this.value == 'House num / name') {this.value = '';} document.getElementById('placeholder-houseDetails').style.display='none';" onblur="housenameCheck(this.id); if (this.value == '') {document.getElementById('placeholder-houseDetails').style.display='block';}" regex="^[A-Za-z0-9'\./()\-&amp; ]+$" required="true" value="30" type="text">
+			<span class="dijitPlaceHolder houseDetailsInputField" id="placeholder-houseDetails" onclick="placeHolder('houseDetails1','placeholder-houseDetails');">House num / name</span>
+			
+	</div>
+	<div class="card-holder-entries fl">
+		<p>&nbsp;</p>
+		<input name="payment_0_street_address2" id="StreetLine1" maxlength="25" class="fl housename" onfocus="if (this.value == 'Street Line 1') {this.value = '';} document.getElementById('placeholder-StreetLine1').style.display='none';" onblur="streetline1Check(this.id);  if (this.value == '') {document.getElementById('placeholder-StreetLine1').style.display='block';}" regexerror="Please enter only English alphanumeric characters or './()-&amp; in the address lines." regex="^[A-Za-z0-9'\./()\-&amp; ]+$" required="true" requirederror="Address Field is required." value="Millbank" type="text">
+				<span class="dijitPlaceHolder streetAddress1InputField" id="placeholder-StreetLine1" onclick="placeHolder('StreetLine1','placeholder-StreetLine1');">Street Line 1</span>
+
+	</div>
+	<div class="card-holder-entries fl">
+		<p>&nbsp;</p>
+		<input onfocus="if (this.value == 'Street Line 2 (Optional)') {this.value = '';} document.getElementById('placeholder-Streetline2').style.display='none';" maxlength="25" onblur="streetline2Check(this.id); if (this.value == '') {document.getElementById('placeholder-Streetline2').style.display='block';}" name="payment_0_additional_address_line1" id="Streetline2" class="fl housename" type="text">
+				<span class="dijitPlaceHolder streetAddress2InputField" id="placeholder-Streetline2" onclick="placeHolder('Streetline2','placeholder-Streetline2');">Street Line 2 (Optional)</span>
+	</div>
+	<div class="card-holder-entries fl">
+		<p>&nbsp;</p>
+		<input onfocus="if (this.value == 'Town/City') {this.value = '';} document.getElementById('placeholder-townorcity').style.display='none';" maxlength="25" onblur="townorcityCheck(this.id); if (this.value == '') {document.getElementById('placeholder-townorcity').style.display='block';}" name="payment_0_street_address3" id="townorcity" class="fl housename" regexerror="Please enter only English alphanumeric characters or './()-&amp; in the address lines." regex="^[A-Za-z0-9'\./()\-&amp; ]+$" required="true" requirederror="Address Field is required." value="London" type="text">
+				<span class="dijitPlaceHolder townorcityInputField" id="placeholder-townorcity" onclick="placeHolder('townorcity','placeholder-townorcity');">Town/City</span>
+	</div>
+	<div class="card-holder-entries fl">
+		<p>&nbsp;</p>
+		<input name="payment_0_street_address4" id="county" class="fl housename" onblur="testCounty(this.id);if (this.value == '') {document.getElementById('placeholder-county').style.display='block';}" onfocus="if (this.value == 'County') {this.value = '';} document.getElementById('placeholder-county').style.display='none';" regexerror="Please enter only English alphabetic characters in the county." regex="^[A-Za-z ]+$" requirederror="Your county" required="true" value="London" maxlength="16" type="text">
+			<span class="dijitPlaceHolder countyInputField" id="placeholder-county" onclick="placeHolder('county','placeholder-county');">County</span>
+	</div>
+	<div class="card-holder-entries fl">
+		<p>&nbsp;</p>
+		<input class="fl postalCode" maxlength="8" onfocus="if (this.value == 'Postcode') {this.value = '';} document.getElementById('placeholder-postalCode').style.display='none';" onblur="testPostCode(this.id); if (this.value == '') {document.getElementById('placeholder-postalCode').style.display='block';}" name="payment_0_postCode" id="postalCode" value="SW1 1AA" regexerror="Please enter alphanumeric characters into the field for the postal code only (e.g. 'W2 4DJ')." regex="^[A-Za-z0-9 ]+$" requirederror="Your postal code" required="true" type="text">
+			<span class="dijitPlaceHolder postCodeInputField" id="placeholder-postalCode" onclick="placeHolder('postalCode','placeholder-postalCode');">Postcode</span>
+	</div>
+	<div class="card-holder-entries fl">
+		<p></p>
+	</div>
+	<!-- <div class="fl mt17px">
+		<button class="button small ml15px">Find Address</button>
+	<a href="#enter-card-details" class="helping-links pl10px" id="showOtherFields" onclick="showAddress(this.id)">Enter my
+		address manually</a>
+	</div>-->
+	<input id="country" name="payment_0_selectedCountry" value="GB" type="hidden">
+	<input name="payment_0_selectedCountryCode" value="GB" type="hidden">
+</div>
+	</div>
+</div>
+
+
+
+				<div class="clear"></div>
+
+				
+
+
+<div class="termsandconditions pb12px fl mt12" id="termsandconditions">
+	<h2> Terms And Conditions </h2>
+         <div id="commPref" class="commPref">
+		<span class="termsandconditionsSelected"></span>
+		Your communication preferences have been updated
+		<a class="remove fr" href="#" onclick="removeDiv()">close</a>
+	</div>
+
+	
+
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+			
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+			
+
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+
+	<p>
+    Please read our  <a href="javascript:newPopup('https://www.thomson.co.uk/destinations/book/termsandconditions/privacypolicy');">Privacy Policy</a> ,<a class="datapolicies" id="DPN" value="Simple Dialog" onclick="popUpOverlay(this)">Data Protection Notice </a>
+  and confirm you agree to us using the information you’ve provided – 
+which may in special situations include sensitive personal data – by 
+ticking this box.
+	</p>
+	<p>Please note that all members of your party must have valid passports and any applicable visas before travelling. Visit the <a href="javascript:newPopup('https://www.gov.uk/browse/abroad')" ;="">Foreign Office website</a> for visa and travel advice.</p>
+	<p>
+	If you’ve got <a href="javascript:newPopup('https://www.thomson.co.uk/destinations/book/termsandconditions/specialneeds');">special requirements</a>, please call us on 0844 871 1600 before booking.
+	</p>
+	<p>
+	Please see the <a href="javascript:newPopup('http://www.thomson.co.uk/editorial/legal/montreal-convention.html');">Air Passenger Notice</a>
+ for a summary of the liability rules applied by community air carriers,
+ as required by community legislation and the Montreal Convention.
+	</p>
+	<p>This booking is authorised under the ATOL licence of TUI UK Limited, ATOL 2524, and is <strong>protected under the ATOL scheme</strong>, as set out in the ATOL certificate to be supplied.</p>
+</div>
+<div class="content-section">
+
+	</div>
+	<div class="info-section timer">
+					<div class="checkState">
+						<input id="tandc-info" name="agreeTermAndCondition" type="checkbox">
+						<label for="tandc-info"><span></span></label>
+					</div>
+		<p>
+			I have read and accept the <span><a href="javascript:newPopup('https://www.thomson.co.uk/thomson/page/byo/tandc/tandc.page?date=2015-06-26&amp;lang=en&amp;accommInvSys=TRACS&amp;flightInvSys=TRACS&amp;depDate=2015-06-26')">booking
+					conditions</a></span>, <span><a href="javascript:newPopup('https://www.thomson.co.uk/destinations/book/termsandconditions/privacypolicy');">privacy policy</a></span> and <span>important
+					information.</span>
+		</p>
+	</div>
+<div id="dpn" class="posFix">
+    <div id="DPNoverlay" class="web_dialog datapolicies">
+		<div class="web_dialog_title">
+			Data Protection Notice <a class="remove fr" href="#" onclick="closeDPNOverlay()">close</a>
+		</div>
+
+			<div class="we_dialog_description">
+				We'd like to contact you from time to time with details of offers, 
+goods and services, new products, and events and competitions we think 
+will be of interest to you.
+			</div>
+			<div class="communication fl paddlef">
+ 				<span class="Trailored sectionTitle fl">
+ 					If you'd prefer not to get these, you can opt out
+ 				</span>
+			</div>
+			<div class="commAccept fl paddlef">
+				<input class="checkBoxRef" name="communicateByEmail" id="communicate_selection_email" type="checkbox"> <label for="communicate_selection_email"><span></span></label>
+				<span class="commAcceptDesc">
+					I don't want to receive emails or SMS with details of offers, goods and services, new products, or events and competitions.</span>
+			</div>
+			<div class="commAccept fl paddlef">
+				<input class="checkBoxRef" name="communicateByPhone" id="communicate_selection_phone" type="checkbox"> <label for="communicate_selection_phone"><span></span></label>
+				<span class="commAcceptDesc">
+					I don't want to be contacted by telephone with details of offers, 
+goods and services, new products, or events and competitions.</span>
+			</div>
+			<div class="commAccept fl paddlef">
+				<input class="checkBoxRef" name="communicateByPost" id="communicate_selection_post" type="checkbox"> <label for="communicate_selection_post"><span></span></label>
+				<span class="commAcceptDesc">
+					I don't want to receive information by post of offers, goods and services, new products, or events and competitions.</span>
+			</div>
+
+		<div class="communicationAcceptance fl paddlef">
+			<div class="sectionTitle">
+				Carefully selected companies outside our holiday group would like to
+ get in touch from time to time with news about their products and 
+services.
+			</div>
+
+			<div class="commAccept fl">
+				<input name="chkThirdPartyMarketingAllowed" id="travelAcpt" type="checkbox"> <label for="travelAcpt"><span></span></label>
+				<span class="commAcceptDesc">
+					No thanks, I don't want to receive information of products and services from carefully selected companies
+				</span>
+			</div>
+
+			<div class="clear"></div>
+			<div class="border-divider"></div>
+
+		</div>
+
+
+		<div class="button-section paddlef">
+			<div class="fl">
+				<a class="cancel" href="#" onclick="closeDPNOverlay()">CANCEL</a>
+
+			</div>
+			<div class="fr rightSection">
+                <a class="okbutton" onclick="okButtonclick(this)">OK</a>
+			</div>
+		</div>
+	</div>
+
+				</div>
+<div id="sessionTime" class="posFix">
+<div id="sessionTimeTextbox" class="sessionTimeText">
+	<div class="session_dialog_title fl">
+				 <div class="sessionText fl">Are you still there?</div>
+				 <a class="remove fr" href="#" onclick="closesessionTime()">close</a>
+	</div>
+	<div class="session_dialog_timeOut_content_container fl">
+			<div class="SesTimeoutImg fl">
+					<div class="sessionoutWarnClock fl"></div>
+					<div class="clear"></div>
+					<span class="sesDisTime">Timeout in</span>
+					<span id="sessiontimeDisplay" class="sesDisTime"></span>
+					<div class="clear"></div>
+			</div>
+			<div class="session_dialog_timeOut_content">
+				This page will soon be timing out for security reasons. Let us know that <br> you're still here , otherwise you'll have to re-enter your details.
+			</div>
+			<div class="clear"></div>
+			<div class="sessionTimeTextbox_border-divider"></div>
+	</div>
+	<div class="activestate fr">
+				 <a class="button fr" href="#" onclick="activestate()">I'm still here</a>
+	</div>
+</div>
+</div>
+
+<div class="posFix" id="sessionTimeout">
+<div class="sessionTimeOutText" id="sessionTimeOutTextbox">
+<div class="session_dialog_title fl">
+			 <div class="sessionText fl">Sorry, this page has timed out!</div>
+			 <a onclick="reloadPage()" class="remove fr">close</a>
+</div>
+<div class="session_dialog_timeOut_content_container fl">
+<div class="sessiontimeout_content fl">
+Unfortunately this page has timed out for security reasons.Don't worry, 
+we're not going to make you start over again, but we do need you to 
+re-enter your details on this page. If you don't want to continue you 
+can go to the <a href="#" onclick="homepage()">homepage</a>.
+</div>
+<div class="clear"></div>
+<div class="border-divider_sessiontimeout"></div>
+</div>
+<div class="activestate fr">
+			 <a onclick="reloadPage()" class="button fr">ok</a>
+</div>
+</div>
+</div>
+<div id="modal" class="web_dialog_overlay"></div>
+
+				<div class="buttonToolTip tooltip fl  disNone" id="errorMessageToolTip">
+						<h3 class="error-message-text">Hold on there...</h3>
+						<h5 class="error-message-subText">some details still haven't been entered, or are currently invalid</h5>
+					<span class="arrow"></span>
+				</div>
+				<div class="clear"></div>
+				<div class="final"></div>
+				<div class="clear"></div>
+				<div class="bookHoliday" align="center">
+					
+					<button class="button cta jumbo" onclick="return validateRequiredField();" onmouseout="displayTooltipInfo_mouseout('errorMessageToolTip');">Book this Holiday</button>
+					
+				</div>
+			</div>
+		</form>
+		<div id="summary-panel">
+
+	
+
+
+
+
+
+<div class="totalPrice">
+	<span class="info-block">TOTAL PRICE
+		<span class="question" onmouseover="totalprice_displayTooltipInfo_mouseover('total_payment');" onmouseout="totalprice_displayTooltipInfo_mouseout('total_payment');">?</span>
+	</span>
+	
+	<div class="tooltip_price disNone fl" id="total_payment">
+		<p class="fl textleft">
+			
+				</p><ul class="item-list">
+					<li>
+						<span class="fl">
+								PRICE BREAKDOWN
+						</span>
+						<span class="fr"></span>
+					</li>
+					
+						<li>
+							<span class="fl">
+								Online Discount
+							</span>
+							<span class="fr">
+								
+									
+										£84.00
+
+									
+									
+									
+								
+							</span>
+						</li>
+					
+						<li>
+							<span class="fl">
+								Basic Holiday
+							</span>
+							<span class="fr">
+								
+									
+									
+									
+										£822.00
+									
+								
+							</span>
+						</li>
+					
+						<li>
+							<span class="fl">
+								Options &amp; Extras (total)
+							</span>
+							<span class="fr">
+								
+									
+									
+									
+										£62.00
+									
+								
+							</span>
+						</li>
+					
+					<li>
+						<span class="fl">
+								TOTAL PRICE
+						</span>
+						<span class="fr">£2900.00</span>
+					</li>
+				</ul>
+			
+		<p></p>
+		<span class="arrow_price"></span>
+	</div>
+	<span class="total"><span class="currency">£</span>
+		<span class="round_value">2900</span>.<span class="decimal_value">00</span>
+	</span>
+	<span class="splitPrice">
+		
+		
+		
+		
+			
+			<span class="pp textNormal disBlock">£
+				400.00
+				per person</span>
+			
+		
+		
+		
+		
+			
+			
+				<span class="discount textNormal">
+				Includes £84.00 discount
+				</span>
+			
+		
+			
+		
+			
+		
+		
+		
+	</span>
+	<div class="clear"></div>
+	<span class="people">
+	
+	
+	
+	
+  	
+    
+    
+            
+                
+            
+            
+	    
+    
+    
+            
+                
+            
+            
+	    
+    
+	
+	
+	2
+        
+		Adults
+		
+	
+			
+	
+	
+	
+	</span>
+</div>
+
+	
+	
+		 
+		
+		
+	
+			
+			<div class="accordOff">
+	<h3 class="summaryAccordSwitch">
+		<span class="icon hotel"></span>HOTEL
+	</h3>
+	<div class="noAccord pb10px">
+
+		
+    
+
+    
+		<div class="copy">
+			<div class="hotel-name">
+				Hotel Catalonia Las Vegas
+			</div>
+			<div class="location">
+				in 
+					Puerto de la Cruz,
+				
+				
+					Tenerife
+				
+				
+			</div>
+			<a class="back-to-review" href="http://www.thomson.co.uk/destinations/bookaccommodation?productCode=002615&amp;tab=overview&amp;noOfAdults=2&amp;noOfChildren=0&amp;childrenAge=&amp;duration=7&amp;airports[]=LGW%7CLTN%7CSEN%7CSTN&amp;units[]=002615:HOTEL:HOTEL&amp;flexibleDays=3&amp;flexibility=true&amp;when=28-06-2015&amp;noOfSeniors=0&amp;multiSelect=true&amp;packageId=002615TMLTEN1435276290000014352762900000TOM45621435962900000014359629000000TOM4563BC133&amp;index=1&amp;bb=HB&amp;price=pp">Back
+				to hotel overview</a>
+		</div>
+    
+
+
+
+	</div>
+</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		 
+		 
+		 
+		
+		  	
+		
+	
+		 
+		
+		
+		
+		
+	
+			
+			<div class="accordOff">
+	<h3 class="summaryAccordSwitch" analytics-id="162" analytics-instance="3" analytics-text="toggle">
+		<span class="icon flights"></span><span class="title">FLIGHTS</span>
+	</h3>
+	
+		
+			
+				
+					
+					
+					
+					
+					
+					
+				
+			
+		
+		
+			
+				
+					
+					
+					
+					
+					
+					
+				
+			
+
+		
+
+
+
+		<div class="noAccord">
+			
+				
+				
+
+					<div class="duration">
+						7
+						
+							
+							
+								 nights
+							
+						
+					</div>
+					<ul class="flightInfo">
+						<li class="place"><span class="from">London Gatwick - </span><span class="to">Tenerife South</span></li>
+						<li class="itinerary depart"><span class="itinerary-dates">Fri 26 Jun 2015</span><span class="itinerary-departure-time">18:50</span><span class="itinerary-arrival-time">23:15</span>
+
+									<span class="TOM"></span>
+									</li>
+
+
+
+						
+
+
+						<li class="itinerary return"><span class="itinerary-dates">Sat 4 Jul 2015</span><span class="itinerary-departure-time">00:15</span><span class="itinerary-arrival-time">04:20</span>
+									<span class="TOM"></span>
+
+
+									</li>
+
+
+
+
+						
+
+					</ul>
+
+					<div class="clear"></div>
+
+					<a class="cb fl changeFlights" href="http://www.thomson.co.uk/destinations/book/flightoptions">Change flights</a>
+
+					<div class="clear"></div>
+
+						<div class="summary-sub-border item-list"></div>
+					
+						
+							<ul class="item-list">
+								<li><span class="fl">Standard Seats x2
+										</span> <span class="fr capitalize"> 
+											
+											
+												included
+											
+										
+								</span></li>
+
+							</ul>
+						
+							<ul class="item-list">
+								<li><span class="fl">15 kg luggage x2
+										</span> <span class="fr capitalize"> 
+											
+											
+												included
+											
+										
+								</span></li>
+
+							</ul>
+						
+					
+				
+				<a class="cb fl" href="http://www.thomson.co.uk/destinations/book/flightoptions">Change flight options</a>
+		</div>
+	
+</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		 
+		 
+		 
+		
+		  	
+		
+	
+		 
+		
+		
+		
+		
+		
+
+			
+			
+<div class="accordOff">
+	<h3 class="summaryAccordSwitch">
+		<span class="icon room"></span><span class="title">ROOM &amp;
+			BOARD</span>
+	</h3>
+	<div class="noAccord">
+		
+			
+			
+				
+					<ul class="item-list">
+						<li><span class="fl">Twin room without balcony x1
+								
+							</span>
+							 <span class="fr capitalize">
+								 	 
+										
+										included
+									
+									
+									
+							</span>
+						</li>
+					</ul>
+				
+					<ul class="item-list">
+						<li><span class="fl">Half Board 
+							</span>
+							 <span class="fr capitalize">
+								 	 
+										
+									
+										
+									
+									
+							</span>
+						</li>
+					</ul>
+				
+				<a class="fl" href="http://www.thomson.co.uk/destinations/book/roomoptions">Change
+					room &amp; board type</a>
+			
+		
+	</div>
+</div>
+		
+		
+		
+		
+		
+		
+		
+		 
+		 
+		 
+		
+		  	
+		
+	
+		 
+		
+		
+		
+		
+		
+		
+		
+			
+			<div class="accordOff">
+	<h3 class="summaryAccordSwitch">
+		<span class="icon extras"></span><span class="title">EXTRAS</span>
+	</h3>
+	<div class="noAccord">
+		
+			
+			
+				
+					<ul class="item-list">
+						<li>
+						<span class="fl">World care fund donation
+								
+									<span onmouseover="totalprice_displayTooltipInfo_mouseover('worldcare_tooltip');" onmouseout="totalprice_displayTooltipInfo_mouseout('worldcare_tooltip');" class="question">?
+									</span>
+									<div class="tooltip_extra disNone fl" id="worldcare_tooltip">
+											<p class="fl textleft">
+												
+													
+												
+													
+												
+													
+												
+													
+												
+													
+												
+													
+												
+													
+												
+													
+												
+													
+												
+													
+												
+													
+												
+													
+												
+													
+												
+													
+												
+													
+												
+													
+												
+													
+												
+													
+												
+													
+												
+													
+												
+													
+												
+													
+												
+													
+												
+													
+												
+													
+												
+													
+														By contributing to our world care fund, you can help 
+support sustainable tourism and clean energy projects around the world.
+													
+												
+													
+												
+													
+												
+													
+												
+													
+												
+													
+												
+											</p>
+											<span class="arrow_fo"></span>
+									</div>
+
+								
+								</span>
+								 <!-- included -->
+								 <span class="fr capitalize"> 
+									
+										£2.00
+									
+									
+
+								</span>
+						</li>
+					</ul>
+				
+					<ul class="item-list">
+						<li>
+						<span class="fl">Coach Transfer
+								
+								</span>
+								 <!-- included -->
+								 <span class="fr capitalize"> 
+									
+										£60.00
+									
+									
+
+								</span>
+						</li>
+					</ul>
+				
+				<a class="fl" href="http://www.thomson.co.uk/destinations/book/extraoptions">Change extras</a>
+			
+		
+	</div>
+</div>
+		
+		
+		
+		
+		
+		
+		
+		 
+		 
+		 
+		
+		  	
+		
+	
+		 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		 
+		 
+		 
+		
+		  	
+		  
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+
+
+
+<div class="priceBrk">
+	<h3>
+		<span class="icon price"></span><span class="title">PRICE
+			BREAKDOWN</span>
+	</h3>
+	<div class="noAccrodDef loaded">
+		
+		
+			<ul class="item-list">
+				
+					<li><span class="fl">Online Discount</span> <span class="fr">
+							
+								
+									<span class="pinkText">-£84.00</span>
+								
+								
+								
+							
+					</span></li>
+				
+					<li><span class="fl">Basic Holiday</span> <span class="fr">
+							
+								
+								
+								
+				£822.00
+								
+							
+					</span></li>
+				
+					<li><span class="fl">Options &amp; Extras (total)</span> <span class="fr">
+							
+								
+								
+								
+				£62.00
+								
+							
+					</span></li>
+				
+				<div class="grandTotal">
+					<span class="lable fl">TOTAL PRICE</span> <span class="price fr"><span class="breakdown_symbol">£</span>
+						<span class="breakdown_round_value">2900</span><span class="breakdown_decimal_value">.00</span>
+					</span>
+				</div>
+				<div class="fl cb paxSplit">
+					
+					
+					
+					
+					
+						
+							
+							
+								
+							
+							
+							
+						
+							
+							
+								
+							
+							
+							
+						
+					
+					
+						2
+						
+							Adults
+							
+						
+								
+					
+					
+					
+				</div>
+				<div class="grandTotalBG"></div>
+			</ul>
+		
+	</div>
+</div>
+
+</div>
+
+
+		
+	</div>
+	<!-- <!doctype html> -->
+<!--[if lt IE 7 ]> <html lang="en" id="firstchoice" class="ie6 "> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" id="firstchoice" class="ie7 "> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" id="firstchoice" class="ie8 "> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" id="firstchoice" class="ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->  <!--<![endif]-->
+<!-- <head>
+	<title></title> -->
+	<!--[if IE 7 ]><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /><![endif]-->
+	<!--[if IE 8 ]><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" /><![endif]-->
+	<!--[if IE 9 ]><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" /><![endif]-->
+	<!--[if (gt IE 9)|!(IE)]><!--><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><!--<![endif]-->
+	<!-- <meta charset="utf-8" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+
+	<link rel="icon" type="image/png" href="https://pay.thomson.co.uk/cms-cps/thomson/images/favicon.png">
+
+		<!--[if lte IE 9]>
+			<link rel="shortcut icon" href="/cms-cps/thomson/images/favicon.ico" type="image/x-icon" />
+			<link rel="icon" href="/cms-cps/thomson/images/favicon.ico" />
+			<![endif]-->
+
+			<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+
+		
+		
+			<!-- javascript -->
+			<!-- <script type="text/javascript"  src="../js/TuiConfigProd.js"></script>
+			<script type="text/javascript" src="../js/Bootstrap.js"></script>
+			<link href="../css/main.css" rel="stylesheet" type="text/css" />
+			<link href="../css/main_header.css" rel="stylesheet" type="text/css" />
+			<link href="../css/print.css" rel="stylesheet" type="text/css" media="print" /> -->
+			<script>
+			var ensLinkTrack = function(){};
+			function displayHolidayTypes(ele){			
+				var holiday_type = new Array();				
+				holiday_type[0]="holidaytypes";
+				holiday_type[1]="popDestinations";
+				holiday_type[2]="longhaul";
+				holiday_type[3]="shorthaul";
+				holiday_type[4]="flightsTo";
+				var get_holiday_type_length=holiday_type.length;				
+				for(var i=0;i<get_holiday_type_length;i++){					
+					document.getElementById(holiday_type[i]).style.display="none";
+					document.getElementById(holiday_type[i]+"_li").className="";
+				}					
+				var split_type=ele.id.split("_");	
+				document.getElementById(split_type[0]).style.display="block";	
+				ele.className="active";
+			}
+			</script>
+		<!-- </head>
+		<body> -->
+			<div id="wrapper">
+
+				<div id="inner-footer">
+					<ul id="footer-utils">
+						<li>
+							<h3>Holiday extras</h3>
+							<ul>
+								<li><a href="http://www.thomsonexcursions.co.uk/" target="_blank" class="ensLinkTrack">Excursions</a></li>
+								<li><a href="http://www.carhiremarket.com/thomson/" target="_blank" class="ensLinkTrack">Car hire</a></li>
+								<li><a href="http://www.thomson.co.uk/editorial/extras/foreign-exchange.html" target="_blank" class="ensLinkTrack">Foreign Exchange</a></li>
+								<li><a href="http://www.holidayextras.co.uk/thomson/parking.html" target="_blank" class="ensLinkTrack">Airport parking</a></li>
+								<li><a href="http://www.thomson.co.uk/editorial/extras/travel-money-card.html" target="_blank" class="ensLinkTrack">Money Card</a></li>
+								<li><a href="http://www.thomsonins.co.uk/travel/default.aspx" target="_blank" class="ensLinkTrack">Travel insurance</a></li>
+							</ul>
+						</li>
+						<li>
+							<h3>Find a local store</h3>
+							<p><a href="http://www.thomson.co.uk/shopfinder/shop-finder.html" target="_blank" class="ensLinkTrack">Shop Finder</a></p>
+						</li>
+
+						<li id="safe-hands">
+							<h3>You're in safe hands</h3>
+							<p>We're part of TUI Travel PLC, one of the world's leading travel groups - and we're in great financial shape.</p>
+							<p>Precious time. Guaranteed.</p>
+							<p class="authority">
+								<img alt="World of TUI" src="Thomson%20_%20Payment%20Details_files/WOT-logo.png" class="wot-logo" height="19" width="93">
+								<a class="abta ensLinkTrack" href="http://www.abta.com/find-a-holiday/member-search/5736" target="_blank">ABTA</a>
+								<a class="atol ensLinkTrack" href="http://www.caa.co.uk/default.aspx?catid=27" target="_blank">ATOL</a>
+							</p>
+						</li>
+						<li id="questions">
+							<h3>Have a question?</h3>
+							<form action="https://www.thomson.co.uk/gsa/gsa.html" method="get">
+								<div class="formrow">
+									<textarea name="q" class="textfield" placeholder="e.g. Where do I print my e-tickets?"></textarea>
+									<!-- <input type="hidden" name="site" value="firstchoice_collection" />
+									<input type="hidden" name="client" value="fc-hugo-main" />
+									<input type="hidden" name="proxystylesheet" value="fc-hugo-main" />
+									<input type="hidden" name="output" value="xml_no_dtd" />
+									<input type="hidden" name="submit" value="Go" /> -->
+									
+									    <input value="default_collection" name="site" type="hidden">
+							            <input value="production_frontend" name="client" type="hidden">
+							            <input value="production_frontend" name="proxystylesheet" type="hidden">
+							            <input value="xml_no_dtd" name="output" type="hidden">
+							            <input value="Go" name="submit" type="hidden">
+            
+            
+								</div>
+								<div class="floater">
+									<button class="button fr mt4 small">Search</button>
+									<!-- <p class="help fl"><a target="_blank" href="http://www.thomson.co.uk/destinations/faqCategories" class="ensLinkTrack">Ask a question</a></p> -->
+									<p class="contact-us fl"><a target="_blank" href="http://www.thomson.co.uk/editorial/legal/contact-us.html" class="ensLinkTrack">Contact us</a></p>
+								</div>
+							</form>
+						</li>
+					</ul>
+					<!-- <script type="text/javascript">
+					dojoConfig.addModuleName("tui/widget/Tabs");
+					</script> -->
+
+					<div id="footer-seo">
+						<div class="tabs-container">
+							<ul class="tabs">
+								<li onclick="displayHolidayTypes(this);" id="holidaytypes_li" class="active"><a enslinktrackattached="true" class="ensLinkTrack">Holiday Types</a><span class="arrow"></span></li>
+								<li onclick="displayHolidayTypes(this);" id="popDestinations_li"><a enslinktrackattached="true" class="ensLinkTrack">Popular Destinations</a><span class="arrow"></span></li>
+								<li onclick="displayHolidayTypes(this);" id="longhaul_li"><a enslinktrackattached="true" class="ensLinkTrack">Mid/Long haul</a><span class="arrow"></span></li>
+								<li onclick="displayHolidayTypes(this);" id="shorthaul_li"><a enslinktrackattached="true" class="ensLinkTrack">Short haul</a><span class="arrow"></span></li>
+								<li onclick="displayHolidayTypes(this);" id="flightsTo_li"><a enslinktrackattached="true" class="ensLinkTrack">Flights To</a><span class="arrow"></span></li>
+							</ul>
+							<div id="holidaytypes" class="menu" style="display:block">
+								<ul>
+									<li><a target="_blank" href="http://www.thomson.co.uk/" class="ensLinkTrack">Cheap Holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/luxury-holidays.html" class="ensLinkTrack">Luxury Holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/editorial/features/sunshine-holidays.html" class="ensLinkTrack">Sun Holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/family-holidays.html" class="ensLinkTrack">Family Holidays</a></li>
+								</ul>
+								<ul>
+									<li><a target="_blank" href="http://www.thomson.co.uk/deals/winter-2013-deals.html" class="ensLinkTrack">Winter Holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/all-inclusive-holidays.html" class="ensLinkTrack">All inclusive holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/editorial/features/sunshine-holidays.html" class="ensLinkTrack">Sunshine Holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/editorial/features/beach-holidays.html" class="ensLinkTrack">Beach holidays</a></li>
+
+								</ul>
+								<ul>
+									<li><a target="_blank" href="http://www.thomson.co.uk/late-deals/late-deals.html" class="ensLinkTrack">Late holiday deals</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/deals/summer-2014-deals.html" class="ensLinkTrack">Holidays 2014</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/editorial/deals/summer-2012-deals.html" class="ensLinkTrack">Summer holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/late-deals/late-deals.html" class="ensLinkTrack">Last minute Holidays</a></li>
+								</ul>
+							</div>
+							<div id="popDestinations" class="menu" style="display:none">
+								<ul>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/europe/spain/tenerife/holidays-tenerife.html" class="ensLinkTrack">Tenerife holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/europe/spain/costa-blanca/benidorm/holidays-benidorm.html" class="ensLinkTrack">Benidorm holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/editorial/features/canary-islands-holidays.html" class="ensLinkTrack">Canary Islands holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/europe/spain/lanzarote/holidays-lanzarote.html" class="ensLinkTrack">Lanzarote holidays</a></li>
+								</ul>
+								<ul>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/africa/egypt/egypt-red-sea/sharm-el-sheikh/holidays-sharm-el-sheikh.html" class="ensLinkTrack">Sharm el Sheikh holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/europe/cyprus/holidays-cyprus.html" class="ensLinkTrack">Cyprus holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/europe/spain/menorca/holidays-menorca.html" class="ensLinkTrack">Menorca holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/europe/spain/majorca/holidays-majorca.html" class="ensLinkTrack">Majorca holidays</a></li>
+								</ul>
+								<ul>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/europe/greece/crete/holidays-crete.html" class="ensLinkTrack">Crete holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/europe/spain/ibiza/holidays-ibiza.html" class="ensLinkTrack">Ibiza holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/europe/spain/gran-canaria/holidays-gran-canaria.html" class="ensLinkTrack">Gran Canaria holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/europe/portugal/algarve/holidays-algarve.html" class="ensLinkTrack">Algarve holidays</a></li>
+								</ul>
+							</div>
+							<div id="longhaul" class="menu" style="display:none">
+								<ul>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/africa/egypt/holidays-egypt.html" class="ensLinkTrack">Egypt holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/africa/cape-verde/holidays-cape-verde.html" class="ensLinkTrack">Cape Verde holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/caribbean/mexico/holidays-mexico.html" class="ensLinkTrack">Mexico holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/indian-ocean/india/goa/holidays-goa.html" class="ensLinkTrack">Goa holidays</a></li>
+								</ul>
+								<ul>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/the-americas/united-states-of-america/florida/holidays-florida.html" class="ensLinkTrack">Caribbean holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/the-americas/united-states-of-america/florida/holidays-florida.html" class="ensLinkTrack">Florida holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/caribbean/jamaica/holidays-jamaica.html" class="ensLinkTrack">Aruba holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/indian-ocean/mauritius/holidays-mauritius.html" class="ensLinkTrack">Mauritius holidays</a></li>
+								</ul>
+								<ul>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/caribbean/dominican-republic/holidays-dominican-republic.html" class="ensLinkTrack">Dominican Republic holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/caribbean/cuba/holidays-cuba.html" class="ensLinkTrack">Cuba holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/africa/kenya/holidays-kenya.html" class="ensLinkTrack">Kenya holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/caribbean/barbados/holidays-barbados.html" class="ensLinkTrack">Barbados holidays</a></li>
+								</ul>
+							</div>
+							<div id="shorthaul" class="menu" style="display:none">
+								<ul>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/africa/tunisia/holidays-tunisia.html" class="ensLinkTrack">Tunisia holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/europe/portugal/holidays-portugal.html" class="ensLinkTrack">Portugal holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/europe/spain/holidays-spain.html" class="ensLinkTrack">Spain holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/europe/turkey/holidays-turkey.html" class="ensLinkTrack">Turkey holidays</a></li>
+								</ul>
+								<ul>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/europe/cyprus/holidays-cyprus.html" class="ensLinkTrack">Cyprus holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/africa/morocco/holidays-morocco.html" class="ensLinkTrack">Morocco holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/europe/croatia/holidays-croatia.html" class="ensLinkTrack">Croatia holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/europe/greece/holidays-greece.html" class="ensLinkTrack">Greece holidays</a></li>
+								</ul>
+								<ul>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/europe/malta/holidays-malta.html" class="ensLinkTrack">Malta holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/europe/bulgaria/holidays-bulgaria.html" class="ensLinkTrack">Bulgaria holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/destinations/europe/italy/holidays-italy.html" class="ensLinkTrack">Italy holidays</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/editorial/features/canary-islands-holidays.html" class="ensLinkTrack">Canary Islands holidays</a></li>
+								</ul>
+							</div>
+							<div id="flightsTo" class="menu" style="display:none">
+								<ul>
+									<li><a target="_blank" href="http://www.thomson.co.uk/flights/destinations/europe/spain/tenerife/tenerife-airport/tenerife-flights.html" class="ensLinkTrack">Tenerife</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/flights/destinations/europe/cyprus/larnaca-region/larnaca-airport/larnaca-flights.html" class="ensLinkTrack">Cyprus</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/flights/destinations/europe/spain/ibiza/ibiza-airport/ibiza-flights.html" class="ensLinkTrack">Ibiza</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/flights/destinations/europe/turkey/turkey-bodrum/bodrum-airport/bodrum-flights.html" class="ensLinkTrack">Bodrum</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/flights/destinations/europe/spain/menorca/menorca-flights.html" class="ensLinkTrack">Menorca</a></li>
+								</ul>
+								<ul>
+									<li><a target="_blank" href="http://www.thomson.co.uk/flights/destinations/the-americas/united-states-of-america/florida/orlando-sanford-airport/orlando-sanford-flights.html" class="ensLinkTrack">Florida</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/flights/destinations/europe/spain/costa-blanca/alicante-airport/alicante-flights.html" class="ensLinkTrack">Alicante</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/flights/destinations/europe/portugal/algarve/faro-airport/faro-flights.html" class="ensLinkTrack">Faro</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/flights/destinations/africa/morocco/morocco-marrakech/marrakech-airport/marrakech-flights.html" class="ensLinkTrack">Marrakech</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/flights/destinations/europe/greece/kefalonia/kefalonia-airport/kefalonia-flights.html" class="ensLinkTrack">Kefalonia</a></li>
+								</ul>
+								<ul>
+									<li><a target="_blank" href="http://www.thomson.co.uk/flights/destinations/europe/spain/costa-del-sol/malaga-airport/malaga-flights.html" class="ensLinkTrack">Malaga</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/flights/destinations/europe/spain/lanzarote/lanzarote-flights.html" class="ensLinkTrack">Lanzarote</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/flights/destinations/europe/spain/majorca/palma-airport/palma-flights.html" class="ensLinkTrack">Majorca</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/flights/destinations/europe/greece/corfu/corfu-airport/corfu-flights.html" class="ensLinkTrack">Corfu</a></li>
+									<li><a target="_blank" href="http://www.thomson.co.uk/flights/destinations/africa/egypt/egypt-red-sea/sharm-el-sheikh-airport/sharm-el-sheikh-flights.html" class="ensLinkTrack">Sharm El Sheikh</a></li>
+								</ul>
+							</div>
+						</div>
+					</div></div>
+				</div>
+			<div id="footer">
+				<ul>
+					<li><a target="_blank" href="http://communicationcentre.thomson.co.uk/" class="ensLinkTrack">Communications Centre</a></li>
+					<li><a target="_blank" href="http://www.tuitraveljobs.co.uk/" class="ensLinkTrack">Travel Jobs</a></li>
+					<li><a target="_blank" href="http://www.thomson.co.uk/partners/thomson-affiliate-programme.html" class="ensLinkTrack">Affiliates</a></li>
+					<li><a target="_blank" href="http://www.thomson.co.uk/mythomson/" class="ensLinkTrack">My Thomson</a></li>
+					<li><a target="_blank" href="http://www.thomson.co.uk/blog/" class="ensLinkTrack">Thomson Blog</a></li>
+				</ul>
+				<ul>
+					<li>© 2014 <a target="_blank" href="http://www.tuitravelplc.com/" class="ensLinkTrack">TUI Travel plc</a></li>
+					<li><a target="_blank" href="http://www.thomson.co.uk/editorial/legal/about-thomson.html" class="ensLinkTrack">About Thomson</a></li>
+					<li><a target="_blank" href="http://www.thomson.co.uk/editorial/legal/website-terms-and-conditions.html" class="ensLinkTrack">Terms &amp; Conditions</a></li>
+					<li><a target="_blank" href="http://www.thomson.co.uk/" class="ensLinkTrack">Accessibility</a></li>
+					<li><a target="_blank" href="http://www.thomson.co.uk/editorial/legal/privacy-policy.html" class="ensLinkTrack">Privacy Policy</a></li>
+					<li><a target="_blank" href="http://www.thomson.co.uk/editorial/legal/statement-on-cookies.html" class="ensLinkTrack">Statement on Cookies</a></li>
+					<li><a target="_blank" href="http://www.thomson.co.uk/destinations/sitemap/site-map.html" class="ensLinkTrack">Site Map</a></li>
+				</ul>
+				<p><span>Many of the flights and flight-inclusive holidays on this 
+website are financially protected by the ATOL scheme. But ATOL 
+protection does not apply to all holiday and travel services listed on 
+this website. Please ask us to confirm what protection may apply to your
+ booking. If you do not receive an ATOL Certificate then the booking 
+will not be ATOL protected. If you do receive an ATOL Certificate but 
+all the parts of your trip are not listed on it, those parts will not be
+ ATOL protected. Please see our booking conditions for information or 
+for more information about financial protection and the ATOL Certificate
+ go to:<span class="apple-converted-space">&nbsp;</span></span><span style="font-family: TUIType, sans-serif;"><a target="_blank" href="http://www.atol.org.uk/ATOLCertificate"><span style="font-size: 8.5pt; color: rgb(102, 102, 102);">www.atol.org.uk/ATOLCertificate</span></a></span>&nbsp;</p>
+
+			
+			<script type="text/javascript">
+				 var tui = {};
+				 tui.analytics = {};
+				 tui.analytics.page = {};
+				 tui.analytics.sessionID = "F44AB73867829F2A09C057F453B40ADC.iscapecommonpaymentserverp86a";
+				 tui.analytics.page.pageUid = "paymentDetailsPage";
+				 
+					 
+					 tui.analytics.page.AltFlt = "null";
+				    
+			    
+					 
+					 tui.analytics.page.Disc = "84";
+				    
+			    
+					 
+					 tui.analytics.page.chkTuiMarketingAllowed = "false";
+				    
+			    
+					 
+					 tui.analytics.page.MinPay = "2900";
+				    
+			    
+					 
+			    
+					 
+					 tui.analytics.page.Sum = "2900";
+				    
+			    
+					 
+					 tui.analytics.page.LowDep = "No";
+				    
+			    
+					 
+					 tui.analytics.page.communicateByEmail = "false";
+				    
+			    
+					 
+					 tui.analytics.page.chkThirdPartyMarketingAllowed = "false";
+				    
+			    
+					 
+					 tui.analytics.page.communicateByPost = "false";
+				    
+			    
+					 
+					 tui.analytics.page.RmSlt = "Twin room without balcony|0|";
+				    
+			    
+					 
+			    
+					 
+					 tui.analytics.page.DepAir = "LGW";
+				    
+			    
+					 
+					 tui.analytics.page.Board = "HB";
+				    
+			    
+					 
+					 tui.analytics.page.carrier = "TOM|TOM";
+				    
+			    
+					 
+			    
+					 
+					 tui.analytics.page.SubProd = "C";
+				    
+			    
+					 
+					 tui.analytics.page.LimAvB = "null";
+				    
+			    
+					 
+					 tui.analytics.page.DepDate = "26";
+				    
+			    
+					 
+					 tui.analytics.page.Party = "R1-A2/C0/I0";
+				    
+			    
+					 
+					 tui.analytics.page.TuiAnc = "WCF|2|2-TXX|2|60";
+				    
+			    
+					 
+					 tui.analytics.page.DreamFl = "No";
+				    
+			    
+					 
+					 tui.analytics.page.Pax = "2";
+				    
+			    
+					 
+					 tui.analytics.page.MonthYear = "06/2015";
+				    
+			    
+					 
+					 tui.analytics.page.WhereTo = "H002615";
+				    
+			    
+					 
+			    
+					 
+					 tui.analytics.page.Dur = "7";
+				    
+			    
+					 
+			    
+					 
+			    
+					 
+					 tui.analytics.page.FltInv = "TRACS";
+				    
+			    
+					 
+					 tui.analytics.page.communicateByPhone = "false";
+				    
+			    
+				</script>
+			</div>
+		<!-- </body>
+		</html> -->
+	<div id="overlay" class="posFix"></div>
+		<form novalidate="" name="postPaymentForm" method="post">
+		<input name="emptyForm" class="disNone" type="hidden">
+	</form>
+
+<iframe style="display: none;" src="Thomson%20_%20Payment%20Details_files/a.htm" height="1px" width="1px"></iframe>
+<script type="text/javascript">
+$(document).ready(function() {
+    
+    $( "#xgiftcardType" ).click(function( event ) {
+ 
+        alert( "As you can see, the link no longer took you to jquery.com" );
+ 
+        event.preventDefault();
+ 
+    });
+ 
+});
+</script>
+</body>
+</html>

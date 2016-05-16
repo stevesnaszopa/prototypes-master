@@ -1,0 +1,31 @@
+= render "demo_details"
+- @pagetitle = 'Manage Lending || My Zopa'
+- content_for :mainnav do
+  = render "mainnav"
+- content_for :subnav do
+  = render "subnav", locals: {active_nav: "manage"}
+.section
+  %div
+    #transfer_money_in
+      %div
+        -#= flash_notice :money_in_notice, "success box info"
+        %h2 Transfers into Zopa
+        %p.intro Money that's transferred in will be lent out in the default accounts you select.
+        #transfer-to-standard
+          = render partial: "transfer_into_zopa", locals: {account: :standard}
+        - if @isa_enabled == "true"
+          %div
+            = render partial: "transfer_into_zopa", locals: {account: :isa}
+        -#%div
+          = render partial: "default_account", locals: {products: @products}
+.section
+  %div
+    #transfer_money_out
+      -#%div
+        = flash_notice :offer_relending_toggle, "success info box"
+        %h2 Get money out of Zopa
+        %p.intro Transfer money that's tied up in loans into your holding account. You can then withdraw to your bank or lend in a different product.
+        %div
+          = render partial: "lender_manage_lending/relending/relending_settings", locals: {products: @products}
+        %div
+          = render partial: "lender_manage_lending/rapid_return/sell_loans", locals: {products: @products}

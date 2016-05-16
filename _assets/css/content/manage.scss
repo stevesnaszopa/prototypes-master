@@ -1,0 +1,8 @@
+@import "variables";
+
+.hint{
+  &.smallprint{
+    background-color:$color-background!important;
+    background-color:transparent!important;
+  }
+}

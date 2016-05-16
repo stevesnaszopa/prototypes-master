@@ -1,0 +1,217 @@
+<% @bodyclass = 'has-hero' %>
+
+<% content_for :styles do %>
+  <%= stylesheet_link_tag "apr_select" %>
+<% end %>
+
+<div class="hero section">
+  <div class="group">
+    <h1>Zopa loans</h1>
+    <p class="intro">
+      Zopa offers low rate loans with no early repayment fees.</p>
+
+    <form action="/borrow" method="get" id="loan-calculator">
+      <fieldset id="slider_calc" class="multi-options" data-loan-size="10000" data-loan-term="60" data-loan-market="A*">
+        <h3>
+          <span>I want to get a loan for</span>
+
+          <span class="">£<input class="borrow-amount validate[custom[integer],min[1000],max[25000],]" type="number" value="10000" data-maxlength="5" step="100" min="1000" max="25000" name="amount" id="amount" data-trackinglabel="Amount" title="Amount" /></span>
+        </h3>
+
+        <input type="hidden" name="zp_source" value="referrer-organic" />
+
+        <script type="text/html" data-inline="true">
+          <div class="slider-container">
+            <button class="decrease round" data-trackinglabel="Amount (decrease)" type="button" title="Decrease amount" aria-controls="slider_calc_results amount amount-slider">-</button>
+            <input class="range-slider" data-trackinglabel="Amount (slider)" title="Amount" id="amount-slider" type="range" min="1000" max="25000" step="100" aria-controls="slider_calc_results amount" aria-live="polite" />
+            <button class="increase round" data-trackinglabel="Amount (increase)" type="button" title="Increase amount" aria-controls="slider_calc_results amount amount-slider">+</button>
+          </div>
+        </script>
+
+
+        <div class="sentences-results content group" id="slider_calc_results">
+          <p>
+            Which credit rating sounds most like you?
+          </p>
+
+          <p class="hint">
+            Your quote will depend on your circumstances.</br>
+            The following gives you a better indication of the rates we can offer.
+          </p>
+
+          <ul class="nav-tabs v2 group">
+            <li class="active">
+              <span>
+                <a href="#excellent_tab_content">Excellent</a>
+                <span class="tooltip">
+                  <span class="center">
+                    <ul>
+                      <li>Many years of credit history</li>
+                      <li>Never missed a payment</li>
+                      <li>Three or fewer loans in the last two years</li>
+                    </ul>
+                  </span>
+                </span>
+              </span>
+            </li>
+            <li>
+              <span>
+                <a href="#good_tab_content">Good</a>
+                <span class="tooltip">
+                  <span class="center">
+                    <ul>
+                      <li>A few years of credit history</li>
+                      <li>May have missed a payment recently</li>
+                      <li>May have defaulted several years ago</li>
+                    </ul>
+                  </span>
+                </span>
+              </span>
+
+            </li>
+            <li>
+              <span>
+                <a href="#fair_tab_content">Fair</a>
+                <span class="tooltip">
+                  <span class="right">
+                    <ul>
+                      <li>Limited credit history</li>
+                      <li>May have missed a payment</li>
+                      <li>May have been turned down for credit in the past</li>
+                      <li>May have defaulted several years ago</li>
+                    </ul>
+                  </span>
+                </span>
+              </span>
+            </li>
+            <li>
+              <span>
+                <a href="#faq_tab_content">Unsure</a>
+                <span class="tooltip">
+                  <span class="right">
+                    <p>Not sure about your rating? No problem.</p>
+
+                    <p>These are our representative rates. </p>
+
+                    <p>Get a free personalised quote in minutes - this won't impact your credit score.</p>
+                  </span>
+                </span>
+              </span>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div id="excellent_tab_content" class="tab-pane group active">
+
+              <%= render 'quote_terms', locals: { name: :excellent, values: [
+                                        {term: '1 year',  apr: '3.9%', cost: '859.67' },
+                                        {term: '2 years', apr: '2.9%', cost: '433.67' },
+                                        {term: '3 years', apr: '2.9%', cost: '294.66' },
+                                        {term: '4 years', apr: '3.8%', cost: '229.18' },
+                                        {term: '5 years', apr: '3.8%', cost: '187.21' }],
+                                                  rep_apr: { loan: '#7,500',
+                                                             term: '5 Years',
+                                                             cost: '£150',
+                                                             apr: '3.9%',
+                                                             total_cost: '£9,044',
+                                                             interest: '£1,404',
+                                                             interest_rate: '7.1%',
+                                                             fee: '£140',
+                                                             total_credit: '£7,640' }}%>
+            </div>
+
+            <div id="good_tab_content" class="tab-pane group">
+
+              <%= render 'quote_terms', locals: { name: :good, values: [
+                                        {term: '1 year',  apr: '4.2%', cost: '959.25' },
+                                        {term: '2 years', apr: '3.3%', cost: '633.53' },
+                                        {term: '3 years', apr: '3.5%', cost: '394.37' },
+                                        {term: '4 years', apr: '4.6%', cost: '299.23' },
+                                        {term: '5 years', apr: '3.7%', cost: '247.87' }],
+                                                  rep_apr: { loan: '#7,500',
+                                                             term: '5 Years',
+                                                             cost: '£255',
+                                                             apr: '5.8%',
+                                                             total_cost: '£10,554',
+                                                             interest: '£1,866',
+                                                             interest_rate: '5.3%',
+                                                             fee: '£200',
+                                                             total_credit: '£11,540' }}%>
+
+            </div>
+
+            <div id="fair_tab_content" class="tab-pane group">
+              <%= render 'quote_terms', locals: { name: :fair, values: [
+                                        {term: '1 year',  apr: '9.1%', cost: '959.54' },
+                                        {term: '2 years', apr: '8.2%', cost: '833.65' },
+                                        {term: '3 years', apr: '8.4%', cost: '594.26' },
+                                        {term: '4 years', apr: '7.5%', cost: '629.54' },
+                                        {term: '5 years', apr: '9.6%', cost: '487.99' }],
+                                                  rep_apr: { loan: '#7,500',
+                                                             term: '5 Years',
+                                                             cost: '£499',
+                                                             apr: '8.4%',
+                                                             total_cost: '£13,044',
+                                                             interest: '£2,404',
+                                                             interest_rate: '8.0%',
+                                                             fee: '£500',
+                                                             total_credit: '£14,330' }} %>
+            </div>
+
+            <div id="faq_tab_content" class="tab-pane group">
+
+              <%= render 'quote_terms', locals: { name: :unsure, values: [
+                                        {term: '1 year',  apr: '7.3%', cost: '939.54' },
+                                        {term: '2 years', apr: '5.4%', cost: '823.65' },
+                                        {term: '3 years', apr: '6.3%', cost: '544.56' },
+                                        {term: '4 years', apr: '7.2%', cost: '659.44' },
+                                        {term: '5 years', apr: '5.5%', cost: '486.29' }],
+                                                  rep_apr: { loan: '#7,500',
+                                                             term: '5 Years',
+                                                             cost: '£449',
+                                                             apr: '7.6%',
+                                                             total_cost: '£23,044',
+                                                             interest: '£2,304',
+                                                             interest_rate: '8.2%',
+                                                             fee: '£505',
+                                                             total_credit: '£15,330' }} %>
+
+            </div>
+
+          </div>
+        </div>
+
+      </fieldset>
+
+    </form>
+  </div>
+</div>
+
+
+<style>
+  html {
+    background-color: white;
+    font: 100%/1.28 "Open Sans",Arial,sans-serif;
+    overflow-x: auto;
+    overflow-y: scroll;
+  }
+
+  body {
+    background-image: url("background_loans.jpg");
+  }
+  @media screen{#loan-calculator{position:relative}#loan-calculator fieldset h3{margin:-.1em 0;font-weight:normal;font-size:1.6em}#loan-calculator fieldset h3 input.borrow-amount,#loan-calculator fieldset h3 select{margin-bottom:.25em}#loan-calculator fieldset h3 input.borrow-amount{width:4em;padding:0 .1em;margin-left:.1em}#loan-calculator fieldset h3 input.button{font-size:1.5em}#loan-calculator fieldset h3 select{width:auto;padding:0}#loan-calculator fieldset h3 .caption{color:#87847a}#loan-calculator fieldset h3 .hint{display:inline-block;line-height:1.1}#loan-calculator .loan-input{display:block;margin-top:0.2em;margin-bottom:0.2em}#loan-calculator .intro{font-size:1.2em}#loan-calculator abbr{border-bottom-width:0}#loan-calculator fieldset .content,#loan-calculator .box .content{background-color:#fff;border-radius:4px;padding:0.71em;position:relative}#loan-calculator fieldset{padding-left:.9em;padding-right:.9em}.dynamic.one_year span.plural{display:none}#loan-calculator .content .intro{color:#736357}#loan-calculator .simple-results .paragraph-group{float:left}#loan-calculator .simple-results input.button{margin-top:0.4em;margin-bottom:0.4em}#loan-calculator .caption{margin:.5em 0 -.21em;clear:both}.slider-container{position:relative;padding:0 30px 10px 30px}.slider-container .decrease,.slider-container .increase{position:absolute;border:none;top:5px;background:none;color:#444034;font-weight:bold;font-size:2em;width:30px;height:30px;padding:0;line-height:1;box-shadow:none}.slider-container .decrease{left:0}.slider-container .increase{right:0}.slider-container .decrease:active,.slider-container .increase:active,.slider-container .decrease:focus,.slider-container .increase:focus{background-color:#EAF6FC}.slider-container .range-slider{-webkit-appearance:none;background-color:#E1F2FB;background-color:rgba(255,255,255,0.3);border:0 none;box-shadow:none;padding:0 10px;width:100%;height:45px;cursor:pointer}.slider-container .range-slider:focus{outline:none;background-color:#EAF6FC;background-color:rgba(255,255,255,0.5)}.slider-container .range-slider::-webkit-slider-runnable-track{-webkit-appearance:none;height:7px;background-color:#A3A1A1;border-radius:3px;box-shadow:inset 2px 2px 2px 0px rgba(0,0,0,0.5),0px 1px 0px 1px rgba(255,255,255,0.5)}.slider-container .range-slider::-webkit-slider-thumb{-webkit-appearance:none;margin-top:-18px;box-shadow:inset 1px 1px 1px 0px rgba(255,255,255,0.5),2px 2px 2px 0px rgba(0,0,0,0.5);background:#2aa1df url('/_assets/img/content/slider-pound-sign.png') no-repeat center;width:38.25px;height:38.25px;border-radius:50%;border:none;cursor:pointer}.slider-container .range-slider:focus::-webkit-slider-runnable-track{background-color:#A3A1A1}.slider-container .range-slider::-moz-range-track{width:100%;height:7px;background-color:#A3A1A1;border-radius:3px;box-shadow:inset 2px 2px 2px 0px rgba(0,0,0,0.5),0px 1px 0px 1px rgba(255,255,255,0.5)}.slider-container .range-slider::-moz-range-thumb{box-shadow:inset 1px 1px 1px 0px rgba(255,255,255,0.5),2px 2px 2px 0px rgba(0,0,0,0.5);background:#2aa1df url('/_assets/img/content/slider-pound-sign.png') no-repeat center;width:38.25px;height:38.25px;border-radius:50%;border:none;cursor:pointer}.slider-container .range-slider::-moz-focusring{outline:1px solid white;outline-offset:-1px}.slider-container .range-slider::-ms-track{width:100%;height:45px;background-color:transparent;border:none;border-radius:3px;overflow:visible;color:transparent}.slider-container .range-slider::-ms-fill-lower{outline:none;background-color:#b8bc09;height:7px;border-radius:3px}.slider-container .range-slider::-ms-fill-upper{outline:none;background-color:#A3A1A1;height:7px;border-radius:3px}.slider-container .range-slider::-ms-thumb{box-shadow:inset 1px 1px 1px 0px rgba(255,255,255,0.5),2px 2px 2px 0px rgba(0,0,0,0.5);background:#2aa1df url('/_assets/img/content/slider-pound-sign.png') no-repeat center;width:38.25px;height:38.25px;border-radius:50%;border:none;cursor:pointer}.slider-container .rangeslider{width:auto;height:45px;background-color:#E1F2FB;background-color:rgba(255,255,255,0.3);border-radius:3px;position:relative;padding:0}.slider-container .rangeslider .rangeslider__fill{height:7px;top:18.75px;background-color:#b8bc09;position:relative;margin-left:10px;border-radius:3px;box-shadow:inset 2px 2px 2px 0px rgba(0,0,0,0.5),0px 1px 0px 1px rgba(255,255,255,0.5);z-index:9}.slider-container .rangeslider:after{position:absolute;display:block;content:'';left:0;width:auto;height:7px;top:11.25px;background-color:#A3A1A1;position:relative;margin-right:10px;margin-left:10px;border-radius:3px;box-shadow:inset 2px 2px 2px 0px rgba(0,0,0,0.5),0px 1px 0px 1px rgba(255,255,255,0.5);z-index:5}.slider-container .rangeslider .rangeslider__handle{top:0;position:absolute;box-shadow:inset 1px 1px 1px 0px rgba(255,255,255,0.5),2px 2px 2px 0px rgba(0,0,0,0.5);background:#2aa1df url('/_assets/img/content/slider-pound-sign.png') no-repeat center;width:38.25px;height:38.25px;border-radius:50%;border:none;cursor:pointer;z-index:10}#slider_calc table{margin-left:auto;margin-right:auto;vertical-align:middle;width:100%}#slider_calc.multi-options{text-align:center}#slider_calc.multi-options table th,#slider_calc.multi-options table td{vertical-align:middle;text-align:center;padding-right:0}#slider_calc.multi-options table td{border:0}#slider_calc.multi-options table tr{cursor:pointer}#slider_calc.multi-options table tr label{min-width:3.5em;text-align:left;padding-left:.2em}#slider_calc.multi-options table tr.selected{background:#E8E9B1;color:#000}#slider_calc.multi-options table td:first-child{padding-left:1em;border-radius:1em 0 0 1em;min-width:4.8em}#slider_calc.multi-options table td:last-child{padding-right:1em;border-radius:0 1em 1em 0}#slider_calc.multi-options .radiocheck input[type=radio]+label:before{top:5px}#slider_calc.multi-options .radiocheck input[type=radio]+label:after{top:12px}}
+
+  .rep-apr {
+    /*text-align: left;*/
+  }
+
+  #loan-calculator fieldset .rep-apr h3 {
+    font-size: 1.25em;
+    margin: 1.25rem 0 0.625rem;
+  }
+
+  .faq dt {
+    display: block;
+    width: 100%;
+  }
+  .nav-tabs
+</style>

@@ -1,0 +1,116 @@
+@media print {
+
+body {
+  font: normal 87.5%/1.28 $font-text;
+  background-color: #fff;
+  color: #000;
+}
+
+#header .nav,
+#header .meta,
+#footer > div > div,
+#footer .social,
+.cookieNotice,
+.a11y,
+ul.nav-tabs,
+form,
+audio,
+video,
+.illustration {
+  display: none;
+}
+
+span.print {
+  display: inline;
+}
+
+#header .logo img {
+  width: 122px;
+  height: auto;
+}
+
+#footer {
+  margin-top: 1.5em;
+  border-top: 1px solid #999;
+  padding-top: .5em;
+  font-size: 80%;
+  color: #999;
+}
+
+ol.terms ol {
+  list-style-type: decimal;
+}
+
+img {
+  border-width: 0;
+  vertical-align: middle;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  clear: both;
+}
+
+th {
+  text-align: left;
+}
+
+mark {
+  font-weight: 600;
+}
+
+.data {
+  border: 2px solid #aaa;
+  border-radius: 0.14em;
+  padding: 0.35em;
+  font-weight: normal;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a:link,
+a:visited {
+  text-decoration: underline;
+  color: #333; /* §colour */
+  background-color: inherit;
+}
+
+a[href*="\://"]:after,
+a[href^=mailto]:after,
+acronym[title]:after,
+abbr[title]:after {
+  color: #666; /* §colour */
+  font-size: .8em;
+}
+a[href*="\://"]:after {
+  content: " ["attr(href)"]";
+}
+a[href^=mailto]:after {
+  content: " <"attr(href)">";
+}
+acronym[title]:after,
+abbr[title]:after {
+  content: " ("attr(title)")";
+}
+
+/*____________ columns (only for plain layouts) ____________*/
+
+.plain .row {
+  .col {
+    width: 48%;
+    margin-left: 4%;
+    float: left;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .col:first-child {
+    margin-left: 0;
+  }
+}
+
+} /* /@media */

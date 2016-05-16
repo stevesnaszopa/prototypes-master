@@ -1,0 +1,1426 @@
+<div class="hero section">
+  <div>
+
+    <h1>Zopa style guide</h1>
+
+    <p class="intro">This style guide shows all basic styling and common components of Zopa's website and guidelines when and how to use them. (Most pages should start with an introduction text like this.)</p>
+
+    <ul class="toc">
+      <li><a href="#text">Text and headings</a></li>
+      <li><a href="#lists">Lists</a></li>
+      <li><a href="#images">Images</a></li>
+      <li><a href="#tables">Tables</a></li>
+      <li><a href="#boxes">Boxes</a></li>
+      <li><a href="#colours">Colours</a></li>
+      <li><a href="#layout">Layout helpers</a></li>
+      <li><a href="#form">Forms</a></li>
+      <li><a href="#misc">Misc</a></li>
+    </ul>
+
+  </div>
+</div>
+
+
+<!-- text -->
+<div class="section" id="text">
+  <div>
+
+    <h2>Text and headings</h2>
+
+    <p>
+      Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the <a href="#">blind texts</a>. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life.
+    </p>
+    <p>
+      One day however a small line of <strong>blind text</strong> by the name of Lorem Ipsum decided to leave for the far World of Grammar.
+    </p>
+
+    <h3>Example heading</h3>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+
+    <h4>Subheading</h4>
+
+    <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way. On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
+
+    <p>But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their projects again and again. And if she hasn’t been rewritten, then they are still using her.</p>
+
+    <hr />
+
+    <blockquote class="pullquote right" style="width: 20em;">
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
+      <cite>Someone said that</cite>
+    </blockquote>
+
+    <h5>Heading level 5 (should not be used)</h5>
+    <p>As soon as you go down to level 5, it's often a clue that something in your page is not quite right.</p>
+
+    <h6>The last possible heading level (should not be used)</h6>
+    <p>It still makes sense to style all levels, in case they get used.</p>
+
+    <p>This text is <em>emphasized</em>, <strong>strongly emphasized</strong>, a <code>source code</code>, <abbr title="for example">e.g.</abbr> an abbreviation and a <q cite="http://en.wikipedia.org/wiki/Quotation">quotation</q>. Then there is also a <a href="#">link</a>, <sub>sub</sub> and <sup>sup</sup>.</p>
+
+
+    <h3>Text classes</h3>
+
+    <p class="hint">This is a hint, which lets the text appear a bit subtler and subdued.</p>
+    <pre class="example">&lt;p class=&quot;hint&quot;&gt;...</pre>
+
+    <p class="more"><a href="http://www.zopa.com/">More about Zopa</a></p>
+<pre class="example">
+&lt;p class=&quot;more&quot;&gt;&lt;a...
+<strong>or</strong>
+&lt;p&gt;&lt;a class=&quot;more&quot;...
+</pre>
+
+    <h4>Endorsement section (as below the example)</h4>
+    <p>(Built with the help of <a href="#layout">layout helpers</a>.)</p>
+
+<pre class="example">
+&lt;div class=&quot;endorsement section&quot;&gt;
+  &lt;div&gt;
+    &lt;h2&gt;&lt;span&gt;What someone said&lt;/span&gt;&lt;/h2&gt;
+    &lt;div class=&quot;row group&quot;&gt;
+      &lt;div class=&quot;logo col third1&quot;&gt;
+        &lt;img src=&quot;...&quot; width=&quot;120&quot; height=&quot;60&quot; alt=&quot;&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;col third2&quot;&gt;
+        &lt;blockquote&gt;
+          &lt;p&gt;“...”&lt;/p&gt;
+          &lt;cite&gt;...&lt;/cite&gt;
+        &lt;/blockquote&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+    <p class="hint">Note: Remove <code>blockquote</code> and <code>cite</code> if you're not quoting someone.</p>
+
+  </div>
+</div>
+
+
+<div class="endorsement section">
+  <div>
+    <h2><span>What someone said</span></h2>
+    <div class="row group">
+      <div class="logo col third1">
+        <img src="http://placekitten.com/120/60" width="120" height="60" alt="" />
+      </div>
+      <div class="col third2">
+        <blockquote>
+          <p>“Epë at tanga salmë aratar, ai yat ettë yulda orofarnë, oa ara silma tengwo nahamna. Cé núr mëoi calacaltasisílafaina, ría na lappa lindë maquetta.”</p>
+          <cite>Someone clever (1789)</cite>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- lists -->
+<div class="section" id="lists">
+  <div>
+
+    <h2>Lists</h2>
+
+    <h3>Unordered list</h3>
+    <ul>
+      <li>Celayur voronwë ré yén. Ai fion telco tar, hat hlar rauko ná, lucië tasar milya nac ná. Heru arnanor car sú. Up nal root ilca lindë, us oli metta latin rempa, pé lëo alqua métima onótima. Salmë yalúmëa wán sí, teren naitya tellaurë cú cor, ep táp píca moina. Ataquë nostalë ata cé, valda manwa tuv as. Engë haloitë tengwelë mi lor, car an quén hyóla hísië. Már entarda valinor ai, pio oi tárië foina, ataquë mornië caimassë vén tó.</li>
+      <li>Hap oa vírë laito haloitë. Úil cu sanga nalda.
+        <ul>
+          <li>Cíla viltë marda vén en, ter sarnë engwa ar. Net nulda calta sá. Lin nú lambë ambalë, cú calpa hlonítë avatyara yén.</li>
+        </ul>
+      </li>
+      <li>Lia oa cotë yúyo amorta, yávë hesta na nóa. Sú ollo tárë saura núr, tyávë foina né lis.</li>
+    </ul>
+
+    <h3>Ordered list</h3>
+    <ol>
+      <li>Rata taima nimba oi cil. Tundo atacar hyarmenya yúl mí. Málo tengwanda óla nó. Lauta metta silma tur oa, mól faina roina vi.</li>
+      <li>Nixë suhto andamunda órë oa. Mí mól occo naraca. Vai ar ambo arca alatúvëaúra. Lá tië palla foina terenë. Línë milya nor nó, or hón hahta aratar. Úil ar findë halya laurëa, hat hanta palmë foina ar. Assa tengwo sú hui, yén mear inqua taniquelassë lá.
+        <ol>
+          <li>Aru hérë tasar sí, ná man soron amorta. Isqua leuca nainanyéna har ta, astar rauko voronwë or nún, venë tanga ananta árë má. Rië lá aica nurmë. Root raita cumna fas ná, téra marda varnë cé oia. Col erya méla teletelya oi, anna linga or tér, oi limbë mardo rip. Hui uë minya caimasan, en aru telpë nalanta. Heru goneheca carcassë ma ava.</li>
+        </ol>
+      </li>
+      <li>Ilu nú lápa ambalë, harë nostalë tó mel, raxë moina rá sië. Hahta pitya má eru, pio sá hísië vëaner. Lindë ambarmetta vá net. Ar nóa astar isqua, vi cil tyávë sanda timpinen. Tyávë calta cu fëa, cua be ollo celë roina.</li>
+    </ol>
+
+    <h3>Definition list</h3>
+    <dl>
+      <dt>Ar órë hamba ataqua</dt>
+      <dd>Yén us harna nostalë tengwanda, vén sívë tengwanda tó, cu mitta wilwarin nún. Or sín rauko tasar ronyo, avá limbë aratar an.</dd>
+
+      <dt>Lau tó felmë sarnë enyárë</dt>
+      <dd>Tumna mornië vi llo, ainu yernacolla mól sa, oa apa aiwë racinë haltacapa. Valdë calpa nú yúl, up ela eques ataqua. Lú raxë armar tacil úvë, ta mantil simpetar artaquetta nië, sú tëa vairë lingwë artaquetta. War hlar aicassë us, en nírë fion antorya yat. Rië anna úcarë isqua et, valinor lindelëa ohtatyaro sai ve. Lívë aldëon ma túr, áva tó viltë mírëa linwelë. Oro hesta leryalehtya us, lia sú linga tanga yulma.</dd>
+      <dd>Cú turma ataquë aro, nór sívë cumna us, nér ma méla enga telta.</dd>
+    </dl>
+
+    <h3>Ticked list</h3>
+    <ul class="ticked">
+      <li>Pé linwelë hlonítë lië, urúva almien yalúmëa pé tië.</li>
+      <li>Be rotelë hwarma tol, sáma ainu viltë ma áva, centa palúrë úr rië. Sairon avatyara hui us, orva nurmë latin ta vië. Ondo eteminya lindelëa avá pé. Nu fui vaxë hravan.</li>
+      <li>Yen at occo inyo laira, nolya nonwa car us, lor lanwa namna aiquen tó.</li>
+    </ul>
+    <pre class="example">&lt;ul class=&quot;ticked&quot;&gt;...</pre>
+
+    <h3>Crossed list</h3>
+    <ul class="crossed">
+      <li>Áva harë laicë yá. Varta vairë elendë nú nár. Nonwa omentië sá órë. É aru hlonítë teletelya. Ruc aini omentië lindelëa as, tanga ontarë ré axa, axo engwa rambë ciryapanda ta.</li>
+      <li>Caw et terca vacco nurtalom, rá mir raxë luhta orosta, sundo nyéni ela cú.</li>
+      <li>Queni nahamna tó fëa, qua alqua torma an. Or can yanen hamba, heru histë lasta lor uë, talta poica en fui. Ava to telco atacar, lindë mantil mir pé.</li>
+    </ul>
+    <pre class="example">&lt;ul class=&quot;crossed&quot;&gt;...</pre>
+
+    <h3>Link list</h3>
+    <ul class="linklist">
+      <li><a href="http://www.zopa.com/">Zopa homepage</a></li>
+      <li><a href="http://www.zopa.com/styleguide">Link to this style guide</a></li>
+      <li><a href="http://google.co.uk/" rel="external" target="_blank" title="opens in a new window">Google</a></li>
+    </ul>
+    <pre class="example">&lt;ul class=&quot;linklist&quot;&gt;...</pre>
+
+    <h3>Big numbers</h3>
+    <div class="numbered">
+      <h2><strong>1</strong><span class="a11y print">. </span>This is not a list</h2>
+      <p>This appears to be a list, but it isn't.</p>
+    </div>
+    <div class="numbered info box">
+      <h2><strong>2</strong><span class="a11y print">. </span>Combine it</h2>
+      <p>This can be combined with boxes or with fieldsets.</p>
+    </div>
+
+<pre class="example">
+&lt;div class=&quot;numbered&quot;&gt;
+  &lt;!-- use e.g. &quot;numbered info box&quot; for a list of info boxes --&gt;
+
+  &lt;h2&gt;&lt;strong&gt;1&lt;/strong&gt;&lt;span class=&quot;a11y print&quot;&gt;. &lt;/span&gt;This is not a list&lt;/h2&gt;
+  &lt;p&gt;This appears to be a list, but it isn't.&lt;/p&gt;
+
+  &lt;h2&gt;&lt;strong&gt;2&lt;/strong&gt;&lt;span class=&quot;a11y print&quot;&gt;. &lt;/span&gt;Combine it&lt;/h2&gt;
+  &lt;p&gt;This can be combined with boxes or with fieldsets.&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+
+  </div>
+</div>
+
+
+<!-- images -->
+<div class="section" id="images">
+  <div>
+    <h2>Images</h2>
+
+    <p>
+      <img src="http://placekitten.com/480/300" width="480" height="300" alt="" />
+    </p>
+
+    <p>
+      <img src="http://placekitten.com/200/150" class="right" width="200" height="150" alt="" />
+      Images use rather unsemantic <code>left</code> and <code>right</code> classes. Those classes shouldn't be misused and only used on media (images, videos, etc). They will also add some necessary spacing.
+    </p>
+
+    <p><img src="http://placekitten.com/101/150" class="left" width="101" height="150" alt="" /></p>
+
+    <p>
+      All images will lose their alignment in mobile view. Unless prevented, all image widths will automatically adjust to never be wider than their container.
+    </p>
+    <p>
+      Please remember to always add <code>width</code> and <code>height</code> parameters so that browsers can allocate space before loading the image. And you should also always add the <code>alt</code> parameter for accessibility reasons.
+    </p>
+  </div>
+</div>
+
+
+<!-- tables -->
+<div class="section" id="tables">
+  <div>
+    <h2>Tables</h2>
+
+    <p>You can mix most of the following table types.</p>
+
+    <h3>Standard table (with highlighted row)</h3>
+
+    <table>
+      <caption>Table caption</caption>
+      <thead>
+        <tr>
+          <th>Pizza type</th>
+          <th>Order number</th>
+          <th>Amount</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Pepperoni</th>
+          <td>P-13</td>
+          <td class="number">2</td>
+          <td class="number">3.50</td>
+        </tr>
+        <tr>
+          <th>Tuna</th>
+          <td>P-07</td>
+          <td class="number">1</td>
+          <td class="number">4.00</td>
+        </tr>
+        <tr>
+          <th>Chicken</th>
+          <td>P-42</td>
+          <td class="number">2</td>
+          <td class="number">4.50</td>
+        </tr>
+        <tr class="highlight">
+          <th colspan="2">Total</th>
+          <td class="number">5</td>
+          <td class="number">20.00</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><code>class=&quot;highlight&quot;</code> highlights either whole rows or single cells.<br /><code>class=&quot;number&quot;</code> aligns numbers in a cell on the right.</p>
+
+    <h3>Striped table</h3>
+
+    <table class="striped">
+      <thead>
+        <tr>
+          <th>Pizza type</th>
+          <th>Order number</th>
+          <th>Amount</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Pepperoni</th>
+          <td>P-13</td>
+          <td class="number">2</td>
+          <td class="number">3.50</td>
+        </tr>
+        <tr>
+          <th>Tuna</th>
+          <td>P-07</td>
+          <td class="number">1</td>
+          <td class="number">4.00</td>
+        </tr>
+        <tr>
+          <th>Chicken</th>
+          <td>P-42</td>
+          <td class="number">2</td>
+          <td class="number">4.50</td>
+        </tr>
+      </tbody>
+    </table>
+    <pre class="example">&lt;table class=&quot;striped&quot;&gt;...</pre>
+
+    <h3>Matrix table</h3>
+
+    <table class="matrix">
+      <thead>
+        <tr>
+          <td></td>
+          <th>Order number</th>
+          <th>Amount</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Pepperoni</th>
+          <td>P-13</td>
+          <td class="number">2</td>
+          <td class="number">3.50</td>
+        </tr>
+        <tr>
+          <th>Tuna</th>
+          <td>P-07</td>
+          <td class="number">1</td>
+          <td class="number">4.00</td>
+        </tr>
+        <tr>
+          <th>Chicken</th>
+          <td>P-42</td>
+          <td class="number">2</td>
+          <td class="number">4.50</td>
+        </tr>
+      </tbody>
+    </table>
+    <pre class="example">&lt;table class=&quot;matrix&quot;&gt;...</pre>
+
+    <h3>Rows table</h3>
+
+    <table class="rows">
+      <thead>
+        <tr>
+          <th>Pizza type</th>
+          <th>Order number</th>
+          <th>Amount</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Pepperoni</th>
+          <td>P-13</td>
+          <td class="number">2</td>
+          <td class="number">3.50</td>
+        </tr>
+        <tr>
+          <th>Tuna</th>
+          <td>P-07</td>
+          <td class="number">1</td>
+          <td class="number">4.00</td>
+        </tr>
+        <tr>
+          <th>Chicken</th>
+          <td>P-42</td>
+          <td class="number">2</td>
+          <td class="number">4.50</td>
+        </tr>
+      </tbody>
+    </table>
+    <pre class="example">&lt;table class=&quot;rows&quot;&gt;...</pre>
+
+    <h3>Raw table</h3>
+
+    <table class="raw">
+      <thead>
+        <tr>
+          <th>Pizza type</th>
+          <th>Order number</th>
+          <th>Amount</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Pepperoni</th>
+          <td>P-13</td>
+          <td class="number">2</td>
+          <td class="number">3.50</td>
+        </tr>
+        <tr>
+          <th>Tuna</th>
+          <td>P-07</td>
+          <td class="number">1</td>
+          <td class="number">4.00</td>
+        </tr>
+        <tr>
+          <th>Chicken</th>
+          <td>P-42</td>
+          <td class="number">2</td>
+          <td class="number">4.50</td>
+        </tr>
+      </tbody>
+    </table>
+    <pre class="example">&lt;table class=&quot;raw&quot;&gt;...</pre>
+
+  </div>
+</div>
+
+
+<!-- boxes -->
+<div class="section" id="boxes">
+  <div>
+    <h2>Boxes</h2>
+
+    <div class="standard box">
+      <h3>Standard box</h3>
+<pre>
+&lt;div class=&quot;standard box&quot;&gt;
+  ...
+&lt;/div&gt;
+</pre>
+    </div>
+
+    <div class="action box">
+      <h3>Action box</h3>
+<pre>
+&lt;div class=&quot;action box&quot;&gt;
+  ...
+&lt;/div&gt;
+</pre>
+    </div>
+
+    <div class="important box">
+      <h3>Important box</h3>
+<pre>
+&lt;div class=&quot;important box&quot;&gt;
+  ...
+&lt;/div&gt;
+</pre>
+    </div>
+
+    <div class="info box">
+      <h3>Info box</h3>
+<pre>
+&lt;div class=&quot;info box&quot;&gt;
+  ...
+&lt;/div&gt;
+</pre>
+    </div>
+
+    <div class="info2 box">
+      <h3>Info2 box</h3>
+<pre>
+&lt;div class=&quot;info2 box&quot;&gt;
+  ...
+&lt;/div&gt;
+</pre>
+    </div>
+
+    <p class="caption">Caption underneath a non-table</p>
+
+    <div class="result box">
+      <p class="important">Result Box showing <strong>results</strong></p>
+      <p>And more text.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- colours -->
+<div class="section" id="colours">
+  <div>
+    <h2>Colours</h2>
+
+    <h3>Main colours</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Colour (hex)</th>
+          <th>SASS variable</th>
+          <th>Where it's used</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th style="background-color: #444034; color: #fff;">#444034</th>
+          <td><code>$color-text</code></td>
+          <td>Text colour</td>
+        </tr>
+        <tr>
+          <th style="background-color: #fff;">#ffffff</th>
+          <td><code>$color-background</code></td>
+          <td>Content background, colour on dark background</td>
+        </tr>
+        <tr>
+          <th style="background-color: #c5c6c1;">#c5c6c1</th>
+          <td><code>$color-border</code></td>
+          <td>Borders, horizontal rule</td>
+        </tr>
+        <tr>
+          <th style="background-color: #dbdbdb;">#dbdbdb</th>
+          <td><code>$color-bg-alternate</code></td>
+          <td>Table head background, hint texts</td>
+        </tr>
+        <tr>
+          <th style="background-color: #f5f5f5;">#f5f5f5</th>
+          <td><code>$color-bg-default</code></td>
+          <td>Optional fieldset background, info, tooltip, footer and alternate section background</td>
+        </tr>
+        <tr>
+          <th style="background-color: #2aa1df; color: #fff;">#2aa1df</th>
+          <td><code>$color-action</code></td>
+          <td>Link and button colour</td>
+        </tr>
+        <tr>
+          <th style="background-color: #d4ecf9;">#d4ecf9</th>
+          <td><code>$color-bg-action</code></td>
+          <td>Mandatory fieldset background, action and alternative background</td>
+        </tr>
+        <tr>
+          <th style="background-color: #b8bc09;">#b8bc09</th>
+          <td><code>$color-positive</code></td>
+          <td>Success messages, positive connotation</td>
+        </tr>
+        <tr>
+          <th style="background-color: #ff8200; color: #fff;">#ff8200</th>
+          <td><code>$color-negative</code></td>
+          <td>Error messages, negative connotation</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Other colours</h3>
+
+    <dl>
+      <dt style="background-color: #6a66c3; color: #fff;">#6a66c3</dt>
+      <dd>Active/visited links</dd>
+
+      <dt style="background-color: #485263; color: #fff;">#485263</dt>
+      <dd>Header background when logged in</dd>
+
+      <dt style="background-color: #6d6d6d; color: #fff;">#6d6d6d</dt>
+      <dd>Header and footer links</dd>
+
+      <dt style="background-color: #f17d04;">#f17d04</dt>
+      <dd>Error variation (darker)</dd>
+
+      <dt style="background-color: #d0d34d;">#d0d34d</dt>
+      <dd>Success variation (lighter)</dd>
+
+      <dt style="background-color: #8c9500; color: #fff;">#8c9500</dt>
+      <dd>Success variation (darker)</dd>
+
+      <dt style="background-color: #87847a; color: #fff;">#87847a</dt>
+      <dd>Hints</dd>
+    </dl>
+
+  </div>
+</div>
+
+
+<!-- layout -->
+<div class="section" id="layout">
+  <div>
+    <h2>Layout helpers</h2>
+
+    <p>There are several layout helpers which help achieving columns of half (<code>col</code>), third (<code>third1 col</code>) and two thirds (<code>third2 col</code>) width. They can be nested for quarter, sixth, etc widths and can be combined with most other classes. All columns will collapse to full width in mobile view, and columns within columns will collapse earlier. Half columns are used in <a href="form">forms</a> a lot.</p>
+
+    <h3>Half columns</h3>
+
+    <div class="row group">
+      <div class="info box col">
+        <p>A column ("col") will automatically take half of the available width.</p>
+      </div>
+
+      <div class="col row group">
+        <div class="info box col">
+          <p>Another column...</p>
+        </div>
+        <div class="info box col">
+          <p>...within a column.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row group">
+      <div class="col">
+        <p>This is half a column.</p>
+      </div>
+      <div class="col">
+        <p>This is the other half.</p>
+      </div>
+    </div>
+
+<pre class="example">
+&lt;div class=&quot;row group&quot;&gt;
+  &lt;div class=&quot;col&quot;&gt;
+    &lt;p&gt;This is half a column.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;
+    &lt;p&gt;This is the other half.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+    <h3>Third columns</h3>
+
+    <div class="row group">
+      <div class="col third1 standard box">
+        <p>This is one third ("third1 col").</p>
+      </div>
+
+      <div class="col third2 standard box">
+        <p>This is two thirds ("third2 col"). But 3x one thirds is also possible.</p>
+      </div>
+    </div>
+
+    <div class="row group">
+      <div class="col third1">
+        <p>This is one third.</p>
+      </div>
+
+      <div class="col third1">
+        <p>This is one third.</p>
+      </div>
+
+      <div class="col third1">
+        <p>This is one third.</p>
+      </div>
+    </div>
+
+<pre class="example">
+&lt;div class=&quot;row group&quot;&gt;
+  &lt;div class=&quot;col third1&quot;&gt;
+    &lt;p&gt;This is one third.&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;col third1&quot;&gt;
+    &lt;p&gt;This is one third.&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;col third1&quot;&gt;
+    &lt;p&gt;This is one third.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+    <h3>Split list</h3>
+
+    <ul class="split group">
+      <li>This is just a normal list</li>
+      <li>It is split into two columns (when &gt;= 960px)</li>
+      <li>It is being ordered left - right - left - right</li>
+      <li>Within fieldset it loses bullets or numbering</li>
+    </ul>
+    <pre class="example">&lt;ul class=&quot;split group&quot;&gt;...</pre>
+
+    <h3>Spacing</h3>
+
+    <p>In order to maintain a consistent vertical rhythm, most elements should use the following values for margin and/or padding. The px equivalents are measured from the basic font size (100%, which is equivalent to 16px under normal circumstances). If the values don't "fit", you can use double or half of them.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Use for</th>
+          <th>Value</th>
+          <th>SASS variable</th>
+          <th>px equivalent</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Vertical spacing underneath elements</th>
+          <td>0.625em</td>
+          <td><code>$size-vspace</code></td>
+          <td>10px</td>
+        </tr>
+        <tr>
+          <th>Padding of boxed elements</th>
+          <td>1.25em</td>
+          <td><code>$size-pad</code></td>
+          <td>20px</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Sections</h3>
+
+    <p>Page sections are needed for all single column pages. If a page has no visible sections, it still needs at least one single section around all of the content.</p>
+
+<pre class="example">
+&lt;div class=&quot;section&quot;&gt;
+  &lt;div&gt;
+    ...
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+  </div>
+</div>
+
+
+    <!-- form -->
+<div class="section" id="form">
+  <div>
+
+    <h2>Forms</h2>
+
+    <p>There are two general variants for forms: Either a form gets basic validation feedback per fieldset (default) or per row (forms with a <code>units</code> class). Both can be used with the <code>check-required</code> class which will disable the submit button until all required fields are filled in and will give feedback by changing fieldset or row colours accordingly (on this page only used for the <a href="#example2">second example form</a>).</p>
+
+    <p><strong>Please note</strong>, the following examples use both two fields per row and one field per row. Going forward we would like to only use <strong>one field per row</strong> (with a couple of exceptions). The examples will be updated soon.</p>
+
+    <form action="#" method="post" id="example">
+
+      <h3>A simple fieldset</h3>
+
+      <p>If you don't use any layout helpers to make a form with two or multiple columns, you should add the <code>simple</code> class to not let the fields get too wide. Please note that an additional <code>div</code> is needed inside then.</p>
+
+      <fieldset class="simple">
+        <div>
+          <p>
+            <label for="field15">A field</label>
+            <input type="text" name="field15" id="field15" value="some stuff" />
+          </p>
+
+          <p>
+            <label for="field16">Another field</label>
+            <input type="text" name="field16" id="field16" value="some more stuff" />
+          </p>
+        </div>
+      </fieldset>
+
+      <pre class="example">
+&lt;fieldset class=&quot;<strong>simple</strong>&quot;&gt;
+  <strong>&lt;div&gt;</strong>
+    &lt;p&gt;
+      &lt;label for=&quot;field01&quot;&gt;A field&lt;/label&gt;
+      &lt;input type=&quot;text&quot; name=&quot;field01&quot; id=&quot;field01&quot; value=&quot;&quot; /&gt;
+    &lt;/p&gt;
+
+    &lt;p&gt;
+      &lt;label for=&quot;field02&quot;&gt;Another field&lt;/label&gt;
+      &lt;input type=&quot;text&quot; name=&quot;field02&quot; id=&quot;field02&quot; value=&quot;&quot; /&gt;
+    &lt;/p&gt;
+  <strong>&lt;/div&gt;</strong>
+&lt;/fieldset&gt;
+        </pre>
+
+
+      <h3>A standard fieldset</h3>
+
+      <p>A standard fieldset has no special class and is blue. Blue usually indicates an action.</p>
+
+      <fieldset>
+        <div class="row group">
+          <p class="col">
+            <label for="field01">A field</label>
+            <input type="text" name="field01" id="field01" value="" />
+          </p>
+
+          <p class="col">
+            <label for="field02">Another field</label>
+            <input type="text" name="field02" id="field02" value="" />
+          </p>
+        </div>
+      </fieldset>
+
+<pre class="example">
+&lt;fieldset&gt;
+  &lt;div class=&quot;row group&quot;&gt;
+    &lt;p class=&quot;col&quot;&gt;
+      &lt;label for=&quot;field01&quot;&gt;A field&lt;/label&gt;
+      &lt;input type=&quot;text&quot; name=&quot;field01&quot; id=&quot;field01&quot; value=&quot;&quot; /&gt;
+    &lt;/p&gt;
+
+    &lt;p class=&quot;col&quot;&gt;
+      &lt;label for=&quot;field02&quot;&gt;Another field&lt;/label&gt;
+      &lt;input type=&quot;text&quot; name=&quot;field02&quot; id=&quot;field02&quot; value=&quot;&quot; /&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/fieldset&gt;
+</pre>
+
+
+      <h3>A filled in fieldset</h3>
+
+      <p>When all mandatory fields have been filled in, a fieldset gets the class <code>done</code> and turns to beige, indicating that there is nothing more to fill in.</p>
+
+      <fieldset class="done">
+        <div class="row group">
+          <p class="col">
+            <label for="field03">A field</label>
+            <input type="text" name="field03" id="field03" value="some stuff" />
+          </p>
+
+          <p class="col">
+            <label for="field04">Another field</label>
+            <input type="text" name="field04" id="field04" value="some more stuff" />
+          </p>
+        </div>
+      </fieldset>
+
+      <pre class="example">&lt;fieldset class=&quot;done&quot;&gt;...</pre>
+
+
+      <h3>Checkboxes and radio buttons</h3>
+
+      <fieldset>
+        <div class="row group">
+          <p class="col">
+            <span class="label">Checkboxes</span>
+
+            <span class="radiocheck">
+              <input type="checkbox" name="checkboxfield" id="field11" value="1" />
+              <label for="field11">Checkbox 1</label>
+            </span>
+            <span class="radiocheck">
+              <input type="checkbox" name="checkboxfield" id="field12" value="2" />
+              <label for="field12">Checkbox 2</label>
+            </span>
+          </p>
+
+          <p class="col">
+            <span class="label">Radio buttons</span>
+
+            <span class="radiocheck">
+              <input type="radio" name="radiofield" id="field13" value="1" />
+              <label for="field13">Radio 1</label>
+            </span>
+            <span class="radiocheck">
+              <input type="radio" name="radiofield" id="field14" value="2" />
+              <label for="field14">Radio 2</label>
+            </span>
+          </p>
+        </div>
+      </fieldset>
+
+<pre class="example">
+&lt;div class=&quot;row group&quot;&gt;
+  &lt;p class=&quot;col&quot;&gt;
+    &lt;span class=&quot;label&quot;&gt;Checkboxes&lt;/span&gt;
+
+    &lt;span class=&quot;radiocheck&quot;&gt;
+      &lt;input type=&quot;checkbox&quot; name=&quot;checkboxfield&quot; id=&quot;field11&quot; value=&quot;1&quot; /&gt;
+      &lt;label for=&quot;field11&quot;&gt;Checkbox 1&lt;/label&gt;
+    &lt;/span&gt;
+    &lt;span class=&quot;radiocheck&quot;&gt;
+      &lt;input type=&quot;checkbox&quot; name=&quot;checkboxfield&quot; id=&quot;field12&quot; value=&quot;2&quot; /&gt;
+      &lt;label for=&quot;field12&quot;&gt;Checkbox 2&lt;/label&gt;
+    &lt;/span&gt;
+  &lt;/p&gt;
+
+  &lt;p class=&quot;col&quot;&gt;
+    &lt;span class=&quot;label&quot;&gt;Radio buttons&lt;/span&gt;
+
+    &lt;span class=&quot;radiocheck&quot;&gt;
+      &lt;input type=&quot;radio&quot; name=&quot;radiofield&quot; id=&quot;field13&quot; value=&quot;1&quot; /&gt;
+      &lt;label for=&quot;field13&quot;&gt;Radio 1&lt;/label&gt;
+    &lt;/span&gt;
+    &lt;span class=&quot;radiocheck&quot;&gt;
+      &lt;input type=&quot;radio&quot; name=&quot;radiofield&quot; id=&quot;field14&quot; value=&quot;2&quot; /&gt;
+      &lt;label for=&quot;field14&quot;&gt;Radio 2&lt;/label&gt;
+    &lt;/span&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+</pre>
+
+
+      <h3>Special options</h3>
+
+      <fieldset class="options done">
+        <p>
+          <span class="radiocheck">
+            <input type="radio" value="o1" name="option" id="option_o1" />
+            <label for="option_o1">
+              <span>Some option</span>
+            </label>
+          </span>
+        </p>
+
+        <p>
+          <span class="radiocheck">
+            <input type="radio" value="o2" name="option" id="option_o2" />
+            <label for="option_o2">
+              <span>An option with a hint</span>
+            </label>
+          </span>
+          <span class="hint">This is the hint</span>
+        </p>
+
+        <p>
+          <span class="radiocheck">
+            <input type="radio" value="o3" name="option" id="option_o3" checked="checked" />
+            <label for="option_o3">
+              <span>Some other option</span>
+            </label>
+          </span>
+        </p>
+      </fieldset>
+
+<pre class="example">
+&lt;fieldset class=&quot;options done&quot;&gt;
+  &lt;p&gt;
+    &lt;span class=&quot;radiocheck&quot;&gt;
+      &lt;input type=&quot;radio&quot; value=&quot;o1&quot; name=&quot;option&quot; id=&quot;option_o1&quot; /&gt;
+      &lt;label for=&quot;option_o1&quot;&gt;
+        &lt;span&gt;Some option&lt;/span&gt;
+      &lt;/label&gt;
+    &lt;/span&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+    &lt;span class=&quot;radiocheck&quot;&gt;
+      &lt;input type=&quot;radio&quot; value=&quot;o2&quot; name=&quot;option&quot; id=&quot;option_o2&quot; /&gt;
+      &lt;label for=&quot;option_o2&quot;&gt;
+        &lt;span&gt;An option with a hint&lt;/span&gt;
+      &lt;/label&gt;
+    &lt;/span&gt;
+    &lt;span class=&quot;hint&quot;&gt;This is the hint&lt;/span&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;...&lt;/p&gt;
+
+&lt;/fieldset&gt;
+</pre>
+
+
+      <h3>Buttons</h3>
+
+      <fieldset class="actions">
+
+        <ol class="split">
+          <li class="button-row">
+            <input type="submit" name="input-submit1a" id="input-submit1a" value="Submit" />
+            <input type="submit" name="input-submit1b" id="input-submit1b" value="Disabled" disabled="disabled" />
+            <a href="#" class="button">Link</a>
+
+            <!--
+            <input type="reset" name="input-reset" id="input-reset" value="Reset (input)" formnovalidate="formnovalidate" />
+            <input type="button" name="input-button" id="input-button" value="Button (input)" />
+            <input type="image" name="image" id="image" src="http://placehold.it/120x30&amp;text=FOO" alt="foo" />
+
+            <button type="submit" name="button-submit" id="button-submit" value="Submit button">Submit (button)</button>
+            <button type="reset" name="button-reset" id="button-reset" value="Reset button" formnovalidate="formnovalidate">Reset (button)</button>
+            <button type="button" name="button-button" id="button-button" value="Button button">Button (button)</button>
+            -->
+          </li>
+
+          <li class="button-row">
+            <input type="submit" class="secondary" name="input-submit2a" id="input-submit2a" value="Submit" />
+            <input type="submit" class="secondary" name="input-submit2b" id="input-submit2b" value="Disabled" disabled="disabled" />
+            <a href="#" class="button secondary">Link</a>
+          </li>
+
+          <li class="button-row">
+            <input type="submit" class="minor" name="input-submit3a" id="input-submit3a" value="Submit" />
+            <input type="submit" class="minor" name="input-submit3b" id="input-submit3b" value="Disabled" disabled="disabled" />
+            <a href="#" class="button minor">Link</a>
+          </li>
+
+          <li class="button-row">
+            <input type="submit" class="minor secondary" name="input-submit4a" id="input-submit4a" value="Submit" />
+            <input type="submit" class="minor secondary" name="input-submit4b" id="input-submit4b" value="Disabled" disabled="disabled" />
+            <a href="#" class="button minor secondary">Link</a>
+          </li>
+
+          <li class="button-row">
+            <input type="submit" class="round" value="+" />
+            <input type="submit" class="secondary round" value="−" />
+            <a href="#" class="button round">?</a>
+            <a href="#" class="button secondary disabled round">!</a>
+          </li>
+
+          <li><a class="button" href="#"><em>Borrow money </em>Get a loan today</a></li>
+
+        </ol>
+      </fieldset>
+
+
+    <form action="#" method="post" id="example2" class="units check-required">
+
+      <h3>A form with basic validation feedback per row</h3>
+
+      <fieldset>
+        <div class="row group">
+          <p class="col">
+            <label for="first_name">First name</label>
+            <input id="first_name" name="first_name" required="required" type="text" />
+          </p>
+          <p class="col">
+            <label for="last_name">Last name</label>
+            <input id="last_name" name="last_name" required="required" type="text" />
+          </p>
+        </div>
+
+        <div class="row group">
+          <p class="col">
+            <label for="member_email">Email address</label>
+            <input id="member_email" name="member_email" required="required" type="email" />
+          </p>
+          <p class="col">
+            <label for="member_email_confirmation">Confirm email address</label>
+            <input id="member_email_confirmation" name="member_email_confirmation" required="required" type="email" />
+          </p>
+        </div>
+
+        <div class="row group">
+          <p class="col">
+            <label for="home_phone">Home phone</label>
+            <input id="home_phone" name="home_phone" required="required" type="tel" />
+          </p>
+          <p class="col">
+            <label for="mobile_phone">Mobile phone</label>
+            <input id="mobile_phone" name="mobile_phone" type="tel" />
+          </p>
+        </div>
+      </fieldset>
+
+      <p><input type="submit" name="example2-submit" id="example2-submit" value="Submit" /></p>
+    </form>
+
+<pre class="example">
+&lt;form action=&quot;#&quot; method=&quot;post&quot; class=&quot;<strong>units check-required</strong>&quot;&gt;
+  &lt;fieldset&gt;
+    &lt;div class=&quot;row group&quot;&gt;
+      &lt;p class=&quot;col&quot;&gt;
+        &lt;label for=&quot;fname&quot;&gt;First name&lt;/label&gt;
+        &lt;input id=&quot;fname&quot; name=&quot;fname&quot; required=&quot;required&quot; type=&quot;text&quot; /&gt;
+      &lt;/p&gt;
+      &lt;p class=&quot;col&quot;&gt;
+        &lt;label for=&quot;lname&quot;&gt;Last name&lt;/label&gt;
+        &lt;input id=&quot;lname&quot; name=&quot;lname&quot; required=&quot;required&quot; type=&quot;text&quot; /&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row group&quot;&gt;...&lt;/div&gt;
+    &lt;div class=&quot;row group&quot;&gt;...&lt;/div&gt;
+  &lt;/fieldset&gt;
+
+  &lt;p&gt;&lt;input type=&quot;submit&quot; ... /&gt;&lt;/p&gt;
+&lt;/form&gt;
+</pre>
+
+
+    <form action="#" method="post" id="example3" class="check-required erroring">
+
+      <h3>An erroring form</h3>
+
+      <p>When a form is erroring, a feedback box with a summary of all the errors needs to be added to the top of the page (i.e. in the very first section within the content area, i.e. before the <code>h1</code>). It needs to have the ID of "feedback" and every form should post to that anchor. Success boxes should also have that ID, there should only be one such box per page.</p>
+      <p>That error summary needs to list each error and link to its error message.</p>
+
+      <div class="error summary box" id="feedback">
+        <h3>There is a problem</h3>
+        <ul>
+          <li><a href="#email2-error">Please correct your email address</a></li>
+          <li><a href="#phone2-error">Please enter your phone number</a></li>
+        </ul>
+      </div>
+
+<pre class="example">
+&lt;div class=&quot;error summary box&quot; <strong>id=&quot;feedback&quot;</strong>&gt;
+  &lt;h3&gt;There is a problem&lt;/h3&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#error-message-id&quot;&gt;Error message&lt;/a&gt;&lt;/li&gt;
+    [...]
+  &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+
+      <fieldset class="simple">
+        <div>
+          <p>
+            <label for="first_name2">First name</label>
+            <input id="first_name2" name="first_name2" required="required" type="text" value="John" />
+          </p>
+          <p>
+            <label for="last_name2">Last name</label>
+            <input id="last_name2" name="last_name2" required="required" type="text" value="Smith" />
+          </p>
+          <p class="error">
+            <span class="message" id="email2-error">Please correct your email address</span>
+            <label for="email2">Email address</label>
+            <input id="email2" name="email2" aria-describedby="email2-error" required="required" type="email" value="john@smithcom" />
+          </p>
+          <p class="error">
+            <span class="message" id="phone2-error">Please enter your phone number</span>
+            <label for="phone2">
+              Phone number
+              <span class="hint">Some useful hint</span>
+            </label>
+            <input id="phone2" name="phone2" aria-describedby="phone2-error" required="required" type="tel" value="" />
+          </p>
+        </div>
+
+        <p><input type="submit" name="example3-submit" id="example3-submit" value="Submit" /></p>
+      </fieldset>
+    </form>
+
+<pre class="example">
+&lt;form [...] action=&quot;[...]#feedback&quot; class=&quot;check-required <strong>erroring</strong>&quot;&gt;
+  &lt;fieldset class=&quot;simple&quot;&gt;
+    &lt;div&gt;
+      [...]
+      &lt;p class=&quot;<strong>error</strong>&quot;&gt;
+        &lt;span class=&quot;message&quot; <strong>id=&quot;error-message-id&quot;</strong>&gt;Error message&lt;/span&gt;
+        &lt;label for=&quot;input-id&quot;&gt;
+          Label
+          <strong>&lt;span class="hint"&gt;Some useful hint&lt;/span&gt;</strong>
+        &lt;/label&gt;
+        &lt;input <strong>aria-describedby=&quot;error-message-id&quot;</strong> id=&quot;input-id&quot; name=&quot;input-id&quot; [...] /&gt;
+      &lt;/p&gt;
+      [...]
+    &lt;/div&gt;
+    [...]
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+</pre>
+
+
+      <h3>All relevant field types</h3>
+
+      <fieldset>
+        <!--<legend>All field types</legend>-->
+        <div class="row group">
+          <p class="col">
+            <input type="hidden" name="hidden" id="hidden" value="" />
+
+            <label for="textinput">Text</label>
+            <input type="text" name="textinput" id="textinput" value="" />
+          </p>
+
+          <p class="col">
+            <label for="textreadonly">Text (readonly)</label>
+            <input type="text" name="textreadonly" id="textreadonly" value="some text" readonly="readonly" />
+          </p>
+        </div>
+
+        <div class="row group">
+          <p class="col">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" value="" autocomplete="off" />
+          </p>
+
+          <p class="col">
+            <label for="password2">Password (disabled)</label>
+            <input type="password" name="password2" id="password2" value="" autocomplete="off" disabled="disabled" />
+          </p>
+        </div>
+
+        <div class="row group">
+          <p class="col">
+            <span class="label">Checkboxes</span>
+
+            <span class="radiocheck">
+              <input type="checkbox" name="checkbox" id="cb1" value="1" />
+              <label for="cb1">Checkbox 1</label>
+            </span>
+            <span class="radiocheck">
+              <input type="checkbox" name="checkbox" id="cb2" value="2" />
+              <label for="cb2">Checkbox 2</label>
+            </span>
+          </p>
+
+          <p class="col">
+            <span class="label">Radio buttons</span>
+
+            <span class="radiocheck">
+              <input type="radio" name="radio" id="rb1" value="1" />
+              <label for="rb1">Radio 1</label>
+            </span>
+            <span class="radiocheck">
+              <input type="radio" name="radio" id="rb2" value="2" />
+              <label for="rb2">Radio 2</label>
+            </span>
+          </p>
+        </div>
+
+        <div class="row group">
+          <p class="col">
+            <label for="search">Search (with placeholder)</label>
+            <input type="search" name="search" id="search" value="" placeholder="Search" />
+          </p>
+
+          <p class="col">
+            <label for="tel">Telephone (with pattern)</label>
+            <input type="tel" name="tel" id="tel" value="" pattern="[0-9]" title="Only numbers allowed." />
+          </p>
+        </div>
+
+        <div class="row group">
+          <p class="col">
+            <label for="url">URL (required)</label>
+            <input type="url" name="url" id="url" value="" required="required" />
+          </p>
+
+          <p class="col">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" value="" />
+          </p>
+        </div>
+
+        <div class="row group">
+          <p class="col">
+            <label for="date">Date</label>
+            <input type="date" name="date" id="date" value="" />
+          </p>
+
+          <p class="col">
+            <label for="time">Time</label>
+            <input type="time" name="time" id="time" value="" />
+          </p>
+        </div>
+
+        <div class="row group">
+          <p class="col">
+            <label for="number">Number</label>
+            <input type="number" name="number" id="number" min="0" max="60" step="5" value="" />
+          </p>
+
+          <p class="col">
+            <label for="range">Range</label>
+            <input type="range" name="range" id="range" min="0" max="100" step="10" value="50" />
+          </p>
+        </div>
+
+        <div class="row group">
+          <p class="col">
+            <label for="file">File upload</label>
+            <input type="file" name="file" id="file" accept="image/*" />
+          </p>
+
+          <p class="col">
+            <label for="select">Select</label>
+            <select name="select" id="select" size="1">
+              <optgroup label="Numbers">
+                <option value="" selected="selected">--Please choose--</option>
+                <option value="1">one</option>
+                <option value="2">two</option>
+                <option value="3">three</option>
+              </optgroup>
+            </select>
+          </p>
+        </div>
+
+        <div class="row group">
+          <p class="col">
+            <label for="textarea">Textarea</label>
+            <textarea name="textarea" id="textarea" rows="5" cols="45" maxlength="1024"></textarea>
+          </p>
+
+          <p class="col">
+            <label for="selects">Select multiple options</label>
+            <select name="selects" id="selects" multiple="multiple">
+              <optgroup label="More numbers">
+                <option value="4">four</option>
+                <option value="5" selected="selected">five</option>
+                <option value="6">six</option>
+                <option value="7">seven</option>
+              </optgroup>
+            </select>
+          </p>
+        </div>
+
+        <p>
+          <input type="submit" name="input-submit" id="input-submit" value="Submit" />
+        </p>
+
+      </fieldset>
+
+    </form>
+
+
+  </div>
+</div>
+
+
+<!-- misc -->
+<div class="section" id="misc">
+  <div>
+    <h2>Misc</h2>
+
+    <h3>Tabs</h3>
+
+    <ul class="nav-tabs group">
+      <li class="active">
+        <a href="#first_tab_content">First tab</a>
+      </li>
+      <li>
+        <a href="#second_tab_content">Second tab</a>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="first_tab_content" class="tab-pane active group">
+        <h4>First tab content</h4>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+      </div>
+      <div id="second_tab_content" class="tab-pane group">
+        <h4>Second tab content</h4>
+        <p>Ava to telco atacar, lindë mantil mir pé. Epë at tanga salmë aratar, ai yat ettë yulda orofarnë, oa ara silma tengwo nahamna. Cé núr mëoi calacaltasisílafaina, ría na lappa lindë maquetta.</p>
+      </div>
+    </div>
+
+<pre class="example">
+&lt;ul class=&quot;nav-tabs group&quot;&gt;
+  &lt;li class=&quot;active&quot;&gt;
+    &lt;a href=&quot;#first_tab_content&quot;&gt;First tab&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;#second_tab_content&quot;&gt;Second tab&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;tab-content&quot;&gt;
+  &lt;div id=&quot;first_tab_content&quot; class=&quot;tab-pane active group&quot;&gt;
+    ...
+  &lt;/div&gt;
+  &lt;div id=&quot;second_tab_content&quot; class=&quot;tab-pane group&quot;&gt;
+    ...
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+    <h3>Tooltips</h3>
+
+    <p>
+      Help tooltip "bottom + left": <span class="tooltip"><span>This is a tooltip.</span></span>
+      Help tooltip "bottom + center": <span class="tooltip"><span class="center">This is a tooltip.</span></span>
+      Help tooltip "bottom + right": <span class="tooltip"><span class="right">This is a tooltip.</span></span><br />
+      Notice tooltip "top + left": <span class="tooltip notice"><span class="top">This is a tooltip.</span></span>
+      Notice tooltip "top + center": <span class="tooltip notice"><span class="top center">This is a tooltip.</span></span>
+      Notice tooltip "top + right": <span class="tooltip notice"><span class="top right">This is a tooltip.</span></span>
+    </p>
+
+    <p>First and last example:</p>
+<pre class="example">
+&lt;span class=&quot;tooltip&quot;&gt;&lt;span&gt;This is a tooltip.&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;tooltip notice&quot;&gt;&lt;span class=&quot;top right&quot;&gt;This is a tooltip.&lt;/span&gt;&lt;/span&gt;
+</pre>
+
+    <h3>Pagination</h3>
+
+    <h2 class="a11y">Pagination</h2>
+    <ul class="pagination">
+      <li><a href="#" rel="prev"><span class="a11y">Page </span>1</a></li>
+      <li><strong><span class="a11y">Current: Page </span>2</strong></li>
+      <li><a href="#" rel="next"><span class="a11y">Page </span>3</a></li>
+      <li><a href="#"><span class="a11y">Page </span>4</a></li>
+    </ul>
+
+<pre class="example">
+&lt;h2 class=&quot;a11y&quot;&gt;Pagination&lt;/h2&gt;
+&lt;ul class=&quot;pagination&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot; rel=&quot;prev&quot;&gt;&lt;span class=&quot;a11y&quot;&gt;Page &lt;/span&gt;1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;span class=&quot;a11y&quot;&gt;Current: Page &lt;/span&gt;2&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot; rel=&quot;next&quot;&gt;&lt;span class=&quot;a11y&quot;&gt;Page &lt;/span&gt;3&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;a11y&quot;&gt;Page &lt;/span&gt;4&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+    <h3>Toggle elements</h3>
+
+    <p>When a link has the class <code>show-more</code> and links to an anchor within the page, the element with the ID of the anchor will be toggled, i.e. shown and hidden.</p>
+
+    <p><a href="#toggle-test" class="show-more"><span>Show</span> the box underneath</a></p>
+    <div class="info box" id="toggle-test">
+      <p>I'm the box sliding open and close.</p>
+    </div>
+
+<pre class="example">
+&lt;p&gt;&lt;a href=&quot;<strong>#toggle-test</strong>&quot; class=&quot;<strong>show-more</strong>&quot;&gt;&lt;span&gt;Show&lt;/span&gt; the box underneath&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;info box&quot; id=&quot;<strong>toggle-test</strong>&quot;&gt;
+  &lt;p&gt;I'm the box sliding open and close.&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+
+    <h3>JS only</h3>
+
+    <p>To show something only when JavaScript is enabled and therefore hide it when JavaScript is disabled (so, the exact opposite of <code>&lt;noscript&gt;</code>), you can use the following:</p>
+
+<pre class="example">
+&lt;script type=&quot;text/html&quot; data-inline=&quot;true&quot;&gt;
+  &lt;p&gt;Switch JS off and I'm gone!&lt;/p&gt;
+&lt;/script&gt;
+</pre>
+
+
+  </div>
+</div>
+
+
+<script>
+  function selectText(element) {
+    var range, selection;
+    if (document.body.createTextRange) { //ms
+      range = document.body.createTextRange();
+      range.moveToElementText(element);
+      range.select();
+    } else if (window.getSelection) { //all others
+      selection = window.getSelection();
+      range = document.createRange();
+      range.selectNodeContents(element);
+      selection.removeAllRanges();
+      selection.addRange(range);
+    }
+  }
+
+  jQuery(function() {
+    // select all text in a code block by double clicking into it
+    jQuery('pre.example').dblclick(function(){
+      var block = jQuery(this).closest('pre');
+      selectText(block[0]);
+    });
+  });
+</script>

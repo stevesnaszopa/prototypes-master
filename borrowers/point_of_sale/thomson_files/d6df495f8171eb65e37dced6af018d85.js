@@ -1,0 +1,1 @@
+Bootstrapper.bindImmediate(function(){var Bootstrapper=window["Bootstrapper"];var ensightenOptions=Bootstrapper.ensightenOptions;Bootstrapper.on("mousedown","#logo",function(){Bootstrapper.ensEvent.trigger("TEST")},true)},-1,-1);

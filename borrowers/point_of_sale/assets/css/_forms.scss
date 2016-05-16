@@ -1,0 +1,516 @@
+@media screen {
+
+/* forms
+********************************************************************/
+
+form {
+  margin: 0;
+  padding: 0;
+}
+
+fieldset {
+  background-color: $color-bg-action;
+  border-width: 0;
+  border-radius: 4px;
+  padding: $size-pad;
+
+  .only-error {
+    display: none;
+  }
+  &.error .only-error {
+    display: inherit;
+  }
+
+  &.disabled {
+    opacity: .5;
+
+    label,
+    input,
+    a {
+      cursor: default;
+    }
+  }
+}
+
+fieldset fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+fieldset {
+  p,
+  ul,
+  ol,
+  dl,
+  table {
+    margin-bottom: .5em;
+  }
+}
+
+legend {
+  margin: 0;
+  padding: 0 .1em;
+}
+form fieldset ol {
+  list-style: none;
+}
+form fieldset ol:last-child {
+  margin-bottom: 0;
+}
+form fieldset ol li {
+  margin: 0 0 $size-vspace/2 0;
+}
+
+
+label,
+.label {
+  display: block;
+  font-weight: 600;
+  vertical-align: middle;
+  margin-bottom: .2em;
+}
+.optional label:after {
+  content: " (optional)";
+  color: #a8a8a8;
+}
+#addresses .optional label:after {
+  content: '';
+}
+label[for] {
+  cursor: pointer;
+}
+
+input,
+textarea,
+button,
+select,
+optgroup,
+option,
+output,
+meter,
+progress,
+.button,
+.data {
+  font: inherit;
+  line-height: normal;
+  margin: 0;
+  vertical-align: middle;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+optgroup {
+  font-style: italic;
+  font-weight: 600;
+}
+option {
+  font-style: normal;
+  font-weight: normal;
+}
+
+input,
+button,
+select,
+textarea,
+.data {
+  color: inherit;
+  background-color: $color-background;
+  border: 2px solid #aaa;
+  border-radius: 0.2em;
+  padding: 0.35em;
+  font-weight: normal;
+  width: 100%;
+}
+select {
+  padding: 0.3em;
+}
+input,
+button,
+select,
+textarea {
+  @include transition(border);
+}
+
+input:focus,
+button:focus,
+select:focus,
+textarea:focus,
+.button:focus {
+  border-color: $color-action;
+}
+
+.error {
+  input,
+  button,
+  select,
+  textarea,
+  .data {
+    border-color: $color-negative;
+    color: $color-text;
+    font-weight: normal;
+  }
+
+  label,
+  .label {
+    color: $color-text;
+  }
+
+  input:focus,
+  button:focus,
+  select:focus,
+  textarea:focus,
+  .button:focus {
+    border-color: $color-action;
+  }
+}
+
+input[type=radio],
+input[type=checkbox],
+input[type=image] {
+  padding: 0;
+  border-style: none;
+  background: transparent;
+  width: auto;
+}
+
+textarea {
+  min-height: 10em;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+  border: 0;
+  outline: 0;
+  padding: 0;
+}
+
+
+/*____________ radio buttons and checkboxes ____________*/
+
+.radiocheck {
+  display: block;
+  position: relative;
+}
+
+.radiocheck label {
+  display: inline-block;
+  font-weight: normal;
+  margin-bottom: 0;
+  padding: .3em 0;
+}
+
+/* hide original element */
+.radiocheck input[type=checkbox],
+.radiocheck input[type=radio] {
+  opacity: 0;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.radiocheck input[type=checkbox] + label,
+.radiocheck input[type=radio] + label {
+  position: relative;
+  margin-left: 29px;
+}
+
+/* make boxes */
+.radiocheck input[type=checkbox] + label:before,
+.radiocheck input[type=radio] + label:before {
+  content: '';
+  line-height: 1;
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  top: 2px;
+  left: -29px;
+  border: 2px solid #aaa;
+  background-color: #fff;
+  border-radius: 4px;
+}
+/* radio box is round */
+.radiocheck input[type=radio] + label:before {
+  border-radius: 15px;
+}
+
+/* focus */
+.radiocheck input[type=checkbox]:focus + label:before,
+.radiocheck input[type=radio]:focus + label:before {
+  border-color: $color-action;
+}
+
+.error {
+  .radiocheck input[type=checkbox] + label:before,
+  .radiocheck input[type=radio] + label:before {
+    border-color: $color-negative;
+  }
+
+  .radiocheck input[type=checkbox]:focus + label:before,
+  .radiocheck input[type=radio]:focus + label:before {
+    border-color: $color-action;
+  }
+}
+
+
+/* make tick and bullet */
+.radiocheck input[type=checkbox] + label:after,
+.radiocheck input[type=radio] + label:after {
+  content: '';
+  opacity: 0;
+  line-height: 1;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+}
+
+/* tick */
+.radiocheck input[type=checkbox] + label:after {
+  height: 5px;
+  top: 9px;
+  left: -23px;
+  border: solid $color-text;
+  border-width: 0 0 4px 4px;
+  background: transparent;
+  @include rotate(-45deg);
+}
+
+/* bullet */
+.radiocheck input[type=radio] + label:after {
+  top: 10px;
+  left: -22px;
+  background: $color-text;
+  border-radius: 20px;
+}
+
+/* show/hide tick on hover and when checked */
+.radiocheck input[type=checkbox]:hover + label:after,
+.radiocheck input[type=radio]:hover + label:after {
+  opacity: .2;
+}
+.radiocheck input[type=checkbox]:checked + label:after,
+.radiocheck input[type=radio]:checked + label:after {
+  opacity: 1;
+}
+
+
+/* undo styling in old IEs */
+
+.oldie .radiocheck input[type=checkbox],
+.oldie .radiocheck input[type=radio],
+.ie8 .radiocheck input[type=checkbox],
+.ie8 .radiocheck input[type=radio] {
+  opacity: 1;
+  position: static;
+}
+
+.oldie .radiocheck label,
+.ie8 .radiocheck label {
+  display: inline;
+}
+
+.oldie .radiocheck input[type=checkbox] + label,
+.oldie .radiocheck input[type=radio] + label,
+.ie8 .radiocheck input[type=checkbox] + label,
+.ie8 .radiocheck input[type=radio] + label {
+  margin-left: 0;
+}
+.ie8 .radiocheck input[type=checkbox] + label:before,
+.ie8 .radiocheck input[type=radio] + label:before,
+.ie8 .radiocheck input[type=checkbox] + label:after,
+.ie8 .radiocheck input[type=radio] + label:after {
+  display: none;
+}
+
+/* Password boxes have a bug with Webfonts in IE8 */
+
+.ie8 input[type=password] {
+  font-family: Arial;
+}
+
+/*____________ buttons ____________*/
+
+input[type=submit],
+input[type=button],
+input[type=reset],
+button,
+a.button,
+a[target="_blank"].button,
+.button {
+  cursor: pointer;
+  overflow: visible;
+  display: inline-block;
+  width: auto;
+  -webkit-appearance: none;
+
+  color: #fff;
+  background-color: $color-action;
+  border-radius: .2em;
+  border: 1px solid transparent;
+  font-weight: 600;
+  text-decoration: none;
+  outline: none;
+
+  font-size: 1.4em;
+  padding: 0.25em 0.85em;
+  text-align: center;
+  @include transition(background);
+}
+
+/* @todo: create mixins for 'all buttons' and 'hover etc' */
+
+input[type=submit]:hover:enabled,
+input[type=button]:hover:enabled,
+input[type=reset]:hover:enabled,
+button:hover:enabled,
+a.button:hover,
+.button:hover,
+input[type=submit]:active,
+input[type=button]:active,
+input[type=reset]:active,
+button:active,
+a.button:active,
+.button:active,
+input[type=submit]:focus,
+input[type=button]:focus,
+input[type=reset]:focus,
+button:focus,
+a.button:focus,
+.button:focus {
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background: darken($color-action, 10%);
+}
+
+/* IE8 seems to have a specificity issue */
+.ie8 a.button:hover,
+.ie8 a.button:active,
+.ie8 a.button:focus {
+  color: #fff;
+}
+
+input[type=submit].minor,
+input[type=button].minor,
+input[type=reset].minor,
+button.minor,
+a.button.minor,
+.button.minor {
+  font-size: 1.14em;
+  padding: .1em 0.5em .15em;
+}
+
+input[type=submit].secondary,
+input[type=button].secondary,
+input[type=reset].secondary,
+button.secondary,
+a.button.secondary,
+.button.secondary {
+  color: $color-action;
+  border-color: $color-bg-action;
+  background-color: #f6fcff;
+}
+
+input[type=submit].secondary:hover:enabled,
+input[type=button].secondary:hover:enabled,
+input[type=reset].secondary:hover:enabled,
+button.secondary:hover:enabled,
+a.button.secondary:hover,
+.button.secondary:hover,
+input[type=submit].secondary:active,
+input[type=button].secondary:active,
+input[type=reset].secondary:active,
+button.secondary:active,
+a.button.secondary:active,
+.button.secondary:active,
+input[type=submit].secondary:focus,
+input[type=button].secondary:focus,
+input[type=reset].secondary:focus,
+button.secondary:focus,
+a.button.secondary:focus,
+.button.secondary:focus {
+  color: $color-action;
+  background: lighten(#f6fcff, 10%);
+}
+
+/* IE8 seems to have a specificity issue */
+.ie8 a.button.secondary:hover,
+.ie8 a.button.secondary:active,
+.ie8 a.button.secondary:focus {
+  color: $color-action;
+}
+
+/* round buttons, to be used with single characters */
+input.round,
+button.round,
+a.button.round,
+.button.round {
+  min-width: 0;
+  border-radius: 50%;
+  width: $size-h2;
+  height: $size-h2;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+a.disabled,
+.disabled,
+input[disabled],
+.radiocheck input[disabled] + label:before,
+select[disabled],
+textarea[disabled],
+button[disabled],
+input[readonly],
+textarea[readonly] {
+  cursor: auto;
+  opacity: .5;
+}
+input[readonly].readable,
+textarea[readonly].readable {
+  opacity: 1;
+}
+.radiocheck input[disabled]:hover:not(:checked) + label:after {
+  opacity: 0;
+}
+.radiocheck input[disabled] + label {
+  cursor: auto;
+}
+
+/* for when rows with buttons in them need to wrap at some point */
+.button-row {
+  margin-top: -.2em;
+  margin-bottom: -.2em;
+}
+.button-row > * {
+  margin-top: .2em;
+  margin-bottom: .2em;
+}
+
+/* take the same space as a button */
+.button-space {
+  display: inline-block;
+  border: 2px solid transparent; /* not sure why it needs 2px instead of 1px? */
+  border-radius: .2em;
+  font-weight: 600;
+  font-size: 1.4em;
+  padding: 0.25em 0.85em;
+  text-align: center;
+}
+.button-space.minor {
+  font-size: 1.14em;
+  padding: .1em 0.5em .15em;
+}
+
+
+} /* @media screen */

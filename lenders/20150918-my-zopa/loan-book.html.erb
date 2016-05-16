@@ -1,0 +1,485 @@
+<% @loggedin = true %>
+<% @audience = :lenders %>
+<% @pagetitle = 'My Zopa loan book' %>
+
+<% content_for :subnav do %>
+  <ul>
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="statements.html">Statements</a></li>
+    <li class="active"><a href="loan-book.html">Loan book</a></li>
+    <li><a href="lend.html">Lend</a></li>
+    <li><a href="withdraw.html">Withdraw</a></li>
+  </ul>
+<% end %>
+
+
+
+<div class="section hero">
+  <div>
+    <h1>My loan book</h1>
+    <p class="intro"><strong style="color:#00913c;">
+      95.4% of your loans</strong> are covered by the <a href="/404">Zopa&#xa0;Safeguard&#xa0;Trust</a>
+    </p>
+  </div>
+</div>
+
+
+<div class="section hero">
+  <div>
+
+    <div class="row group">
+      <div class="third2 col">
+        <h2>Total currently lent out</h2>
+        <p style="margin-top: -20px; font-size:60px; font-weight:bold; letter-spacing:-2px; color:#00913c;">£32,183.87</p>
+        <p style="margin-top: -15px;">
+          Diversified across <strong style="color:#00913c;">2,607 loans</strong>
+        </p>
+      </div>
+
+      <div class="third1 col">
+        <h2>Net rate</h2>
+        <p style="margin-top: -20px; font-size:60px; font-weight:bold; letter-spacing:-6px; color:#00913c;">4.70%</p>
+        <p style="margin-top: -15px;"><strong style="color:#00913c;">
+          4.76%</strong> current rate less<br /><strong style="color:#00913c;">0.06%</strong> expected bad debt
+        </p>
+      </div>
+    </div>
+
+<hr style="margin-top: 10px;" />
+
+
+    <div class="row group" style="margin-top: 20px;">
+      <div class="col third2">
+        <h3>Safeguard loans</h3>
+        <p style="margin-top: -15px; font-size:48px; font-weight:bold; letter-spacing:-2px; color:#00913c;">£30,689.35</p>
+        <p style="margin-top: -15px;">Diversified across <strong style="color:#00913c;">2,489 loans</strong></p>
+        <p style="margin-top: -7px;"><a href="#arrears-s" class="show-more" aria-controls="arrears-s" aria-live="polite"><span>Show</span> <span class="hide">Hide</span> details on loan performance</a></p>
+      </div>
+
+      <div class="col third1">
+        <h3>Net rate</h3>
+        <p style="margin-top: -15px; font-size:48px; font-weight:bold; letter-spacing:-2px; color:#00913c;">4.69%</p>
+        <p style="margin-top: -15px;"><strong style="color:#00913c;">
+          4.69%</strong> current rate less<br /><strong style="color:#00913c;">0.00%</strong> expected bad debt
+        </p>
+      </div>
+    </div>
+
+    <div id="arrears-s">
+      <div class="info box" style="margin-top: 20px;">
+        <h3>Missed payments</h3>
+        <p style="margin-top: -15px; font-size:48px; font-weight:bold; letter-spacing:-2px; color:#c95d3a;">£5.76</p>
+        <p style="margin-top: -15px;"><strong style="color:#c95d3a;">23 borrowers (0.02%)</strong> have missed payments.</p>
+        <p>These loans account for <strong style="color:#c95d3a;">£117.15 (0.38%)</strong> of your Safeguard loan book including interest from missed payments.</p>
+
+        <p style="margin-top: 15px;"><strong style="color:#ff8200;">£40.59</strong> is less than 1 month late</p>
+        <p style="margin-top: -5px;"><strong style="color:#c95d3a;">£40.58</strong> is between 2 to 3 months late</p>
+        <p style="margin-top: -5px;"><strong style="color:#a04040;">£35.97</strong> is more than 3 months late</p>
+        <p style="margin-top: 10px;">Our collections team works closely with each borrower to help get them back on track. When a loan is the equivalent of 4 months in arrears it becomes eligible for a Safeguard pay out.</p>
+      </div>
+
+      <div class="row group info box">
+        <div class="col">
+          <h3>Safeguard watch</h3>
+          <p style="margin-top: -15px; font-size:48px; font-weight:bold; letter-spacing:-2px; color:#00913c;">1.48x</p>
+          <p style="margin-top: -15px;">Safeguard is currently 1.48 times bigger than what we expect to cover</p>
+        </div>
+
+        <div class="col">
+          <h3>Lifetime interest</h3>
+          <p style="margin-top: -15px; font-size:48px; font-weight:bold; letter-spacing:-2px; color:#00913c;">£2,859.76</p>
+          <p style="margin-top: -15px;">At an effective rate (excluding bonuses) of <strong style="color:#00913c;">4.81%</strong> since 23rd November 2009</p>
+        </div>
+
+        <div class="col" style="display: none;">
+          <h3>Safeguard payout</h3>
+          <p style="margin-top: -15px; font-size:48px; font-weight:bold; letter-spacing:-2px; color:#00913c;">£450.17</p>
+          <p style="margin-top: -15px;">Safeguard has paid out <strong style="color:#00913c;">0.31%</strong> of your loan book since 23rd November 2009</p>
+        </div>
+      </div>
+    </div>
+
+<hr style="margin-top: 10px;" />
+
+    <div class="row group" style="margin-top: 20px;">
+      <div class="col third2">
+        <h3>Non-Safeguard loans</h3>
+        <p style="margin-top: -15px; font-size:48px; font-weight:bold; letter-spacing:-2px; color:#00913c;">£1,494.52</p>
+        <p style="margin-top: -15px;">Diversified across <strong style="color:#00913c;">118 loans</strong></p>
+        <p style="margin-top: -7px;"><a href="#arrears-ns" class="show-more" aria-controls="arrears-ns" aria-live="polite"><span>Show</span> <span class="hide">Hide</span> details on loan performance</a></p>
+      </div>
+
+      <div class="col third1">
+        <h3>Net rate</h3>
+        <p style="margin-top: -15px; font-size:48px; font-weight:bold; letter-spacing:-2px; color:#00913c;">4.79%</p>
+        <p style="margin-top: -15px;"><strong style="color:#00913c;">6.09%</strong> current rate less<br /><strong style="color:#00913c;">1.30%</strong> expected bad debt</p>
+      </div>
+    </div>
+
+    <div id="arrears-ns">
+      <div class="info box" style="margin-top: 20px;">
+        <h3>Missed payments</h3>
+        <p style="margin-top: -15px; font-size:48px; font-weight:bold; letter-spacing:-2px; color:#c95d3a;">£4.21</p>
+        <p style="margin-top: -15px;"><strong style="color:#c95d3a;">2 borrowers (0.28%)</strong> have missed payments.</p>
+        <p>These loans account for <strong style="color:#c95d3a;">£21.59 (1.44%)</strong> of your Non-Safeguard loan book including interest from missed payments.</p>
+
+        <p style="margin-top: 15px;"><strong style="color:#ff8200;">£7.55</strong> is less than 1 month late</p>
+        <p style="margin-top: -5px;"><strong style="color:#a04040;">£14.04</strong> is over 3 months late</p>
+        <p style="margin-top: 10px;">Our collections team works closely with each borrower to help get them back on track. A loan is considered a default when it is the equivalent of 4 months in arrears. Defaulted loans are added to your lifetime bad debt.</p>
+      </div>
+
+      <div class="row group info box">
+        <div>
+          <div class="col">
+            <h3>Lifetime bad debt</h3>
+            <p style="margin-top: -15px; font-size:48px; font-weight:bold; letter-spacing:-2px; color:#a04040;">£20.53</p>
+            <p style="margin-top: -15px;"><strong style="color:#a04040;">0.51%</strong> of your Non-Safeguard loan book since 23rd November 2009</p>
+          </div>
+
+          <div class="col">
+            <h3>Lifetime interest</h3>
+            <p style="margin-top: -15px; font-size:48px; font-weight:bold; letter-spacing:-2px; color:#00913c;">£1,331.82</p>
+            <p style="margin-top: -15px;">At an effective rate (excluding bonuses) of <strong style="color:#00913c;">4.81%</strong> since 23rd November 2009</p>
+          </div>
+        </div>
+        <p style="margin-top: 10px;">You may still continue to recieve repayments on loans considered as bad debt. This will reduce your lifetime bad debt total.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="section">
+  <div>
+    <h1>In detail</h1>
+    <p class="intro">All the rates shown are aggregated from your loan book</p>
+
+    <div class="row group" style="margin-top: 2em;">
+      <div class="col third1">
+        <img src="img/circle1-risk.svg" alt="Risk distribution pie chart" width="200" />
+        <h2>Risk distribution</h2>
+        <ul>
+          <li class="leg-greendark">A* market<br />
+            <p class="hint">£18,475.66 at 3.9%</p>
+          </li>
+          <li class="leg-greenlight">A market<br />
+            <p class="hint">£8,712.19 at 5.5%</p>
+          </li>
+          <li class="leg-orangedark">B market<br />
+            <p class="hint">£3,491.81 at 6.7%</p>
+          </li>
+          <li class="leg-orangelight">C1 market<br />
+            <p class="hint">£1,494.21 at 7.7%</p>
+          </li>
+          <li class="leg-yellow">S market<br />
+            <p class="hint">£10.00 at 6.3%</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col third1">
+        <img src="img/circle2-purpose.svg"
+        alt="Loans purposes" width="200" />
+        <h2>Loan purpose</h2>
+        <ul>
+          <li class="leg-greendark">Car loans<br />
+            <p class="hint">£12,936.62 at 3.9%</p>
+          </li>
+          <li class="leg-greenlight">Debt consolidations<br />
+            <p class="hint">£6,705.20 at 6.2%</p>
+          </li>
+          <li class="leg-orangedark">Home improvements<br />
+            <p class="hint">£8,308.95 at 4.5%</p>
+          </li>
+          <li class="leg-orangelight">Other loans<br />
+            <p class="hint">£4,233.10 at 5.6%</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col third1">
+        <img src="img/circle3-term.svg"
+        alt="Loans purposes" width="200" />
+        <h2>Loan length</h2>
+        <ul>
+          <!-- <li class="leg-yellow">1 year loans<br />
+            <p class="hint">£0.00 at 0.0%</p>
+          </li>
+          <li class="leg-orangelight">2 year loans<br />
+            <p class="hint">£0.00 at 0.0%</p>
+          </li> -->
+          <li class="leg-greendark">5 year loans<br />
+            <p class="hint">£24,803.13 at 4.8%</p>
+          </li>
+          <li class="leg-greenlight">4 year loans<br />
+            <p class="hint">£7,307.33 at 4.6%</p>
+          </li>
+          <li class="leg-orangedark">3 year loans<br />
+            <p class="hint">£73.40 at 4.8%</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="row group" style="margin-top: 20px;">
+      <div class="col third2">
+        <img src="img/map-borrowers.png"
+        alt="Loans by region" width="500" />
+      </div>
+
+      <div class="col third1">
+        <img src="img/circle2-purpose.svg"
+        alt="Locations" width="200" />
+        <h2>Locations</h2>
+        <ul>
+          <li class="leg-greendark">Scotland<br />
+            <p class="hint">£12,936.62 at 3.9%</p>
+          </li>
+          <li class="leg-greenlight">North East England<br />
+            <p class="hint">£6,705.20 at 6.2%</p>
+          </li>
+          <li class="leg-orangedark">London<br />
+            <p class="hint">£8,308.95 at 4.5%</p>
+          </li>
+          <li class="leg-orangelight">South England<br />
+            <p class="hint">£4,233.10 at 5.6%</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="section">
+  <div>
+    <h2>Repayments</h2>
+    <p class="intro">You received <strong style="color:#00913c;" title="Made up of £541.93 capital and £92.36 interest">£634.29</strong> in repayments in <strong style="color:#00913c;">August 2015</strong></p>
+    <div id="bars" style="height: 250px; margin-top: 1.5em; margin-bottom: 1em;"></div>
+    <p class="intro">Repayments are <a href="withdraw.html#auto-top">re-lent automatically</a></p>
+    <!-- <p class="hint">This schedule does not take unforseen early repayments into account.</p> -->
+  </div>
+</div>
+
+
+
+<div class="section">
+  <div>
+    <h2>Download my loan book</h2>
+    <p>If you're looking for more detail about the individual loans that make up your loan book, we have provided a monthly snapshot for you to download.</p>
+    <p class="hint">Last updated 30th July 2015</p>
+    <p><a href="img/Zopa-LoanBook-20150830.csv" class="button minor">Download entire loan book (CSV)</a></p>
+  </div>
+</div>
+
+
+
+<% content_for :scripts do %>
+<%= javascript_include_tag "vendor/highcharts" %>
+
+<script>
+$(function () {
+Highcharts.theme = {
+  colors: ['#CFE8CC', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+};
+// Apply the theme
+var highchartsOptions = Highcharts.setOptions(Highcharts.theme);
+});
+$(function () {
+$('#bars').highcharts({
+  chart: {
+    type: 'column'
+  },
+  title: {
+    text: ''
+  },
+  xAxis: {
+    type: 'category',
+    labels: {
+      rotation: -45
+    }
+  },
+  yAxis: {
+    min: 0,
+    title: {
+      text: 'Pounds (£)'
+    }
+  },
+  legend: {
+    enabled: false
+  },
+  tooltip: {
+    pointFormat: 'Value <b>£{point.y:.1f}</b>'
+  },
+  series: [{
+    name: 'Value',
+    data: [
+      ['1st', 32.19],
+      ['2nd', 76.22],
+      ['3rd', 76.88],
+      ['4th', 13.29],
+      ['5th', 0.00],
+      ['6th', 0.40],
+      ['7th', 5.14],
+      ['8th', 1.95],
+      ['9th', 1.76],
+      ['10th', 16.58],
+      ['11th', 18.18],
+      ['12th', 23.08],
+      ['13th', 20.28],
+      ['14th', 24.64],
+      ['15th', 21.79],
+      ['16th', 18.49],
+      ['17th', 15.60],
+      ['18th', 22.73],
+      ['19th', 21.75],
+      ['20th', 22.50],
+      ['21st', 10.84],
+      ['22nd', 20.87],
+      ['23rd', 12.71],
+      ['24th', 21.41],
+      ['25th', 17.17],
+      ['26th', 22.15],
+      ['27th', 24.41],
+      ['28th', 22.94],
+      ['29th', 22.79],
+      ['30th', 25.58]
+    ]
+  }]
+});
+});
+</script>
+<% end %>
+
+
+<% content_for :styles do %>
+<style>
+@media screen {
+  #bars rect.highcharts-background {
+    fill: whitesmoke;
+  }
+  ul {
+    list-style-type: none;
+    position: relative;
+    margin-left: 0.1em;
+  }
+  li.leg-greendark:before {
+    content: "\2B24";
+    position: absolute;
+    left: -0.1em;
+    color: #00913c;
+    margin-top: -0.15em;
+    font-size: 1em;
+  }
+  li.leg-greenlight:before {
+    content: "\2B24";
+    position: absolute;
+    left: -0.1em;
+    color: #7cc576;
+    margin-top: -0.15em;
+    font-size: 1em;
+  }
+  li.leg-orangedark:before {
+    content: "\2B24";
+    position: absolute;
+    left: -0.1em;
+    color: #ff8200;
+    margin-top: -0.15em;
+    font-size: 1em;
+  }
+  li.leg-orangelight:before {
+    content: "\2B24";
+    position: absolute;
+    left: -0.1em;
+    color: #ffb466;
+    margin-top: -0.15em;
+    font-size: 1em;
+  }
+  li.leg-yellow:before {
+    content: "\2B24";
+    position: absolute;
+    left: -0.1em;
+    color: #eabe06;
+    margin-top: -0.15em;
+    font-size: 1em;
+  }
+  th {
+    vertical-align: bottom;"
+  }
+  table.rows td {
+    padding: .75em;
+  }
+  #lending-account-details table.alt.rows {
+    border: 0 !important;
+    border-width: 0 !important;
+  }
+  #lending-account-details table.alt.rows .highlight {
+    background-color: #fff;
+    font-size: 1.2em;
+  }
+  #lending-account-details table {
+    width: 100%;
+  }
+  #lending-account-details table .show-more {
+    display: block;
+  }
+  #lending-account-details table .number {
+    font-weight: 600;
+    width: 120px; /* so that show/hiding the table underneath doesn't make everything jump */
+  }
+  #lending-account-details table td.number  {
+    font-size:25px;
+    font-weight:bold;
+    letter-spacing:-1px;
+    color:#00913c;
+    padding:10px;
+  }
+  #lending-account-details table table .number {
+    width: auto;
+  }
+  #lending-account-details table .hint {
+    display: block;
+  }
+  #lending-account-details table .hint {
+    color: #444034;
+  }
+  #queue-details table,
+  #recent-lending-details table {
+    background-color: whitesmoke;
+  }
+  #queue-details .position p,
+  #recent-lending-details .position p {
+    font-size: .85em;
+    margin-bottom: .2em;
+  }
+}
+@media only screen and (max-width: 601px) {
+  #lending-account-details table .button-row span {
+    display: none;
+  }
+  #lending-account-details table td {
+    display: block;
+    border-width: 0;
+    padding: 0 .5em .5em;
+  }
+  #lending-account-details table td:last-child {
+    border-bottom-width: 1px;
+  }
+  #lending-account-details table td:first-child {
+    padding-top: .5em;
+  }
+  #lending-account-details table td.number,
+  #lending-account-details table td.more {
+    text-align: left;
+  }
+  #lending-account-details table td.number {
+    padding-bottom: .2em;
+  }
+}
+</style>
+<% end %>

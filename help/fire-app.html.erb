@@ -1,0 +1,120 @@
+
+<div class="section">
+  <div>
+    <h1>Help with Fire.app</h1>
+    <p class="intro">We use Fire.app to build our prototypes.</p>
+
+    <h2>Starting a new project</h2>
+    <p>When starting a new project, create a new folder under either <code>borrowers</code> or <code>lenders</code>. Only use lowercase letters and numbers and no special characters (except '-') for either folder or file names please.</p>
+
+    <h3>Creating pages</h3>
+    <p>To make creating new pages easier, you can copy the code from <a href="example.html">this example page</a> (from your local files not from the browser) to start any new page as that will contain examples of most things you'll need to get started.</p>
+
+    <h2>Editing pages</h2>
+
+    <h3>Layouts</h3>
+
+    <p>All new pages will automatically use the standard Zopa layout. If you need to use a different layout you need to create a new file with the same name as the page you're working on, except give it a <code>.layout</code> extension instead of <code>.erb</code>, and add the path to the layout you'd like to use inside that new file. E.g. <code>/borrowers/test-project/registration-email.html.erb</code> should have an accompnaying file at <code>/borrowers/test-project/registration-email.html.layout</code> and that file needs to include just the line <code>/_layouts/_email.html.erb</code>.</p>
+
+    <p>The following layouts exist:</p>
+    <dl>
+      <dt><code>/_layout.html.erb</code></dt>
+      <dd>is the default layout</dd>
+
+      <dt><code>/_layouts/_email.html.erb</code></dt>
+      <dd>is used for emails</dd>
+
+      <dt><code>/_layouts/_plain.html.erb</code></dt>
+      <dd>uses no layout but includes the basic styles</dd>
+    </dl>
+
+    <h2>Helpers for standard layout</h2>
+
+    <p>To change the page title, add a <code>&lt;% @pagetitle = 'Payday loans!!!' %&gt;</code> within the page.
+    <p>To make a page use the Piazza (logged-in) and not the Brochureware (logged-out) header and navigation, you need to set <code>@loggedin = true</code>.</p>
+    <p>To make a page highlight the lender and not the borrower navigation items, you need to set <code>@audience = :lenders</code>.</p>
+    <p>To set an additional body class, you can use <code>@bodyclass = 'test'</code>.</p>
+
+    <h3>Add hero images</h3>
+
+    <p>To show hero images in the first content section you need to change two things:</p>
+    <ol>
+      <li>Add a body class of 'has-hero' (<code>@bodyclass = 'has-hero'</code></li>
+      <li>Add the class 'hero' to the first section (<code>&lt;div class=&quot;hero section&quot;&gt;</code>)</li>
+    </ol>
+
+    <h3>Add sub navigation</h3>
+
+    <p>There is no subnavigation by default. If you'd like to add one you can add any list of links within a <code>content_for :subnav</code> block. E.g.</p>
+<pre class="example">
+&lt;% content_for :subnav do %&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="/404.html" class="active"&gt;Lorem&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/404.html"&gt;Ipsum&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/404.html"&gt;Dolor&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/404.html"&gt;Sit amet&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;% end %&gt;
+</pre>
+
+    <p>But the standard different sub navigations are already prepared in <code>/_includes/nav/subnav_content</code> and can be included. It re-uses the <code>@loggedin</code> and <code>@audience</code> variables to decide which version is shown. In addtion to that you can tell it which item to highlight with <code>locals: { highlight: 2 }</code>. E.g.</p>
+<pre class="example">
+&lt;% content_for :subnav do %&gt;
+  &lt;%= render :partial => "/_includes/nav/subnav_content", locals: { highlight: 2 } %&gt;
+&lt;% end %&gt;
+</pre>
+
+    <h3>Add CSS</h3>
+<pre class="example">
+&lt;% content_for :styles do %&gt;
+  &lt;style&gt;
+    /* put some CSS here */
+  &lt;/style&gt;
+&lt;% end %&gt;
+</pre>
+
+    <p>If you'd like to share CSS between many pages, it's better to put the styles into their own file. Add a <code>.scss</code> file under <code>_assets/css/content/</code>. If you'd like to use our SASS variables in there, add <code>@import &quot;variables&quot;;</code> at the top of that file. And reference that file in a same 'content_for' block like above:</p>
+<pre class="example">
+&lt;% content_for :styles do %&gt;
+  &lt;%= stylesheet_link_tag &quot;content/your-css-file&quot; %&gt;
+&lt;% end %&gt;
+</pre>
+
+
+    <h3>Add JavaScript</h3>
+<pre class="example">
+&lt;% content_for :scripts do %&gt;
+  &lt;script&gt;
+    // put some JS here
+  &lt;/script&gt;
+&lt;% end %&gt;
+</pre>
+
+    <p>If you'd like to share JS between many pages, it's better to put the script into its own file. Add a <code>.js</code> file under <code>_assets/js/content/</code>. And reference that file in a same 'content_for' block like above:</p>
+<pre class="example">
+&lt;% content_for :scripts do %&gt;
+  &lt;%= javascript_include_tag "content/your-js-file" %&gt;
+&lt;% end %&gt;
+</pre>
+
+    <h2>General helpers</h2>
+
+    <h3>Dummy text</h3>
+    <pre class="example">&lt;%= lorem_sentences(3) %&gt;</pre>
+    <p><%= lorem_sentences(3) %></p>
+
+    <p>Lots more are available, e.g. <code>lorem_date</code> or <code>lorem_name</code>.
+
+
+    <h3>Placeholder images</h3>
+    <pre class="example">&lt;%= image_tag(lorem_image("250x150")) %&gt;</pre>
+    <%= image_tag(lorem_image("250x150")) %>
+
+    <h2>Further information</h2>
+    <ul>
+      <li><a href="http://fireapp.kkbox.com/doc/index.html">Fire.app documentation</a></li>
+      <li><a href="http://get-serve.com/documentation">Serve documentation</a></li>
+    </ul>
+
+  </div>
+</div>

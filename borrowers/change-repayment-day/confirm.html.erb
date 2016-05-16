@@ -1,0 +1,81 @@
+<% @loggedin = true %>
+
+<div class="section">
+  <div>
+
+    <h1>Change repayment day</h1>
+    <p class="intro">You currently repay £182.49 on the 15th of each month.</p>
+
+    <form action="confirm.html" method="get" id="change-day">
+      <fieldset class="done">
+        <p>
+          <label for="repayment-day">Choose new monthly repayment day</label>
+          <select name="repayment-day" id="repayment-day" size="1" style="width: 7em;">
+            <% for i in (1..31) %>
+              <option value="<%= i %>" <% if params['repayment-day'] == i.to_s %>selected="selected"<% end %>><%= i %></option>
+            <% end %>
+          </select>
+        </p>
+        <p>
+          <input type="submit" value="Calculate new repayments" class="secondary" />
+        </p>
+      </fieldset>
+    </form>
+
+    <h2>New monthly repayment details</h2>
+    <table>
+      <tbody>
+        <tr>
+          <th>Repayment day</th>
+          <td>10th</td>
+        </tr>
+        <tr>
+          <th>Monthly repayments</th>
+          <td>£182.65</td>
+        </tr>
+        <tr>
+          <th>Next repayment date</th>
+          <td>03/09/2014</td>
+        </tr>
+        <tr>
+          <th>Next repayment</th>
+          <td>£128.53</td>
+        </tr>
+        <tr>
+          <th>Total repayable</th>
+          <td>£5,521.94</td>
+        </tr>
+        <tr>
+          <th>Final repayment date</th>
+          <td>03/09/2017</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><%= lorem_paragraph %></p>
+
+    <p><a href="thanks.html" class="button">Confirm change</a></p>
+
+  </div>
+</div>
+
+
+
+
+<% content_for :scripts do %>
+  <script>
+    (function($) {
+      // simulate an error by changing form action to error page when selecting '31'
+      var $form = $('#change-day');
+      $('select', $form).change(function(){
+        console.log('test');
+        var $selectedOption = $('option:selected', $form);
+        if ($selectedOption.length && ($selectedOption.val() === "31")) {
+          $form.attr('action', 'error.html');
+        } else {
+          $form.attr('action', 'confirm.html');
+        }
+      });
+    })(jQuery);
+  </script>
+<% end %>

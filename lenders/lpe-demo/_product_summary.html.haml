@@ -1,0 +1,25 @@
+#lending-account-details
+  %table.lending-summary{:width => "100%"}
+    %thead.a11y
+      %tr
+        %th Amount
+        %th Description
+    %tbody
+      %tr
+        %td
+          %p
+            = "Matching to borrowers"
+        %td.number
+          %strong= number_to_currency p[:matched], precision: 2
+      %tr
+        %td
+          %p
+            = "Repayments queued"
+        %td.number
+          %strong= number_to_currency p[:r_queued], precision: 2
+      %tr
+        %td
+          %p
+            = "New money queued"
+        %td.number
+          %strong= number_to_currency p[:n_queued], precision: 2

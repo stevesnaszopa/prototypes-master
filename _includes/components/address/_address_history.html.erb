@@ -1,0 +1,16 @@
+<%
+   count ||= 0
+   i = 0;
+%>
+<script>
+  CURRENT_ADDRESSES ='[';
+
+  <% count.times do %>
+    CURRENT_ADDRESSES += '{"addressable_id":null,"addressable_type":null,"county":"London","created_at":null,"from":"1999-12-01","house_name":"House Name","house_number":"<%= i %>","id":null,"months":null,"postcode":"e10 <%= i %>np","ptcabs":"3e10 <%= i %>np000","rialto_id":"dfc52e93-5531-e511-b0b8-0050568d003d","street_1":"TOP GEAR LANE","street_2":"Result <%= i %>","to":"2015-09-07","updated_at":null,"years":null}';
+    <% unless (count - 1) == i %>
+      CURRENT_ADDRESSES += ',';
+    <% end %>
+    <% i = i + 1 %>
+  <% end %>
+  CURRENT_ADDRESSES += ']';
+</script>

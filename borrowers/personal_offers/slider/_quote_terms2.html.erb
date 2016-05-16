@@ -1,0 +1,106 @@
+<form action="/borrow" method="get" id="loan-calculator">
+
+  <fieldset id="slider_calc"
+            class="multi-options"
+            data-loan-size="<%= initial_amount %>"
+            data-loan-term="<%= initial_term %>"
+            data-loan-market="A*">
+    <h3>
+      <span>Loan for</span>
+
+      <span class="">
+        £<input class="borrow-amount"
+                type="number"
+                value="<%= initial_amount %>"
+                data-maxlength="5"
+                step="100"
+                min="<%= minmax.min %>"
+                max="<%= minmax.max %>"
+                name="amount"
+                id="amount"
+                data-trackinglabel="Amount"
+                title="Amount" />
+      </span>
+    </h3>
+
+    <input type="hidden" name="zp_source" value="referrer-organic" />
+
+    <script type="text/html" data-inline="true">
+      <div class="slider-container">
+
+        <button class="decrease round"
+                data-amount="£<%= minmax.min %>"
+                data-trackinglabel="Amount (decrease)"
+                type="button"
+                title="Decrease amount"
+                aria-controls="slider_calc_results amount amount-slider">-</button>
+
+        <input class="range-slider"
+               data-trackinglabel="Amount (slider)"
+               title="Amount"
+               id="amount-slider"
+               type="range"
+               value="<%= initial_amount %>"
+               min="<%= minmax.min %>"
+               max="<%= minmax.max %>"
+               step="100"
+               aria-controls="slider_calc_results amount"
+               aria-live="polite" />
+
+
+        <button class="increase round"
+                data-trackinglabel="Amount (increase)"
+                data-amount="£<%= minmax.max %>"
+                type="button"
+                title="Increase amount"
+                aria-controls="slider_calc_results amount amount-slider">+</button>
+      </div>
+    </script>
+
+
+    <div class="sentences-results content group"
+         id="slider_calc_results">
+
+      <table class="rows">
+        <thead>
+        <tr>
+          <th>Term</th>
+          <th>APR</th>
+          <th>Monthly cost</th>
+          <th>Total cost</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% values.each_with_index do |val, index| %>
+          <tr class="" data-index="0">
+            <td>
+              <span class="radiocheck">
+                <input type="radio"
+                       <%= val == values.last ? 'checked=checked' : ''%>
+                       name="<%= "rate-#{name}" %>"
+                       value="12"
+                       id="<%= "rate-#{name}-#{index}" %>" />
+                <label for="<%= "rate-#{name}-#{index}" %>"><%= val[:term] %></label>
+              </span>
+            </td>
+            <td><span class="apr"><%= val[:apr] %></span></td>
+            <td>£<span class="monthly-repayment"><%= val[:cost] %></span></td>
+            <td>£<span class="monthly-repayment"><%= val[:total] %></span></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </fieldset>
+
+</form>
+<div class="submit-form">
+<p class="intro">
+  <a href="#" class="button">Select this quote</a>
+</p>
+<p class="hint">
+  Your tailored quote selection is valid for 14 days.<br/>
+  You can access this again by logging in.
+</p>
+
+</div>

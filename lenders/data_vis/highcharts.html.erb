@@ -1,0 +1,285 @@
+<div class="section hero">
+  <div>
+    <h1 style="margin-bottom:30px;">Graph test: Highcharts</h1>
+
+    <!--Highcharts Version -->
+
+    <!--Doughnut highchart-->
+    <h2 style="margin-bottom:-10px; color:#999;">Doughnut chart</h2>
+    <div id="doughnut" style="height: 400px; margin-top: 1.5em; margin-bottom: 1em;"></div>
+
+    <p>Notes</p>
+    <p>Change the text in the on-hover label</p>
+
+    <!--Original highchart-->
+
+    <h2 style="margin-bottom:-10px; color:#999;">Bar chart</h2>
+    <div id="bars" style="height: 250px; margin-top: 1.5em; margin-bottom: 1em;"></div>
+
+  </div>
+</div>
+
+<div class="section" id="tell-a-friend">
+  <div>
+    <h2>Tell your friends</h2>
+    <p>
+      Earn money by telling your friends about Zopa.
+      <a href="/405">Tell a friend</a>
+    </p>
+  </div>
+</div>
+
+<% content_for :styles do %>
+  <style>
+    @media screen {
+      th {
+        vertical-align: bottom;"
+      }
+      table.rows td {
+          padding: .75em;
+      }
+      #lending-account-details table.alt.rows {
+        border: 0 !important;
+        border-width: 0 !important;
+      }
+      #lending-account-details table.alt.rows .highlight {
+        background-color: #fff;
+        font-size: 1.2em;
+      }
+      #lending-account-details table {
+        width: 100%;
+      }
+      #lending-account-details table .show-more {
+        display: block;
+      }
+      #lending-account-details table .number {
+        font-weight: 600;
+        width: 120px; /* so that show/hiding the table underneath doesn't make everything jump */
+      }
+      #lending-account-details table td.number  {
+        font-size:25px;
+        font-weight:bold;
+        letter-spacing:-1px;
+        color:#00913c;
+        padding:10px;
+      }
+      #lending-account-details table table .number {
+        width: auto;
+      }
+      #lending-account-details table .hint {
+        display: block;
+      }
+      #lending-account-details table .hint {
+        color: #444034;
+      }
+
+      #queue-details table,
+      #recent-lending-details table {
+        background-color: whitesmoke;
+      }
+      #queue-details .position p,
+      #recent-lending-details .position p {
+        font-size: .85em;
+        margin-bottom: .2em;
+      }
+    }
+
+/*____________ simple bar charts ____________*/
+
+/* end bit */
+.barchart {
+  height: 1.5em;
+  width: 100%;
+  max-width: 270px;
+  margin-bottom: .1em;
+  background-color: white;
+  border: 1px solid;
+  position: relative;
+  overflow: hidden;
+}
+
+/* positioning of divider (left set inline) */
+.barchart span.graph {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* start bit */
+.barchart span.graph:before {
+  content: '';
+  height: 1.5em;
+  width: 270px;
+  background-color: #D3D60D;
+  position: absolute;
+  top: 0;
+  right: 100%;
+}
+
+  /* text inside */
+.barchart strong {
+  position: relative;
+  display: block;
+  font-size: .9em;
+  line-height: 1;
+  padding: .3em .4em;
+}
+
+.barchart strong span {
+      font-weight: normal;
+}
+
+
+    @media only screen and (max-width: 601px) {
+      #lending-account-details table .button-row span {
+        display: none;
+      }
+
+      #lending-account-details table td {
+        display: block;
+        border-width: 0;
+        padding: 0 .5em .5em;
+      }
+      #lending-account-details table td:last-child {
+        border-bottom-width: 1px;
+      }
+      #lending-account-details table td:first-child {
+        padding-top: .5em;
+      }
+      #lending-account-details table td.number,
+      #lending-account-details table td.more {
+        text-align: left;
+      }
+      #lending-account-details table td.number {
+        padding-bottom: .2em;
+      }
+    }
+  </style>
+<% end %>
+
+
+<% content_for :scripts do %>
+  <%= javascript_include_tag "vendor/highcharts" %>
+
+  <script>
+  console.log("Can we put this here?!??");
+
+    $(function () {
+
+      Highcharts.theme = {
+        colors: ['#CFE8CC', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+      };
+
+      // Apply the theme
+      var highchartsOptions = Highcharts.setOptions(Highcharts.theme);
+
+    });
+
+  //Highcharts the doughnut chart
+    $(function () {
+        //define data
+        var reasonData = [
+              ['Car finance', 17450],
+              ['Debt consolidation', 5450],
+              ['Home improvement', 5031],
+              ['Other', 1455]
+        ];
+
+        //calculate percentages
+        var dataSum = 0;
+        for (var i=0;i < reasonData.length;i++) {
+            dataSum += reasonData[i][1];
+        };
+
+        //make chart
+        $('#doughnut').highcharts({
+            chart: {
+                type: 'pie'
+            },
+            title: {
+                text: 'Reason for loan'
+            },
+            subtitle:{
+               text: 'Source: the Zopa loanbook'
+            },
+            yAxis: {
+                title: {
+                    text: 'Pounds (£)'
+                }
+            },
+            plotOptions: {
+              pie: {
+                shadow: false,
+                center: ['50%', '50%']
+              }
+            },
+            legend: {
+                enabled: false
+            },
+            series: [{
+                //First set of data
+                name: 'Lent out',
+                data: reasonData,
+                size: '100%',
+                innerSize: '60%',
+                dataLabels:{
+                   formatter: function(){
+                     return this.point.name + '<br/> £' + this.y;
+                    }
+                }
+            }], //series
+            tooltip: {
+                formatter: function(){
+                  var pcnt = (this.y / dataSum) *100;
+                  return this.point.name + ": " + Highcharts.numberFormat(pcnt) + '%';
+                }
+            }
+        });
+
+    //make bar chart
+    $(function () {
+        $('#bars').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: ''
+            },
+            xAxis: {
+                type: 'category',
+                labels: {
+                    rotation: -45
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Pounds (£)'
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            tooltip: {
+                pointFormat: 'Value <b>£{point.y:.1f}</b>'
+            },
+            series: [{
+                name: 'Value',
+                data: [
+                    ['January 2015', 1155],
+                    ['Febuary 2015', 1255],
+                    ['March 2015', 1355],
+                    ['April 2015', 1355],
+                    ['May 2015', 1355],
+                    ['June 2015', 1655],
+                    ['July 2015', 1755]
+                  ]
+
+            }]
+        });
+    });
+
+    });
+  </script>
+<% end %>
+

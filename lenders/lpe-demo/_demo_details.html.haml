@@ -1,0 +1,27 @@
+- content_for :styles do
+  = stylesheet_link_tag "content/multiproduct"
+  = stylesheet_link_tag "content/comparison"
+  = stylesheet_link_tag "content/manage"
+- content_for :scripts do
+  = javascript_include_tag "content/expand"
+- @products = [ |
+{ name: "Zopa Access", slug: "z-access", rate: "3.6", terms: "1-5 year A* to C risk market SafeGuarded loans and no fee charged for selling loans", balance: "5000", lentout: "4300", matched: "0", r_queued: "400", n_queued: "300", r_earnings: "40", r_lending: "35", active: true }, |
+{ name: "Zopa Classic", slug: "z-classic", rate: "4.7", terms: "1-5 year A* to C risk market SafeGuarded loans with a 1% fee charged for any sale of loans", balance: "3000", lentout: "3000", matched: "0", r_queued: "0", n_queued: "0", r_earnings: "20", r_lending: "15" , default: "true", active: true }, |
+{ name: "Zopa Plus", slug: "z-plus", rate: "7.3", terms: "1-5 year A* to E Non-SafeGuarded loans with a 1% fee charged for any sale of loans, and a minimum balance of £2000", balance: "8000", lentout: "7200", matched: "300", r_queued: "250", n_queued: "250", r_earnings: "14", r_lending: "7", active: true}, |
+{ name: "ISA Zopa Access", slug: "isa-z-access", rate: "3.6", terms: "1-5 year A* to C risk market SafeGuarded loans and no fee charged for selling loans", balance: "5000", lentout: "4300", matched: "0", r_queued: "400", n_queued: "300", r_earnings: "40", r_lending: "35", active: false }, |
+{ name: "ISA Zopa Classic", slug: "isa-z-classic", rate: "4.7", terms: "1-5 year A* to C risk market SafeGuarded loans with a 1% fee charged for any sale of loans", balance: "3000", lentout: "3000", matched: "0", r_queued: "0", n_queued: "0", r_earnings: "20", r_lending: "15" , default: "true", active: false }, |
+{ name: "ISA Zopa Plus", slug: "isa-z-plus", rate: "7.3", terms: "1-5 year A* to E Non-SafeGuarded loans with a 1% fee charged for any sale of loans, and a minimum balance of £2000", balance: "8000", lentout: "7200", matched: "300", r_queued: "250", n_queued: "250", r_earnings: "14", r_lending: "7", active: false} |
+] |
+- @holding_account = {balance: "3000"}
+- @balance_percent = "40%"
+- @balance_used = "7000"
+- @active_products = @products.select { |p| p[:active] == true }
+- @aggregated_balance = @active_products.inject(0) {|sum, prod| sum + prod[:balance].to_f}
+- @aggregated_rate_numerator = @active_products.inject(0) {|sum, prod| sum + (prod[:lentout].to_f * (1 + prod[:rate].to_f / 100 )).to_f}
+- @aggregated_lentout_denominator = @active_products.inject(0) {|sum, prod| sum + prod[:lentout].to_f}
+- @average_rate = (((@aggregated_rate_numerator / @aggregated_lentout_denominator) - 1) * 100).round(2)
+- @isa_enabled = false
+- @demo_date = DateTime.new(2016,03,01,12,30,00,"00:00")
+- @demo_month_and_day = @demo_date.strftime("%B %Y")
+- @statements_start_date = DateTime.new(2015,01,01,00,00,00,"00:00")
+- @statements_start_date_month_year_human = @statements_start_date.strftime("%B %Y")

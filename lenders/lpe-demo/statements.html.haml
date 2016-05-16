@@ -1,0 +1,101 @@
+= render "demo_details"
+- @loggedin = true
+- @pagetitle = 'Statements || My Zopa ISA'
+- content_for :mainnav do
+  = render "mainnav"
+- content_for :subnav do
+  = render "subnav", locals: {active_nav: "reports"}
+.section
+  %div
+    %h1 Statements
+    %p View your earnings statements from #{@statements_start_date_month_year_human} onwards
+    %form#select_statement{"accept-charset" => "UTF-8", :action => "/statements/beta", :method => "get"}
+      %div{:style => "margin:0;padding:0;display:inline"}
+        %input{:name => "utf8", :type => "hidden", :value => "✔"}/
+      %p.intro.date
+        Showing:
+        %select#date{:name => "date"}
+          %option{:selected => "selected", :value => "2016-02"} February 2016 to date
+          %option{:value => "2016-01"} January 2016
+          %option{:value => "2015-12"} December 2015
+          %option{:value => "2015-11"} November 2015
+          %option{:value => "all"} Year to date
+          %option{:value => "previous"} 2015 Annual Statement
+          %option{:value => "tax_year"} Tax year to date
+        for:
+        %select#product{:name => "product"}
+          - @active_products.each do |p|
+            %option{value: p[:slug]}=p[:name]
+        %input.minor.secondary{"data-automation" => "ZA.view_selected_statement", :name => "commit", :type => "submit", :value => "View"}/
+    .info.box
+      %h2 Account summary
+      %h3.startToEndDate
+        1st February 2016 to 1st February 2016
+      %p.user-info
+        User ID:
+        %strong 123456789abc
+      %p.user-info Bob Lenderson
+      %p.user-info
+      %p.user-info 123 Fourtyfive ST, E1 23F
+      %table.statement
+        %thead.a11y
+          %tr
+            %th Category
+            %th Amount
+        %tbody
+          %tr.total
+            %td Zopa total (1st February 2016)
+            %td=@aggregated_balance
+          %tr
+            %td
+              Earnings
+              %a.show-more{"aria-controls" => "earnings", "aria-live" => "polite", :href => "#earnings"}
+                %span Show
+                %span.a11y earnings
+              #earnings{"aria-expanded" => "false", :style => "display: none;"}
+                %table
+                  %thead.hide
+                    %tr
+                      %th Earnings type
+                      %th Amount
+                  %tbody
+                    %tr
+                      %td
+                        Interest earned from borrowers
+                        %span.tooltip.help{:tabindex => "0"}
+                          %span.center{:role => "tooltip"} This is made up of interest paid to you directly by borrowers, interest covered by the Safeguard fund and interest credits paid to you by other lenders if you've bought loans from them
+                      %td £0.00
+                    %tr
+                      %td.bonus
+                        Bonus:
+                        %a{:href => "/dashboards/tell_a_friend"} Tell a friend
+                      %td £0.00
+            %td £0.00
+          %tr
+            %td Deposits
+            %td £0.00
+          %tr
+            %td Withdrawals
+            %td £0.00
+          %tr.total
+            %td Zopa total (1st February 2016)
+            %td=@aggregated_balance
+    %p.hint
+      No transactions in this period
+    %h2 Current loan book
+    %p
+      You currently have
+      %strong £#{@aggregated_balance}
+      lent out at an average rate of
+      %strong #{@average_rate}%
+    %p
+      %a.loanbook-link{:href => "/lending/loan_book"} View your loan book to see details of your loan contracts
+    .info.box.loanbook-link
+      %p
+        %strong Please note:
+        We have been working on a new section to provide an overview of your loan book.
+        Take a look at the
+        = succeed "." do
+          %a{:href => "/lending/loan_book/overview"} loan book overview
+        = succeed "." do
+          %a{:href => "mailto:usertesting@zopa.com"} contact us

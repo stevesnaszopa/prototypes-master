@@ -1,0 +1,368 @@
+<div class="section">
+  <div>
+
+    <h1>You're almost there</h1>
+
+    <p class="intro">
+      We need to verify your <strong>income</strong> and <strong>bank account</strong>
+      and <strong>identity</strong> before we process your application.
+    </p>
+
+    <p class="intro">Please upload the following:</p>
+
+    <ul class="nav-tabs group">
+
+      <li class="active">
+        <a href="#bank_statement-content">Bank statement</a>
+      </li>
+
+      <li>
+        <a href="#payslip-content">Payslip</a>
+      </li>
+
+      <li>
+        <a href="#id_check-content">ID</a>
+      </li>
+    </ul>
+
+    <div class="tab-content group">
+      <div id="bank_statement-content" class="tab-pane group active ">
+
+        <h3>Upload a bank statement to validate your bank account</h3>
+
+        <div class="row group">
+          <div class="col">
+            <p class="hint">
+              Note: If your bank statement shows your latest salary payment then you won't need to upload a payslip.
+            </p>
+
+            <p>It must include the following:</p>
+
+            <ul class="ticked">
+              <li>Recent transactions</li>
+              <li>Your name</li>
+              <li>Sort code</li>
+              <li>Account number</li>
+              <li>Date</li>
+            </ul>
+
+            <p><strong>Bank statements cannot be:</strong></p>
+            <ul class="crossed">
+              <li>A spreadsheet</li>
+              <li>A screenshot from online banking</li>
+              <li>A black and white copy</li>
+            </ul>
+          </div>
+          <div class="col">
+            <p><img alt="" height="449" src="bank_statement-example.png" width="400"></p>
+          </div>
+        </div>
+
+        <form accept-charset="UTF-8"
+              action="/"
+              class="v2"
+              enctype="multipart/form-data"
+              method="post">
+
+          <div style="margin:0;padding:0;display:inline">
+            <input name="utf8" type="hidden" value="✔">
+            <input name="authenticity_token" type="hidden" value="YWffHB8fea93VgFeNf3kQrvTqMLzqffJDjrKzlFTBxs=">
+          </div>
+
+          <fieldset>
+            <div class="hidden">
+              <input id="document_upload_doc_type" name="document_upload[doc_type]" type="hidden" value="bank_statement">
+            </div>
+
+            <p><input type="file" accept="image/*" capture="camera"></p>
+            <p><input type="file" accept="image/*" ></p>
+            <div class="document-type">
+              <p class="">
+                <label for="document_upload_file">Add your latest Bank statement</label>
+                <input accept="image/png,image/jpeg,image/pjpeg,image/gif,application/pdf"
+                       capture="camera"
+                       id="document_upload_file"
+                       name="document_upload[file]"
+                       required="required"
+                       type="file">
+              </p>
+
+
+              <p class="hint">
+                This can be a PDF download or a photo/scan of the original document (we accept JPG, PNG and GIF files).
+                The file size must be under 5MB.
+              </p>
+            </div>
+
+            <p>
+              <span class="radiocheck">
+                <input name="document_upload[doc_type]" type="hidden" value="bank_statement">
+                <input id="document_upload_doc_type_checkbox"
+                       name="document_upload[doc_type]"
+                       type="checkbox"
+                       value="bank_statement_with_income">
+
+                <label for="document_upload_doc_type_checkbox">
+                  This document displays my latest salary payment. (If not you’ll need to upload a payslip too).
+                </label>
+              </span>
+            </p>
+
+            <p><input data-disable-with="Uploading..." name="commit" type="submit" value="Upload"></p>
+          </fieldset>
+        </form>
+
+
+      </div>
+      <div id="payslip-content" class="tab-pane group  ">
+        <h3>Upload a payslip to validate your income</h3>
+
+        <div class="row group">
+          <div class="col">
+            <p>It must include the following:</p>
+            <ul class="ticked">
+              <li>Your name</li>
+              <li>Employer name</li>
+              <li>Salary credit</li>
+              <li>Date</li>
+            </ul>
+
+            <p><strong>Payslips cannot be:</strong></p>
+            <ul class="crossed">
+              <li>A black and white copy</li>
+            </ul>
+          </div>
+          <div class="col">
+            <p><img alt="" height="183" src="payslip-example.png" width="400"></p>
+          </div>
+        </div>
+
+        <form accept-charset="UTF-8"
+              action="/"
+              class="v2"
+              enctype="multipart/form-data"
+              method="post">
+
+          <div style="margin:0;padding:0;display:inline">
+            <input name="utf8" type="hidden" value="✔">
+            <input name="authenticity_token" type="hidden" value="YWffHB8fea93VgFeNf3kQrvTqMLzqffJDjrKzlFTBxs=">
+          </div>
+
+          <fieldset>
+            <div class="hidden">
+              <input id="document_upload_doc_type" name="document_upload[doc_type]" type="hidden" value="payslip">
+            </div>
+
+            <div class="document-type">
+              <p class="">
+                <label for="document_upload_file">Add your latest Payslip</label>
+                <input accept="image/png,image/jpeg,image/pjpeg,image/gif,application/pdf"
+                       capture="camera"
+                       id="document_upload_file"
+                       name="document_upload[file]"
+                       required="required"
+                       type="file">
+              </p>
+
+
+              <p class="hint">
+                This can be a PDF download or a photo/scan of the original document (we accept JPG, PNG and GIF files).
+                The file size must be under 5MB.
+              </p>
+            </div>
+
+
+            <p><input data-disable-with="Uploading..." name="commit" type="submit" value="Upload"></p>
+          </fieldset>
+        </form>
+
+
+
+      </div>
+      <div id="id_check-content" class="tab-pane group  ">
+        <h3>Upload a copy of your passport or your driving licence photocard to validate your identity</h3>
+
+        <div class="row group">
+          <div class="col">
+            <p class="hint">
+              Note: You can send us a photo or a scan
+            </p>
+
+            <p>Your passport or driving licence must include:</p>
+
+            <ul class="ticked">
+              <li>Your name</li>
+              <li>A photo of you</li>
+              <li>Date of birth</li>
+            </ul>
+
+            <p><strong>The photo or scan cannot be:</strong></p>
+            <ul class="crossed">
+              <li>Blurry</li>
+              <li>Obscured by camera flash</li>
+              <li>Taken at an extreme angle</li>
+              <li>A black and white copy</li>
+            </ul>
+          </div>
+          <div class="col">
+            <p><img alt="" height="449" src="drivers_licence-example.png" width="400"></p>
+          </div>
+        </div>
+
+
+
+
+        <form accept-charset="UTF-8"
+              action="/"
+              class="v2"
+              enctype="multipart/form-data"
+              method="post">
+
+          <div style="margin:0;padding:0;display:inline">
+            <input name="utf8"
+                   type="hidden"
+                   value="✔">
+
+            <input name="authenticity_token"
+                   type="hidden"
+                   value="YWffHB8fea93VgFeNf3kQrvTqMLzqffJDjrKzlFTBxs=">
+          </div>
+
+          <fieldset>
+            <div class="hidden">
+              <input id="document_upload_doc_type" name="document_upload[doc_type]" type="hidden" value="id_check">
+            </div>
+
+            <div class="document-type">
+              <p class="">
+                <label for="document_upload_file">Add your latest ID</label>
+                <input accept="image/png,image/jpeg,image/pjpeg,image/gif,application/pdf"
+                       capture="camera"
+                       id="document_upload_file"
+                       name="document_upload[file]"
+                       required="required"
+                       type="file">
+              </p>
+
+
+              <p class="hint">
+                This can be a PDF download or a photo/scan of the original document (we accept JPG, PNG and GIF files).
+                The file size must be under 5MB.
+              </p>
+            </div>
+
+            <p><input data-disable-with="Uploading..." name="commit" type="submit" value="Upload"></p>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+
+    <p>
+      You can do this later, but the sooner you do it, the faster we can process your application.
+      This form will be available when you sign in to Zopa.com.
+    </p>
+
+  </div>
+</div>
+
+<style>
+  @media screen {
+    div.preview .box > img {
+      width: 100%;
+      height: auto;
+    }
+    .tab-pane h3 {
+      margin-top: .5em !important;
+    }
+  }
+</style>
+
+
+<script type="text/javascript" charset="utf-8">
+  /*global window, $, ACCEPTED_FILE_TYPES, FileReader */
+
+  var ACCEPTED_FILE_TYPES = ['image/png', 'image/jpeg', 'image/pjpeg', 'image/gif'];
+
+  //polyfill for Array.includes()
+  if (![].includes) {
+    Array.prototype.includes = function (searchElement /*, fromIndex*/) {
+      'use strict';
+      var O = Object(this);
+      var len = parseInt(O.length, 10) || 0;
+      if (len === 0) {
+        return false;
+      }
+      var n = parseInt(arguments[1], 10) || 0;
+      var k;
+      if (n >= 0) {
+        k = n;
+      } else {
+        k = len + n;
+        if (k < 0) {k = 0;}
+      }
+      var currentElement;
+      while (k < len) {
+        currentElement = O[k];
+        if (searchElement === currentElement ||
+          (searchElement !== searchElement && currentElement !== currentElement)) {
+          return true;
+        }
+        k++;
+      }
+      return false;
+    };
+  }
+
+  if (window.FileReader) {
+    $(function () {
+      var $img = $('<img class="preview" />'),
+        $inputs = $('input[type=file]'),
+        readURL = function(input) {
+          var $previewContainer = $('<div class="preview"><h4>Preview:</h4><div class="info box"></div></div>'),
+            $reselectLink = $('<p><a class="reselect" href="#">Select a different file</a></p>'),
+            $errorMsg = $('<p class="error" role="alert" />').text('Please select a valid file type'),
+            $inputContainer = $(input).parent();
+          // end var
+
+          $errorMsg.detach();
+
+          if (input.files && input.files[0] && ACCEPTED_FILE_TYPES.includes(input.files[0].type)) {
+            var reader = new FileReader();
+            $errorMsg.detach();
+
+            reader.onloadstart = function () {
+              $inputContainer.after($previewContainer).aria('hide');
+              $previewContainer.aria('show').find('.box').html('Loading image...');
+            };
+
+            reader.onload = function (e) {
+              $img.attr('src', e.target.result);
+              $previewContainer.find('.box').html('').append($img.clone());
+              $previewContainer.append($reselectLink);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+          } else if (input.files[0].type === 'application/pdf') {
+            $errorMsg.detach();
+            //do nothing
+          } else {
+            $errorMsg.text('Please select a valid file type');
+            $inputContainer.after($errorMsg.clone()).find('input').val('');
+          }
+        };
+      //end var
+
+      $inputs.on('change', function () {
+        readURL(this);
+      });
+
+      $('.document-type').on('click', 'a.reselect', function (e) {
+        e.preventDefault();
+        var $container = $(this).closest('.document-type');
+
+        $('input', $container).val('').parent().aria('show');
+        $('.preview', $container).aria('hide');
+      });
+    });
+  }
+</script>

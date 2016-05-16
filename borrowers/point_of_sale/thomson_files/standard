@@ -1,0 +1,80 @@
+var mboxCurrent=mboxFactories.get('default').get('TH_PromoStrip',0);mboxCurrent.setEventTime('include.start');document.write('<div style="visibility: hidden; display: none" id="mboxImported-default-TH_PromoStrip-0">');/* Offer id: 247*/ 
+
+_mboxDefaultContentOffer = function() {
+  this._onLoad = function() {};
+};
+
+_mboxDefaultContentOffer.prototype.setOnLoad = function(_onLoad) {
+  this._onLoad = _onLoad;
+};
+
+_mboxDefaultContentOffer.prototype.shouldAppendClickHandler = function(_mbox, _clickHandlerDiv, _defaultDiv) {
+  var _result = _mbox.getFetcher && _mbox.getFetcher().getType() === 'ajax';
+  _result = _result && _mbox.getDiv() === _mbox.getDefaultDiv();
+  _result = _result && _clickHandlerDiv !== null;
+  _result = _result && _clickHandlerDiv !== _defaultDiv;
+
+  return  _result;
+};
+
+_mboxDefaultContentOffer.prototype.appendClickHandlerIfRequired = function(_mbox, _clickHandlerDiv, _defaultDiv) {
+  if (this.shouldAppendClickHandler(_mbox, _clickHandlerDiv, _defaultDiv)) {
+    _defaultDiv.appendChild(_clickHandlerDiv);
+  }
+};
+
+_mboxDefaultContentOffer.prototype.onClickHandler = function(_mbox) {
+  // just use _mbox.getName() when everyone is on mboxVersion >= 21
+  var _mboxName = _mbox.getName ? _mbox.getName() : _mbox.id;
+  var _clickDiv = document.getElementById('mboxClick-' + _mboxName);
+
+  if (_clickDiv !== null) {
+    _clickDiv.onclick();
+  }
+};
+
+_mboxDefaultContentOffer.prototype.show = function(_mbox) {
+  try {
+    var _self = this;
+    var _defaultDiv = _mbox.getDefaultDiv();
+
+    if (_defaultDiv === null) {
+      return 0;
+    }
+
+    _defaultDiv.onclick = function () {
+      _self.onClickHandler(_mbox);
+    };
+
+    var _clickHandlerDiv = _mbox.getDiv();
+    var _result = _mbox.hide();
+
+    if (_result === 1) {
+      this.appendClickHandlerIfRequired(_mbox, _clickHandlerDiv, _defaultDiv);
+      this._onLoad();
+    }
+
+    return _result;
+  } catch (e) {
+    var _errorMessage = "Default content offer caused exception: " + e;
+
+    if (_mbox.setMessage) {
+      _mbox.setMessage(_errorMessage);
+    } else {
+      _mbox.setError(_errorMessage);
+    }
+
+    return 0;
+  }
+};
+
+(function(){
+  var shouldShowMbox = mboxCurrent.getFetcher && mboxCurrent.getFetcher().getType() === 'ajax';
+
+  mboxCurrent.setOffer(new _mboxDefaultContentOffer());
+
+  if (shouldShowMbox) {
+    mboxCurrent.show();
+  }
+}());
+document.write('<!-- Offer Id: 96532  --><script type=\"text\/javascript\">\r\n\/*T&T Metadata v3 ==>Response Plugin*\/\r\nwindow.ttMETA=(typeof(window.ttMETA)!=\"undefined\")?window.ttMETA:[];window.ttMETA.push({\"CampaignName\":\"Thomson Beach - Seasonal Searched - S15 & W15 - 23\/06\/2015\",\"CampaignId\":\"44966\",\"RecipeName\":\"Summer 15\",\"RecipeId\":\"14\",\"OfferId\":\"247\",\"OfferName\":\"Default Content\",\"MboxName\":\"TH_PromoStrip\"});\r\n<\/script>');document.write('<!-- Offer Id: 62893  --><script>\r\n\r\nfunction tryAgain(args,_this) { var self = arguments.callee; var func = args.callee; func.current = (func.current || 0) + self.interval; if (func.current <= self.max) { setTimeout( function() { func.apply( (_this||{}),Array.prototype.slice.call(args)) } ,self.interval); return true; } else return false; };\r\n\t\ttryAgain.max = 8000; \r\n\t\ttryAgain.interval = 500;\r\n\t\t\r\nfunction setCookie(cname,cvalue,exdays)\r\n{\r\nvar d = new Date();\r\nd.setTime(d.getTime()+(exdays*24*60*60*1000));\r\nvar expires = \"expires=\"+d.toGMTString();\r\ndocument.cookie = cname + \"=\" + cvalue + \"; \" + expires;\r\n}\r\n\r\nfunction getCookie(c,notFoundString){var dc=document.cookie;if(dc.indexOf(c)!=-1){var cs=dc.split(c)[1];return (cs.substr(0,1)==\"=\"?cs.substr(1):cs).split(\';\')[0];};return (notFoundString || \"\");};\r\n\r\n\r\nmboxFactoryDefault.addOnLoad(function(){\r\n\t\r\n\tvar get_count= getCookie(\"count\");\r\n\tif(get_count==\"\"){\r\n\t\t\t setCookie(\"count\",0,\"1\");\r\n\t\t\t get_count=0;\r\n\t\t\t}\r\n\t \r\n\tfunction mboxTrack(mbox) {\r\n    var d = new Date();\r\n    var ub = mboxFactoryDefault.getUrlBuilder().clone();\r\n    ub.addParameter(\"mbox\", mbox);\r\n    ub.addParameter(\'mboxTime\', d.getTime() - (d.getTimezoneOffset() * 60000));\r\n    ub.addParameters(Array.prototype.slice.call(arguments).slice(1));\r\n    var img = new Image();\r\n    img.src = ub.buildUrl().replace(\"\/mbox\/undefined\", \"\/mbox\/ajax\");\r\n    img.style.display = \"none\";\r\n    if (document.body) document.body.insertBefore(img,document.body.firstChild);\r\n}\r\n\r\nfunction check_dojo()\r\n{\r\nif(typeof(dojo) !== \"undefined\") {\r\n\t\/\/console.log(\'loaded\');\r\n  \t\t\t \/\/ dojo has been loaded\t\t \r\n\t\t\t \tdojo.require(\"dojox.NodeList.delegate\");\r\n\t\t\t\t dojo.ready(function(){\r\n \t\t\t\t\t dojo.query(\".sub-col.search-col\").delegate(\"#tui_searchPanel_view_SubmitButton_0\", \"onclick\", function(evt){\r\n\t\t\t\t\t var new_count= parseInt(get_count)+parseInt(1);\r\n  \t\t\t   \t\t mboxTrack(\"search_track\",\"profile.searchVolume=\"+new_count);\r\n\t\t\t\t\t setCookie(\"count\",new_count,\"1\");\r\n\t\t\t\t\t\/\/ console.log(\"clicked \" + dojo.attr(this, \"id\")+ new_count);\r\n     \t\t\t\t dojo.stopEvent(evt);\r\n \t\t\t\t\t\t \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t});\r\n\t\t\t\t\t });\r\n\t}\r\nelse{setTimeout(check_dojo,500)}\r\n}\r\n\r\ncheck_dojo();\r\n\t})\r\n\r\n<\/script>');document.write('</div>');mboxCurrent.setEventTime('include.end');mboxFactories.get('default').get('TH_PromoStrip',0).loaded();mboxFactories.get('default').getPCId().forceId("1435238808500-287383.21_20");

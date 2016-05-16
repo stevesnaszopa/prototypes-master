@@ -1,0 +1,290 @@
+<% @loggedin = true %>
+<% @audience = :lenders %>
+<% @pagetitle = 'My Zopa lending dashboard' %>
+
+<% content_for :subnav do %>
+ <ul>
+   <li class="active"><a href="dashboard.html">Dashboard</a></li>
+   <li><a href="statements.html">Statements</a></li>
+   <li><a href="lend.html">Lend</a></li>
+   <li><a href="withdraw.html">Withdraw</a></li>
+ </ul>
+<% end %>
+
+
+
+<div class="section hero">
+  <div>
+    <h1>Dashboard</h1>
+
+    <p style="font-size:60px; font-weight:bold; letter-spacing:-2px; color:#00913c;">£32,336.52</p>
+
+    <p class="intro" style="margin-top:-10px;">
+      Total in Zopa of which <b style="color:#00913c;">£32,183.87</b> is lent out at 4.76%
+      <span class="tooltip" style="font-size: 0.7em;"><span class="top center">This is the average rate of all your money that’s currently lent out. It does not take account of any Rate Promises or bonuses.</span></span>
+    </p>
+
+    <p style="margin-top: -7px;"><a href="#recent-lending-details" class="show-more"><span>Show</span> recent lending</a></p>
+
+    <div id="recent-lending-details" class="info box">
+      <table class="alt rows">
+        <tbody>
+            <tr class="new_funding">
+              <td class="number" style="color:#00913c; font-weight: bold; font-size: 2em;">£10.00</td>
+              <td>
+                <p>
+                  Last 7 days
+              </p>
+              </td>
+            </tr>
+            <tr class="new_funding">
+              <td class="number"  style="color:#00913c; font-weight: bold; font-size: 2em;">£984.27</td>
+              <td>
+                <p>
+                  Last month
+                </p>
+              </td>
+            </tr>
+        </tbody>
+      </table>
+
+      <p><a href="">View loan book</a></p>
+    </div>
+
+
+    <p style="margin-top: -7px;"><a href="#queued-to-lend" class="show-more"><span>Show</span> money queued to lend</a></p>
+
+    <div id="queued-to-lend" class="info box">
+     <table class="alt rows">
+       <tbody>
+           <tr class="new_funding">
+             <td class="number" style="color:#c95d3a; font-weight: bold; font-size: 2em;">£150.00</td>
+             <td>
+               <p>
+                 Repayments queued (15th August 2015)
+                 <span class="tooltip" tabindex="0"><span class="top center" role="tooltip">
+                   Money repaid by borrowers in the queue to be processed and re-lent. Re-lending is prioritised ahead of new money and will be lent out faster.
+                 </span></span>
+               <br />
+               <span class="hint">£1.13m from all lenders in 4 and 5 year loans</span>
+             </p>
+
+               <div class="position">
+                 <div class="barchart">
+                   <span class="graph" style="left: 27.889265831140722%;"></span>
+                   <strong><span>Progress</span> 28%</strong>
+                 </div>
+               </div>
+             </td>
+           </tr>
+           <tr class="new_funding">
+             <td class="number"  style="color:#c95d3a; font-weight: bold; font-size: 2em;">£0.41</td>
+             <td>
+               <p>
+                 Under £10 in processing
+                 <span class="tooltip" tabindex="0"><span class="top center" role="tooltip">
+                   New money and repayments will go through processing to be matched to borrowers. This step diversifies your money and gives you a blend of rates. £10 is the minimum amount you can lend at any one time. Smaller amounts will remain in processing.
+                 </span></span>
+                 <br />
+                 <span class="hint">£827k from all lenders, ~£577k being lent per day</span>
+               </p>
+             </td>
+           </tr>
+       </tbody>
+     </table>
+   </div>
+
+  </div>
+</div>
+
+
+<div class="section" id="earnings">
+  <div>
+
+   <h1>Earnings</h1>
+
+    <span style="font-size:60px; font-weight:bold; letter-spacing:-2px; color:#00913c;">£879.41</span>
+
+    <p class="into">Total earnings including bonuses and after fees since January 2015</p>
+
+    <div id="bars" style="height: 250px; margin-top: 0; margin-bottom: 1em;"></div>
+
+    <p style="margin-top: 0em;"><a href="statements.html" class="button minor">View statements</a></p>
+
+  </div>
+</div>
+
+
+
+<div class="section" id="all-time">
+  <div>
+    <h1>All time</h1>
+    <p>Since 3rd November 2009</p>
+    <div class="row group">
+      <div class="col third2">
+        <p class="intro"><b style="font-weight:bold; color:#00913c;">£6,336.52</b> earnings<br />
+          <span class="hint">Incl. bonuses, after fees and bad debt not covered by Safeguard</p>
+
+        <p class="intro"><b style="font-weight:bold;  color:#a04040;">£20.53</b> Bad debt not covered by Safeguard</p>
+
+        <p class="intro"> <b style="font-weight:bold; color:#00913c;">£29,000.00</b> deposits</p>
+
+        <p class="intro"><b style="font-weight:bold; color:#a04040;">£503.65</b> withdrawals</p>
+      </div>
+
+      <div class="col third1 info box">
+        <h2>Tell your friends</h2>
+        <p>Earn money by telling your friends about Zopa</p>
+        <p><a href="/404" class="button minor">Tell a friend</a></p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<% content_for :scripts do %>
+  <%= javascript_include_tag "vendor/highcharts" %>
+  <script>
+    $(function () {
+      Highcharts.theme = {
+        colors: ['#CFE8CC', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+      };
+      // Apply the theme
+      var highchartsOptions = Highcharts.setOptions(Highcharts.theme);
+    });
+
+    $(function () {
+        $('#bars').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: ''
+            },
+            xAxis: {
+                type: 'category',
+                labels: {
+                    rotation: -45
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Pounds (£)'
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            tooltip: {
+                pointFormat: '<b style="color:#00913c;">£{point.y:.2f}</b>'
+            },
+            series: [{
+                name: 'Value',
+                data: [
+                    ['January 2015', 102.11],
+                    ['Febuary 2015', 112.73],
+                    ['March 2015', 138.10],
+                    ['April 2015', 125.99],
+                    ['May 2015', 122.30],
+                    ['June 2015', 118.48],
+                    ['July 2015', 148.19],
+                    ['August 2015', 151.36]
+                  ]
+            }]
+        });
+    });
+  </script>
+<% end %>
+
+
+
+<% content_for :styles do %>
+  <style>
+    @media screen {
+      #bars rect.highcharts-background {
+        fill: whitesmoke;
+      }
+
+      th {
+        vertical-align: bottom;"
+      }
+      table.rows td {
+          padding: .75em;
+      }
+      #lending-account-details table.alt.rows {
+        border: 0 !important;
+        border-width: 0 !important;
+      }
+      #lending-account-details table.alt.rows .highlight {
+        background-color: #fff;
+        font-size: 1.2em;
+      }
+      #lending-account-details table {
+        width: 100%;
+      }
+      #lending-account-details table .show-more {
+        display: block;
+      }
+      #lending-account-details table .number {
+        font-weight: 600;
+        width: 120px; /* so that show/hiding the table underneath doesn't make everything jump */
+      }
+      #lending-account-details table td.number  {
+        font-size:25px;
+        font-weight:bold;
+        letter-spacing:-1px;
+        color:#00913c;
+        padding:10px;
+      }
+      #lending-account-details table table .number {
+        width: auto;
+      }
+      #lending-account-details table .hint {
+        display: block;
+      }
+      #lending-account-details table .hint {
+        color: #444034;
+      }
+
+      #queue-details table,
+      #recent-lending-details table {
+        background-color: whitesmoke;
+      }
+      #queue-details .position p,
+      #recent-lending-details .position p {
+        font-size: .85em;
+        margin-bottom: .2em;
+      }
+    }
+
+
+    @media only screen and (max-width: 601px) {
+      #lending-account-details table .button-row span {
+        display: none;
+      }
+
+      #lending-account-details table td {
+        display: block;
+        border-width: 0;
+        padding: 0 .5em .5em;
+      }
+      #lending-account-details table td:last-child {
+        border-bottom-width: 1px;
+      }
+      #lending-account-details table td:first-child {
+        padding-top: .5em;
+      }
+      #lending-account-details table td.number,
+      #lending-account-details table td.more {
+        text-align: left;
+      }
+      #lending-account-details table td.number {
+        padding-bottom: .2em;
+      }
+    }
+  </style>
+<% end %>

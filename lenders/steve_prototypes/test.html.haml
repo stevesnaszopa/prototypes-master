@@ -1,0 +1,111 @@
+- @pagetitle = 'Lending Summary || My Zopa'
+- content_for :styles do
+  = stylesheet_link_tag "content/turbo-dashboard"
+- content_for :scripts do
+  = javascript_include_tag "content/expand"
+  = javascript_include_tag "content/toggle-widgets"
+- @products = [{ name: "Zopa Classic", balance: "£103,200.45", rate: "4.5%", queued: "£299.55", matched: "£135.01", lentout: "£103,200.45", r_queued: "£14.54", n_queued: "£150.00", default: "false" },{ name: "Zopa Plus", balance: "£230,000.00", rate: "12.5%", queued: "£0.00", matched: "£135.01", lentout: "£103,200.45", r_queued: "£14.54", n_queued: "£150.00", default: "true" }]
+
+.dashboard.section
+  .row.group
+    %h1 Lending Summary
+  .row.group
+    .col
+      .info.box
+        Thing
+    .col
+      .info.box
+        Thing
+  .row.group
+    .lending-summary-group
+      .ls-row
+        .ls-titles
+          .ls-action
+          .ls-product
+            %h3 Products
+          .ls-balance
+            %h3 Balance
+      - @products.each do |p|
+        .ls-row
+          .ls-summary
+            .ls-action
+              %a.expand expand
+            .ls-product
+              %h3.name
+                =p[:name]
+                - if p[:default] == "true"
+                  %span.default-icon
+                    =image_tag "/_assets/img/tick.png"
+                    %span.a11y (Default)
+            .ls-balance
+              %h3.balance=p[:balance]
+          .ls-expand
+            .group
+              .expanded-info.col.third2
+                - if p[:default] == "true"
+                  .expanded-default
+                    %span This is your default for new funding
+                %table.product-details-table.rows
+                  %tbody
+                    %tr
+                      %td
+                        Lent out at
+                        %strong=p[:rate]
+                      %td=p[:lentout]
+                    %tr
+                      %td Matching to borrowers
+                      %td=p[:matched]
+                    %tr
+                      %td In the repayments queue
+                      %td=p[:r_queued]
+                    %tr
+                      %td In the new money queue
+                      %td=p[:n_queued]
+              .expanded-actions.col.third1
+                %a.button.minor Add funds
+                %a.button.minor.secondary Manage lending
+      .ls-row
+        .ls-summary
+          .ls-action
+            %a.expand expand
+          .ls-product
+            %h3.name Holding account
+          .ls-balance
+            %h3.balance £12,014.45
+        .ls-expand
+          .group
+            .expanded-info.col.third2
+              %p
+                Lorem ipsum something something
+                %strong 0%
+                something something.
+              %p
+                Lorem ipsum something something
+                %strong 0%
+                something something.
+            .expanded-actions.col.third1
+              %a.button.minor Lend
+              %a.button.minor.secondary Withdraw
+      .ls-row.zopa-total
+        .ls-summary
+          .ls-action
+          .ls-product
+            %h3.name Total money in Zopa
+          .ls-balance
+            %h3.balance £344,712.45
+
+.section
+  %div
+    %h3 Loan book summary
+    #loanbook_pie
+    = link_to 'View loan book overview', "#", class: 'loanbook-link'
+.section
+  .row.group.equalHeights
+    .col.info.box
+      %h3 Tell your friends
+      %p Earn money by telling your friends about Zopa
+      %p= link_to 'Share your link', "#", class: 'button minor'
+    .col.info.box
+      %h3 Read our blog
+      %p Keep up to date with the latest news from Zopa
+      %p= link_to 'Go to blog', "#", class: 'button minor'

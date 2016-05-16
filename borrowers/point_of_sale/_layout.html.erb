@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+
+<html class="" id="firstchoice" lang="en">
+<head>
+
+<meta name="robots" content="noindex,nofollow" />
+
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><script src="thomson_files/d6df495f8171eb65e37dced6af018d85.js"></script><script src="thomson_files/4a446ea276d9fe1888b5220f95c042e0.js"></script><script src="thomson_files/0abb118629badb8d2a935c5f828a0bae.js"></script><script src="thomson_files/d60210c8b91f8d96ca7776199d4eff61.js"></script><script src="thomson_files/1547deafe86d84c9f3825019ffebbc5a.js"></script><script src="thomson_files/85a484dbb3c196e61a56fcb315dbde40.js" async="" type="text/javascript"></script><script src="thomson_files/serverComponent.php"></script>
+
+<link href="thomson_files/main.css" rel="stylesheet" type="text/css">
+<link href="thomson_files/changes.css" rel="stylesheet" type="text/css">
+<link href="thomson_files/main_header.css" rel="stylesheet" type="text/css">
+<link href="thomson_files/print.css" rel="stylesheet" type="text/css" media="print">
+
+<% if content_for? :styles %>
+  <%= yield :styles %>
+<% end %>
+
+<title>Holidayz | Payment Details</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+
+<style>
+/*____________ iframe-like scrolling pane ____________*/
+
+div.iframe {
+  background-color: white;
+  overflow: auto;
+  padding: 1em;
+  height: 12em;
+  max-width: 650px;
+  border: 1px solid;
+}
+
+form fieldset div.iframe ol {
+  list-style: decimal outside;
+}
+form fieldset div.iframe ol li {
+  margin: 0 0 0 1.5em;
+}
+form fieldset div.iframe li ol {
+  margin: 0;
+}
+
+  .env {
+      left: 0;
+      width: 78%;
+      text-align: center;
+      font-size: .8em;
+      margin-left: 1%;
+      border-radius: .2em;
+      color: #fff;
+      font-weight: 600;
+      padding: .3em;
+      background-color: #E30926;
+  }
+  .content-section {
+    float: left;
+    width: 745px;
+    padding: 0px 22px; /*before-padding: 0px 22px;*/
+}
+</style>
+
+<script type="text/javascript" src="thomson_files/functions_thomson_paymentPage.js"></script>
+<script type="text/javascript" src="thomson_files/functions_manualAddress.js"></script>
+
+<script type="text/javascript" language="javascript">
+
+   //seconds
+  var session_timeout= 12900;
+  var IDLE_TIMEOUT = (12900)-(600);
+  var _idleSecondsCounter = 0;
+  var IDLE_TIMEOUT_millisecond = IDLE_TIMEOUT *1000;
+  var url="http://www.thomson.co.uk/destinations/bookaccommodation?productCode=002615&tab=overview&noOfAdults=2&noOfChildren=0&childrenAge=&duration=7&airports[]=LGW|LTN|SEN|STN&units[]=002615:HOTEL:HOTEL&flexibleDays=3&flexibility=true&when=28-06-2015&noOfSeniors=0&multiSelect=true&packageId=002615TMLTEN1435276290000014352762900000TOM45621435962900000014359629000000TOM4563BC133&index=1&bb=HB&price=pp";
+  var sessionTimeOutFlag =  false;
+
+  function noback(){
+    window.history.forward();
+    $('FieldExpiryDateMonth').selectedIndex = 0;
+    $('FieldExpiryDateYear').selectedIndex  = 0;
+    document.getElementById("tandc-info").checked=false;
+  }
+
+  window.setInterval(CheckIdleTime, 1000);
+  window.alertMsg();
+  function alertMsg(){
+
+  var myvar = setTimeout(function(){
+  document.getElementById("sessionTime").style.visibility = "visible";
+  document.getElementById("modal").style.visibility = "visible";
+  document.getElementById("sessionTimeTextbox").style.visibility = "visible";
+
+  var count = Math.round((session_timeout - _idleSecondsCounter)/60);
+  document.getElementById("sessiontimeDisplay").innerHTML = count +"mins";
+  },IDLE_TIMEOUT_millisecond);
+
+  }
+
+  function CheckIdleTime() {
+    _idleSecondsCounter++;
+
+    if (  _idleSecondsCounter >= session_timeout) {
+
+      if (window.sessionTimeOutFlag == false){
+    document.getElementById("sessionTime").style.visibility = "hidden";
+    document.getElementById("modal").style.visibility = "hidden";
+    document.getElementById("sessionTimeTextbox").style.visibility = "hidden";
+    document.getElementById("sessionTimeout").style.visibility = "visible";
+    document.getElementById("modal").style.visibility = "visible";
+    document.getElementById("sessionTimeOutTextbox").style.visibility = "visible";
+      }else{
+        document.getElementById("sessionTimeout").style.visibility = "hidden";
+        document.getElementById("modal").style.visibility = "visible";
+        document.getElementById("sessionTimeOutTextbox").style.visibility = "hidden";
+
+
+      }
+     //navigate to technical difficulty page
+
+    }
+  }
+  function closesessionTime()
+  {
+
+    document.getElementById("sessionTime").style.visibility = "hidden";
+    document.getElementById("modal").style.visibility = "hidden";
+    document.getElementById("sessionTimeTextbox").style.visibility = "hidden";
+
+  }
+  function reloadPage(){
+    window.sessionTimeOutFlag= true;
+    document.getElementById("sessionTimeout").style.visibility = "hidden";
+    document.getElementById("modal").style.visibility = "hidden";
+    document.getElementById("sessionTimeOutTextbox").style.visibility = "hidden";
+    window.noback();
+    window.location.replace(window.url);
+    return(false);
+  };
+</script>
+
+<style>
+
+  a.calculatoranchor {
+    display: block;
+    position: relative;
+    top: -300px;
+    visibility: hidden;
+  }
+
+</style>
+
+<script type="text/javascript" src="thomson_files/functions_thomson_paymentPage.js"></script>
+<script type="text/javascript" src="thomson_files/functions_manualAddress.js"></script>
+
+
+
+
+
+
+
+ <!--MORE JAVASCRIPT-->
+
+  <input id="currencyText" value="&pound;" type="hidden">
+
+
+
+  <div id="wrapper">
+
+
+
+
+  <link rel="icon" type="image/png" href="http://www.konstantin-kirsch.de/wp-content/themes/atahualpa333/images/favicon/fff-weather_sun.ico">
+
+      <div id="wrapper">
+        <div id="header">
+          <div class="beta">
+            <a href="index.html.erb"><span class="env">PROTOTYPE</span></a>
+            <p class="tell-us">
+              <a href="PLACEHOLDER" target="_blank" class="ensLinkTrack">Tell us what you think</a> or <a href="PLACEHOLDER" target="_blank" class="ensLinkTrack">Report a problem</a>
+            </p>
+            <a href="#" class="button">Switch to main site</a>
+          </div>
+          <div class="message-window" style="display:none" id="tellUsWhatYouThink">
+            <a href="#" class="close ensLinkTrack"> <span class="text">Close</span></a>
+            <div class="message-content small-pop beta-pop">
+              <h3>Before you go...</h3>
+              <p>We'd love to know what you made of the new site:</p>
+              <ul>
+                <li><a target="_blank" href="PLACEHOLDER" class="ensLinkTrack">Tell us what you think</a></li>
+                <li><a target="_blank" href="PLACEHOLDER" class="ensLinkTrack">Switch to our main site</a></li>
+              </ul>
+            </div>
+          </div>
+          <div id="utils">
+            <ul>
+              <li><a target="_blank" class="ensLinkTrack" title="Statement on Cookies" href="x/editorial/legal/statement-on-cookies.html">Statement on Cookies</a></li>
+              <li><a target="_blank" class="ensLinkTrack" title="Travel alerts" href="x/editorial/alerts/thomsonfly-travel-alert.html">Travel alerts</a></li>
+              <li><a target="_blank" class="ensLinkTrack" title="API login" href="">API login</a></li>
+              <li><a target="_blank" class="ensLinkTrack" title="API login" href="x/managemybooking/">Manage my booking</a></li>
+            </ul>
+          </div>
+
+          <div id="logo">
+          <img src="assets/holidayz-logo.jpg" alt="exciting new holiday company logo">
+
+          </div>
+          <div id="nav">
+            <ul>
+              <li class="homepage-main-nav"><a target="_blank" class="ensLinkTrack" href="PLACEHOLDER">Holidays</a></li>
+              <li class="cruise-main-nav"><a target="_blank" class="ensLinkTrack" href="PLACEHOLDER">Cruises</a></li>
+              <li class="flights-main-nav"><a target="_blank" class="ensLinkTrack" href="PLACEHOLDER">Flights</a></li>
+              <li class="hotels-main-nav"><a target="_blank" class="ensLinkTrack" href="PLACEHOLDER">Deals</a></li>
+              <li class="dest-main-nav"><a target="_blank" class="ensLinkTrack" href="PLACEHOLDER">Destinations</a></li>
+              <li class="extra-main-nav"><a target="_blank" class="ensLinkTrack" href="PLACEHOLDER">Extras</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+    <div style="visibility: visible; display: block;" class="mboxDefault">&nbsp;</div>
+<div id="mboxMarker-default-TH_PromoStrip-0" style="visibility:hidden;display:none">&nbsp;</div><script src="thomson_files/standard"></script><div style="visibility: hidden; display: none" id="mboxImported-default-TH_PromoStrip-0"><!-- Offer Id: 96532  --><script type="text/javascript">
+/*T&T Metadata v3 ==>Response Plugin*/
+window.ttMETA=(typeof(window.ttMETA)!="undefined")?window.ttMETA:[];window.ttMETA.push({"CampaignName":"Thomson Beach - Seasonal Searched - S15 & W15 - 23/06/2015","CampaignId":"44966","RecipeName":"Summer 15","RecipeId":"14","OfferId":"247","OfferName":"Default Content","MboxName":"TH_PromoStrip"});
+</script><!-- Offer Id: 62893  -->
+
+</div>
+
+
+
+
+
+
+
+<%= yield %>
+
+
+
+
+
+
+
+
+
+
+
+      <div id="wrapper">
+
+        <div id="inner-footer">
+          <ul id="footer-utils">
+            <li>
+              <h3>Holiday extras</h3>
+              <ul>
+                <li><a href="http://www.thomsonexcursions.co.uk/" target="_blank" class="ensLinkTrack">Excursions</a></li>
+                <li><a href="http://www.carhiremarket.com/thomson/" target="_blank" class="ensLinkTrack">Car hire</a></li>
+                <li><a href="x/editorial/extras/foreign-exchange.html" target="_blank" class="ensLinkTrack">Foreign Exchange</a></li>
+                <li><a href="http://www.holidayextras.co.uk/thomson/parking.html" target="_blank" class="ensLinkTrack">Airport parking</a></li>
+                <li><a href="x/editorial/extras/travel-money-card.html" target="_blank" class="ensLinkTrack">Money Card</a></li>
+                <li><a href="http://www.thomsonins.co.uk/travel/default.aspx" target="_blank" class="ensLinkTrack">Travel insurance</a></li>
+              </ul>
+            </li>
+            <li>
+              <h3>Find a local store</h3>
+              <p><a href="x/shopfinder/shop-finder.html" target="_blank" class="ensLinkTrack">Shop Finder</a></p>
+            </li>
+
+            <li id="safe-hands">
+              <h3>PARTNERED WITH ZOPA</h3>
+              <p>Holidayz is one of the world's leading travel groups - and that's why we chose to partner with one of the world's best loan companies.</p>
+              <p>Dayz to remember, loans you can trust.</p>
+              <a href="https://www.zopa.com/">
+                <strong> Partnered with Zopa</strong><br/>
+                <img src="assets/zopa-logo.png" width="60px">
+              </a>
+              <p class="authority">
+                <img alt="World of TUI" src="thomson_files/WOT-logo.png" class="wot-logo" height="19" width="93">
+                <a class="abta ensLinkTrack" href="http://www.abta.com/find-a-holiday/member-search/5736" target="_blank">ABTA</a>
+                <a class="atol ensLinkTrack" href="http://www.caa.co.uk/default.aspx?catid=27" target="_blank">ATOL</a>
+              </p>
+            </li>
+            <li id="questions">
+              <h3>Have a question?</h3>
+              <form action="https://www.x/gsa/gsa.html" method="get">
+                <div class="formrow">
+                  <textarea name="q" class="textfield" placeholder="e.g. Where do I print my e-tickets?"></textarea>
+
+                      <input value="default_collection" name="site" type="hidden">
+                          <input value="production_frontend" name="client" type="hidden">
+                          <input value="production_frontend" name="proxystylesheet" type="hidden">
+                          <input value="xml_no_dtd" name="output" type="hidden">
+                          <input value="Go" name="submit" type="hidden">
+
+
+                </div>
+                <div class="floater">
+                  <button class="button fr mt4 small">Search</button>
+                  <p class="contact-us fl"><a target="_blank" href="x/editorial/legal/contact-us.html" class="ensLinkTrack">Contact us</a></p>
+                </div>
+              </form>
+            </li>
+          </ul>
+
+          <div id="footer-seo">
+            <div class="tabs-container">
+              <ul class="tabs">
+                <li onclick="displayHolidayTypes(this);" id="holidaytypes_li" class="active"><a enslinktrackattached="true" class="ensLinkTrack">Holiday Types</a><span class="arrow"></span></li>
+                <li onclick="displayHolidayTypes(this);" id="popDestinations_li"><a enslinktrackattached="true" class="ensLinkTrack">Popular Destinations</a><span class="arrow"></span></li>
+                <li onclick="displayHolidayTypes(this);" id="longhaul_li"><a enslinktrackattached="true" class="ensLinkTrack">Mid/Long haul</a><span class="arrow"></span></li>
+                <li onclick="displayHolidayTypes(this);" id="shorthaul_li"><a enslinktrackattached="true" class="ensLinkTrack">Short haul</a><span class="arrow"></span></li>
+                <li onclick="displayHolidayTypes(this);" id="flightsTo_li"><a enslinktrackattached="true" class="ensLinkTrack">Flights To</a><span class="arrow"></span></li>
+              </ul>
+              <div id="holidaytypes" class="menu" style="display:block">
+                <ul>
+                  <li><a target="_blank" href="x/" class="ensLinkTrack">Cheap Holidays</a></li>
+                  <li><a target="_blank" href="x/luxury-holidays.html" class="ensLinkTrack">Luxury Holidays</a></li>
+                  <li><a target="_blank" href="x/editorial/features/sunshine-holidays.html" class="ensLinkTrack">Sun Holidays</a></li>
+                  <li><a target="_blank" href="x/family-holidays.html" class="ensLinkTrack">Family Holidays</a></li>
+                </ul>
+                <ul>
+                  <li><a target="_blank" href="x/deals/winter-2013-deals.html" class="ensLinkTrack">Winter Holidays</a></li>
+                  <li><a target="_blank" href="x/all-inclusive-holidays.html" class="ensLinkTrack">All inclusive holidays</a></li>
+                  <li><a target="_blank" href="x/editorial/features/sunshine-holidays.html" class="ensLinkTrack">Sunshine Holidays</a></li>
+                  <li><a target="_blank" href="x/editorial/features/beach-holidays.html" class="ensLinkTrack">Beach holidays</a></li>
+
+                </ul>
+                <ul>
+                  <li><a target="_blank" href="x/late-deals/late-deals.html" class="ensLinkTrack">Late holiday deals</a></li>
+                  <li><a target="_blank" href="x/deals/summer-2014-deals.html" class="ensLinkTrack">Holidays 2014</a></li>
+                  <li><a target="_blank" href="x/editorial/deals/summer-2012-deals.html" class="ensLinkTrack">Summer holidays</a></li>
+                  <li><a target="_blank" href="x/late-deals/late-deals.html" class="ensLinkTrack">Last minute Holidays</a></li>
+                </ul>
+              </div>
+              <div id="popDestinations" class="menu" style="display:none">
+                <ul>
+                  <li><a target="_blank" href="x/destinations/europe/spain/tenerife/holidays-tenerife.html" class="ensLinkTrack">Tenerife holidays</a></li>
+                  <li><a target="_blank" href="x/destinations/europe/spain/costa-blanca/benidorm/holidays-benidorm.html" class="ensLinkTrack">Benidorm holidays</a></li>
+                  <li><a target="_blank" href="x/editorial/features/canary-islands-holidays.html" class="ensLinkTrack">Canary Islands holidays</a></li>
+                  <li><a target="_blank" href="x/destinations/europe/spain/lanzarote/holidays-lanzarote.html" class="ensLinkTrack">Lanzarote holidays</a></li>
+                </ul>
+                <ul>
+                  <li><a target="_blank" href="x/destinations/africa/egypt/egypt-red-sea/sharm-el-sheikh/holidays-sharm-el-sheikh.html" class="ensLinkTrack">Sharm el Sheikh holidays</a></li>
+                  <li><a target="_blank" href="x/destinations/europe/cyprus/holidays-cyprus.html" class="ensLinkTrack">Cyprus holidays</a></li>
+                  <li><a target="_blank" href="x/destinations/europe/spain/menorca/holidays-menorca.html" class="ensLinkTrack">Menorca holidays</a></li>
+                  <li><a target="_blank" href="x/destinations/europe/spain/majorca/holidays-majorca.html" class="ensLinkTrack">Majorca holidays</a></li>
+                </ul>
+                <ul>
+                  <li><a target="_blank" href="x/destinations/europe/greece/crete/holidays-crete.html" class="ensLinkTrack">Crete holidays</a></li>
+                  <li><a target="_blank" href="x/destinations/europe/spain/ibiza/holidays-ibiza.html" class="ensLinkTrack">Ibiza holidays</a></li>
+                  <li><a target="_blank" href="x/destinations/europe/spain/gran-canaria/holidays-gran-canaria.html" class="ensLinkTrack">Gran Canaria holidays</a></li>
+                  <li><a target="_blank" href="x/destinations/europe/portugal/algarve/holidays-algarve.html" class="ensLinkTrack">Algarve holidays</a></li>
+                </ul>
+              </div>
+              <div id="longhaul" class="menu" style="display:none">
+                <ul>
+                  <li><a target="_blank" href="x/destinations/africa/egypt/holidays-egypt.html" class="ensLinkTrack">Egypt holidays</a></li>
+                  <li><a target="_blank" href="x/destinations/africa/cape-verde/holidays-cape-verde.html" class="ensLinkTrack">Cape Verde holidays</a></li>
+                  <li><a target="_blank" href="x/destinations/caribbean/mexico/holidays-mexico.html" class="ensLinkTrack">Mexico holidays</a></li>
+                  <li><a target="_blank" href="x/destinations/indian-ocean/india/goa/holidays-goa.html" class="ensLinkTrack">Goa holidays</a></li>
+                </ul>
+                <ul>
+                  <li><a target="_blank" href="x/destinations/the-americas/united-states-of-america/florida/holidays-florida.html" class="ensLinkTrack">Caribbean holidays</a></li>
+                  <li><a target="_blank" href="x/destinations/the-americas/united-states-of-america/florida/holidays-florida.html" class="ensLinkTrack">Florida holidays</a></li>
+                  <li><a target="_blank" href="x/destinations/caribbean/jamaica/holidays-jamaica.html" class="ensLinkTrack">Aruba holidays</a></li>
+                  <li><a target="_blank" href="x/destinations/indian-ocean/mauritius/holidays-mauritius.html" class="ensLinkTrack">Mauritius holidays</a></li>
+                </ul>
+                <ul>
+                  <li><a target="_blank" href="x/destinations/caribbean/dominican-republic/holidays-dominican-republic.html" class="ensLinkTrack">Dominican Republic holidays</a></li>
+                  <li><a target="_blank" href="x/destinations/caribbean/cuba/holidays-cuba.html" class="ensLinkTrack">Cuba holidays</a></li>
+                  <li><a target="_blank" href="x/destinations/africa/kenya/holidays-kenya.html" class="ensLinkTrack">Kenya holidays</a></li>
+                  <li><a target="_blank" href="x/destinations/caribbean/barbados/holidays-barbados.html" class="ensLinkTrack">Barbados holidays</a></li>
+                </ul>
+              </div>
+              <div id="shorthaul" class="menu" style="display:none">
+                <ul>
+                  <li><a target="_blank" href="x/destinations/africa/tunisia/holidays-tunisia.html" class="ensLinkTrack">Tunisia holidays</a></li>
+                  <li><a target="_blank" href="x/destinations/europe/portugal/holidays-portugal.html" class="ensLinkTrack">Portugal holidays</a></li>
+                  <li><a target="_blank" href="x/destinations/europe/spain/holidays-spain.html" class="ensLinkTrack">Spain holidays</a></li>
+                  <li><a target="_blank" href="x/destinations/europe/turkey/holidays-turkey.html" class="ensLinkTrack">Turkey holidays</a></li>
+                </ul>
+                <ul>
+                  <li><a target="_blank" href="x/destinations/europe/cyprus/holidays-cyprus.html" class="ensLinkTrack">Cyprus holidays</a></li>
+                  <li><a target="_blank" href="x/destinations/africa/morocco/holidays-morocco.html" class="ensLinkTrack">Morocco holidays</a></li>
+                  <li><a target="_blank" href="x/destinations/europe/croatia/holidays-croatia.html" class="ensLinkTrack">Croatia holidays</a></li>
+                  <li><a target="_blank" href="x/destinations/europe/greece/holidays-greece.html" class="ensLinkTrack">Greece holidays</a></li>
+                </ul>
+                <ul>
+                  <li><a target="_blank" href="x/destinations/europe/malta/holidays-malta.html" class="ensLinkTrack">Malta holidays</a></li>
+                  <li><a target="_blank" href="x/destinations/europe/bulgaria/holidays-bulgaria.html" class="ensLinkTrack">Bulgaria holidays</a></li>
+                  <li><a target="_blank" href="x/destinations/europe/italy/holidays-italy.html" class="ensLinkTrack">Italy holidays</a></li>
+                  <li><a target="_blank" href="x/editorial/features/canary-islands-holidays.html" class="ensLinkTrack">Canary Islands holidays</a></li>
+                </ul>
+              </div>
+              <div id="flightsTo" class="menu" style="display:none">
+                <ul>
+                  <li><a target="_blank" href="x/flights/destinations/europe/spain/tenerife/tenerife-airport/tenerife-flights.html" class="ensLinkTrack">Tenerife</a></li>
+                  <li><a target="_blank" href="x/flights/destinations/europe/cyprus/larnaca-region/larnaca-airport/larnaca-flights.html" class="ensLinkTrack">Cyprus</a></li>
+                  <li><a target="_blank" href="x/flights/destinations/europe/spain/ibiza/ibiza-airport/ibiza-flights.html" class="ensLinkTrack">Ibiza</a></li>
+                  <li><a target="_blank" href="x/flights/destinations/europe/turkey/turkey-bodrum/bodrum-airport/bodrum-flights.html" class="ensLinkTrack">Bodrum</a></li>
+                  <li><a target="_blank" href="x/flights/destinations/europe/spain/menorca/menorca-flights.html" class="ensLinkTrack">Menorca</a></li>
+                </ul>
+                <ul>
+                  <li><a target="_blank" href="x/flights/destinations/the-americas/united-states-of-america/florida/orlando-sanford-airport/orlando-sanford-flights.html" class="ensLinkTrack">Florida</a></li>
+                  <li><a target="_blank" href="x/flights/destinations/europe/spain/costa-blanca/alicante-airport/alicante-flights.html" class="ensLinkTrack">Alicante</a></li>
+                  <li><a target="_blank" href="x/flights/destinations/europe/portugal/algarve/faro-airport/faro-flights.html" class="ensLinkTrack">Faro</a></li>
+                  <li><a target="_blank" href="x/flights/destinations/africa/morocco/morocco-marrakech/marrakech-airport/marrakech-flights.html" class="ensLinkTrack">Marrakech</a></li>
+                  <li><a target="_blank" href="x/flights/destinations/europe/greece/kefalonia/kefalonia-airport/kefalonia-flights.html" class="ensLinkTrack">Kefalonia</a></li>
+                </ul>
+                <ul>
+                  <li><a target="_blank" href="x/flights/destinations/europe/spain/costa-del-sol/malaga-airport/malaga-flights.html" class="ensLinkTrack">Malaga</a></li>
+                  <li><a target="_blank" href="x/flights/destinations/europe/spain/lanzarote/lanzarote-flights.html" class="ensLinkTrack">Lanzarote</a></li>
+                  <li><a target="_blank" href="x/flights/destinations/europe/spain/majorca/palma-airport/palma-flights.html" class="ensLinkTrack">Majorca</a></li>
+                  <li><a target="_blank" href="x/flights/destinations/europe/greece/corfu/corfu-airport/corfu-flights.html" class="ensLinkTrack">Corfu</a></li>
+                  <li><a target="_blank" href="x/flights/destinations/africa/egypt/egypt-red-sea/sharm-el-sheikh-airport/sharm-el-sheikh-flights.html" class="ensLinkTrack">Sharm El Sheikh</a></li>
+                </ul>
+              </div>
+            </div>
+          </div></div>
+        </div>
+      <div id="footer">
+        <ul>
+          <li><a target="_blank" href="http://communicationcentre.x/" class="ensLinkTrack">Communications Centre</a></li>
+          <li><a target="_blank" href="http://www.tuitraveljobs.co.uk/" class="ensLinkTrack">Travel Jobs</a></li>
+          <li><a target="_blank" href="x/partners/thomson-affiliate-programme.html" class="ensLinkTrack">Affiliates</a></li>
+          <li><a target="_blank" href="x/mythomson/" class="ensLinkTrack">My Thomson</a></li>
+          <li><a target="_blank" href="x/blog/" class="ensLinkTrack">Thomson Blog</a></li>
+        </ul>
+        <ul>
+          <li>© 2014 <a target="_blank" href="http://www.tuitravelplc.com/" class="ensLinkTrack">TUI Travel plc</a></li>
+          <li><a target="_blank" href="x/editorial/legal/about-thomson.html" class="ensLinkTrack">About Thomson</a></li>
+          <li><a target="_blank" href="x/editorial/legal/website-terms-and-conditions.html" class="ensLinkTrack">Terms &amp; Conditions</a></li>
+          <li><a target="_blank" href="x/" class="ensLinkTrack">Accessibility</a></li>
+          <li><a target="_blank" href="x/editorial/legal/privacy-policy.html" class="ensLinkTrack">Privacy Policy</a></li>
+          <li><a target="_blank" href="x/editorial/legal/statement-on-cookies.html" class="ensLinkTrack">Statement on Cookies</a></li>
+          <li><a target="_blank" href="x/destinations/sitemap/site-map.html" class="ensLinkTrack">Site Map</a></li>
+        </ul>
+        <p><span>Many of the flights and flight-inclusive holidays on this
+website are financially protected by the ATOL scheme. But ATOL
+protection does not apply to all holiday and travel services listed on
+this website. Please ask us to confirm what protection may apply to your
+ booking. If you do not receive an ATOL Certificate then the booking
+will not be ATOL protected. If you do receive an ATOL Certificate but
+all the parts of your trip are not listed on it, those parts will not be
+ ATOL protected. Please see our booking conditions for information or
+for more information about financial protection and the ATOL Certificate
+ go to:<span class="apple-converted-space">&nbsp;</span></span><span style="font-family: TUIType, sans-serif;"><a target="_blank" href="http://www.atol.org.uk/ATOLCertificate"><span style="font-size: 8.5pt; color: rgb(102, 102, 102);">www.atol.org.uk/ATOLCertificate</span></a></span>&nbsp;</p>
+
+
+      </div>
+    <!-- </body>
+    </html> -->
+  <div id="overlay" class="posFix"></div>
+    <form novalidate="" name="postPaymentForm" method="post">
+    <input name="emptyForm" class="disNone" type="hidden">
+  </form>
+
+
+</body>
+</html>

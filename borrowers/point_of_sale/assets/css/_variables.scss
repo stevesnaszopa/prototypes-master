@@ -1,0 +1,55 @@
+
+$color-text: #444034;
+$color-background: #fff;
+$color-border: #c5c6c1;
+$color-action: #2aa1df;
+$color-bg-default: #f5f5f5; /* lighter grey */
+$color-bg-alternate: #dbdbdb; /* light grey */
+$color-bg-section: #f5f5f5;
+$color-bg-action: #d4ecf9; /* light blue */
+$color-negative: #ff8200;
+$color-positive: #b8bc09;
+
+$size-h1: 2.57em;
+$size-h2: 1.71em;
+$size-h3: 1.28em;
+$size-vspace: .625em;
+$size-vspace-modern: .625rem;
+$size-pad: 1.25em;
+$side-pad: 15px;
+
+$font-text: 'Open Sans', Arial, sans-serif;
+
+$screensize-m: 959px;
+$screensize-s: 800px;
+$screensize-xs: 601px;
+
+$transition-time: 0.15s;
+$transition-method: ease-in-out;
+
+@mixin rotate($deg) {
+     -moz-transform: rotate($deg);
+       -o-transform: rotate($deg);
+  -webkit-transform: rotate($deg);
+      -ms-transform: rotate($deg);
+          transform: rotate($deg);
+}
+
+@mixin linear-gradient($params) {
+  background-image: -moz-linear-gradient($params);
+  background-image: -webkit-linear-gradient($params);
+  background-image: -ms-linear-gradient($params);
+  background-image: linear-gradient($params);
+}
+
+@mixin transition($transition-property: all, $transition-time: $transition-time, $method: $transition-method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+@function vspace($fontsize: 1em, $factor: 1) {
+  @return ($size-vspace * $factor / $fontsize)+em;
+}

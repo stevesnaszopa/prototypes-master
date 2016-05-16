@@ -1,0 +1,12 @@
+.row.group.product_glance
+  =product.inspect
+-#
+  .col.third1.box
+    %h3=product.balance
+    %p.hint total on product
+-#  .col.third1.box
+    %h3= number_to_percentage product.rate, precision: 2
+    %p.hint avarage on money lent out
+  .col.third1.box
+    %h3= number_to_currency product.lent_out, precision: 2
+    %p.hint currently lent out

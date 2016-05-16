@@ -1,0 +1,184 @@
+<div class="row group addresses">
+
+  <div class="hidden">
+    {{#longEnough}}
+    <input type="hidden" name="valid_address" value="true" />
+    {{/longEnough}}
+
+  </div>
+
+  {{#errors}}
+  <p class="error" id="error_addresses" role="alert">{{#t}}{{.}}{{/t}}</p>
+  {{/errors}}
+
+  {{#currentAddresses}}
+  <div class="row group">
+    <div class="hidden">
+      <input type="hidden" name="applications_loan_apply[addresses_attributes][{{index}}][id]"           value="">
+      <input type="hidden" name="applications_loan_apply[addresses_attributes][{{index}}][rialto_id]"    value="{{rialto_id}}">
+      <input type="hidden" name="applications_loan_apply[addresses_attributes][{{index}}][house_number]" value="{{house_number}}">
+      <input type="hidden" name="applications_loan_apply[addresses_attributes][{{index}}][house_name]"   value="{{house_name}}">
+      <input type="hidden" name="applications_loan_apply[addresses_attributes][{{index}}][street_1]"     value="{{street_1}}">
+      <input type="hidden" name="applications_loan_apply[addresses_attributes][{{index}}][street_2]"     value="{{street_2}}">
+      <input type="hidden" name="applications_loan_apply[addresses_attributes][{{index}}][county]"       value="{{county}}">
+      <input type="hidden" name="applications_loan_apply[addresses_attributes][{{index}}][postcode]"     value="{{postcode}}">
+      <input type="hidden" name="applications_loan_apply[addresses_attributes][{{index}}][from]"         value="{{from}}">
+      <input type="hidden" name="applications_loan_apply[addresses_attributes][{{index}}][ptcabs]"       value="{{ptcabs}}">
+    </div>
+
+    {{#errors}}
+    <p class="error">{{#t}}{{.}}{{/t}}</p>
+    {{/errors}}
+
+    <div class="row group">
+      <p class="col third2">
+        {{house_name}} {{house_number}} {{street_1}} {{street_2}} {{postcode}} {{county}}
+      </p>
+      <p class="col third1">
+        <a href="#" class="address-remove button minor secondary" data-destroy="{{localId}}">Remove</a>
+      </p>
+    </div>
+
+    <div class="address_dates">
+      <p>
+        <label for="date_from">When did you move in?</label>
+        <span class="select-group">
+          <label for="month_select_{{localId}}">Month</label>
+          <select id="month_select_{{localId}}" class="address-month-select" name="months" data-bind-{{localId}}="month">
+            <option value="">Month</option>
+            {{#datesMonths}}
+            <option value="{{1}}" {{2}}>{{0}}</option>
+            {{/datesMonths}}
+          </select>
+
+          <label for="year_select_{{localId}}">Year</label>
+          <select id="year_select_{{localId}}" class="address-year-select" name="years" data-bind-{{localId}}="year">
+            <option value="">Year</option>
+            {{#datesYears}}
+            <option value="{{1}}" {{2}}>{{0}}</option>
+            {{/datesYears}}
+          </select>
+        </span>
+      </p>
+    </div>
+  </div>
+  {{/currentAddresses}}
+
+  <%# mustache supports partials, but haven't figured out yet how to use them properly %>
+  {{#addressStaging}}
+  <div class="row group">
+    <div class="hidden">
+      <input type="hidden" name="applications_loan_apply[addresses_attributes][{{index}}][id]"           value="">
+      <input type="hidden" name="applications_loan_apply[addresses_attributes][{{index}}][rialto_id]"    value="{{rialto_id}}">
+      <input type="hidden" name="applications_loan_apply[addresses_attributes][{{index}}][house_number]" value="{{house_number}}">
+      <input type="hidden" name="applications_loan_apply[addresses_attributes][{{index}}][house_name]"   value="{{house_name}}">
+      <input type="hidden" name="applications_loan_apply[addresses_attributes][{{index}}][street_1]"     value="{{street_1}}">
+      <input type="hidden" name="applications_loan_apply[addresses_attributes][{{index}}][street_2]"     value="{{street_2}}">
+      <input type="hidden" name="applications_loan_apply[addresses_attributes][{{index}}][county]"       value="{{county}}">
+      <input type="hidden" name="applications_loan_apply[addresses_attributes][{{index}}][postcode]"     value="{{postcode}}">
+      <input type="hidden" name="applications_loan_apply[addresses_attributes][{{index}}][from]"         value="{{from}}">
+      <input type="hidden" name="applications_loan_apply[addresses_attributes][{{index}}][ptcabs]"       value="{{ptcabs}}">
+    </div>
+
+    {{#errors}}
+    <p class="error">{{#t}}{{.}}{{/t}}</p>
+    {{/errors}}
+
+    <div class="row group">
+      <p class="col third2">
+        {{house_name}} {{house_number}} {{street_1}} {{street_2}} {{postcode}} {{county}}
+      </p>
+      <p class="col third1">
+        <a href="#" class="address-remove button minor secondary" data-destroy="{{localId}}">Remove</a>
+      </p>
+    </div>
+
+    <div class="address_dates">
+      <p>
+        <label for="date_from">When did you move in?</label>
+        <span class="select-group">
+          <label for="month_select_{{localId}}">Month</label>
+          <select id="month_select_{{localId}}" class="address-month-select" name="months" data-bind-{{localId}}="month">
+            <option value="">Month</option>
+            {{#datesMonths}}
+            <option value="{{1}}" {{2}}>{{0}}</option>
+            {{/datesMonths}}
+          </select>
+
+          <label for="year_select_{{localId}}">Year</label>
+          <select id="year_select_{{localId}}" class="address-year-select" name="years" data-bind-{{localId}}="year">
+            <option value="">Year</option>
+            {{#datesYears}}
+            <option value="{{1}}" {{2}}>{{0}}</option>
+            {{/datesYears}}
+          </select>
+        </span>
+      </p>
+    </div>
+  </div>
+  {{/addressStaging}}
+
+
+
+  {{#allAddressDatesSet}}
+  {{^addressStaging}}
+  {{^longEnough}}
+  <div class="address_basics">
+    <div class="row group novalidate ">
+      <p class="row group">
+        <span class="col">
+          {{^haveCurrentAddresses}}<label for="postcode">Current house postcode</label>{{/haveCurrentAddresses}}
+          {{#haveCurrentAddresses}}<label for="postcode">Previous house postcode</label>{{/haveCurrentAddresses}}
+          <input id="postcode" maxlenght="9" data-bind-{{helperId}}="postcode" value="{{postcode}}" type="text" />
+        </span>
+        <span id="find_address" class="col noLabel">
+          {{^searching}}
+          <input class="minor" data-find="{{helperId}}" type="submit" value="Look up address" />
+          {{/searching}}
+
+          {{#searching}}
+            <%= image_tag 'spinner.gif', size: '16x16', class: :zopa_button_spinner, alt: '' %>
+            Searching...
+          {{/searching}}
+        </span>
+      </p>
+    </div>
+  </div>
+  {{/longEnough}}
+  {{/addressStaging}}
+  {{/allAddressDatesSet}}
+
+  {{#haveResults}}
+  <div class="row group">
+    <label for="possible_addresses">Please select your address</label>
+    <p>
+      <select id="possible_addresses" size="7">
+        {{#results}}
+        <option value="{{localId}}">{{house_name}} {{house_number}} {{street_1}} {{street_2}} {{postcode}} {{county}}</option>
+        {{/results}}
+      </select>
+    </p>
+  </div>
+  {{#tooManyResults}}
+  <div class="row group novalidate ">
+
+    <p class="row group">
+      <span class="col">
+        <input placeholder="House number or name" d="house_number" data-bind-{{helperId}}="houseNumber" maxlenght="9" value="{{houseNumber}}" type="text" />
+      </span>
+
+      <span id="" class="col noLabel">
+        {{^searching}}
+          <input class="minor secondary" data-find="{{helperId}}" type="submit" value="Refine results" />
+        {{/searching}}
+
+        {{#searching}}
+          <%= image_tag 'spinner.gif', size: '16x16', class: :zopa_button_spinner, alt: '' %>
+          Searching...
+        {{/searching}}
+      </span>
+    </p>
+  </div>
+  {{/tooManyResults}}
+  {{/haveResults}}
+</div>

@@ -1,0 +1,131 @@
+@import "variables";
+
+@function shared-image-url($url) {
+  @return url('/_assets/img/' + $url);
+}
+
+@mixin border-radius($radius){
+  -webkit-border-radius:$radius;
+  -moz-border-radius:$radius;
+  border-radius:$radius;
+}
+
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}
+
+$color-sum-background: #e5f4eb;
+$ls-action-width: 4%;
+$color-hint: #87847A;
+
+.ls-row{
+  border-bottom: 1px solid $color-border;
+  background-color:$color-bg-default;
+  h3{
+    margin:0;
+  }
+  &:first-of-type{
+    border-top:none;
+    background-color:initial;
+  }
+  &.zopa-total{
+    background-color:$color-sum-background;
+    color: $color-sum;
+    border-top: 2px solid $color-border;
+    border-bottom: none;
+  }
+  > * [class^='ls-']{
+    display:block;
+    float:left;
+    @include box-sizing(border-box)
+  }
+  .ls-expand{display:none;}
+  &.expanded{
+    .ls-expand{display:block;}
+    .ls-action a{
+      background-image: url('/_assets/img/content/toggle-expanded.png');
+    }
+
+  }
+}
+
+.ls-action{width:$ls-action-width}
+.ls-product, .ls-balance{width:48%;}
+.ls-product, .ls-balance, .ls-queued, .ls-expand {
+  padding:0 $size-pad;
+}
+.ls-summary, .ls-titles{
+  font-size:$size-h3;
+  padding:$size-vspace 0;
+}
+.ls-summary{
+  &:hover{
+    cursor:pointer;
+    cursor:hand;
+  }
+}
+
+.ls-balance{text-align:right;}
+.ls-action{
+  min-height:1px;//Width fix for empty cells
+  height:100%;
+  a{
+    background-image: url('/_assets/img/content/toggle-collapsed.png');
+    background-repeat:no-repeat;
+    background-position:left center;
+    display:block;
+    height:100%;
+    width:100%;
+    text-indent:-9999px;
+    overflow:hidden;
+  }
+}
+
+.ls-row > *{
+  &:after{
+    display:block;
+    clear:both;
+    content: "";
+  }
+}
+
+span.default-icon img{
+  padding: 8px 6px; //specific to image height.
+  background: white;
+}
+
+.ls-expand{
+  margin-left:$ls-action-width;
+  padding-top:0;
+  .expanded-actions{
+    > a{
+      display:block;
+      text-align:left;
+      margin-bottom:$size-vspace;
+      &:last-of-type{
+        margin-bottom:0;
+      }
+    }
+  }
+  .expanded-info{
+    *:first-child{margin-top:0;}
+    table.product-details-table{
+      width:100%;
+      tr:first-child td {
+          border-top: none;
+      }
+    }
+  }
+  .expanded-default{
+    background-color:$color-background;
+    padding:$size-vspace;
+    color:$color-sum;
+    margin-bottom: $size-vspace;
+  }
+}
+.ls-titles{
+  color:$color-hint;
+  font-style:italic;
+}

@@ -1,0 +1,1379 @@
+@media screen {
+
+/*____________ sections ____________*/
+
+.section {
+  padding: vspace($fontsize: 1em, $factor: 4) 0 vspace($fontsize: 1em, $factor: 3);
+  padding: $size-vspace-modern*4 0 $size-vspace-modern*3;
+
+  div > h2:first-child,
+  div > h3:first-child,
+  div > h4:first-child {
+    margin-top: 0;
+  }
+}
+
+@mixin section-colouring($section-bg-color, $section-box-color, $section-alt-color) {
+  background-color: $section-bg-color;
+
+  .info.box,
+  .error.summary.box,
+  fieldset.done,
+  .units fieldset > .row.done,
+  .numbered h2 strong,
+  .numbered h3 strong {
+    background-color: $section-box-color;
+  }
+  .comparison h3 .between {
+    background-color: transparent;
+  }
+  fieldset .info.box,
+  fieldset.options span.hint {
+    background-color: $section-alt-color;
+  }
+  fieldset.options p {
+    border-color: $section-alt-color;
+  }
+  form.v2 fieldset.field-units > div {
+    border-color: $section-bg-color;
+  }
+}
+
+/* default section colouring */
+.section:nth-child(even) {
+  @include section-colouring($color-bg-section, $color-background, $color-bg-default);
+}
+.section:nth-child(odd) {
+  @include section-colouring($color-background, $color-bg-default, $color-background);
+}
+
+.alert.section + .section {
+  @include section-colouring($color-background, $color-bg-default, $color-background);
+  padding-top: 0;
+}
+
+.has-hero {
+  .section:nth-child(even) {
+    @include section-colouring($color-background, $color-bg-default, $color-background);
+  }
+  .section:nth-child(odd) {
+    @include section-colouring($color-bg-section, $color-background, $color-bg-default);
+  }
+}
+
+.section:first-child {
+  background-color: transparent !important;
+}
+
+.has-hero {
+  #content .hero.section {
+    .box,
+    fieldset {
+      background-color: rgba(255, 255, 255, .6) !important;
+    }
+  }
+}
+
+
+/*____________ let text stand out ____________*/
+
+/* like h2 */
+p.important {
+  font-size: $size-h2;
+}
+
+.intro {
+  font-size: $size-h3;
+  margin-bottom: vspace($fontsize: $size-h3);
+  margin-bottom: $size-vspace-modern;
+
+  ul.ticked,
+  &.ticked,
+  ul.crossed,
+  &.crossed {
+    margin-bottom: vspace($fontsize: $size-h3);
+    margin-bottom: $size-vspace-modern;
+    li {
+      padding-bottom: 0;
+    }
+  }
+
+}
+
+p.intro {
+  a.minor {
+    font-size: .89em;
+  }
+}
+
+.hint,
+.note {
+  font-size: .85em;
+  color: #87847a;
+}
+.intro .hint {
+  font-size: .6em;
+}
+label .hint {
+  display: block;
+  font-weight: normal;
+}
+label + .hint {
+  display: block;
+  margin-bottom: .2em;
+}
+
+
+.highlight.section {
+  background-color: $color-text !important;
+  color: $color-background;
+  padding: vspace($fontsize: 1em, $factor: 2) 0 vspace($fontsize: 1em, $factor: 1);
+  padding: $size-vspace-modern*2 0 $size-vspace-modern*1;
+
+  strong {
+    color: $color-background;
+  }
+/*_____ rate in views/lending/_widget_footer.erb _____*/
+  p.rate {
+    color: $color-action;
+    font-size: 4em;
+    font-weight: 700;
+    margin-top: -0.3em;
+    margin-bottom: -0.1em;
+  }
+  .hint {
+    color: $color-bg-alternate;
+  }
+  a:not(.button):visited {
+    color: $color-action;
+  }
+}
+
+
+/*____________ special lists ____________*/
+
+ul.ticked,
+ul.crossed,
+ol.spaced {
+  margin-bottom: $size-vspace/2;
+
+  li {
+    padding-bottom: $size-vspace/2;
+    margin: 0;
+  }
+}
+ul.ticked,
+ul.crossed {
+  li {
+    background: no-repeat 0 .2em;
+    list-style: none;
+    padding-left: 24px;
+  }
+}
+ol.spaced {
+  list-style-position: inside;
+}
+ul.ticked li {
+  background-image: shared-image-url("tick.png");
+}
+ul.crossed li {
+  background-image: shared-image-url("cross.png");
+}
+
+ul.linklist {
+  list-style: none;
+
+  li:before {
+    content: '\00bb'; /* => &raquo; */
+    position: absolute;
+    top: 0;
+    left: -.9em;
+  }
+
+  li {
+    margin: 0 0 .3em 1em;
+    position: relative;
+  }
+}
+
+a.more,
+p.more > a {
+  position: relative;
+  padding-left: .8em;
+
+  &:before {
+    content: '\00bb'; /* => &raquo; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $color-text;
+  }
+}
+
+a.more,
+p.more > a {
+  font-size: $size-h3;
+}
+
+/* show-more links */
+a.show-more {
+  &:before {
+    content: '\25B8'; /* triangle pointing to the right */
+    display: inline-block;
+    width: .8em;
+  }
+
+  &.expanded:before {
+    content: "\25BE"; /* triangle pointing down */
+  }
+
+  .no-js & {
+    display: none;
+  }
+}
+
+/* split list into two columns */
+ul.split li,
+ol.split li {
+  width: 50%;
+  margin: 0;
+  padding-right: 1em;
+  position: relative;
+  left: 1.5em;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+}
+
+ul.split li:nth-child(odd),
+ol.split li:nth-child(odd) {
+  clear: left;
+}
+ul.split li:nth-child(even),
+ol.split li:nth-child(even) {
+  padding-right: 0;
+}
+
+ul.split.ticked li,
+ul.split.crossed li {
+  left: 0;
+}
+
+fieldset ol.split li {
+  left: 0;
+  margin-bottom: $size-vspace/2;
+}
+fieldset ol.split li:nth-child(even) {
+  padding-left: 1em;
+}
+
+/* double layered button */
+a.button em {
+  display: block;
+  font-size: .8em;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+}
+
+/* files */
+a.pdf,
+a.feed,
+a.csv {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  background-image: shared-image-url("icons/sprite-filetypes.png");
+  padding-left: 20px;
+}
+
+a.pdf  { background-position: 0 1px;  }
+a.feed { background-position: 0 -25px; }
+a.csv  { background-position: 0 -51px; }
+
+p.information {
+  padding-left: 45px;
+  min-height: 38px;
+  background-image: shared-image-url("icons/info.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+ul.files li {
+  list-style: none;
+}
+
+ul.files a.pdf {
+  background-image: shared-image-url("icons/pdf-big.png");
+  padding: .25em 0 .25em 30px;
+  min-height: 24px;
+}
+
+/* social icons */
+a.icon {
+  background-image: shared-image-url('icons/social-sprite.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  display: inline-block;
+  vertical-align: middle;
+  min-height: 17px;
+  padding-left: 20px;
+}
+a.facebook.icon {
+  background-position: 0 -37px;
+}
+a.twitter.icon {
+  padding-left: 29px;
+}
+
+.button.social {
+  padding-left: 43px;
+  min-width: 267px;
+  text-align: left;
+  background-image: shared-image-url('icons/social-icons-sprite-v2.png');
+  background-repeat: no-repeat;
+  &.facebook {
+    background-color: #3B5998;
+    background-position: -8px -82px;
+    &:hover {
+      background-color: #2f4779;
+    }
+  }
+  &.twitter {
+    background-color: #55acee;
+    background-position: -8px -10px;
+    &:hover {
+      background-color: #3b78a6;
+    }
+  }
+  &.email {
+    background-position: -8px -220px;
+  }
+}
+
+/* example code */
+pre.example {
+  border-left: 10px solid $color-bg-action;
+  border-right: 10px solid $color-bg-action;
+  margin-left: -20px;
+  padding-left: 10px;
+}
+
+/* license text */
+pre.license {
+  white-space: pre-wrap;
+  font-family: $font-text;
+  background: inherit;
+  padding: 0;
+  overflow: visible;
+}
+
+/*____________ pull quotes ____________*/
+
+blockquote.pullquote {
+  p {
+    font-weight: 700;
+    font-size: 1.71em;
+    margin-bottom: 0;
+  }
+
+  cite {
+    font-size: .85em;
+    font-style: normal;
+  }
+}
+
+.endorsement.section {
+  border: solid $color-border;
+  border-width: 1px 0;
+
+  > div {
+    position: relative;
+  }
+
+  .logo {
+    text-align: center;
+  }
+
+  blockquote {
+    color: #59564d;
+    line-height: 1.4;
+
+    cite {
+      color: $color-text;
+      font-size: .85em;
+      font-style: normal;
+    }
+  }
+
+  & > div > h2,
+  & > div > h3 {
+    position: absolute;
+    top: -($size-vspace*4 + 0.5em);
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 1;
+    /* reset heading styles: */
+    font-family: $font-text;
+    font-weight: normal;
+    font-size: 1em;
+    letter-spacing: 0;
+    margin-bottom: 0;
+
+    span {
+      background-color: $color-background;
+      color: #87847a;
+      padding: .1em $size-pad;
+      border: 1px solid $color-border;
+      border-radius: 1em;
+    }
+  }
+}
+
+/*____________ contact section ____________*/
+
+.contact.section {
+  text-align: center;
+  h3 {
+    margin-bottom: 0;
+  }
+  #borrower_contact,
+  #lender_contact {
+    background-color: $color-bg-default;
+  }
+  & > div {
+    margin: 0 auto;
+    max-width: 670px;
+  }
+  .money-lent {
+    font-size: 1.2em;
+    padding-bottom: $size-vspace*2;
+  }
+}
+
+/*____________ terms lists ____________*/
+
+ol.terms ol {
+  list-style-type: decimal;
+}
+
+/*____________ feedback messages ____________*/
+
+.error {
+  color: #ca6802;
+  font-weight: 600;
+}
+
+.success {
+  background-image: shared-image-url("tick.png");
+  background-repeat: no-repeat;
+  background-position: 0 .2em;
+  padding-left: 24px;
+}
+
+.status {
+  background-image: shared-image-url("tick-white.png");
+  background-repeat: no-repeat;
+  background-position: 0 .2em;
+  padding-left: 24px;
+}
+
+form .row p.error,
+form .row p.hint {
+  clear: both;
+}
+
+form .row p.error.col,
+form .row p.hint.col {
+  clear: none;
+}
+
+/*____________ grouped numbers i.e. sorty code and date of birth ____________*/
+
+.grouped-numbers input {
+  width: 3em;
+  text-align: center;
+}
+
+/*____________ columns ____________*/
+
+.row .col {
+  width: 49%;
+  margin-left: 2%;
+  float: left;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.row .col.third1 {
+  width: 32%;
+}
+.row .col.third2 {
+  width: 66%;
+}
+.row .col:first-child {
+  margin-left: 0;
+}
+
+/* would be great, because allows several .cols in a .row,
+   but doesn't work in IE8
+.row .col:nth-child(odd) {
+  margin-left: 0;
+  clear: left;
+}
+*/
+
+
+/*____________ boxes ____________*/
+
+div.box {
+  margin-bottom: $size-vspace;
+  padding: $size-pad;
+  border-radius: 4px;
+  position: relative;
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+
+  img.left {
+    margin-right: .2em;
+  }
+  img.right {
+    margin-left: .2em;
+  }
+
+  &.standard {
+    border: $size-pad/2 solid $color-bg-default;
+  }
+  &.important {
+    border: $size-pad/2 solid $color-action;
+  }
+  &.action {
+    border: $size-pad/2 solid $color-bg-action;
+  }
+  &.info {
+    background-color: $color-bg-default;
+  }
+  &.info2 {
+    background-color: $color-bg-action;
+  }
+  &.success {
+    padding-left: 32px;
+    background-position: 10px center;
+  }
+  &.result {
+    border: $size-pad/2 solid #d0d34d;
+
+    .important {
+      color: #9f9187; /* #87847a */
+      strong {
+        color: #8c9500;
+      }
+    }
+  }
+  &.error {
+    background-color: $color-bg-default;
+
+    &.summary {
+      color: $color-text;
+      font-weight: normal;
+
+      ul li {
+        list-style-type: none;
+        margin: 0 0 $size-vspace/2 0;
+      }
+    }
+  }
+
+  img {
+    max-width: none;
+  }
+
+  &.see-above:after {
+    border-bottom-color: $color-background;
+  }
+  /* needs different colour per box type */
+  &.standard.see-above:before {
+    border-bottom-color: $color-bg-default;
+  }
+}
+
+/* pointer above */
+.see-above {
+  position: relative;
+}
+.see-above:after {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  content: "";
+  height: 0;
+  width: 0;
+  border: solid transparent;
+  border-bottom-color: $color-bg-default;
+  border-width: $size-vspace;
+  margin-left: -$size-vspace;
+}
+
+.see-above.left-corner:after {
+  left: 7%;
+}
+
+.third1 .box,
+.third1.box {
+  font-size: 87.5%;
+}
+
+.more.section div.box {
+  display: inline-block;
+}
+
+.numbered {
+  margin-left: 4em;
+  margin-top: $size-vspace*2;
+
+  h2,
+  h3 {
+    position: relative;
+
+    strong {
+      position: absolute;
+      top: -.2em;
+      left: -1.7em;
+      font-size: 1.4em;
+      font-weight: 600;
+      line-height: 1;
+      background-color: $color-bg-default;
+      border-radius: 2em;
+      padding: .2em;
+      min-width: 1em;
+      text-align: center;
+    }
+  }
+
+  fieldset h2 strong,
+  fieldset h3 strong {
+    left: -2em;
+  }
+
+
+  &.row {
+    margin: 0 0 0 3em;
+
+    .col {
+      padding-left: 2em;
+    }
+    .col:first-child {
+      padding-left: 0;
+    }
+  }
+}
+div.box.numbered h2 strong,
+div.box.numbered h3 strong {
+  top: -.3em;
+  left: -2.22em;
+}
+
+/*____________ iframe-like scrolling pane ____________*/
+
+div.iframe {
+  background-color: $color-background;
+  overflow: auto;
+  padding: 1em;
+  height: 12em;
+
+  -webkit-overflow-scrolling: touch;
+
+  table {
+    table-layout: fixed;
+    width: auto;
+    word-wrap: break-word;
+  }
+}
+
+form fieldset div.iframe ol {
+  list-style: decimal outside;
+  margin-bottom: $size-vspace;
+}
+form fieldset div.iframe ol li {
+  margin: 0 0 0 1.5em;
+}
+form fieldset div.iframe li ol {
+  margin: 0;
+}
+
+
+/*____________ document box ____________*/
+
+.document {
+  border: solid 1px $color-border;
+  padding: 1.3em;
+}
+
+html.plain .document {
+  border: none;
+  padding: 0;
+}
+
+
+/*____________ simple bar charts ____________*/
+
+.barchart {
+  /* end bit */
+  height: 1.5em;
+  width: 100%;
+  max-width: 270px;
+  margin-bottom: .1em;
+  background-color: $color-background;
+  border: 1px solid;
+  position: relative;
+  overflow: hidden;
+
+  /* positioning of divider (left set inline) */
+  span.graph {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  /* start bit */
+  span.graph:before {
+    content: '';
+    height: 1.5em;
+    width: 270px;
+    background-color: #D3D60D;
+    position: absolute;
+    top: 0;
+    right: 100%;
+  }
+
+  /* text inside */
+  strong {
+    position: relative;
+    display: block;
+    font-size: .9em;
+    line-height: 1;
+    padding: .3em .4em;
+
+    span {
+      font-weight: normal;
+    }
+  }
+}
+
+/*____________ tooltips ____________*/
+
+.tooltip {
+  background-image: shared-image-url('icons/help-sprite.png');
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+  font-weight: normal;
+  text-align: left;
+  position: relative;
+  vertical-align: top;
+  margin-top: .18em;
+
+  span {
+    display: none;
+    background-color: $color-bg-default;
+    color: $color-text;
+    border: 1px solid $color-border;
+    border-radius: 4px;
+    box-shadow: 0 0 .5em #999;
+    width: 350px;
+    padding: $size-pad;
+    z-index: 2;
+    position: absolute;
+    /* default postion: bottom left */
+    top: 1.9em;
+    left: -0.75em;
+    /* reset .left and .right from basic.css */
+    float: none;
+    margin: 0;
+
+    &.center {
+      left: -175px;
+    }
+    &.right {
+      right: -0.75em;
+      left: auto;
+    }
+    &.top {
+      bottom: 1.9em;
+      top: auto;
+    }
+  }
+
+  &.notice {
+    background-position: 0 -64px;
+  }
+}
+
+.radiocheck .tooltip {
+  margin-top: .45em;
+}
+
+table .tooltip {
+  margin-top: .1em;
+}
+
+/* arrow */
+.tooltip span:before {
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: 100%;
+  left: 0.75em;
+  border: .5em solid transparent;
+  border-bottom-color: $color-bg-default;
+}
+.tooltip span.center:before {
+  left: 175px;
+}
+.tooltip span.right:before {
+  right: 1em;
+  left: auto;
+}
+.tooltip span.top:before {
+  bottom: auto;
+  top: 100%;
+  border-bottom-color: transparent;
+  border-top-color: $color-bg-default;
+}
+
+/* no js case */
+.no-js .tooltip:hover {
+  cursor: help;
+  span {
+    display: block;
+  }
+}
+
+/* keyboard access case */
+.tooltip:focus {
+  outline: none;
+
+  span {
+    display: block !important;
+  }
+}
+
+
+/*____________ tabs ____________*/
+
+.tab-content {
+  margin-bottom: $size-vspace;
+  padding-top: $size-vspace;
+  background-color: $color-background;
+}
+.js .tab-content > .tab-pane {
+  display: none;
+}
+.js .tab-content > .active {
+  display: block;
+}
+
+ul.nav-tabs {
+  margin: 0;
+  padding: $size-vspace/2 0 0;
+  list-style: none;
+  border-bottom: 2px solid $color-border;
+}
+.no-js ul.nav-tabs {
+  display: none;
+}
+
+ul.nav-tabs > li {
+  float: left;
+  margin: 0 0 -2px 0;
+}
+
+ul.nav-tabs > li > a {
+  display: block;
+  border: 2px solid $color-bg-action;
+  border-bottom-color: $color-border;
+  letter-spacing: -0.04em;
+  font-size: $size-h2;
+  border-radius: .35em .35em 0 0;
+  padding: .1em .65em;
+  margin-right: .4em;
+  color: $color-action;
+}
+
+ul.nav-tabs > li > a:link,
+ul.nav-tabs > li > a:visited {
+  text-decoration: none;
+  background-color: $color-background;
+}
+
+ul.nav-tabs > li > a:hover,
+ul.nav-tabs > li > a:active,
+ul.nav-tabs > li > a:focus {
+  text-decoration: none;
+  background-color: $color-bg-action;
+}
+
+ul.nav-tabs > .active > a:link,
+ul.nav-tabs > .active > a:visited {
+  color: $color-text;
+  background-color: #fff;
+  border-color: $color-border;
+  border-bottom-color: transparent;
+  cursor: default;
+}
+
+
+/*____________ pagination ____________*/
+
+ul.pagination {
+  list-style: none;
+  margin: $size-vspace*4 0 $size-vspace*2;
+
+  li {
+    margin-left: 0;
+    margin: 0 0 1em 0;
+    display: inline-block;
+
+    a,
+    strong {
+      padding: .35em .85em;
+      border-radius: 4px;
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    a:link,
+    a:visited,
+    a:hover,
+    a:active,
+    a:focus {
+      background-color: $color-action;
+      color: $color-background;
+    }
+    strong {
+      background-color: $color-bg-default;
+      color: $color-text;
+    }
+  }
+}
+
+.oldie ul.pagination li {
+  display: inline;
+}
+
+
+/*____________ carousels ____________*/
+
+.carousel {
+  position: relative;
+
+  ul.items {
+    list-style: none;
+    margin: 0 0 1.4em;
+    padding: 0;
+  }
+  ul.items li {
+    display: none;
+    margin: 0;
+  }
+  ul.items li.selected {
+    display: block;
+  }
+
+  .controls {
+    list-style: none;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: .4em;
+  }
+
+  .controls li {
+    margin: 0;
+    display: inline-block;
+    line-height: 1;
+  }
+  .controls li a {
+    text-decoration: none;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 0 .93em 0 0;
+    width: .93em;
+    height: .93em;
+    display: inline-block;
+  }
+  .controls li a:hover,
+  .controls li a:active,
+  .controls li a:focus {
+    text-decoration: none;
+    background-color: #8ec8e2;
+  }
+  .controls li.selected a,
+  .controls li.selected a:active {
+    background-color: #adaa9e;
+  }
+}
+
+/*____________ reset effects of headings ____________*/
+
+.reset {
+  line-height: 1.28;
+  font-weight: normal;
+  letter-spacing: 0;
+  margin-bottom: $size-vspace;
+}
+
+h1 .reset {
+  font-size: (1em/$size-h1)+em;
+}
+h2 .reset {
+  font-size: (1em/$size-h2)+em;
+}
+h3 .reset {
+  font-size: (1em/$size-h3)+em;
+}
+.intro .reset {
+  font-size: (1em/$size-h3)+em;
+}
+
+/*____________ video widget ____________*/
+
+.video-wrap {
+  position: relative;
+  .ratio {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    cursor: pointer;
+  }
+
+  video,
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  & + .transcript-trigger {
+    text-align: right;
+  }
+}
+.js #video-transcript {
+  display: none;
+}
+.js .video-wrap.html5 {
+  .ratio { z-index: 11; }
+  .video { z-index: 10; }
+}
+
+/* Progress tracker - A/B tested */
+.progress-tracker {
+  list-style-type: none;
+  margin-top: 2em;
+  overflow: visible;
+  min-width: 300px;
+  position: relative;
+
+  /* line behind all items */
+  &:before,
+  &:after {
+    border-bottom: 9px solid $color-bg-default;
+    content: "";
+    position: absolute;
+    width: 99%;
+  }
+  &:after {
+    border-color: $color-bg-action;
+    right: 0;
+    top: 0;
+    z-index: 0;
+  }
+
+  &.on-step-1:after { width: 100%; }
+  &.on-step-2:after { width: 50%; }
+  &.on-step-3:after { width: 0; }
+
+  .step-1 { width: 22.5%; }
+  .step-2 { width: 42.5%; margin-left: 2.5%; }
+  .step-3 { width: 20%;   margin-left: 2.5%; }
+
+  @media only screen and (max-width: 800px) {
+    .step-1 { width: 21.5%; }
+    .step-2 { width: 43.5%; margin-left: 2.5%; }
+    .step-3 { width: 20%;   margin-left: 2.5%; }
+  }
+
+  li {
+    display: inline-block;
+    text-align: center;
+    line-height: 2.4;
+    margin: 0;
+    position: relative;
+    top: -.95em;
+    width: 21.25%;
+    font-weight: bold;
+    overflow: hidden;
+    padding-right: 5%;
+    z-index: 10;
+
+    span > span,
+    strong > span {
+      font-size: 0.8em;
+    }
+  }
+  li:first-child {
+    text-align: left;
+  }
+  li:last-child {
+    text-align: right;
+    padding-right: 0;
+  }
+  li > span,
+  li > strong {
+    background-color: $color-bg-action;
+    border-color: $color-bg-action;
+    border-radius: 4px 0 0 4px;
+    padding: 0.5em 0.7em;
+    white-space: nowrap;
+  }
+  li.done > span,
+  li.done > strong {
+    background-color: $color-bg-default;
+    border-color: $color-bg-default;
+  }
+  li:last-child > span,
+  li:last-child > strong {
+    border-radius: 4px;
+  }
+  li:last-child > span:after,
+  li:last-child > strong:after {
+    border: none;
+  }
+  li strong {
+    background-color: #ff8200;
+    border-color: #ff8200;
+    color: #fff;
+  }
+  /* arrow/triangle */
+  li > span:after,
+  li > strong:after {
+    border-bottom: 1.20em solid transparent;
+    border-left-color: inherit;
+    border-left-style: solid;
+    border-left-width: 1.4em;
+    border-top: 1.2em solid transparent;
+    content: "";
+    display: inline-block;
+    height: 0.15em;
+    margin-left: 0.65em;
+    position: absolute;
+    top: 0;
+    width: 0;
+  }
+
+  @media only screen and (max-width: $screensize-s) {
+    li {
+      font-size: 87%;
+    }
+  }
+
+  @media only screen and (max-width: $screensize-xs) {
+    display: none;
+  }
+
+}/* <= Progress tracker - A/B tested */
+
+.oldie .progress-tracker {
+  white-space: nowrap;
+  li {
+    display: inline!important;
+    margin: 1em 0;
+  }
+}
+
+.ie8 .progress-tracker {
+  white-space: nowrap;
+}
+
+} /* /@media */
+
+
+/* size M (e.g. tablet landscape)
+********************************************************************/
+
+@media only screen and (max-width: $screensize-m) {
+
+.row .col .col {
+  width: auto !important;
+  margin-left: 0 !important;
+  float: none !important;
+}
+
+.intro {
+  font-size: 1.15em;
+}
+
+ul.split li,
+ol.split li {
+  width: auto;
+  float: none;
+  padding-right: 0;
+}
+fieldset ol.split li:nth-child(even) {
+  padding-left: 0;
+}
+
+} /* /@media */
+
+
+/* size S (e.g. tablet portrait)
+********************************************************************/
+
+@media only screen and (max-width: $screensize-s) {
+
+  ul.nav-tabs > li > a:link,
+  ul.nav-tabs > li > a:visited {
+    font-size: $size-h3;
+  }
+
+} /* /@media */
+
+
+/* size XS (e.g. phones)
+********************************************************************/
+
+@media only screen and (max-width: $screensize-xs) {
+
+fieldset {
+  margin-left: -1em;
+  margin-right: -1em;
+  border-radius: 0;
+}
+
+.tooltip span {
+  position: fixed;
+  width: 80%;
+  left: 1em !important;
+  top: 1.5em !important;
+  right: 0 !important;
+  bottom: auto !important;
+  z-index: 100;
+}
+.tooltip span:before {
+  display: none;
+}
+
+.section {
+  padding: vspace($fontsize: 1em, $factor: 2) 0 vspace($fontsize: 1em, $factor: 1);
+  padding: $size-vspace-modern*2 0 $size-vspace-modern;
+}
+
+.section:first-child {
+  padding-top: 0;
+}
+
+.row .col {
+  width: auto !important;
+  margin-left: 0 !important;
+  float: none !important;
+}
+
+.contact.section {
+  .hint {
+    padding-top: $size-vspace;
+  }
+
+  div.group {
+    padding-left: $size-pad;
+    padding-right: $size-pad;
+  }
+}
+
+.numbered.row .col {
+  padding-left: 0;
+}
+
+.numbered {
+  margin-left: 3em;
+}
+
+blockquote.pullquote {
+  p {
+    font-size: $size-h3;
+  }
+}
+
+.endorsement.section {
+  border: 0;
+  & > div > h2,
+  & > div > h3 {
+    position: static;
+    text-align: left;
+    font-weight: 600;
+    font-size: $size-h3;
+    letter-spacing: -0.04em;
+    span {
+      background: transparent;
+      color: inherit;
+      border: none;
+      border-radius: 0;
+      padding: inherit;
+    }
+  }
+  .logo {
+    text-align: left;
+    img {
+      margin-bottom: $size-vspace;
+      margin-top: $size-vspace;
+    }
+  }
+}
+
+ul.nav-tabs > li > a:link,
+ul.nav-tabs > li > a:visited {
+  padding: .1em .25em;
+}
+
+p.important {
+  font-size: $size-h3;
+}
+
+.intro {
+  font-size: 1em;
+}
+
+pre.example {
+  border-left-width: 5px;
+  border-right-width: 5px;
+  margin-left: -10px;
+  padding-left: 5px;
+}
+
+a.more,
+p.more > a {
+  font-size: 1.1em;
+}
+
+.video-wrap {
+  margin-left: -1em;
+  margin-right: -1em;
+}
+
+} /* /@media */
+
+
+/* custom break point */
+@media only screen and (max-width: 700px) {
+  #content .section > div {
+    width: auto;
+  }
+} /* /@media */

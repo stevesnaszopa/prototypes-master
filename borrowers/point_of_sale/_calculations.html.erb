@@ -1,0 +1,12 @@
+
+<%
+@deposit = params['deposit']
+
+if @deposit
+  @deposit = @deposit.to_f
+  @loan = 3000 - @deposit
+  @monthly = @loan / 12
+end
+
+%>
+

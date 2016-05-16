@@ -1,0 +1,49 @@
+
+<table class="rows">
+  <thead>
+  <tr>
+    <th>Term</th>
+    <th>APR from</th>
+    <th>Monthly cost</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% values.each_with_index do |val, index| %>
+    <tr class="" data-index="0">
+      <td>
+        <span class="radiocheck">
+          <input type="radio" <%= val == values.last ? 'checked=checked' : ''%> name="<%= "rate-#{name}" %>" value="12"  id="<%= "rate-#{name}-#{index}" %>" />
+          <label for="<%= "rate-#{name}-#{index}" %>"><%= val[:term] %></label>
+        </span>
+      </td>
+      <td><span class="apr"><%= val[:apr] %></span></td>
+      <td>£<span class="monthly-repayment"><%= val[:cost] %></span></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<p class="intro">
+  <a href="#" class="button">Get a quote today</a>
+</p>
+
+<div class="rep-apr">
+<h3>Representative example</h3>
+  <div class=" slider-sentences">
+    <p>
+      A loan of <span class="amount"><%= rep_apr[:amount] %></span> over
+      <span class="term"><%= rep_apr[:term] %></span> will cost you
+      <span class="monthly-repayment"><%= rep_apr[:cost] %></span>&#xa0;per&#xa0;month at a representative
+      <span class="apr"><%= rep_apr[:apr]%></span>&#xa0;APR.
+    </p>
+
+    <p>
+      The total cost after <span class="term"><%= rep_apr[:term] %></span> is
+      <span class="total-repayment"><%= rep_apr[:total_cost] %></span>, which includes
+      <span class="total-interest"><%= rep_apr[:interest] %></span> interest at
+      <span class="lending-rate"><%= rep_apr[:interest_rate]%></span> fixed and
+      a <span class="fee"><%= rep_apr[:fee] %></span> fee.
+      The total amount of credit is <span class="total-credit"><%= rep_apr[:total_credit] %></span>.
+    </p>
+  </div>
+  <p class="hint">The rate and fee you are offered will depend on your individual circumstances</p>
+</div>

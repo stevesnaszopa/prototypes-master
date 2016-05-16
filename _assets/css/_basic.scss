@@ -1,0 +1,644 @@
+/**
+ * Basic Styles
+ */
+
+/* screen styles
+********************************************************************/
+
+@media screen {
+
+html {
+  overflow-x: auto;
+  overflow-y: scroll;
+  background-color: $color-background;
+  font: normal 100%/1.28 $font-text;
+}
+html.plain {
+  overflow: auto;
+}
+html,
+body {
+  color: $color-text;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+body {
+  background: $color-background center top;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+
+/*____________ headings ____________*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+caption,
+figcaption,
+summary,
+legend {
+  font-weight: 600;
+  padding: 0;
+}
+h1 {
+  font-weight: 700;
+  line-height: 1;
+}
+h1,
+h2,
+h3 {
+  letter-spacing: -0.04em;
+}
+caption,
+figcaption,
+summary,
+legend {
+  font-style: normal;
+  font-weight: normal;
+  margin: 0 0 .35em;
+}
+
+h1 {
+  font-size: $size-h1; /* 36px */
+  margin: 0 0 vspace($fontsize: $size-h1); /* for IE8 and under */
+  margin-bottom: $size-vspace-modern; /* for modern browsers */
+}
+h2 {
+  font-size: $size-h2; /* 24px */
+  margin: vspace($fontsize: $size-h2, $factor: 2) 0 vspace($fontsize: $size-h1);
+  margin: $size-vspace-modern*2 0 $size-vspace-modern;
+}
+h3 {
+  font-size: $size-h3; /* 18px */
+  margin: vspace($fontsize: $size-h3, $factor: 2) 0 vspace($fontsize: $size-h3);
+  margin: $size-vspace-modern*2 0 $size-vspace-modern;
+}
+h4 {
+  font-size: 1em; /* 14px */
+  margin: vspace($fontsize: $size-h3, $factor: 2) 0 0;
+  margin-top: $size-vspace-modern*2;
+}
+h5 {
+  font-size: .875em;
+  margin: vspace($fontsize: .875em, $factor: 2) 0 vspace($fontsize: .875em);
+}
+h6 {
+  font-size: .75em;
+  margin: vspace($fontsize: .75em, $factor: 2) 0 vspace($fontsize: .75em);
+}
+
+figure figcaption:last-child {
+  margin: -1.05em 0 0;
+}
+
+div.box,
+div.col,
+fieldset,
+.tab-pane {
+  h2:first-child,
+  h3:first-child,
+  h4:first-child {
+    margin-top: 0;
+  }
+}
+h1 + h2,
+h2 + h3,
+h3 + h4 {
+  margin-top: 0;
+}
+
+
+/*____________ basic margins and paddings ____________*/
+
+p,
+ul,
+ol,
+dl,
+pre,
+table,
+hr,
+blockquote,
+figure,
+details,
+fieldset,
+address {
+  margin: 0 0 $size-vspace 0;
+  margin-bottom: $size-vspace-modern;
+  padding: 0;
+}
+p.last {
+  margin-bottom: 0;
+}
+
+div {
+  margin: 0;
+  padding: 0;
+}
+
+
+/*____________ lists ____________*/
+
+li {
+  margin: 0 0 0 1.5em;
+  padding: 0;
+}
+dt {
+  font-weight: 600;
+  margin: 0 .2em 0 0;
+  padding: 0;
+  float: left;
+  clear: left;
+}
+dd {
+  margin: 0 0 .65em;
+  padding: 0;
+}
+
+li ul,
+li ol,
+li dl,
+dl ul,
+dl ol,
+dl dl {
+  margin: 0;
+}
+li li {
+  font-size: 100%;
+}
+
+ul {
+  list-style: disc outside;
+}
+ol {
+  list-style: decimal outside;
+}
+ol ol {
+  list-style-type: lower-alpha;
+}
+ol ol ol {
+  list-style-type: upper-roman;
+}
+ol ol ol ol {
+  list-style-type: upper-alpha;
+}
+ol ol ol ol ol {
+  list-style-type: lower-roman;
+}
+
+
+/*____________ tables ____________*/
+
+/* basic table styles underneath for all (print & screen) */
+
+table.raw {
+  border-width: 0;
+}
+
+caption,
+.caption {
+  font-size: .85em;
+  line-height: 1.15;
+}
+caption {
+  caption-side: bottom;
+  margin: .35em 0 0;
+  text-align: left;
+}
+.caption {
+  margin: -($size-vspace) 0 .85em;
+}
+
+table.plain th {
+  font-weight: normal;
+}
+
+table.raw th,
+table.raw td {
+  padding: 0 .25em 0 0;
+  border-width: 0;
+  background-color: transparent;
+}
+
+table.matrix thead td {
+  background-color: transparent;
+  border-left-color: transparent;
+  border-top-color: transparent;
+}
+
+table.striped tbody tr:nth-child(odd) td,
+table.striped:not(.matrix) tbody tr:nth-child(odd) th {
+  background-color: $color-bg-default;
+}
+table.matrix tbody th {
+  background-color: $color-bg-alternate;
+}
+
+table .highlight,
+table .highlight td,
+table .highlight th {
+  background-color: $color-bg-default;
+  font-weight: 600;
+  color: #000;
+}
+
+table.plain .highlight,
+table.plain .highlight td,
+table.plain .highlight th {
+  background-color: transparent;
+}
+
+table.rows {
+  border-width: 0;
+
+  th,
+  td {
+    padding: .25em 2em .25em 0;
+    background-color: transparent;
+    border-width: 1px 0;
+  }
+  thead tr:first-child th,
+  thead tr:first-child td {
+    border-top-width: 0;
+    border-color: #999;
+  }
+  tbody tr:last-child td,
+  tbody tr:last-child th {
+    border-bottom-width: 0;
+  }
+  .highlight,
+  .highlight td,
+  .highlight th {
+    background-color: transparent;
+    border-color: #999; /* @todo: not working */
+  }
+}
+
+table.alt.rows {
+  .highlight {
+    background-color: $color-bg-default;
+  }
+  tr:first-child th,
+  tr:first-child td {
+    border-top-width: 0;
+  }
+  th,
+  td {
+    padding: .5em .5em .5em 0;
+  }
+  th:first-child,
+  td:first-child {
+    padding-left: .5em;
+  }
+}
+
+/*____________ links ____________*/
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: $color-action;
+  background-color: inherit;
+  font-weight: 600;
+}
+
+a:link:hover,
+a:visited:hover,
+a:link:focus,
+a:visited:focus,
+a:link:active,
+a:visited:active {
+  color: $color-action;
+  outline: none;
+  text-decoration: underline;
+}
+
+a:visited,
+a:link:active,
+a:visited:active {
+  color: #6a66c3;
+}
+
+h1 a:link,
+h1 a:visited {
+  font-weight: 700;
+}
+
+h2 a:link,
+h2 a:visited,
+h3 a:link,
+h3 a:visited,
+h4 a:link,
+h4 a:visited {
+  font-weight: 600;
+}
+
+a[rel~="external"] {
+  background: transparent shared-image-url('icons/external.png') no-repeat right center;
+  padding: 0 15px 0 0;
+}
+a.button span.external,
+a[target="_blank"].button span {
+  background: transparent shared-image-url('icons/external-white.png') no-repeat right center;
+  padding-right: 17px;
+}
+
+
+/*____________ media ____________*/
+
+img {
+  border-width: 0;
+  vertical-align: middle;
+  color: #666;
+  background-color: transparent;
+  font-style: italic;
+}
+
+img,
+object,
+embed,
+iframe,
+video,
+audio {
+  max-width: 100%;
+}
+img,
+video {
+  height: auto;
+}
+
+iframe {
+  border-width: 0;
+  background-color: inherit;
+}
+
+object:focus,
+embed:focus,
+iframe:focus,
+video:focus,
+audio:focus {
+  outline: none;
+  box-shadow: 0 0 5px #999;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+
+/*____________ misc ____________*/
+
+hr {
+  border: dotted $color-border;
+  border-width: 2px 0 0;
+  text-align: center;
+  height: 0;
+  clear: both;
+}
+
+strong {
+  color: #000;
+  font-weight: 600;
+}
+
+address {
+  font-style: normal;
+}
+
+abbr {
+  font-style: normal;
+}
+abbr[title] {
+  cursor: help;
+  border-bottom: 1px dotted;
+}
+
+mark {
+  background: #ff0;
+  color: inherit;
+}
+
+pre,
+code,
+samp,
+kbd {
+  font-family: "Courier New", monospace;
+  font-size: 1em;
+  direction: ltr;
+  text-align: left;
+  background-color: #eef6fb;
+}
+pre {
+  overflow: auto;
+  padding: 5px;
+}
+
+blockquote {
+}
+q:before,
+q:after {
+  content: '';
+}
+
+sub,
+sup {
+  font-size: .8em;
+  line-height: 1;
+}
+sub {
+  vertical-align: sub;
+}
+sup {
+  vertical-align: super;
+}
+
+small {
+  font-size: .8em;
+}
+
+
+/*____________ general classes ____________*/
+
+/* mark something visibly as not done yet */
+.todo {
+  outline: 2px dashed #c00;
+}
+
+/* hide something in an accessible way */
+.a11y {
+  position: absolute;
+  left: -99999em;
+  top: 0;
+  overflow: hidden;
+  display: inline;
+}
+
+.hide {
+  display: none;
+}
+
+/* hide if javascript is enabled */
+.js {
+  .no-js-only {
+    display: none;
+  }
+}
+
+/* hold elements together when wrapping (when nbsp doesn't cut it) */
+.bunch {
+  display: inline-block;
+}
+.ie8 .bunch {
+  display: inline;
+}
+
+
+} /* /@media */
+
+/* screen size dependent helpers
+********************************************************************/
+@media only screen {
+  .only-screensize-xs {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: $screensize-xs) {
+  .only-screensize-xs {
+    display: block;
+  }
+}
+
+
+/* all styles
+********************************************************************/
+
+table {
+  border-collapse: collapse;
+  empty-cells: show;
+  border-spacing: 0;
+  border: 1px solid $color-border;
+}
+
+th,
+td {
+  padding: .5em .7em;
+  margin: 0;
+  vertical-align: top;
+  text-align: left;
+  border: 1px solid $color-border;
+}
+th {
+  font-weight: 600;
+}
+
+thead th,
+thead td {
+  background-color: $color-bg-alternate;
+}
+tbody th,
+tbody td {
+  background-color: #fff;
+}
+th.number,
+td.number {
+  text-align: right;
+}
+
+figure,
+figcaption {
+  display: block;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+.data {
+  display: inline-block;
+  margin-bottom: .2em;
+}
+
+/* for media in content */
+.left {
+  float: left;
+  margin: .2em 1em .3em 0;
+}
+.right {
+  float: right;
+  margin: .2em 0 .3em 1em;
+}
+
+/* one of the many clearfix versions */
+.group,
+.section > div {
+  display: inline-block;
+}
+.group,
+.section > div {
+  display: block;
+}
+.group:before,
+.group:after,
+.section > div:before,
+.section > div:after {
+  content: "";
+  display: table;
+}
+.group:after,
+.section > div:after {
+  clear: both;
+}
+
+
+/* size S (e.g. tablet portrait)
+********************************************************************/
+
+@media only screen and (max-width: $screensize-s) {
+
+  table.rows th,
+  table.rows td {
+    padding-right: 1em;
+  }
+
+} /* /@media */
+
+
+/* size XS (e.g. phones)
+********************************************************************/
+
+@media only screen and (max-width: $screensize-xs) {
+
+h1 {
+  font-size: $size-h2;
+}
+h2 {
+  font-size: $size-h3;
+}
+h3 {
+  font-size: 1.14em;
+}
+
+table.rows th,
+table.rows td {
+  padding-right: .25em;
+}
+
+.left,
+.right {
+  float: none;
+  margin: .2em 0;
+}
+
+.bunch {
+  display: inline;
+}
+
+} /* /@media */

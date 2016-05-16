@@ -1,0 +1,154 @@
+     <h2>How much will your monthly repayments be?</h2>
+
+      <form method="post" id="loan">
+        <fieldset class="row group">
+          <div class="standard box">
+            <label>
+              Deposit amount: £
+            </label>
+            <input id="deposit" type="number" value="1500">
+          </div>
+
+           <div class="slider-container">
+              <button class="round" id="decrease" data-trackinglabel="Amount (decrease)" type="button" title="Decrease amount">-</button>
+              <input class="range-slider" data-trackinglable="Amount (slider)" id="amount-slider" type="range" min="0" max="3000" step="50">
+              <button class="round" id="increase" data-trackinglabel="Amount (increase)" type="button" title="Increase amount">+</button>
+            </div> <!--SLIDER CONTAINER-->
+          <!--RESULTS-->
+          <!--<div class="row group" id="results">-->
+            <div class="important box results">
+               <p>You will pay 12 monthly installments of: </p>
+               £<span id="monthly">125</span>
+            </div>
+          <!--</div>-->
+        </fieldset>
+        <!--FINAL RESULT NOT WORKING
+        <div class="selected">
+            <h3>You chose to make a £<span id="final-deposit"> </span> deposit and 12 monthly repayments of £<span id="final-repayment"> </span></h3>
+        </div>
+        -->
+        <div class="row group" id="repexample">
+          <p>
+            Representative Example: a loan of £19,000 over 3 years will cost you £624.71 per month at 11.9% APR. The total cost after 3 years is £22,489.41, which includes an  annual interest rate of 11.9% fixed. The total amount of credit is £19,000.
+          </p>
+        </div>
+      </form>
+  </div>
+</div>
+
+  <!--STYLE SLIDER --> 
+  <style>
+
+ /* Customise the slider */
+  #amount-slider {
+    width:80%;
+  }
+
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: yellow;
+  }
+
+  /*Customise slider buttons */
+  button .round{
+    width:10%;
+    float:right;
+  }
+
+  /*Customise the input */
+  input#deposit {
+    width: 25%;
+    display:block;
+  }
+
+  input#deposit span{
+    font-size: 2.45em;
+    font-weight:bold;
+  }
+
+  /*Customise the results */
+
+  div#results span{
+    font-weight: 2.45em;
+    font-weight:bold;
+    text-align: center;
+  }
+
+  .results{
+    margin-top:10px;
+  }
+
+  </style>
+
+<!--SCRIPT SLIDER --> 
+  <script>
+
+var SLIDERAPP = (function(){
+
+  var slider = document.getElementById("amount-slider");
+  var box = document.getElementById("deposit");
+  var installment = document.getElementById("monthly");
+  var container = document.querySelectorAll(".slider-container")[0];
+
+  //set deposit value
+  var printValue = function(){
+    slider.onmousemove = function(){
+      box.value = slider.value;
+      console.log("this runs");
+      monthlyPayments(box.value);
+    };
+  };
+
+  //calculate monthly repayments
+  var monthlyPayments = function(x){
+    y = (((3000 - x)/12).toFixed(2));
+    installment.textContent = y;
+  };
+
+  //make slider buttons work
+  var buttonwork = function(e){
+    var bv = parseInt(box.value, 10);
+    if(event.target.id === "increase"){
+      if(bv < 3000){
+        bv += 50;
+        box.value = bv;
+        monthlyPayments(bv);
+      }
+    }
+
+    else if(event.target.id === "decrease"){
+      if(bv > 0){
+        bv -= 50;
+        box.value = bv;
+        monthlyPayments(bv);
+      }
+    }
+    slider.value = box.value;
+  };
+
+  //Trigger slider event
+  var buttonpush = function(){
+    container.addEventListener(
+      "click",
+      function(event){
+        buttonwork(event);
+      },
+      false
+    )
+  };
+
+  return {
+    init: printValue,
+    init2: buttonpush
+  }
+
+})();
+
+SLIDERAPP.init();
+SLIDERAPP.init2();
+
+</script>

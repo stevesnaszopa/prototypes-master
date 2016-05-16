@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<!--[if lte IE 7]><html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" class="no-js oldie plain"><![endif]-->
+<!--[if IE 8]><html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" class="no-js ie8 plain"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" class="no-js plain"><!--<![endif]-->
+  <head>
+    <title><%= @pagetitle ? @pagetitle : 'Zopa prototype' %></title>
+    <%= render :partial => "/_includes/layout/head" %>
+  </head>
+  <body class="<%= @bodyclass %>">
+
+    <%= yield %>
+
+    <%= render :partial => "/_includes/layout/scripts" %>
+  </body>
+</html>

@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" id="firstchoice" class="ie6 "> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" id="firstchoice" class="ie7 "> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" id="firstchoice" class="ie8 "> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" id="firstchoice" class="ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="" id="firstchoice" lang="en"><!--<![endif]--><head>
+
+
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><script src="Thomson%20_%20Payment%20Details_files/ga.js"></script><script src="Thomson%20_%20Payment%20Details_files/d6df495f8171eb65e37dced6af018d85.js"></script><script src="Thomson%20_%20Payment%20Details_files/4a446ea276d9fe1888b5220f95c042e0.js"></script><script src="Thomson%20_%20Payment%20Details_files/0abb118629badb8d2a935c5f828a0bae.js"></script><script src="Thomson%20_%20Payment%20Details_files/d60210c8b91f8d96ca7776199d4eff61.js"></script><script src="Thomson%20_%20Payment%20Details_files/1547deafe86d84c9f3825019ffebbc5a.js"></script><script src="Thomson%20_%20Payment%20Details_files/85a484dbb3c196e61a56fcb315dbde40.js" async="" type="text/javascript"></script><script src="Thomson%20_%20Payment%20Details_files/serverComponent.php"></script>
+<link href="Thomson%20_%20Payment%20Details_files/main.css" rel="stylesheet" type="text/css">
+<link href="Thomson%20_%20Payment%20Details_files/main_header.css" rel="stylesheet" type="text/css">
+<link href="Thomson%20_%20Payment%20Details_files/print.css" rel="stylesheet" type="text/css" media="print">
+<!--[if lt IE 9]>
+	<link rel="stylesheet" type="text/css" href="/cms-cps/thomson/css/ie8-and-down.css" />
+<![endif]-->
+
+<!--    -- listing properties --
+Built-By=bob
+Created-By=16.0-b13 (Sun Microsystems Inc.)
+Version=34.00.00
+Manifest-Version=1.0
+Ant-Version=Apache Ant 1.7.0
+Built-Date=May 21 2015 1453
+Session Id=F44AB73867829F2A09C057F453B40ADC.iscapecommonpaymentserverp86a -->
+
+<title>Holidayz | Payment Details</title>
+<!--#endif-->
+		<!--[if IE 7 ]><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /><![endif]-->
+		<!--[if IE 8 ]><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" /><![endif]-->
+		<!--[if IE 9 ]><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" /><![endif]-->
+		<!--[if (gt IE 9)|!(IE)]><!--><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><!--<![endif]-->
+		<meta charset="utf-8">
+
+<style>
+	.env {
+	    left: 0;
+	    width: 78%;
+	    text-align: center;
+	    font-size: .8em;
+	    margin-left: 1%;
+	    border-radius: .2em;
+	    color: #fff;
+	    font-weight: 600;
+	    padding: .3em;
+	    background-color: #E30926;
+	}
+	.content-section {
+		float: left;
+		width: 745px;
+		padding: 0px 22px; /*before-padding: 0px 22px;*/
+}
+</style>
+
+<script type="text/javascript" src="Thomson%20_%20Payment%20Details_files/functions_thomson_paymentPage.js"></script>
+<script type="text/javascript" src="Thomson%20_%20Payment%20Details_files/functions_manualAddress.js"></script>
+
+<script type="text/javascript" language="javascript">
+	 //seconds
+	var session_timeout= 12900;
+	var IDLE_TIMEOUT = (12900)-(600);
+	var _idleSecondsCounter = 0;
+	var IDLE_TIMEOUT_millisecond = IDLE_TIMEOUT *1000;
+	var url="http://www.thomson.co.uk/destinations/bookaccommodation?productCode=002615&tab=overview&noOfAdults=2&noOfChildren=0&childrenAge=&duration=7&airports[]=LGW|LTN|SEN|STN&units[]=002615:HOTEL:HOTEL&flexibleDays=3&flexibility=true&when=28-06-2015&noOfSeniors=0&multiSelect=true&packageId=002615TMLTEN1435276290000014352762900000TOM45621435962900000014359629000000TOM4563BC133&index=1&bb=HB&price=pp";
+	var sessionTimeOutFlag =  false;
+
+	function noback(){
+		window.history.forward();
+		$('FieldExpiryDateMonth').selectedIndex = 0;
+		$('FieldExpiryDateYear').selectedIndex  = 0;
+		document.getElementById("tandc-info").checked=false;
+	}
+
+	window.setInterval(CheckIdleTime, 1000);
+	window.alertMsg();
+	function alertMsg(){
+
+	var myvar = setTimeout(function(){
+	document.getElementById("sessionTime").style.visibility = "visible";
+	document.getElementById("modal").style.visibility = "visible";
+	document.getElementById("sessionTimeTextbox").style.visibility = "visible";
+
+	var count = Math.round((session_timeout - _idleSecondsCounter)/60);
+	document.getElementById("sessiontimeDisplay").innerHTML = count +"mins";
+	},IDLE_TIMEOUT_millisecond);
+
+	}
+
+	function CheckIdleTime() {
+    _idleSecondsCounter++;
+
+    if (  _idleSecondsCounter >= session_timeout) {
+
+    	if (window.sessionTimeOutFlag == false){
+		document.getElementById("sessionTime").style.visibility = "hidden";
+		document.getElementById("modal").style.visibility = "hidden";
+		document.getElementById("sessionTimeTextbox").style.visibility = "hidden";
+		document.getElementById("sessionTimeout").style.visibility = "visible";
+		document.getElementById("modal").style.visibility = "visible";
+		document.getElementById("sessionTimeOutTextbox").style.visibility = "visible";
+    	}else{
+    		document.getElementById("sessionTimeout").style.visibility = "hidden";
+    		document.getElementById("modal").style.visibility = "visible";
+    		document.getElementById("sessionTimeOutTextbox").style.visibility = "hidden";
+
+
+    	}
+	   //navigate to technical difficulty page
+
+		}
+	}
+	function closesessionTime()
+	{
+
+		document.getElementById("sessionTime").style.visibility = "hidden";
+		document.getElementById("modal").style.visibility = "hidden";
+		document.getElementById("sessionTimeTextbox").style.visibility = "hidden";
+
+	}
+	function reloadPage(){
+		window.sessionTimeOutFlag= true;
+		document.getElementById("sessionTimeout").style.visibility = "hidden";
+		document.getElementById("modal").style.visibility = "hidden";
+		document.getElementById("sessionTimeOutTextbox").style.visibility = "hidden";
+		window.noback();
+		window.location.replace(window.url);
+		return(false);
+
+	}
+	function homepage()
+	{
+		url="https://www.zopa.com"
+		window.noback();
+	
+		window.location.replace(url);
+	}
+	function activestate()
+	{
+
+		document.getElementById("sessionTime").style.visibility = "hidden";
+		document.getElementById("modal").style.visibility = "hidden";
+		document.getElementById("sessionTimeTextbox").style.visibility = "hidden";
+		window.ajaxForCounterReset();
+		window.alertMsg();
+		window._idleSecondsCounter = 0;
+	}
+	function ajaxForCounterReset() {
+		var token = "0de24243-73bf-4a6d-a428-024d24eea7e5";
+		var url = "/cps/SessionTimeOutServlet?tomcat=cpsp86a";
+		var request = new Ajax.Request(url, {
+			method : "POST"
+		});
+		window._idleSecondsCounter = 0;
+
+	}
+
+	function newPopup(url) {
+		var win = window.open(url,"","width=700,height=600,scrollbars=yes,resizable=yes");
+	    if (win && win.focus) win.focus();
+	}
+
+
+	function makePayment() {
+		document.getElementById('errorMessageToolTip').style.display = "none";
+		if( document.getElementById("errorMsg") ){
+			document.getElementById("errorMsg").style.display = "none";
+		}
+		var isvalid = true,
+		cardValid = false;
+		if(allnumeric('cardNumber') && validateCVV('cvv') && allCharacters('cardholderName') && getMonth('FieldExpiryDateMonth') || validateISSUE('issuenum') ){
+			cardValid = true;
+		}
+		if(checkBox()){
+			isvalid = isValid();
+		}
+		if(!isvalid || !cardValid){
+			document.getElementById('errorMessageToolTip').style.display = "block";
+		}
+		var paymentForm = $('CheckoutPaymentDetailsForm');
+		var element = paymentForm.serialize();
+		elementstring = element
+				+ "&token=0de24243-73bf-4a6d-a428-024d24eea7e5&b=32000&tomcat=cpsp86a";
+		var url = "/cps/processPostPayment?token=0de24243-73bf-4a6d-a428-024d24eea7e5&b=32000&tomcat=cpsp86a";
+		elementstring = elementstring.replace("&title=&", "&title=" + leadTitle + "&");
+		elementstring = elementstring.replace("payment_0_type=&", "");
+		elementstring = elementstring.replace("payment_0_type=PleaseSelect&", "");
+		elementstring = elementstring.replace("payment_0_type=PleaseSelect&", "");
+		if(isvalid && cardValid){
+			document.getElementById("modal").style.visibility = "visible";
+			var request = new Ajax.Request(url, {
+				method : "POST",
+				parameters : elementstring,
+				onSuccess : showThreeDOverlay
+			});
+		}
+	}
+
+	function isValid(){
+		var firstName =  checkFName("firstName"),
+			title = checkTitle("styled-select"),
+			surName = checkName("surName"),
+			houseName = housenameCheck("houseDetails1"),
+			street1 = streetline1Check("StreetLine1"),			
+			street2 = streetline2Check("Streetline2"),
+			town = townorcityCheck("townorcity"),
+			county = testCounty("county"),
+			postCode = testPostCode("postalCode");
+
+		 if(!firstName || !title || !surName || !houseName || !street1 || !street2 || !town || !county || !postCode){
+			return false;
+		 }
+		 return true;
+		}
+
+</script>
+
+	 
+
+
+
+
+ <!--MORE JAVASCRIPT-->
+ 
+<script type="text/javascript">
+ var clientApp = "THOMSON ";
+ var clientDomainURL = "https://www.zopa.com";
+ var isPromotionalcodeApplied = "";
+ var themePath = '';
+ var promoCodeValidated = false;
+ var tomcatInstance= "&tomcat=cpsp86a" ;
+ var token = "0de24243-73bf-4a6d-a428-024d24eea7e5" ;
+ var isNewHoliday = 'true';
+ var errorFields = "";
+ var paymenttypeoptions = new Array();
+ var preLdDepositOptions="";
+
+ setSummaryPanelCollapsable( false );
+
+ var tandCurl = ""+"https://www.thomson.co.uk/thomson/page/byo/tandc/tandc.page?date=2015-06-26&lang=en&accommInvSys=TRACS&flightInvSys=TRACS&depDate=2015-06-26";
+ var configurableCardCharge = "2.00,0.00,95.00";
+
+
+///Define a javascript object for using thru out the page
+ var newHoliday  = "true";
+ var PaymentInfo = {};
+
+PaymentInfo.totalAmount ="3000";
+PaymentInfo.payableAmount = "3000";
+
+PaymentInfo.calculatedPayableAmount = "3000";
+PaymentInfo.calculatedTotalAmount = "3000";
+
+//PaymentInfo.maxCardChargeAmount = "";
+
+PaymentInfo.calculatedDiscount = "0";
+
+//Let us give default values
+if(trimSpaces(PaymentInfo.calculatedDiscount)=="")
+{
+  PaymentInfo.calculatedDiscount = 0.0;
+}
+
+PaymentInfo.chargePercent = 0.0;
+PaymentInfo.selectedCardType = 'PleaseSelect';
+
+var depositAmountsMap = new Map();
+     
+     depositAmountsMap.put('fullCost', 1*PaymentInfo.totalAmount  - 1*PaymentInfo.calculatedDiscount);
+
+var cardChargeMap = new Map();
+     cardChargeMap.put('PleaseSelect', configurableCardCharge);
+       
+         cardChargeMap.put('VISA', '2.00,0.00,95.00,VISA&amp;nbsp;-&amp;nbsp;Credit,Credit,');
+       
+         cardChargeMap.put('MAESTRO', '0.00,0.00,0.00,TUI&amp;nbsp;Gift&amp;nbsp;Card,');
+       
+         cardChargeMap.put('MASTERCARD', '2.00,0.00,95.00,MasterCard&amp;nbsp;Credit,Credit,');
+       
+         cardChargeMap.put('VISA_DELTA', '0.00,0.00,0.00,VISA/Delta&amp;nbsp;-&amp;nbsp;Debit,Debit,');
+       
+         cardChargeMap.put('VISA_ELECTRON', '0.00,0.00,0.00,Visa&amp;nbsp;Electron,Debit,');
+       
+         cardChargeMap.put('DEBIT_MASTERCARD', '0.00,0.00,0.00,MasterCard&amp;nbsp;Debit,Debit,');
+       
+         cardChargeMap.put('SWITCH', '0.00,0.00,0.00,Maestro,Debit,');
+       
+         cardChargeMap.put('AMERICAN_EXPRESS', '2.00,0.00,95.00,American&amp;nbsp;Express,Credit,');
+       
+
+var issueNumberDetailsMap = new Map();
+     
+       issueNumberDetailsMap.put('MASTERCARD', 'false');
+     
+       issueNumberDetailsMap.put('DEBIT_MASTERCARD', 'false');
+     
+       issueNumberDetailsMap.put('VISA', 'false');
+     
+       issueNumberDetailsMap.put('VISA_DELTA', 'false');
+     
+       issueNumberDetailsMap.put('SWITCH', 'true');
+     
+       issueNumberDetailsMap.put('AMERICAN_EXPRESS', 'false');
+     
+       issueNumberDetailsMap.put('VISA_ELECTRON', 'false');
+     
+       issueNumberDetailsMap.put('MAESTRO', 'true');
+     
+
+var threeDCards = new Map();
+        
+            threeDCards.put("VISA","visagroup");
+        
+            threeDCards.put("MAESTRO","");
+        
+            threeDCards.put("MASTERCARD","mastercardgroup");
+        
+            threeDCards.put("VISA_DELTA","visagroup");
+        
+            threeDCards.put("VISA_ELECTRON","visagroup");
+        
+            threeDCards.put("DEBIT_MASTERCARD","mastercardgroup");
+        
+            threeDCards.put("SWITCH","");
+        
+            threeDCards.put("AMERICAN_EXPRESS","americanexpressgroup");
+        
+
+ //Payment constants used thru out the page
+var payableConstants  =
+                  {
+                         FULL_COST                        : "fullCost",
+                         CARD_TYPE_ID                     : "payment_type_0",
+
+                        calculatePayableAmountClassName   :	 "calPayableAmount",
+                        PAYABLE_AMT_CLASS                 : "calPayableAmount",
+                        TOTAL_AMOUNT_CLASS                :"totalAmountClass",
+
+                        DEFAULT_SECURITY_CODE_LEN    : 4,
+                        DEFAULT_CARD_SELECTION          : ""
+                  };
+var bookingConstants = {PAY_CLASS:"pay",
+        PAY_DESCRIPTION:"Pay"};
+
+var addressConstants =
+    {
+        ADDRESSLINE1 : '',
+        ADDRESSLINE2 : '',
+        CITY : '',
+        COUNTY : '',
+        COUNTRY : '',
+        COUNTRY_CODE : '',
+        POST_CODE : ''
+    };
+</script>
+
+
+  <input id="currencyText" value="£" type="hidden">
+
+    
+
+	<div id="wrapper">
+		
+<!--[if lt IE 7 ]> <html lang="en" id="firstchoice" class="ie6 "> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" id="firstchoice" class="ie7 "> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" id="firstchoice" class="ie8 "> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" id="firstchoice" class="ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->  <!--<![endif]-->
+
+	<title></title>
+	<!--[if IE 7 ]><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /><![endif]-->
+	<!--[if IE 8 ]><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" /><![endif]-->
+	<!--[if IE 9 ]><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" /><![endif]-->
+	<!--[if (gt IE 9)|!(IE)]><!--><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><!--<![endif]-->
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width,  itial-scale=1">
+
+
+	<link rel="icon" type="image/png" href="http://www.konstantin-kirsch.de/wp-content/themes/atahualpa333/images/favicon/fff-weather_sun.ico">
+		
+			<div id="wrapper">
+				<div id="header">
+					<div class="beta">
+						<span class="env">PROTOTYPE</span>
+						<p class="tell-us">
+							<a href="PLACEHOLDER" target="_blank" class="ensLinkTrack">Tell us what you think</a> or <a href="PLACEHOLDER" target="_blank" class="ensLinkTrack">Report a problem</a>
+						</p>
+						<a href="#" class="button">Switch to main site</a>
+					</div>
+					<div class="message-window" style="display:none" id="tellUsWhatYouThink">
+						<a href="#" class="close ensLinkTrack"> <span class="text">Close</span></a>
+						<div class="message-content small-pop beta-pop">
+							<h3>Before you go...</h3>
+							<p>We'd love to know what you made of the new site:</p>
+							<ul>
+								<li><a target="_blank" href="PLACEHOLDER" class="ensLinkTrack">Tell us what you think</a></li>
+								<li><a target="_blank" href="PLACEHOLDER" class="ensLinkTrack">Switch to our main site</a></li>
+							</ul>
+						</div>
+					</div>
+					<div id="utils">
+						<ul>
+							<li><a target="_blank" class="ensLinkTrack" title="Statement on Cookies" href="http://www.thomson.co.uk/editorial/legal/statement-on-cookies.html">Statement on Cookies</a></li>
+							<li><a target="_blank" class="ensLinkTrack" title="Travel alerts" href="http://www.thomson.co.uk/editorial/alerts/thomsonfly-travel-alert.html">Travel alerts</a></li>
+							<li><a target="_blank" class="ensLinkTrack" title="API login" href="http://eapi.thomson.co.uk/">API login</a></li>
+							<li><a target="_blank" class="ensLinkTrack" title="API login" href="http://www.thomson.co.uk/managemybooking/">Manage my booking</a></li>
+						</ul>
+					</div>
+
+					<div id="logo">
+						<img src="assets/holidayz-logo.jpg" alt="exciting new holiday company logo">
+
+					</div>
+					<div id="nav">
+						<ul>
+							<li class="homepage-main-nav"><a target="_blank" class="ensLinkTrack" href="PLACEHOLDER">Holidays</a></li>
+							<li class="cruise-main-nav"><a target="_blank" class="ensLinkTrack" href="PLACEHOLDER">Cruises</a></li>
+							<li class="flights-main-nav"><a target="_blank" class="ensLinkTrack" href="PLACEHOLDER">Flights</a></li>
+							<li class="hotels-main-nav"><a target="_blank" class="ensLinkTrack" href="PLACEHOLDER">Deals</a></li>
+							<li class="dest-main-nav"><a target="_blank" class="ensLinkTrack" href="PLACEHOLDER">Destinations</a></li>
+							<li class="extra-main-nav"><a target="_blank" class="ensLinkTrack" href="PLACEHOLDER">Extras</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		
+	
+		<div><style type="text/css">#mboxImported-default-TH_PromoStrip-0 {clear:both;}</style></div>
+		<div style="visibility: visible; display: block;" class="mboxDefault">&nbsp;</div>
+		<script type="text/javascript">
+		mboxCreate("TH_PromoStrip");
+		</script><div id="mboxMarker-default-TH_PromoStrip-0" style="visibility:hidden;display:none">&nbsp;</div><script src="Thomson%20_%20Payment%20Details_files/standard"></script><div style="visibility: hidden; display: none" id="mboxImported-default-TH_PromoStrip-0"><!-- Offer Id: 96532  --><script type="text/javascript">
+/*T&T Metadata v3 ==>Response Plugin*/
+window.ttMETA=(typeof(window.ttMETA)!="undefined")?window.ttMETA:[];window.ttMETA.push({"CampaignName":"Thomson Beach - Seasonal Searched - S15 & W15 - 23/06/2015","CampaignId":"44966","RecipeName":"Summer 15","RecipeId":"14","OfferId":"247","OfferName":"Default Content","MboxName":"TH_PromoStrip"});
+</script><!-- Offer Id: 62893  --><script>
+
+function tryAgain(args,_this) { var self = arguments.callee; var func = args.callee; func.current = (func.current || 0) + self.interval; if (func.current <= self.max) { setTimeout( function() { func.apply( (_this||{}),Array.prototype.slice.call(args)) } ,self.interval); return true; } else return false; };
+		tryAgain.max = 29000; 
+		tryAgain.interval = 500;
+		
+function setCookie(cname,cvalue,exdays)
+{
+var d = new Date();
+d.setTime(d.getTime()+(exdays*24*60*60*1000));
+var expires = "expires="+d.toGMTString();
+document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+function getCookie(c,notFoundString){var dc=document.cookie;if(dc.indexOf(c)!=-1){var cs=dc.split(c)[1];return (cs.substr(0,1)=="="?cs.substr(1):cs).split(';')[0];};return (notFoundString || "");};
+
+
+mboxFactoryDefault.addOnLoad(function(){
+	
+	var get_count= getCookie("count");
+	if(get_count==""){
+			 setCookie("count",0,"1");
+			 get_count=0;
+			}
+	 
+	function mboxTrack(mbox) {
+    var d = new Date();
+    var ub = mboxFactoryDefault.getUrlBuilder().clone();
+    ub.addParameter("mbox", mbox);
+    ub.addParameter('mboxTime', d.getTime() - (d.getTimezoneOffset() * 60000));
+    ub.addParameters(Array.prototype.slice.call(arguments).slice(1));
+    var img = new Image();
+    img.src = ub.buildUrl().replace("/mbox/undefined", "/mbox/ajax");
+    img.style.display = "none";
+    if (document.body) document.body.insertBefore(img,document.body.firstChild);
+}
+
+function check_dojo()
+{
+if(typeof(dojo) !== "undefined") {
+	//console.log('loaded');
+  			 // dojo has been loaded		 
+			 	dojo.require("dojox.NodeList.delegate");
+				 dojo.ready(function(){
+ 					 dojo.query(".sub-col.search-col").delegate("#tui_searchPanel_view_SubmitButton_0", "onclick", function(evt){
+					 var new_count= parseInt(get_count)+parseInt(1);
+  			   		 mboxTrack("search_track","profile.searchVolume="+new_count);
+					 setCookie("count",new_count,"1");
+					// console.log("clicked " + dojo.attr(this, "id")+ new_count);
+     				 dojo.stopEvent(evt);
+ 						 																										});
+					 });
+	}
+else{setTimeout(check_dojo,500)}
+}
+
+check_dojo();
+	})
+
+</script></div>
+		
+
+<!--START OF PAGE --> 
+<div class="span no-bottom-margin header-spacing">
+
+<div class="clear-both"></div>
+	<h1 class="fs32px">Book your holiday</h1>
+</div>
+		<form id="CheckoutPaymentDetailsForm" name="CheckoutPaymentDetailsForm" method="post" action="javascript:makePayment();" novalidate="">
+			
+			<div class="content-section">
+				
+				<div id="errorMsg"></div>
+				<div class="info-section timer">
+	<div class="icon clock">30:00</div>
+	<h5>Please complete this page within 30 minutes.</h5>
+	<p>After 30 minutes this page will timeout and you will have to re-enter any details.</p>
+</div>
+
+				<div class="mask-interactivity"></div>
+
+				
+<div class="item" id="important_infosection">
+	<h3 class="item-toggle" onclick="displayImportantInfo('importantInfo');">
+		Important Information<span class="floatRight posAbsolute"><label class="confirmed mr30px">confirmed</label></span><i></i>
+	</h3>
+	<div class="disNone" id="importantInfo">
+	
+		<p>CHECK IN LATE FRIDAY DEPART EARLY HOURS SATURDAY. HOLD BAGGAGE ALLOWANCE IS 15KG, EXTRA WEIGHT CAN BE PRE-BOOKED </p>
+	
+		<div class="address-check">
+			<input id="imp-info" required="true" name="imp-info-confirm" class="checkBox" checked="checked" disabled="disabled" type="checkbox"> <label for="imp-info"><span></span><strong>
+				&nbsp;I can confirm that I have read and understood the above information</strong></label>
+		</div>
+	</div>
+</div>
+
+
+				<!-- <div class="item open">
+	<h3 class="item-toggle">Discount code<span class="floatRight disNone"><label class="confirmed mr30px">applied</label></span><i></i></h3>
+	<div class="item-content">
+		<input type="text" class="textfield" placeholder="Enter your promo code"><span class="button small">Apply Discount</span>
+		<a href="">What is a discount code <span class="question">?</span></a>
+	</div>
+</div>-->
+
+
+
+<div class="item open">
+	<h3 class="item-toggle">Your holiday<span class="passengers-count">
+	 
+	2 Adults
+	
+	<a href="https://www.thomson.co.uk/destinations/book/passengerdetails" class="changeClass">CHANGE</a></span></h3>
+
+	<div class="item-content selectedSection">
+		<div class="fl width98per">
+
+			<div class="payment-passenger-details">
+	<h5>flights</h5>
+	<h6 class="sub-details">
+		<span class="disBlock"><strong>London Gatwick - Tenerife South</strong></span>
+		<span class="disBlock">Fri 26 Jun 2015: 18:50 - 23:15</span>
+		<span class="disBlock">Sat 04 Jul 2015: 00:15 - 04:20</span>
+		<span class="disBlock"><a class="cb fl changeFlights" href="http://www.thomson.co.uk/destinations/book/flightoptions">Change flights</a></span>
+	</h6>
+</div>
+
+			<div class="payment-passenger-details">
+				<h5>hotel</h5>
+				<h6 class="sub-details">
+					<span class="disBlock">
+						<span class="pass_details">Hotel Catalonia Las Vegas</span>
+					</span>
+					<span class="disBlock">
+						<span class="pass_type">in Puerto de la Cruz, Tenerife</span>
+					</span>
+					<span class="disBlock">Deluxe double with balcony</span>
+					<span class="disBlock">
+						<a class="back-to-review" href="http://www.thomson.co.uk/destinations/bookaccommodation?productCode=002615&amp;tab=overview&amp;noOfAdults=2&amp;noOfChildren=0&amp;childrenAge=&amp;duration=7&amp;airports[]=LGW%7CLTN%7CSEN%7CSTN&amp;units[]=002615:HOTEL:HOTEL&amp;flexibleDays=3&amp;flexibility=true&amp;when=28-06-2015&amp;noOfSeniors=0&amp;multiSelect=true&amp;packageId=002615TMLTEN1435276290000014352762900000TOM45621435962900000014359629000000TOM4563BC133&amp;index=1&amp;bb=HB&amp;price=pp">Back to hotel overview</a>
+					</span>
+				</h6>
+			</div>
+
+				
+<div class="payment-passenger-details">
+
+    <h5>EXTRAS 
+    </h5>
+	<h6 class="sub-details">
+	  <ul class="item-list">
+			<li>
+				<span class="fl">World care fund donation
+					<span onmouseover="totalprice_displayTooltipInfo_mouseover('worldcare_tooltip');" onmouseout="totalprice_displayTooltipInfo_mouseout('worldcare_tooltip');" class="question">?
+					</span>
+					<div class="tooltip_extra disNone fl" id="worldcare_tooltip">
+							<p class="fl textleft">By contributing to our world care fund, you can help support sustainable tourism and clean energy projects around the world.</p>
+							<span class="arrow_fo"></span>
+					</div>
+				</span>	
+				<span class="fr capitalize">£2.00</span>
+			</li>
+			<li>
+				<span class="fl">Car Hire</span>
+				<span class="fr capitalize">£60.00</span>		
+			</li>
+	  </ul>	
+	  <span class="disBlock"><a class="cb fl changeFlights" href="http://www.thomson.co.uk/destinations/book/extraoptions">Change extras</a></span>
+
+	</h6>
+
+</div>
+
+			
+		</div>
+	</div>
+</div>
+
+<!---CHANGE THIS BIT-->
+
+<div class="item open">
+	<h3>
+		Payment<span class="secured-section">Secure online payment</span>
+	</h3>
+	<div class="item-content">
+		<div class="item-content-payment">
+			<div class="payment-section">
+	<h5 class="pl10px"></h5>
+</div>
+<div class="payment-details" id="full-amt" onclick="selectedpaymentMode(this.id)">
+	<div class="pb10px overflowHidden" onclick="updatePaymentInfo('fullCost')">
+		<div class="initialAmount">
+			<input checked="checked" id="full" name="depositType" class="radioBtn" value="fullCost" type="radio"><label class="margin0px floatLeft radioBtn" for="full"><span class="radioBtn" for="full"></span></label>
+
+		<div class="moreAmount">
+			<h5>total price </h5>
+			<a class="TotalAmntToBePay"><span class="currencySymbol">£</span>3000.00</a>
+		</div>
+	</div>
+</div>
+<input name="total_transamt" id="total_transamt" value="NA" type="hidden">
+<input id="payment_0_totalTrans" value="1" name="payment_totalTrans" type="hidden">
+<script type="text/javascript" src="Thomson%20_%20Payment%20Details_files/functions_depositSection.js"></script>
+
+			<div class="clear"></div>
+			<script type="text/javascript" src="Thomson%20_%20Payment%20Details_files/functions_paymentMethods.js"></script>
+
+
+<div class="payment-section mt15px">
+	<h5 class="pl10px">How would you like to pay?</h5>
+</div>
+<div class="pb12px fl">
+	<input name="payment_0_type" id="payment_0_type" type="hidden">
+	<div class="paycard-details " id="debitcardType" onclick="displayCreditCharges(this.id)">
+		<input checked="checked" id="debit" name="cardtype" class="radioBtn" value="Debit" onclick="displayCreditCharges(debit)" type="radio">
+		<label for="debit" class="radioBtn"><span for="debit" class="radioBtn"></span></label>
+		<h2 class="card-type">debit card</h2>
+		<span class="cardCharges"> No extra charge </span>
+		<img src="assets/debit-card-icon-small.png" alt="debit card icon" style="padding-left:35px; padding-top:10px">
+	</div>
+	<div class="paycard-details" id="creditcardType" onclick="displayCreditCharges(this.id)">
+		<input id="credit" name="cardtype" class="radioBtn" value="Credit" type="radio">
+		<label for="credit" class="radioBtn"><span for="credit" class="radioBtn"></span></label>
+		<h2 class="card-type">credit card</h2>
+		<span class="cardCharges"> +2% credit card surcharge</span>
+		<img src="assets/credit-card-icon-small.png" alt="debit card icon" style="padding-left:35px; padding-top:10px">
+	</div>
+	<div class="paycard-details padding10pxnoBottom" id="zopabutton">
+		<img src="./zopa_logo1.png" />
+		<h4 class="mt16px zopa">
+			<span class="gift-text">
+			Pay for your holiday in easy installments over 12 months with 0% APR from <a target="_blank" href="http://www.zopa.com">Zopa</a></span>
+		</h4>
+	</div>
+</div>
+
+<!--YOU ARE ABOUT TO PAY STRIP--> 
+			<div class="clear"></div>
+			<div style="display: none;" class="finalAmtConfirmation disNone" id="creditCardCharges">
+				<h3>
+					You are about to pay <span class="creditCardChargeFinalAmt">£</span><span class="creditCardChargeFinalAmt" id="creditCardChargeFinalAmt">3000.00</span>
+					by credit card
+				</h3>
+				<span class="subchargesSection">Includes 2% Credit Card
+					surcharge
+				</span>
+			</div>
+			<div class="clear"></div>
+			<div style="display: block;" class="finalAmtConfirmation disNone" id="debitCardCharges">
+				<h3>
+					You are about to pay <span class="creditCardChargeFinalAmt">£</span><span class="creditCardChargeFinalAmt" id="debitCardFinalAmt">3000.00</span>
+					by debit card 
+				</h3>				
+			</div>
+			<div style="display: none;" class="finalAmtConfirmation disNone" id="giftCardCharges">
+				<h3>
+					You are about to pay <span class="creditCardChargeFinalAmt">£</span><span class="creditCardChargeFinalAmt" id="giftCardFinalAmt">3000.00</span>
+					with a Zopa loan
+				</h3>				
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="Thomson%20_%20Payment%20Details_files/functions_cardDetails.js"></script>
+
+<!--CREDIT CARD FORM --> 
+<div class="clear"></div>
+<div class="item open">
+	<h3>Your Card Details</h3>
+	<div class="item-content fl">
+		<div class="card-details-entry">
+				<div class="card-details-entry-section fl">
+
+					<div id="creditPaymentTypeCode" style="display: none;">
+						<p>Card type</p>
+						<div class="cardtype-select">
+						<select id="payment_type_credit" class="cardType fl" name="payment_0_type" onchange="checkIssueNumberEnabled(this.value)">
+							<option id="pleaseSelect" value="PleaseSelect" selected="selected">Select type of credit card</option>
+								
+									<option value="MASTERCARD|Dcard">
+										MasterCard&nbsp;Credit
+									</option>
+								
+								
+									<option value="VISA|Dcard">
+										VISA&nbsp;-&nbsp;Credit
+									</option>
+
+									<option value="AMERICAN_EXPRESS|Dcard">
+										American&nbsp;Express
+									</option>
+							
+						</select>
+						</div> <span class="visa"></span> <span class="delta"></span> <span class="mastercard"></span> <span class="maestro"></span> <span class="amexcard"></span>
+					</div>
+
+					<div id="debitPaymentTypeCode" style="display: none;">
+						<p>Card Type</p>
+						<div class="cardtype-select">
+						<select id="payment_type_debit" class="cardType fl" name="payment_0_type" onchange="checkIssueNumberEnabled(this.value)">
+							<option id="pleaseSelect" value="PleaseSelect" selected="selected">Select type of debit card</option>
+
+									<option value="DEBIT_MASTERCARD|Dcard">
+										MasterCard&nbsp;Debit
+									</option>
+
+									<option value="VISA_DELTA|Dcard">
+										VISA/Delta&nbsp;-&nbsp;Debit
+									</option>
+								
+									<option value="SWITCH|Dcard">
+										Maestro
+									</option>
+
+									<option value="VISA_ELECTRON|Dcard">
+										Visa&nbsp;Electron
+									</option>
+
+						</select>
+						</div>
+						<span class="visa"></span> <span class="delta"></span> <span class="mastercard"></span> <span class="maestro"></span> <span class="amexcard"></span>
+					</div>
+
+					<div id="giftPaymentTypeCode" style="display: none;"></div>
+				</div>
+				<div class="card-details-entry-section fl">
+					<p>Card Number</p>
+					<div class="fl">
+						<input name="payment_0_cardNumber" id="cardNumber" class="ccnumber fl" size="31" maxlength="20" onblur="allnumeric(this.id); displayCardType();" regexerror="Please enter card number into the field (e.g. '123456789098765')." regex="^[0-9]+$" requirederror="Your Card Number needs to be entered" required="true" autocomplete="off" type="text">
+					</div>
+					<span id="card-img" class="card-img ml15px"></span> <span id="card-desc" class="card-detect"></span>
+				</div>
+				<div class="card-details-entry-section fl">
+					<p>Name on Card</p>
+					<div class="fl">
+						<input class="name_on_card fl" name="payment_0_nameOnCard" id="cardholderName" onblur="allCharacters(this.id);" onfocus="tooltip(this.id);" regexerror="Please enter your name into the field (e.g. 'Smith Deremy')." regex="^[A-Za-z]+$" requirederror="Your Name needs to be entered" required="true" maxlength="80" autocomplete="off" type="text">
+					</div>
+					<!-- <span class="info-icon" id="cardname-details"
+						onmouseover="tooltip(this.id);"
+						onmouseout="closeTooltip(this.id);"> </span> -->
+					<span class="info-icon" onmouseover="displayTooltipInfo_mouseover('nameonCard');" onmouseout="displayTooltipInfo_mouseout('nameonCard');">
+						<div class="tooltip fl disNone" id="nameonCard">
+							<p class="width200px textleft">
+
+										Please enter the name as it appears on the card
+									
+
+								<!-- Please enter the name as it
+								appears on the card -->
+							</p>
+							<span class="arrow"></span>
+						</div>
+					</span>
+
+
+				</div>
+				<div class="card-details-entry-section fl">
+					<p>Expiry Date</p>
+					<div class="fl">
+					
+					<div class="styled-select">
+					<select style="width:75px" name="payment_0_expiryMonth" id="FieldExpiryDateMonth" onblur="getMonth(this.id);" class="title">
+						
+							
+								<option value="" selected="selected">MM</option>
+	
+									<option value="01">
+										01
+									</option>
+	
+									<option value="02">
+										02
+									</option>
+								
+									<option value="03">
+										03
+									</option>
+	
+									<option value="04">
+										04
+									</option>
+	
+									<option value="05">
+										05
+									</option>
+
+									<option value="06">
+										06
+									</option>
+
+									<option value="07">
+										07
+									</option>
+	
+								
+									<option value="08">
+										08
+									</option>
+	
+								
+									<option value="09">
+										09
+									</option>
+								
+	
+									<option value="10">
+										10
+									</option>
+	
+								
+									<option value="11">
+										11
+									</option>
+	
+								
+									<option value="12">
+										12
+									</option>
+	
+					</select>
+					</div>
+					
+					<div class="styled-select">
+					<select style="width:75px" id="FieldExpiryDateYear" name="payment_0_expiryYear" onblur="getMonth();" onfocus="getMonth('true');" class="title">
+						
+							
+							<option value="" selected="selected">YY</option>
+						
+							<option value="15">
+								15
+							</option>
+						
+							<option value="16">
+								16
+							</option>
+						
+							<option value="17">
+								17
+							</option>
+						
+							<option value="18">
+								18
+							</option>
+						
+							<option value="19">
+								19
+							</option>
+						
+							<option value="20">
+								20
+							</option>
+						
+							<option value="21">
+								21
+							</option>
+						
+							<option value="22">
+								22
+							</option>
+						
+							<option value="23">
+								23
+							</option>
+						
+							<option value="24">
+								24
+							</option>
+						
+							<option value="25">
+								25
+							</option>
+						
+							<option value="26">
+								26
+							</option>
+						
+					</select>
+					</div>
+				</div>
+				</div>
+				<div class="clear"></div>
+				<div class="card-details-entry-section disNone fl" id="issueNumber">
+					<p>Issue Number</p>
+					<div class="fl">
+						<input id="issuenum" name="payment_0_issueNumber" class="cvv fl" maxlength="2" autocomplete="off" onblur="validateISSUE(this.id);" type="text">
+					</div>
+					<span class="info-icon" onmouseover="displayTooltipInfo_mouseover('issueNum');" onmouseout="displayTooltipInfo_mouseout('issueNum');">
+						<div class="tooltip fl disNone" id="issueNum">
+							<p class="fl issueToolClass textleft">
+								Please enter the issue number on the front of the card (if applicable).
+
+							</p>
+							<span class="arrow"></span>
+						</div>
+					</span>
+				</div>
+				<div class="clear"></div>
+				<input style="visibility: hidden;" class="disNone" type="password">
+				<div class="card-details-entry-section fl width59per cardDetailSecurity">
+					<p>Security Code</p>
+					<div class="fl entrySession">
+						<input id="cvv" class="cvv fl" name="payment_0_securityCode" onblur="validateCVV(this.id)" onfocus="tooltip(this.id);" regexerror="Please enter numeric characters into the field for CVV code only (e.g. '243')." regex="^[0-9]+$" requirederror="Your CVV code" required="true" maxlength="4" value="" autocomplete="off" type="password">
+					</div>
+					<!-- <span class="info-icon" id="cvv-details"
+						onmouseover="tooltip(this.id);"
+						onmouseout="closeTooltip(this.id);"></span> -->
+					<span class="info-icon" onmouseover="displayTooltipInfo_mouseover('cvvDetails');" onmouseout="displayTooltipInfo_mouseout('cvvDetails');">
+						<div class="tooltip_security fl disNone" id="cvvDetails">
+							<p class="width75px fl textleft"> This should be the last few digits on the back of your card
+									
+							<!-- This should be the last
+								digits on the back of your card. -->
+							</p>
+							<span class="card-back fl"></span> <span class="arrow"></span>
+						</div>
+					</span>
+
+					<a href="#" class="helping-links fl ml5px pt5px disNone">
+						What's this?</a>
+				</div>
+				
+
+
+
+<div class="card-links mt15px">
+        
+            <div class="american-express-link">
+				<p>
+					<a href="javascript:newPopup('https://network.americanexpress.com/uk/en/safekey/');">Learn More</a>
+				</p>
+			</div>
+    
+</div>
+
+<div id="american-express-stickey" class="tooltip fl disNone">
+  <div>
+    <div>
+      <div>
+        <div>
+          <h3>American Express SafeKey</h3>
+          <a id="amexDetailsClose" href="#" title="Close overlay">Close</a></div>
+         <p class="amextext">We've introduced American Express SafeKey -
+ a security programme created by American Express to give you peace of 
+mind when shopping online. All you need to do is register once whilst 
+paying on our website. You'll be asked to set up a password that you can
+ then use for any future payments you make with your card on 
+participating websites.
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+		</div>
+	</div>
+</div>
+<div class="clear"></div>
+<!--END OF CREDIT CARD FORM --> 
+
+
+
+
+<!--ALL SLIDER CODE -->
+	<div class="clear"></div>
+	<div class="item open">
+      <form action="url" method="get" name="payment" value="#deposit.value" target="_self">
+        <fieldset class="row group">
+          <div>
+            <span>
+              <strong>How much of a deposit do you want to put down? &pound;</strong>
+            </span>
+            <span>
+              <input id="deposit" type="number" value="1500">
+            </span>
+          </div>
+
+           <div class="slider-container">
+              <button class="round" id="decrease" data-trackinglabel="Amount (decrease)" type="button" title="Decrease amount">-</button>
+              <input class="range-slider" data-trackinglable="Amount (slider)" id="amount-slider" type="range" min="0" max="3000" step="50">
+              <button class="round" id="increase" data-trackinglabel="Amount (increase)" type="button" title="Increase amount">+</button>
+            </div> <!-- END SLIDER CONTAINER-->
+          <!--RESULTS-->
+            <div class="allresults">
+              <div class="important box" id="summaryresults">
+              	<br/>
+                  <h3>Breakdown of costs</h3>
+                    <div class="calculation wrapper">
+                      <table>
+                        <tbody>
+                          <tr>
+                            <th style="width:25em">Monthly installments (x12)</th>
+                            <td><span id="monthly">&pound;125</span></td>
+                          </tr>  
+                          <tr class="sum">
+                            <th>Total cost of holiday</th>
+                            <td><span id="totalcost">&pound;3000</span></td>
+                          </tr>
+                          <tr>
+                            <th>Zopa finance</th>
+                            <td>-<span id="zopafinance">&pound;1,500</span></td>
+                          </tr>
+                          <tr class="sum">
+                            <th><strong>Deposit to pay</strong></th>
+                            <td><span id="deposittopay">&pound;1,500</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+              </div>
+            </div>  
+          <!--SUBMIT BUTTON -->
+          </fieldset>
+        </form>
+      <!--</div>
+    </div>-->
+
+      <!--STYLE SLIDER -->
+    <style>
+
+       /* Customise the slider */
+
+        #amount-slider {
+          -webkit-appearance: none;
+          width:86%;
+          outline:none;
+          border-width: 0;
+          padding: 0
+        }
+        
+        #amount-slider::-webkit-slider-thumb{
+          -webkit-appearance: none;
+          margin-top: -18px;
+          box-shadow: inset 1px 1px 1px 0px rgba(255, 255, 255, 0.5), 2px 2px 2px 0px rgba(0, 0, 0, 0.5);
+          background: #2aa1df url("assets/slider-pound-sign.png") no-repeat center;
+          width: 38.25px;
+          height: 38.25px;
+          border-radius: 50%;
+          border: none;
+          cursor: pointer
+        }
+
+        #amount-slider::-webkit-slider-runnable-track {
+          -webkit-appearance: none;
+          height: 7px;
+          background-color: #a3a1a1;
+          border-radius: 3px;
+          box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0.5), 0px 1px 0px 1px rgba(255, 255, 255, 0.5);
+        }
+
+        .slider-container{
+          margin:8px;
+        }
+
+
+        /*Customise slider buttons */
+        button .round{
+          width:10%;
+          float:right;
+        }
+
+        /*Customise the input */
+        input#deposit {
+          width: 25%;
+          display:inline;
+        }
+
+        input#deposit span{
+          font-size: 2.45em;
+          font-weight:bold;
+        }
+
+        /*Customise the results */
+
+        div#results span{
+          font-weight: 2.45em;
+          font-weight:bold;
+          text-align: center;
+          display:inline;
+        }
+
+        .results{
+          margin-top:10px;
+        }
+
+        /*Submit button */
+        #submitdeposit{
+          display: block;
+          margin-right:35%;
+          margin-left:35%;
+        }
+
+        /*Round buttons */
+        input.round, button.round, a.button.round, .button.round {
+		    min-width: 0;
+		    border-radius: 50%;
+		    width: 1.71em;
+		    height: 1.71em;
+		    padding: 0;
+		    text-align: center;
+		    vertical-align: middle;
+		}
+
+        /*Change summarybox after submit button clicked */
+
+        .textselected{
+          color:black;
+          font-weight: 800;
+        }
+        .boxselected{
+          background-color: white;
+        }
+
+    </style>
+
+  <!--SCRIPT SLIDER -->
+      <script>
+
+        var SLIDERAPP = (function(){
+
+          var slider = document.getElementById("amount-slider");
+          var box = document.getElementById("deposit");
+          var installment = document.getElementById("monthly");
+          var container = document.querySelectorAll(".slider-container")[0];
+          var summarytotal = document.getElementById("totalcost");
+          var summaryfinance = document.getElementById("zopafinance");
+          var summarydeposit = document.getElementById("deposittopay");
+          var bv;
+          var summarybox = document.getElementById("summaryresults");
+          var confirm = document.getElementById("submitdeposit");
+
+          //get deposit value from slider
+          var printValue = function(){
+            slider.onmousemove = function(){
+              box.value = slider.value;
+              monthlyPayments(box.value);
+              setbreakdown(box.value);
+              chooseagain();
+            };
+          };
+
+          //calculate monthly repayments
+          var monthlyPayments = function(x){
+            y = (((3000 - x)/12).toFixed(2));
+            installment.textContent = "£" + y;
+          };
+
+          //make slider buttons work
+          var buttonwork = function(e){
+            var bv = parseInt(box.value, 10);
+            if(event.target.id === "increase"){
+              if(bv < 3000){
+                bv += 50;
+                box.value = bv;
+                monthlyPayments(bv);
+                setbreakdown(bv);
+                chooseagain();
+              }
+            }
+
+            else if(event.target.id === "decrease"){
+              if(bv > 0){
+                bv -= 50;
+                box.value = bv;
+                monthlyPayments(bv);
+                setbreakdown(bv);
+                chooseagain();
+              }
+            }
+            slider.value = box.value;
+          };
+
+          //Trigger slider event
+          var buttonpush = function(){
+            container.addEventListener(
+              "click",
+              function(event){
+                buttonwork(event);
+              },
+              false
+            )
+          };
+
+          //Update breakdown box
+          var setbreakdown = function(x){
+            summaryfinance.textContent = "£" + (3000 - x);
+            summarydeposit.textContent = "£" + x;
+          };
+
+          //Confirm choice 
+          var confirmchoice = function(){
+            if (summarybox.className === "important box"){
+              summarybox.setAttribute("class", "result box boxselected");
+              summarytotal.setAttribute("class", "textselected");
+              summarydeposit.setAttribute("class", "textselected");
+              summaryfinance.setAttribute("class", "textselected");
+              installment.setAttribute("class", "textselected");
+              confirm.setAttribute("class", "disabled");
+            }
+          };
+
+          var chooseagain = function(){
+            if(summarybox.className === "result box boxselected"){
+              summarybox.setAttribute("class", "important box");
+              summarytotal.removeAttribute("class", "textselected");
+              summarydeposit.removeAttribute("class", "textselected");
+              summaryfinance.removeAttribute("class", "textselected");
+              installment.removeAttribute("class", "textselected");
+              confirm.removeAttribute("class", "disabled");
+            }  
+          };
+
+          //Confirm button 
+          var confirmbutton = function(){
+            confirm.addEventListener(
+              "click",
+              confirmchoice,
+              false
+            )
+          };
+
+          return {
+            init: printValue,
+            init2: buttonpush,
+            init3: confirmbutton
+          }
+
+        })();
+
+        SLIDERAPP.init();
+        SLIDERAPP.init2();
+        SLIDERAPP.init3();
+
+      </script>
+
+
+    <!--END SLIDER CODE -->

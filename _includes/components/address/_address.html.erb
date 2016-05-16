@@ -1,0 +1,67 @@
+<fieldset class="address simple">
+
+</fieldset>
+
+<style>
+  #find_address {
+    display: inline-block;
+    padding-top: 1.6em;
+  }
+
+  .select-group label {
+    position: absolute;
+    left: -99999em;
+    top: 0;
+  }
+</style>
+
+<script id="addressTemplate" type="x-tmpl-mustache">
+  <%= render '/_includes/components/address/template' %>
+</script>
+
+<%= javascript_include_tag 'modules/mustache.js' %>
+<%= javascript_include_tag 'modules/date_helper.js' %>
+<%= javascript_include_tag 'modules/data_binder.js' %>
+<%= javascript_include_tag 'modules/address.js' %>
+<%= javascript_include_tag 'modules/address_helper.js' %>
+<%
+ count = history || 0;
+%>
+<%= render '/_includes/components/address/address_history', locals:{ count: count } %>
+
+<script>
+
+  $(function () {
+    var $container    = $('fieldset.address'),
+      $errorMessages  = $('.error[role="alert"]', $container),
+      addressTemplate = $('#addressTemplate').html(),
+      address = new Zopa.AddressHelper({
+        existingJson: CURRENT_ADDRESSES,
+        messageTranslations: {
+          //todo: use error messages from en.yml
+          dateInTheFuture: 'Move in dates cannot be in the future.',
+          notLongEnough: 'We need to identify all the addresses at which you have lived for the last 3 years.',
+          postCodeEmpty: 'Please provide a postcode',
+          noAddressesFound: 'No addresses found, please try again with a different postcode',
+          connectionError: 'Error in connection',
+          duplicateAddress: 'If you have lived at the same address multiple times, please ensure that you have specified any addresses between the occurrences',
+          moveInDateBlank: 'Please select a move in date.',
+          equifaxUnavailable: "We use Equifax to look up your address but can't currently connect with their network. Please try again in a few minutes."
+        }
+      }),
+
+      updateExistingAddresses = function () {
+        var addressHtml = Mustache.render(addressTemplate, address);
+        $container.html(addressHtml);
+
+      };
+    // end var
+
+    // set callback function
+    address.onChange = updateExistingAddresses;
+
+    // render for the first time
+    updateExistingAddresses();
+    $container.find('.addresses').prepend($errorMessages);
+  });
+</script>

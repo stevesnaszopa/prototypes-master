@@ -1,0 +1,206 @@
+<div class="section">
+  <div>
+
+    <div class="loading-quote">
+      <h1>Your personalised quote</h1>
+      <p class="intro">Please wait a moment while we see if we need anything else...</p>
+      <p>This could take up to 60 seconds, so please sit tight.</p>
+
+      <div class="group waiting">
+        <img alt="" height="64" src="/_assets/img/waiting_big.gif" width="64" />
+      </div>
+    </div>
+
+    <div class="loan-quote-stuff">
+      <div class="row group loan-quote equalHeights">
+        <div class="col group">
+          <div class="result box" style="min-height: 488px;">
+            <h2>Your loan quote</h2>
+            <p class="hint">You can edit the amount or duration of your loan below. We'll recalculate your quote instantly.</p>
+            <p>Subject to approval:</p>
+            <div class="quote wrapper">
+              <table>
+                <tbody><tr>
+                  <th>Amount</th>
+                  <td>
+                    <select name="loan-amount" id="">
+                      <% 20.downto 10 do |i| %>
+                        <option value="value<%= i %>"><%= "£#{i}000" %></option>
+                      <% end %>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Duration</th>
+                  <td>
+                    <select name="loan-term" id="">
+                      <option value="value">5 years</option>
+                      <option value="value">4 years</option>
+                      <option value="value">3 years</option>
+                      <option value="value">2 years</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Monthly cost</th>
+                  <td>£187.47</td>
+                </tr>
+                <tr>
+                  <th>Rate (APR)</th>
+                  <td>4.8% APR</td>
+                </tr>
+                </tbody></table>
+            </div>
+
+            <h3>Calculation of costs</h3>
+            <div class="calculation wrapper">
+              <table>
+                <tbody><tr>
+                  <th>Loan over 5 years</th>
+                  <td>£10,000.00</td>
+                </tr>
+                <tr>
+                  <th>Admin fee
+                    <span class="tooltip" tabindex="0"><span role="tooltip" style="display: none;">
+                      The cost of the admin fee is included in your £187.47 monthly repayments, no upfront payment is required. The admin fee covers the cost of setting up and servicing your loan.
+                    </span></span>
+                  </th>
+                  <td>+ £90.00</td>
+                </tr>
+
+                <tr class="sum">
+                  <th>Total loan amount</th>
+                  <td>£10,090.00</td>
+                </tr>
+                <tr>
+                  <th>Interest at 4.5% fixed</th>
+                  <td>+ £1,158.46</td>
+                </tr>
+
+                <tr class="sum">
+                  <th><strong>Total cost</strong></th>
+                  <td>£11,248.46</td>
+                </tr>
+                </tbody></table>
+            </div>
+            <p id="button-to-application" class="only-screensize-xs">
+              <a class="button" href="#continue-application">Apply for this loan</a>
+            </p>
+          </div>
+
+        </div>
+
+        <div class="col box zopa-promise" style="min-height: 488px;">
+          <div>
+            <h3><img width="120" height="120" alt="Zopa Promise" src="/_assets/img/promo/zopa-promise.png"></h3>
+            <p>We know we do things better:</p>
+            <ul class="ticked">
+              <li>Speedy online application form</li>
+              <li>Award-winning customer service</li>
+              <li>No hidden or early repayment fees</li>
+            </ul>
+            <p class="hint">If you experience otherwise, claim £100 as part of our Zopa Promise. <a href="#zopa-promise">Tell me more</a></p>
+          </div>
+        </div>
+      </div>
+      <p><a class="button" href="#">Continue with this loan</a></p>
+    </div>
+
+  </div>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+  $().ready(function () {
+    var $quote = $('.loan-quote-stuff');
+    var $loader = $('.loading-quote');
+    var showQuote = function () {
+      console.log('boom');
+      $quote.show();
+      $loader.hide();
+    };
+
+
+    var timeoutID = window.setTimeout(showQuote, 200)
+  });
+</script>
+
+
+<style>
+  .loan-quote-stuff {
+    display: none;
+  }
+  @media only screen and (max-width: 601px) {
+    div.box.zopa-promise {
+      padding: 0;
+    }
+  }
+
+  @media screen {
+    .loan-quote table {
+      width: 100%;
+      border: 0;
+      margin-bottom: 0;
+    }
+
+    .loan-quote table td {
+      text-align: right;
+      color: #8c9500;
+      font-weight: 600;
+      padding-right: 0;
+    }
+
+    .loan-quote .result.box {
+      padding-bottom: 0;
+    }
+
+    .loan-quote .explanation.box {
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .loan-quote table tr.sum {
+      border-top: 2px solid #C5C6C1;
+    }
+
+    .loan-quote table th {
+      font-weight: normal;
+      padding-left: 0;
+    }
+
+    .loan-quote table td,
+    .loan-quote table th {
+      border: 0;
+      background-color: transparent;
+    }
+
+    .loan-quote .quote table th,
+    .loan-quote .quote table td {
+      border-bottom: 1px solid #fff;
+    }
+
+    .loan-quote .wrapper {
+      padding-left: 1.25em;
+      padding-right: 1.25em;
+
+      margin-left: -1.25em;
+      margin-right: -1.25em;
+    }
+
+    .loan-quote .wrapper.quote       { background-color: #F8FAEC; }
+    .loan-quote .wrapper.calculation { background-color: rgba(245, 245, 245, 0.9); }
+
+    .loan-quote .wrapper.calculation + p {
+      margin: 1em 0;
+    }
+
+    .loan-quote + h1 {
+      margin-top: 2em;
+    }
+    p#admin-fee {
+      margin-bottom: 3em;
+    }
+  }
+</style>
+
+

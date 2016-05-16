@@ -1,0 +1,151 @@
+<% @loggedin = true %>
+<% @audience = :lenders %>
+<% @pagetitle = 'Statements at Zopa' %>
+
+<% content_for :subnav do %>
+ <ul>
+   <li><a href="dashboard.html">Dashboard</a></li>
+   <li class="active"><a href="statements.html">Statements</a></li>
+   <li><a href="lend.html">Lend</a></li>
+   <li><a href="withdraw.html">Withdraw</a></li>
+ </ul>
+<% end %>
+
+
+
+<div class="section">
+  <div>
+    <a class="back" href="statements.html">Statements</a>
+    <h1>Annual income statements</h1>
+
+    <div class="row group">
+      <div class="col third2">
+        <p class="intro">We do not deduct tax on your Zopa earnings, so you should decare your earnings to HMRC.</p>
+        <p>If you do not currently complete a Self-Assessment Tax return then you should send an annual income statement to your local tax office. We've created a template letter which might help.</p>
+      </div>
+      <div class="col third1 info box">
+        <p>Find your local tax office and additional information on the <a href="/404" rel="external">HM Revenue & Customs website</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="section">
+  <div>
+
+  <p class="intro">Showing tax year <select style="width:8em;margin-top:-3px;font-size:19px;">
+  <option selected="selected">2013 to 2014</option>
+  <option>2012 to 2013</option>
+  <option>2011 to 2012</option>
+  <option>2010 to 2011</option>
+  </select> <a href="/404" class="button minor">Download statement</a></p>
+
+  <div id="statement" class="document" style="margin-top:30px;background-color:white;padding:40px;">
+    <p style="float:right;font-size:14px;"><img alt="Logo" src="/_assets/img/logo-header.png" style="margin-left:-15px;"><br />
+    <strong>Zopa Limited</strong><br>
+    6th Floor<br>
+    90 Fetter Lane<br>
+    London EC4A 1EN<br>
+    <br>
+    T + 44 (0)20 7580 6060<br>
+    F + 44 (0)20 7580 6084<br>
+    www.zopa.com<br>
+    </p>
+    <p style="margin-top:30px;">
+    <strong>John Smith</strong><br>
+    17 Top Gear Lane<br>
+    Bromley Bells<br>
+    A1 1AA
+    </p>
+    <h3 style="margin-top:100px;">
+    Annual income statement —<br />For year ended
+    April 05, 2014
+    </h3>
+    <p>
+    Statement for
+    userid231
+    </p>
+    <table width="100%">
+      <tbody><tr>
+        <td>
+          Interest from your borrowers<sup><a href="#interest_from_borrowers">1</a></sup>
+        </td>
+        <td class="number">£159.18</td>
+      </tr>
+      <tr>
+        <td>
+          Zopa bonuses
+        </td>
+        <td class="number">£0.00</td>
+      </tr>
+      <tr>
+        <td>
+          Tell-a-friend rewards
+        </td>
+        <td class="number">£0.00</td>
+      </tr>
+      <tr>
+        <td>
+          Lending fees<sup><a href="#deducted_rate_promise">4</a></sup>
+        </td>
+        <td class="negative number">-£1.29</td>
+      </tr>
+      <tr>
+        <td>
+          Rapid return fees
+        </td>
+        <td class="negative number">-£1.26</td>
+      </tr>
+      <tr class="highlight">
+        <td>
+          <strong>Gross earnings to declare to HMRC</strong>
+        </td>
+        <td class="number">
+          £156.63
+        </td>
+      </tr>
+    </tbody></table>
+    <p style="margin-top:30px;">N.B. A total of £71.20 of lending fees were rebated via rate promise.
+    <table width="100%">
+      <tbody><tr>
+        <td>
+          Capital written off this year due to bad debt<sup><a href="#capital_written_off">2</a></sup>
+        </td>
+        <td class="negative number">£0.00</td>
+      </tr>
+      <tr>
+        <td>
+          Capital recovered from previous years' bad debt<sup><a href="#capital_recovered">3</a></sup>
+        </td>
+        <td class="number">£0.00</td>
+      </tr>
+      <tr class="highlight">
+        <td>
+          <strong>Total for the year</strong> (Net of bad debt)
+        </td>
+        <td class="number">
+          £156.63
+        </td>
+      </tr>
+    </tbody></table>
+    <ol style="font-size:14px;margin-top:30px;">
+      <li id="interest_from_borrowers">
+        The figure for ‘Interest from your borrowers’ accounts for
+        interest paid to you directly by the borrower, as well as interest
+        credits paid to you by other lenders, in instances where you have bought
+        loans from other lenders at a lower rate than you would have achieved
+      with similar loans at the latest tracker rates.</li>
+      <li id="capital_written_off">This figure relates to any Zopa loan that was written off and closed as bad debt
+        during the specified period. Please note that HMRC do not permit you to offset bad
+        debt losses against earnings when calculating tax payable. You may have additional
+      borrowers in arrears, or that are currently being managed by our collections agency.</li>
+      <li id="capital_recovered">If you had a capital loss recorded on a previous year's statement, we may have recovered
+      some of this money.</li>
+      <li id="deducted_rate_promise">Any amount credited for Rate Promise has been deducted from your lending fees above.</li>
+    </ol>
+  </div>
+
+  </div>
+</div>

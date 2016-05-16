@@ -1,0 +1,17 @@
+# Unify coding style for different editors and IDEs
+# See http://EditorConfig.org
+
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+
+# Use editor defaults for vendor files
+[**/vendor/**]
+indent_style =
+indent_size =
+end_of_line =
+charset =
+trim_trailing_whitespace =

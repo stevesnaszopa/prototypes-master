@@ -1,0 +1,62 @@
+<% @loggedin = true %>
+<% @audience = :lenders %>
+<% @pagetitle = 'Withdraw money from Zopa' %>
+
+<% content_for :subnav do %>
+ <ul>
+   <li><a href="dashboard.html">Dashboard</a></li>
+   <li><a href="statements.html">Statements</a></li>
+   <li><a href="lend.html">Lend</a></li>
+   <li class="active"><a href="withdraw.html">Withdraw</a></li>
+ </ul>
+<% end %>
+
+
+
+<div class="section hero">
+  <div>
+    <h1>Withdraw money from Zopa</h1>
+    <p class="intro">You have <strong>£2.65</strong> available in your holding account.</p>
+    <!-- <p>Before you can withdraw any money you need to add your bank details.</p> -->
+    <p><a href="/404" class="button">Withdraw £2.65</a></p>
+  </div>
+</div>
+
+
+
+<div class="section" id="auto-top">
+  <div>
+    <h2>Make money available to withdraw</h2>
+
+    <div class="info box" style="background: white;">
+      <h3>Manage upcoming repayments</h3>
+      <p><strong>Re-lending is on:</strong> Your repayments are being recycled.</p>
+      <p>
+        Repayments are being re-lent at the latest rates.
+        To achieve the rates advertised you need to keep re-lending.
+      </p>
+      <p>To make future repayments available for withdrawal turn off re-lending.</p>
+      <p><a href="/404" class="button secondary">Turn re-lending off</a></p>
+      <p class="hint">This is also known as Auto&#xa0;Top&#xa0;Up.</p>
+    </div>
+
+    <div class="info box" style="background: white;">
+      <h3>Money in the queue to lend</h3>
+      <p>You currently have <strong>£170.00</strong> in the queue to lend.</p>
+      <p class="more">
+        <a href="/404" data-automation="ZA.remove_money">Remove from queue</a>
+      </p>
+    </div>
+
+    <div class="info box" style="background: white;">
+      <h3>Sell your loans</h3>
+      <p>
+        You can access money that is tied up in loans by selling your loans to another Zopa lender.
+        We charge a 1.0% processing fee for this service.
+      </p>
+      <p class="more"><a href="/404">Sell existing loans</a></p>
+      <p class="hint">This is also known as Rapid Return.</p>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<meta charset="utf-8" />
+<meta name="author" content="Zopa.com" />
+<meta name="robots" content="noindex,nofollow,NOODP,NOYDIR" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
+<%= stylesheet_link_tag "app" %>
+<% if content_for? :styles %>
+  <%= yield :styles %>
+<% end %>
+<%= javascript_include_tag "vendor/jquery" %>

@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+
+<% content_for :scripts do %>
+  <script>document.domain = "uat.ldn.zopa.com";</script>
+
+  <script src="/assets/jquery-87c4605f02d9bf55b191d1d56c1f4221.js" type="text/javascript"></script>
+
+  <meta content="authenticity_token" name="csrf-param" />
+  <meta content="pkF4ZFCVYiA8mUsv62mEsylTn+nJORaZkW4j+nIQ5yM=" name="csrf-token" />
+
+<% end %>
+
+<% content_for :styles do %>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
+    <link href="/assets/v3/application-8bcba528688d7ba43b580c0ea6798e2f.css" media="all" rel="stylesheet" type="text/css" />
+    <style>
+    @media screen {
+      .loan-quote table {
+        width: 100%;
+        border: 0;
+        margin-bottom: 0;
+      }
+
+      .loan-quote table td {
+        text-align: right;
+        color: #8c9500;
+        font-weight: 600;
+        padding-right: 0;
+      }
+
+      .loan-quote .result.box {
+        padding-bottom: 0;
+      }
+
+      .loan-quote .explanation.box {
+        padding: 0;
+        display: flex;
+        align-items: center;
+      }
+
+      .loan-quote table tr.sum {
+        border-top: 2px solid #C5C6C1;
+      }
+
+      .loan-quote table th {
+        font-weight: normal;
+        padding-left: 0;
+      }
+
+      .loan-quote table td,
+      .loan-quote table th {
+        border: 0;
+        background-color: transparent;
+      }
+
+      .loan-quote .quote table th,
+      .loan-quote .quote table td {
+        border-bottom: 1px solid #fff;
+      }
+
+      .loan-quote .wrapper {
+        padding-left: 1.25em;
+        padding-right: 1.25em;
+
+        margin-left: -1.25em;
+        margin-right: -1.25em;
+      }
+
+      .loan-quote .wrapper.quote       { background-color: #F8FAEC; }
+      .loan-quote .wrapper.calculation { background-color: rgba(245, 245, 245, 0.9); }
+
+      .loan-quote .wrapper.calculation + p {
+        margin: 1em 0;
+      }
+
+      .loan-quote + h1 {
+        margin-top: 2em;
+      }
+      p#admin-fee {
+        margin-bottom: 3em;
+      }
+    }
+  </style>
+  <style>
+    .sort-code input {
+      width: 3em;
+      text-align: center;
+    }
+  </style>
+  <style>
+    html,
+    body {
+      background-color: #fff;
+    }
+    table.bankDetails th,
+    table.bankDetails td {
+      padding-right: 5em;
+    }
+    .contract-iframe table.bankDetails th,
+    .contract-iframe table.bankDetails td {
+      padding-right: 0;
+    }
+    @media print {
+      h1 {
+        clear: none;
+      }
+    }
+  </style>
+
+<% end %>
+
+
+
+<body class=" my-zopa">
+
+  <hr class="a11y" />
+  <div id="content">
+    <div class="group">
+
+
+<!--LOAN QUOTE PAGE STARTS HERE-->
+<div class="section">
+  <div>
+
+<div class="row group loan-quote equalHeights">
+  <div class="col group result box">
+    <h2>Your loan quote</h2>
+    <p>Subject to approval:</p>
+    <div class="quote wrapper">
+      <table>
+        <tr>
+          <th>Amount</th>
+          <td>£10,000.00</td>
+        </tr>
+        <tr>
+          <th>Duration</th>
+          <td>5 years</td>
+        </tr>
+        <tr>
+          <th>Monthly cost</th>
+          <td>£204.43</td>
+        </tr>
+        <tr>
+          <th>Rate (APR)</th>
+          <td>8.7% APR</td>
+        </tr>
+      </table>
+    </div>
+
+    <h3>Calculation of costs</h3>
+    <div class="calculation wrapper">
+      <table>
+        <tr>
+          <th>Loan over 5 years</th>
+          <td>£10,000.00</td>
+        </tr>
+        <tr>
+          <th>Admin fee
+            <span class="tooltip"><span>
+              The cost of the admin fee is included in your £204.43 monthly repayments, no upfront payment is required. The admin fee covers the cost of setting up and servicing your loan.
+            </span></span>
+          </th>
+          <td>+ £490.00</td>
+        </tr>
+
+        <tr class="sum">
+          <th>Total loan amount</th>
+          <td>£10,490.00</td>
+        </tr>
+        <tr>
+          <th>Interest at 6.5% fixed</th>
+          <td>+ £1,775.73</td>
+        </tr>
+
+        <tr class="sum">
+          <th><strong>Total cost</strong></th>
+          <td>£12,265.73</td>
+        </tr>
+      </table>
+    </div>
+    <p class="only-screensize-xs">
+      <a href="#continue-application" class="button minor" >Continue application</a>
+    </p>
+  </div>
+
+  <div class="col explanation box">
+    <div>
+      <h3>About us</h3>
+      <ul class="ticked">
+        <li>Voted the UK's most trusted loan provider for the last 6 years</li>
+        <li>97% of customers recommend Zopa</li>
+        <li>UK’s largest peer-to-peer lender</li>
+      </ul>
+      <h3>About taking out a loan with us</h3>
+      <ul class="ticked">
+        <li>Fast online decisions</li>
+        <li>APR fixed for duration of the loan</li>
+        <li>No early repayment fees</li>
+      </ul>
+    </div>
+  </div>
+</div><!-- quote result box -->
+
+
+
+
+
+<h1 id="continue-application">
+  Continue your loan application
+</h1>
+<p class="intro">
+  If your loan is approved, there is still a 14 day cool-off period in case you change your mind.
+  Applying for this loan will show up on your credit file.
+</p>
+
+<form accept-charset="UTF-8" action="/loan_applications/86b7cce4-fe82-e511-9543-0050568d003d/quote#feedback" class="bank-details v2" data-trackingcategory="Borrower Registration" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="pkF4ZFCVYiA8mUsv62mEsylTn+nJORaZkW4j+nIQ5yM=" /></div>
+
+      <h3>Employment details</h3>
+
+      <fieldset class="field-units">
+
+          <div>
+            <p class="">
+
+              <label for="applications_loan_apply_job_title">Job title</label>
+              <input data-automation="ZA.job_title" id="applications_loan_apply_job_title" maxlength="160" name="applications_loan_apply[job_title]" required="required" size="160" type="text" />
+            </p>
+          </div>
+
+          <div>
+            <p class="">
+
+              <label for="applications_loan_apply_employer">Employer</label>
+              <input data-automation="ZA.employer_name" id="applications_loan_apply_employer" maxlength="100" name="applications_loan_apply[employer]" required="required" size="100" type="text" />
+            </p>
+          </div>
+
+          <div>
+            <p class="">
+
+              <label for="applications_loan_apply_employer_address">
+                Employer address
+                <span class="hint">The number and street name is all we need</span>
+</label>              <input data-automation="ZA.employer_address" id="applications_loan_apply_employer_address" maxlength="100" name="applications_loan_apply[employer_address]" required="required" size="100" type="text" />
+            </p>
+          </div>
+
+          <div>
+            <p class="select-group ">
+
+              <label for="applications_loan_apply_employer_years">Time with this employer</label>
+              <select data-automation="ZA.employer_years" id="applications_loan_apply_employer_years" name="applications_loan_apply[employer_years]" required="required"><option value="">Year</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+<option value="32">32</option>
+<option value="33">33</option>
+<option value="34">34</option>
+<option value="35">35</option>
+<option value="36">36</option>
+<option value="37">37</option>
+<option value="38">38</option>
+<option value="39">39</option>
+<option value="40">40</option>
+<option value="41">41</option>
+<option value="42">42</option>
+<option value="43">43</option>
+<option value="44">44</option>
+<option value="45">45</option>
+<option value="46">46</option>
+<option value="47">47</option>
+<option value="48">48</option>
+<option value="49">49</option>
+<option value="50">50</option></select>
+              <select data-automation="ZA.employer_months" id="applications_loan_apply_employer_months" name="applications_loan_apply[employer_months]" required="required"><option value="">Month</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option></select>
+            </p>
+          </div>
+
+          <div>
+            <p class="optional ">
+
+              <label for="applications_loan_apply_additional_income">
+                <span>Additional income </span>
+                <span class="hint">E.g. bonus, tax credit</span>
+</label>              <input data-automation="ZA.additional_income" data-hint="You have entered $$." data-hinttype="currency" id="applications_loan_apply_additional_income" name="applications_loan_apply[additional_income]" placeholder="xx,xxx per year" style="width: auto" type="number" />
+            </p>
+          </div>
+      </fieldset>
+
+      <h3>Your circumstances</h3>
+
+      <fieldset>
+        <p class="">
+
+          <label for="applications_loan_apply_marital_status">Are you married or in a civil partnership?</label>
+
+          <span class="radiocheck">
+            <input id="applications_loan_apply_marital_status_married" name="applications_loan_apply[marital_status]" required="required" type="radio" value="MARRIED" />
+            <label for="applications_loan_apply_marital_status_married">Yes</label>
+          </span>
+          <span class="radiocheck">
+            <input id="applications_loan_apply_marital_status_single" name="applications_loan_apply[marital_status]" required="required" type="radio" value="SINGLE" />
+            <label for="applications_loan_apply_marital_status_single">No</label>
+          </span>
+        </p>
+      </fieldset>
+
+
+  <h3>Bank details</h3>
+  <p>Please provide bank details for a <strong>current account</strong> on which you are named.</p>
+  <ul>
+    <li>We will transfer the loan money into this account</li>
+    <li>We will set up a Direct Debit for <strong>your monthly repayments</strong> on this account</li>
+    <li>No early repayment fees</li>
+  </ul>
+
+<fieldset class="  direct-debit-form">
+
+  <p>
+    <label for="direct_debit_account_number">Account number</label>
+    <input autocomplete="off" data-automation="ZA.account_number" id="direct_debit_account_number" maxlength="8" name="direct_debit[account_number]" pattern="[0-9]{8}" required="required" title="Enter an 8-digit bank account number" type="tel" value="" />
+  </p>
+  <p class="sort-code">
+    <label for="sort_code">Sort code</label>
+    <input autocomplete="off" data-automation="ZA.account_sort_code_1" id="direct_debit_sort_code_0" maxlength="2" name="direct_debit[sort_code][0]" pattern="[0-9]{2}" placeholder="00" required="required" title="Enter the first 2 digits of your sort code" type="tel" />
+    -
+    <input autocomplete="off" data-automation="ZA.account_sort_code_2" id="direct_debit_sort_code_1" maxlength="2" name="direct_debit[sort_code][1]" pattern="[0-9]{2}" placeholder="00" required="required" title="Enter the middle 2 digits of your sort code" type="tel" />
+    -
+    <input autocomplete="off" data-automation="ZA.account_sort_code_3" id="direct_debit_sort_code_2" maxlength="2" name="direct_debit[sort_code][2]" pattern="[0-9]{2}" placeholder="00" required="required" title="Enter the last 2 digits of your sort code" type="tel" />
+  </p>
+  <p>
+    <label for="direct_debit_account_holder_name">Name on account</label>
+    <input autocomplete="off" data-automation="ZA.account_holder_name" id="direct_debit_account_holder_name" maxlength="100" name="direct_debit[account_holder_name]" required="required" type="text" />
+  </p>
+</fieldset>
+
+
+
+
+
+
+<h3>Loan Conditions</h3>
+<div class="accept-legal">
+    <script type="text/html" data-inline="true">
+      <p><a href="#loan-conditions" class="show-once button minor">Read Zopas Loan Conditions</a></p>
+    </script>
+
+  <fieldset class=" ">
+    <div class="iframe" id="loan-conditions">
+
+<img alt="" class="right" height="66" src="/assets/logos/zopa_old-c4dc6c7ee26c37d2d6ced379a26dc015.png" width="105" />
+  <p><strong>Your Personalised Quote</strong></p>
+  <!-- Quote contract 15  -->
+<h1>Your Zopa Loan Contract Summary</h1>
+<p>If approved your total loan amount will be subject to the Loan Contracts summarised
+below, incorporating the attached Loan Conditions:</p>
+
+<p><strong>Parties</strong></p>
+
+<p>Borrower: Ms Aaa Ggg – c/o Zopa Limited, 6th Floor, 90 Fetter Lane,
+ London EC4A 1EN ("you","your"), entered into several Loan Contracts with each of
+the following   Lenders.</p>
+
+<p>Lenders: (the list of Lenders shown in the "Borrowing" section of
+"MyZopa") – c/o Zopa Limited, 6th Floor, 90 Fetter Lane, London EC4A 1EN.</p>
+
+<p>The Lenders are not lending in the course of a business. The Loan Contracts are therefore non-commercial agreements within the meaning of the Consumer Credit Act 1974 (as amended) and, even if these Loan Contracts finance the supply of certain items specified under “Other Financial Information” below, you do not have claim against any of the Lenders in respect of any misrepresentation or breach of contract by the supplier of those items.</p>
+
+<p>Those Loan Contracts are summarised in this Loan Contract Summary.</p>
+
+<p><strong>Key Financial Information</strong></p>
+
+<table width="600px">
+  <tr>
+    <td>Amount of Credit</td>
+
+    <td>£10,490.00 (including the applicable
+    Borrowing Fee)</td>
+  </tr>
+
+  <tr>
+    <td>Total Amount Payable</td>
+
+    <td>£12,265.73</td>
+  </tr>
+
+  <tr>
+    <td>Term of Agreement</td>
+
+    <td>60 months</td>
+  </tr>
+
+  <tr>
+    <td>APR</td>
+
+    <td>8.7%</td>
+  </tr>
+</table>
+
+<p>This APR is the blended rate based on the interest rate in each of the Loan Contracts that relate to the Total Amount Payable. For a detailed
+breakdown of individual APRs for each Loan Contract, please send a written request
+via the Contact Us section of the Lending Platform.</p>
+
+<p>Following acceptance of each Loan Contract and on approval, the Amount of credit
+(net of any applicable fee(s)) will be credited to your nominated account within 5 days
+and be available for your use.</p>
+
+<p>Repayments</p>
+
+<p>The Borrowing Fee will be deducted from the Amount of Credit on the date of the Loan
+Contracts. You will pay the Total Amount Payable in 60 monthly Repayments
+of £204.43 each. The first such Repayment will be due and payable
+one (1) month after the date on which we initiate payment of the net amount of the loan proceeds to you (as confirmed
+to you in writing at that time).
+Each subsequent Repayment shall be due and payable on the same date of each consecutive month thereafter (“the
+Repayment Date”). Each Repayment includes a monthly fee of up to 2% of the principal outstanding under the Loan
+Contract which is payable to Zopa to cover the cost of administering Loan Contracts, including the receipt and
+distribution of Repayments and the cost of collecting missed Repayments (but excluding activity covered by the fees
+referred to in clauses 4.4 and 4.5 of the Loan Conditions)   (“Loan Servicing Fee”). We may waive or reduce the
+Loan Servicing Fee from time to time for promotional purposes or as we see fit. All Repayments are to be made in
+accordance with clause 2 of the Loan Conditions.</p>
+
+<p><strong>Other Financial Information</strong></p>
+
+<table width="600px">
+  <tr>
+    <td>Borrowing Fee</td>
+
+    <td>£490.00</td>
+  </tr>
+
+  <tr>
+    <td>Interest charges (including the Loan Servicing Fee)</td>
+
+    <td>£1,775.73</td>
+  </tr>
+
+  <tr>
+    <td>Total charge for credit</td>
+
+    <td>£2,265.73</td>
+  </tr>
+
+  <tr>
+    <td>Rate of Interest</td>
+
+    <td>6.5% per annum
+    (fixed)</td>
+  </tr>
+</table>
+
+<p>The Interest charges have been calculated by applying the Rate of Interest shown above
+to the Amount of Credit, assuming the duration of the Loan Contract is the “Term of Agreement”
+stated under the heading Key Financial Information, and include the Loan Servicing Fee as explained under “Repayments” above.</p>
+
+
+  <!-- Loan conditions 17 -->
+
+  <h2>Loan Conditions</h2>
+
+  <p>These Loan Conditions will apply to each Loan Contract entered into through the
+  Lending Platform. Capitalised terms not otherwise defined in these Loan Conditions have
+  the meaning given in clause 16.</p>
+
+
+  <h3>1. Loan Approval, Drawdown and Disbursement</h3>
+
+  <ol>
+    <li>Once each of your Confirmed Bid has been matched with each Lender’s Market Offer (and you have electronically counter-signed a credit agreement with any Lending Business), Zopa will provisionally credit your Zopa Wallet with the total amount you have borrowed, less the Borrowing Fee, but actual payment of this amount to your Nominated Account is (or directly to the supplier(s), if any, referred to in clause 1.2) subject to:
+
+      <ol style="list-style-type:lower-alpha;">
+        <li>you providing Zopa with certain additional information which Zopa will ask you for, provided that this additional information and the information you gave Zopa before making the Confirmed Bid is not found by Zopa to be inaccurate or deficient in any respect (if Zopa discovers that it was, then the Loan Contract will be void and Zopa will report this information to credit reference and fraud agencies);</li>
+        <li>Zopa checking your Credit Rating and the information you provide Zopa to assess the affordability of your Repayments. You acknowledge that credit reference agencies link together the records of you and anyone that you have advised is a financial associate (e.g. someone with whom you have a joint credit account) including previous and subsequent names of parties to the account. Links between financial associates will remain on your, and their, credit reference files until such time as you or your partner successfully files for a disassociation with the credit reference agencies. When assessing the affordability of your Repayments, Zopa may take into account Information about your financial associates in your credit reference.</li>
+      </ol>
+    </li>
+
+    <li>As soon as reasonably practicable after satisfactory completion of the checks under clause 1.1, you authorize Zopa to, and Zopa shall disburse to the supplier(s), if any, specified under "Other Financial Information" on the first page of the Loan Contract the amount(s) there specified as being payable for the items there specified; and as to the remaining balance (if any) of the Amount of Credit, directly to your Nominated Bank Account.</li>
+  </ol>
+
+  <h3>2. Payment</h3>
+
+  <ol>
+    <li>You must repay the total amount payable under each Loan Contract by paying the
+    Repayments on the Repayment Date shown in the Loan Contract or, where you enter into more than one Loan Contract at or about the same time, the relevant Loan Contract Summary. Prompt payment is essential.
+    If you are late in paying a Repayment, in addition to the right to enforce the Loan
+    Contract, you must pay interest on the Repayment from when it is due until when it is
+    paid at the interest rate represented by the Rate of Interest.</li>
+
+    <li>Your obligation to make such Repayments will be satisfied by making payments into
+    the Zopa Customers' Account or such other bank account as Zopa may approve.</li>
+
+    <li>Each Repayment will be pro-rated between the Lenders in accordance with each Loan
+    Contract and used:
+      <ol style="list-style-type:lower-alpha;">
+        <li>first pay any arrears of principal and interest under the Loan Contract;</li>
+        <li>then to pay the interest and principal due under the latest monthly Repayment that is due and payable under the Loan Contract;</li>
+        <li>then to pay any fees, charges, costs or expenses due to Zopa or any third party under the Loan Contract.</li>
+      </ol>
+    </li>
+
+    <li>All Repayments will be made to the Lender without deduction of income tax.</li>
+
+    <li>If your personal or employment circumstances change (other than your ability to make
+    one or more Repayments at all) you may wish to change the date upon which you make your
+    Repayments, in which case.
+
+      <ol style="list-style-type:lower-alpha;">
+        <li>You may ask Zopa to change the Repayment Date by notifying Zopa that you wish to do so and specifying the new date within the month upon which you wish your Repayments to take place. Such requests may be made by logging-in to MyZopa and following the instructions there, or by email to contactus@zopa.com or by calling us at the general contact number shown on the Lending Platform (such calls will be recorded to confirm your consent to the change).</li>
+
+        <li>Depending on whether the revised Repayment Date is before or after the original Repayment Date in the month, the amount of your next Repayment on the new Repayment Date will be adjusted to take account of the number of days between the new Repayment Date and the previous one. The remaining Repayments (assuming no further changes) will revert to the usual Repayment amount.</li>
+
+        <li>Zopa will then acknowledge and confirm the new Repayment Date and any change to the amount of your next Repayment as a result, before effecting any change. Depending on how you request the change, this acknowledgement and confirmation will take place online, during the course of your telephone call or by an exchange of email with you.</li>
+
+        <li>Zopa may request justification for the change to the Repayment Date and reserves the right not to complete the request if in its sole and absolute discretion it determines that the change is not due to an appropriate change in circumstances or that the process set out above is not being followed.</li>
+      </ol>
+    </li>
+    <li>
+      In the event that you become entitled to a refund of any amount paid by Zopa to a supplier under clause 1.2, you hereby transfer to Zopa your right to that refund, and agree that the proceeds of any such refund shall be credited to the Zopa Customers’ Account and to your Zopa Wallet towards repayment of the amount outstanding in respect of each Loan Contract; and, in the event that your Loan Contract is discharged as a result of such payment, any surplus shall be paid by us to your Nominated Bank Account within 30 days after such discharge.
+    </li>
+  </ol>
+
+
+  <h3>3. Early Settlement</h3>
+
+  <ol>
+    <li>You may at any time settle your Loan Contract early and end the Loan Contract in whole
+    or in part by following the instructions in My Zopa or as notified by the Collection Agency
+    and repaying the full or partial amount you wish to repay.</li>
+
+    <li>You agree that Zopa or the Collections Agency will, on the
+    Lenders' behalf, demand Repayment of the full amount owed by you under your Loan
+    Contract if you:
+
+      <ol style="list-style-type:lower-alpha;">
+        <li>pay late for more than two consecutive months;</li>
+
+        <li>have lied in a way which affects the decision to allow you to register as a Zopa
+        Customer; or</li>
+
+        <li>die, become bankrupt or make a voluntary applicable with people you owe money
+        to.</li>
+      </ol>
+    </li>
+
+    <li>Before making any demand, Zopa will take all the steps the Lenders are required to
+    take by law for your protection.</li>
+  </ol>
+
+
+  <h3>4. Charges and missing payments</h3>
+
+  <ol>
+    <li>To borrow via the Lending Platform, you must pay Zopa (a) the applicable Borrowing Fee,
+    which will be included in the Amount of Credit; and (b) the monthly Loan Servicing Fee,
+    which will be deducted from each Repayment.</li>
+
+    <li>To take advantage of the Fast-Track service - where if your application is
+    successful you receive the credit sum within one working day of approval - you will be
+    charged the applicable Fast Track Fee.</li>
+
+    <li>Missing payments could have severe consequences, including commencement of legal
+    proceedings and an adverse report on your credit history, which may make obtaining
+    credit more difficult.</li>
+
+    <li>If you are late in making payment, the Collections Agency may charge you an
+    administration fee for the work it does in attempting to collect your Repayments ("Late
+    Payment Fee"). The Late Payment Fee will be 22.5% of the amount that is overdue (which
+    amount shall include any interest that accrues on overdue amounts) except where a field
+    agent is required as part of the collections process, in which case the Late Payment
+    Fee will be 40% of the amount overdue. The Collections Agency reserves the right to
+    change the percentage charged (over which neither the Lenders nor Zopa has any
+    control).</li>
+
+    <li>Other fees or charges that may be charged by Zopa or the Collections Agency in
+    relation to the Loan Contract and added to the balance outstanding are:
+
+      <ol style="list-style-type:lower-alpha;">
+        <li>Tracing charges (for finding you if you cannot be contacted by Zopa or the
+        Collections Agency) - £25</li>
+
+        <li>Charges for document retrieval and copying up to 20 pages (other than as a result
+        of statutory entitlement, for which there may still be a charge as provided by
+        statute) - £35</li>
+
+        <li>Debt counselling service (if you fall into arrears and Zopa or the Collections
+        Agency cannot contact you) - £80</li>
+
+        <li>Litigation costs and expenses, including legal fees and expenses, to cover
+        litigation recovering outstanding arrears, in which case you will be advised of the
+        cost if such action proves necessary.</li>
+      </ol>
+    </li>
+
+    <li>You will be notified by Zopa or the Collections Agency if these charges change in nature or amount and of the reason for the change. If you do not agree to the change you may settle your Loan Contract early by following the instructions at clause 3.</li>
+  </ol>
+
+
+  <h3>5. Statement of Account</h3>
+
+  <ol>
+    <li>You have the right to receive, on request, and free of charge, at any time
+    throughout the duration of the Loan Contract, a statement in the form of a table
+    showing:
+
+      <ol>
+        <li style="list-style-type: lower-alpha;">the details of each Repayment owing under
+        the Loan Contract;</li>
+
+        <li style="list-style-type: lower-alpha;">the date on which each Repayment is due,
+        the amount and any conditions relating to the payment of the Repayment;</li>
+
+        <li style="list-style-type: lower-alpha;">a breakdown of each Repayment showing how
+        much comprises:
+
+          <ol>
+            <li style="list-style-type:lower-roman;">capital Repayment,</li>
+
+            <li style="list-style-type:lower-roman;">interest payment, and,</li>
+
+            <li style="list-style-type:lower-roman;">if applicable, any other charges.</li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+
+
+  <h3>6. Other costs that are not paid via Zopa, the Lenders or imposed by
+  them</h3>
+
+  <p>You are responsible for any telecommunications charges, digital television
+  subscription or other charges for the time you spend accessing the Lending Platform via the
+  Internet or any wireless, television or other relevant network.</p>
+
+
+  <h3>7. Assignment of Loan Contracts</h3>
+
+  <ol>
+    <li>Each Lender may freely assign or transfer or otherwise dispose of his or her right, title and interest in the Loan Contract and
+    all associated rights under the Zopa Principles to any third party via the Lending
+    Platform (or any trading exchange or in any other manner approved by Zopa for that purpose).</li>
+
+    <li>Your rights and obligations under a Loan Contract that has been assigned of transferred shall not
+    be adversely affected in any way whatsoever.</li>
+
+    <li>You shall not be entitled to assign or transfer any Loan Contract to another person.</li>
+  </ol>
+
+
+  <h3>8. Law applicable to the conclusion of a distance contract:</h3>
+
+  <p>The laws of the United Kingdom (and English law in particular) are the basis for the
+  establishment of relations with you prior to the conclusion of the Loan Contract.</p>
+
+
+  <h3>9. Law applicable to the Loan Contract:</h3>
+
+  <p>The Loan Contract is governed by and construed in accordance with English law; and
+  the parties submit to the non-exclusive jurisdiction of the English courts.</p>
+
+
+  <h3>10. Language of this document: the Loan Contract and Contractual
+  Communications</h3>
+
+  <p>The Loan Contract and all related documentation are in the English language; and the
+  Lenders undertake to communicate with you in English during the duration of the Loan
+  Contract.</p>
+
+
+  <h3>11. Other legal terms</h3>
+
+  <ol>
+    <li>Each of the clauses of the Loan Contract operates separately. If any court or relevant authority decides that any of them are unlawful, the remaining clauses will remain in full force and effect.</li>
+
+    <li>If either party does not strictly apply its rights under the Loan Contract at any time, that will not prevent that party from doing so later.</li>
+
+    <li>Any notices given to you in relation to any Loan Contract will be put in your My
+    Zopa, in which case you will also receive by email to your email address a prompt to
+    refer to your My Zopa, or may be sent by post to your last known postal address.</li>
+
+    <li>Please contact Zopa if you think there is a mistake with any records relating to your Loan Contract. The process is explained at clause 13.</li>
+
+    <li>You confirm that you have a regular source of income, do not expect this to change
+    over the lifetime of the Loan Contract and have no reason to think that you will be unable
+    to make the Repayments required.</li>
+  </ol>
+
+
+  <h3>12. Cancellation or the Right to Withdraw</h3>
+
+  <ol>
+    <li>If your Loan Contract is a regulated credit agreement, you will have a right to withdraw in accordance with the provisions on page 2 of that Loan Contract (Right to Withdraw). If your Loan Contract is not a regulated credit agreement, you will have a right of cancellation under this clause 12.</li>
+
+    <li>Once you have signed the Loan Contract, you will have for FOURTEEN calendar days (starting the day on which each of your Confirmed Bid has been matched with each Lender’s Market Offer) a right to cancel the Loan Contract, orally or in writing in accordance with clause 12.2, without giving a
+    reason.</li>
+
+    <li>If you wish to cancel the Loan Contract under clause 12.2:
+
+      <ol style="list-style-type:lower-alpha;">
+        <li>you can send a WRITTEN notice of cancellation to contactus@zopa.com or cancel
+        ORALLY by calling 0207 580 6060 (please be aware conversations may be recorded for
+        evidentiary purposes);</li>
+
+        <li>you must repay the whole loan amount (including interest charged, but not the
+        Borrowing Fee);</li>
+
+        <li>you must ensure the repayable amount is repaid to the Zopa Customer’ Account
+        within 30 (THIRTY) days of sending your written notice of cancellation or
+        cancelling orally. Should funds fail to reach that account by this time, you will be
+        deemed to have accepted the Loan Contract such that our normal terms and conditions
+        will apply as if the Loan Contract had not been cancelled.</li>
+      </ol>
+    </li>
+  </ol>
+
+  <h3>13. Complaints and complaints handling</h3>
+
+  <ol>
+    <li>If you want to make a complaint about the Loan Contract or Zopa you can email
+    contactus@zopa.com with brief details of your complaint and your account reference.
+    Zopa will acknowledge your complaint within one business day. Zopa will then
+    investigate and send you an initial response. This should take no longer than five
+    business days. If you are not satisfied by Zopa's response, you may contact Zopa’s
+    Customer Services Manager who will respond by email within a further five business
+    days.</li>
+
+    <li>If you are not satisfied with the response from the Customer Services Manager you
+    can email contactus@zopa.com, enclosing responses already given to you. Your email will
+    then be referred to Zopa’s Chief Executive Officer, who will respond within a final five
+    business days.</li>
+
+    <li>Within four weeks after receiving a complaint, Zopa will send you either a final
+    response or a response which explains why Zopa is not in a position to resolve the
+    complaint and/or indicates when Zopa will make further contact. Complaints that cannot be
+    settled within eight weeks of the date of complaint may ultimately be referred to the
+    Financial Ombudsman Service, who can be contacted by telephone on 08000234567 or
+    at www.financial-ombudsman.org.uk.</li>
+
+    <li>You also have the right to make a complaint directly to the Financial Ombudsman
+    Service.</li>
+  </ol>
+
+
+  <h3>14. List of Lenders</h3>
+
+  <p>You can view a list of your Lenders, including how much each of them has lent you
+  and at what rate, will be available in the "Borrowing" section of your "My Zopa". You can
+  access your MyZopa by logging in securely to the Lending Platform.</p>
+
+  <h3>15. Your Personal Data</h3>
+
+  <p>
+    We will process your personal data in connection with the performance of our rights and obligations under this Agreement and our regulatory obligations, consistent with Principle 11 of the Zopa Principles. We may receive personal data directly from you, generate personal data about you and/or receive personal data about you from third parties (such as Zopa, the Collections Agency or parties engaged in the same or similar business to that of the Collections Agency).  We may disclose your personal data to the Collections Agency and the bodies referred to under "Supervisory Authority" above and will only disclose your personal data to locations outside the European Economic Area in circumstances where there is adequate protection for the data or otherwise with your prior consent.  You should contact us in writing at our address on page 1 of the Loan Contract to exercise your rights to access and rectify personal data we hold about you. Personal data means data which relate to you and from which you can be identified, or from which you can be identified in combination with other information which is, or is likely come into, our possession.
+  </p>
+
+
+  <h3>16. Defined Terms</h3>
+
+  <p>In these Loan Conditions the following words have the following meanings-</p>
+
+  <p>"Borrowing Fee"<br />
+  means the fee charged by Zopa for enabling you to borrow on the Lending Platform, as
+  specified in your Personalised Quote and any subsequent Loan Contract, and shall include an amount estimated by Zopa to reflect the potential for a Default, based on the Credit Rating applicable to your Loan Contract and Zopa’s assessment of whether there are sufficient funds in the Zopa Safeguard Trust, where applicable;</p>
+
+  <p>"Borrower", "you", "your"<br />
+  means the Zopa Customer identified as the Borrower in the Loan Contract which shall include an amount estimated by Zopa to reflect the potential for a Default, based on the Credit Rating applicable to your Loan Contract;</p>
+
+  <p>"Collections Agency"<br />
+  means Credit Resource Solutions Limited of Rosemount House, Rosemount Estate,
+  Huddersfield Road, Elland, West Yorkshire HX5 0EE or such other duly authorised collections agency as
+  may be appointed from time to time;</p>
+
+  <p>"Confirmed Bid"<br />
+  means a bid which a potential Borrower posts on the Lending Platform confirming an
+  Indicative Bid;</p>
+
+  <p>"Credit Rating"<br />
+  means a credit rating supplied by Equifax plc or such other credit reference agency that Zopa may use from time to time in relation to the Borrower for use in connection with the Lending Platform;</p>
+
+  <p>"Default"<br />
+  means the failure of the Borrower to pay the full amount of four Repayments then due and payable in relation to the Loan Contract;</p>
+
+  <p>"Fast Track"<br />
+  means the optional process by which Zopa disburses the proceeds of an approved Loan Contract under clause 1 on the same day or next morning (depending on the time of day it was approved);</p>
+
+  <p>"Fast Track Fee"<br />
+  means the fee of £57.50 payable by you to Zopa in order to use Fast Track;</p>
+
+  <p>"Lender"<br />
+  means the Zopa Customer identified as the Lender in the Loan Contract and any assignee, transferee or successor in title following any assignment, transfer or disposal under Clause 7;</p>
+
+  <p>"Lending Platform"<br />
+  means the internet marketplace which Zopa operates at www.zopa.com for the purpose of matching Market
+  Offers and Confirmed Bids;</p>
+
+  <p>"Loan Conditions"<br />
+  means these terms and conditions;</p>
+
+  <p>"Loan Contract"<br />
+  means the agreement, incorporating the Loan Conditions, under which the Lender agrees
+  to make a loan to the Borrower;</p>
+
+  <p>"Loan Contract Summary"<br />
+  means the summary of all the Loan Contracts entered into by the Borrower at or about the same time (where more than one Loan Contract is entered into);</p>
+
+  <p>“Loan Servicing Fee”<br />
+  has the meaning given under the heading “Key Financial Information” in the Loan Contract Summary;</p>
+
+  <p>"Market Offer"<br />
+  means an offer to lend to a Borrower, which a potential Lender posts on the Lending Platform;</p>
+
+  <p>"My Zopa"<br />
+  means the part of the Lending Platform which can only be accessed by a Zopa Customer, using
+  his or her own email address and Passcodes.</p>
+
+  <p>"Nominated Account"<br />
+  means the current account you have with a UK bank from which you authorise Zopa to collect Repayments under the direct debiting scheme, and/or to which Zopa will make any payments due to you, as the case may be;</p>
+
+  <p>"P2PS Limited"<br />
+  means the independent, not for profit company, limited by guarantee, incorporated in the UK, with its registered office at 2 Tombland Alley, Norwich, Norfolk, UK, NR3 1HL (Company No. 06800515) which is authorised and registered by the Financial Conduct Authority, and entered on the Financial Services Register under firm registration number 0626216;</p>
+
+  <p>"Passcodes"<br />
+  means your unique email address, password, answers to security questions, which you specify when you register with Zopa to use the Lending Platform;<br />
+
+  <p>"Repayment"<br />
+  means each instalment due and payable by the Borrower under each Loan Contract, which shall comprise principal and interest, as well as any amount otherwise due and payable by the Borrower under the Loan Contract;</p>
+
+  <p>"Zopa"<br />
+  means Zopa Limited, whose registered office is 6th Floor, 90 Fetter Lane, London EC4A 1EN.
+   Company Registration Number 05197592. Zopa Limited is also:</p>
+
+  <ul>
+    <li>the holder of Consumer Credit Licence Number 563134;</li>
+    <li>authorised and registered by the Financial Conduct Authority, and entered on the Financial Services Register under firm registration number 563134;</li>
+    <li>registered with the Office of the Information Commissioner (registration number Z879078)</li>
+    <li>a member of CIFAS;</li>
+  </ul>
+
+  <p>"Zopa Customer"<br />
+  means an individual who has completed the registration process to use the Lending Platform and has been issued with
+  his or her own Passcodes;</p>
+
+  <p>"Zopa Customers' Account"<br />
+  means any segregated bank account that Zopa maintains with Royal Bank of Scotland (or such other UK bank as Zopa may choose from time to time) for the sole purpose of holding funds to which Zopa Customers are beneficially entitled in accordance with the Zopa Principles and/or any Loan Contract;</p>
+
+  <p>"Zopa Principles"<br />
+  means the Zopa Principles you agreed when registering to use the Lending Platform, as amended from time to time, a copy of which is available on the Lending Platform;</p>
+
+  <p>“Zopa Safeguard Trust”<br />
+  means the trust, constituted by the payment of funds contributed by Borrowers as part of the Borrowing Fee, where their Loan Contracts are covered by the trust, which funds are held on trust by P2PS Limited for Lenders in accordance with the Zopa Principles.</p>
+
+
+
+    </div>
+
+    <p class="">
+
+      <span class="radiocheck">
+          <input id="loan_application_contract0" name="loan_application[contract]" type="hidden" value="0" />
+          <input class="accept-checkbox" id="loan_application_contract" name="loan_application[contract]" required="required" type="checkbox" value="1" />
+
+        <label for="loan_application_contract">
+          I've read and agree to the <a href="/loan_applications/86b7cce4-fe82-e511-9543-0050568d003d/quote?print_loan_conditions=1" data-automation="ZA.view_loan_contract" id="print-loan-conditions" target="_blank" title="opens in a new window">Zopa Loan Conditions</a>,
+          which govern my Loan Contract with each of my Lenders
+          .
+</label>      </span>
+    </p>
+  </fieldset>
+</div>
+
+
+
+  <p class="actions">
+    <button class="secure" data-automation="ZA.save_bank_details" data-disable_with="Please wait..." name="button" type="submit">Set up your repayments</button>
+  </p>
+</form>
+
+<style>
+  .loan-quote + h1 {
+    margin-top: 1em;
+  }
+  iframe + p {
+    margin-top: .7em;
+  }
+</style>
+
+  </div>
+</div>
+
+
+
+
+
+
+    </div>
+  </div>
+
+
+<div class="contact section" id="contact">
+  <div class="group">
+    <h2>Got a question?</h2>
+
+      <p>
+  Email: <a href="mailto:contactus@zopa.com">contactus@zopa.com</a>
+</p>
+<p>
+  Telephone: <strong>020&#xa0;7580&#xa0;6060</strong>
+</p>
+<p>
+  Calls may be monitored or recorded.
+  We can't take loan applications over the phone.
+</p>
+
+
+
+      <p>
+        <strong>Please note:</strong> We are currently operating a reduced phone service.
+        We ask for your patience whilst we answer your call.
+        Alternately, please <a href="mailto:contactus@zopa.com">email us</a>
+        and we'll get back to you as soon as possible.
+      </p>
+
+  </div>
+</div>
+
+
+
+<div id="footer" class="section">
+  <hr class="a11y" />
+  <div class="group">
+    <h2 class="a11y">Sitemap</h2>
+    <div class="col-4">
+      <h3>About Zopa</h3>
+      <ul>
+        <li><a href="https://www.uat.ldn.zopa.com/about">About Zopa</a></li>
+        <li><a href="https://www.uat.ldn.zopa.com/peer-to-peer-lending">Peer-to-peer lending</a></li>
+        <li><a href="https://www.uat.ldn.zopa.com/working-at-zopa">Working at Zopa</a></li>
+        <li><a href="https://www.uat.ldn.zopa.com/blog">Blog</a></li>
+        <li><a href="https://www.uat.ldn.zopa.com/about#press">Press office</a></li>
+        <li><a href="http://talk.zopa.com/">Customer forum</a></li>
+        <li><a href="https://www.uat.ldn.zopa.com/contact">Contact Zopa</a></li>
+      </ul>
+    </div><div class="col-4">
+      <h3>Loans</h3>
+      <ul>
+        <li><a href="https://www.uat.ldn.zopa.com/loans">Zopa loans</a></li>
+        <li><a href="https://www.uat.ldn.zopa.com/loans/credit-card">Credit cards</a></li>
+        <li><a href="https://www.uat.ldn.zopa.com/loans/debt-consolidation">Debt consolidation</a></li>
+        <li><a href="https://www.uat.ldn.zopa.com/loans/home-improvement">Home improvements</a></li>
+        <li><a href="https://www.uat.ldn.zopa.com/loans/car-finance">Car finance</a></li>
+        <li><a href="https://www.uat.ldn.zopa.com/loans/wedding">Weddings</a></li>
+        <li><a href="https://www.uat.ldn.zopa.com/loans/business">Business loans</a></li>
+        <li><a href="https://www.uat.ldn.zopa.com/loans/zopa-reviews">Loan reviews</a></li>
+      </ul>
+    </div><div class="col-4">
+      <h3>Lend your money</h3>
+      <ul>
+        <li><a href="https://www.uat.ldn.zopa.com/lending">Lending at Zopa</a></li>
+        <li><a href="https://www.uat.ldn.zopa.com/lending/how-lending-money-works">How lending works</a></li>
+        <li><a href="https://www.uat.ldn.zopa.com/lending/ethical-banking-alternative">Who are Zopa?</a></li>
+        <li><a href="https://www.uat.ldn.zopa.com/lending/high-interest-returns">Why choose us?</a></li>
+        <li><a href="https://www.uat.ldn.zopa.com/lending/peer-to-peer-experts">Lending experts</a></li>
+        <li><a href="https://www.uat.ldn.zopa.com/lending/zopa-reviews">Lender reviews</a></li>
+        <li><a href="https://www.uat.ldn.zopa.com/lending/grow-your-savings">Interest calculator</a></li>
+        <li><a href="https://www.uat.ldn.zopa.com/lending/financial-advisors">Financial advisors</a></li>
+        <li><a href="http://help.zopa.com/">FAQs</a></li>
+      </ul>
+    </div><div class="col-4 utilities">
+      <h3>Utilities</h3>
+      <p class="logo"><a href="https://www.uat.ldn.zopa.com/" title="Back to homepage"><img alt="Zopa" height="109" src="/assets/logo-736bd89d68c1c128c0e62f006c03f1c0.png" width="166" /></a></p>
+      <ul>
+        <li class="home"><a href="https://www.uat.ldn.zopa.com/">Homepage</a></li>
+        <li><a href="https://www.uat.ldn.zopa.com/sitemap">Sitemap</a></li>
+        <li><a href="https://www.uat.ldn.zopa.com/privacy-policy">Privacy policy</a></li>
+        <li><a href="https://www.uat.ldn.zopa.com/principles">Principles</a></li>
+        <li><a href="https://www.uat.ldn.zopa.com/cookie-policy">Cookie policy</a></li>
+        <li><a href="https://www.uat.ldn.zopa.com/conflicts-policy">Conflicts policy</a></li>
+      </ul>
+    </div>
+
+    <h3 class="a11y">Social media</h3>
+    <ul class="social">
+      <li><a class="twitter" href="http://twitter.com/zopa" title="Find us on Twitter">Twitter</a></li>
+      <li><a class="facebook" href="http://facebook.com/zopa" title="Find us on Facebook">Facebook</a></li>
+      <li><a class="google-plus" href="https://plus.google.com/b/113730959209325000142/113730959209325000142/posts" title="Find us on Google+">Google+</a></li>
+    </ul>
+
+    <p>
+      © Zopa Limited 2015 All rights reserved. 'Zopa' and the Zopa logo are trade marks of Zopa Limited.
+      Zopa is a member of CIFAS - the UK's leading anti-fraud association, and we are registered with the Office of the Information Commissioner (No. Z879078).
+    </p>
+
+    <p>Zopa Limited is incorporated in England &amp; Wales (registration number 05197592), with its registered office at 6th Floor, 90 Fetter Lane, London. EC4A 1EN. Zopa Limited is authorised and regulated by the Financial Conduct Authority, and entered on the Financial Services Register under firm registration number 563134. </p>
+
+    <p>Contact Zopa on 020 7580 6060. Calls may be monitored or recorded.</p>
+  </div>
+</div>
+
+  <script src="/assets/application-e8fcb4357f5406c0d006e13a816781d6.js" type="text/javascript"></script>
+      <script src="/assets/views/direct_debit_autotab-9851d3207e264d77697751f4e8b6b61e.js" type="text/javascript"></script>
+  <script src="/assets/currency_helper-cbd5e7a3bcaa27dc4fff5dde91d4b518.js" type="text/javascript"></script>
+
+  <script>
+    $(function() {
+      var employmentYears = $("#applications_loan_apply_employer_years");
+      var employmentMonths = $("#applications_loan_apply_employer_months");
+
+      employmentYears.change(function () {
+        if (employmentMonths.val().length === 0) {
+          employmentMonths.val('0');
+        }
+      });
+      employmentMonths.change(function () {
+        if (employmentYears.val().length === 0) {
+          employmentYears.val('0');
+        }
+      });
+    });
+  </script>
+  <script src="/assets/views/loan_applications_back-f43afc25ecb6b186f07b9de262c152bb.js" type="text/javascript"></script>
+
+
+  <script>
+  var _gaq = _gaq || [];
+
+    _gaq.push(['_setCustomVar', 1, 'user_type', 'Borrower', 1]);
+
+  var _vis_opt_GA_slot = 3;
+  if (typeof(_vis_opt_GA_track) === "function") {
+    _vis_opt_GA_track();
+  }
+
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+  <div id="screen-mode"></div>
+</body>
+</html>

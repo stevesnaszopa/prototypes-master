@@ -1,0 +1,412 @@
+<div class="section">
+  <div>
+    <h1>Get a personal quote</h1>
+
+
+    <p class="intro">
+      To provide you with a quote, we check your details with a credit bureau using a ‘soft search’.
+      This doesn’t impact your credit score.
+    </p>
+
+    <form accept-charset="UTF-8" action="#feedback" class="loan_application v2" method="post" novalidate="novalidate"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="BiyyooXuVI0DQP7wKyxHwvBslAxDsfG5Khrg+YfwM+I=" /></div>
+
+      <h2>About you</h2>
+
+      <fieldset>
+
+        <!-- Member email -->
+        <div class="field-unit member-email">
+
+          <p class="">
+            <label for="member_email">Email address</label>
+            <input data-automation="ZA.email" data-errorMsg="There is already a Zopa account registered with this email address. &lt;span&gt;Do you want to &lt;a href=&#x27;/login&#x27;&gt;sign in&lt;/a&gt; or &lt;a href=&#x27;/forgotten_password&#x27;&gt;recover your password&lt;/a&gt;?&lt;/span&gt;" data-remoteUrl="/members/email_available" id="member_email" name="member[email]" required="required" size="30" type="email" />
+          </p>
+        </div>
+
+
+        <div class="field-unit">
+
+          <!-- Title-->
+          <p class="">
+
+            <span class="label">Title</span>
+            <span class="radiocheck block-label">
+              <input data-automation="ZA.title" id="applications_loan_apply_title_mr" name="applications_loan_apply[title]" required="required" type="radio" value="Mr" />
+
+              <label for="applications_loan_apply_title_mr">Mr</label>
+            </span>
+            <span class="radiocheck block-label">
+              <input data-automation="ZA.title" id="applications_loan_apply_title_ms" name="applications_loan_apply[title]" required="required" type="radio" value="Ms" />
+
+              <label for="applications_loan_apply_title_ms">Ms</label>
+            </span>
+            <span class="radiocheck block-label">
+              <input data-automation="ZA.title" id="applications_loan_apply_title_miss" name="applications_loan_apply[title]" required="required" type="radio" value="Miss" />
+
+              <label for="applications_loan_apply_title_miss">Miss</label>
+            </span>
+            <span class="radiocheck block-label">
+              <input data-automation="ZA.title" id="applications_loan_apply_title_mrs" name="applications_loan_apply[title]" required="required" type="radio" value="Mrs" />
+
+              <label for="applications_loan_apply_title_mrs">Mrs</label>
+            </span>
+
+          </p>
+
+          <!-- First name -->
+          <p class="">
+            <label for="applications_loan_apply_first_name">First name</label>
+            <input data-automation="ZA.first_name" id="applications_loan_apply_first_name" maxlength="20" name="applications_loan_apply[first_name]" required="required" size="20" type="text" />
+          </p>
+
+          <!-- Last name -->
+          <p>
+            <label for="applications_loan_apply_last_name">Last name</label>
+            <input data-automation="ZA.last_name" id="applications_loan_apply_last_name" maxlength="25" name="applications_loan_apply[last_name]" required="required" size="25" type="text" />
+          </p>
+        </div>
+
+        <div class="field-unit">
+          <!-- Home phone number-->
+          <p class="">
+
+            <label for="applications_loan_apply_home_phone">Phone number</label>
+            <input data-automation="ZA.home_phone" id="applications_loan_apply_home_phone" name="applications_loan_apply[home_phone]" required="required" size="30" type="tel" />
+          </p>
+
+        </div>
+
+        <div class="field-unit">
+          <!-- Date of birth -->
+          <p class="date ">
+
+            <label for="applications_loan_apply_date_of_birth">
+              Date of birth
+              <span class="hint">You must be over 20 years old</span>
+            </label>
+
+            <span class="select-group">
+              <select data-automation="ZA.date_of_birth" id="applications_loan_apply_date_of_birth_3i" name="applications_loan_apply[date_of_birth(3i)]" required="required">
+                <option value="">Day</option>
+                <% 1.upto(31) do |date| %>
+                  <option value="<%= date %>"><%= date %></option>
+                <% end %>
+              </select>
+
+              <select data-automation="ZA.date_of_birth" id="applications_loan_apply_date_of_birth_2i" name="applications_loan_apply[date_of_birth(2i)]" required="required">
+                <option value="">Month</option>
+                <% Date::MONTHNAMES.compact.each_with_index do |month, index| %>
+                  <option value="<%= index %>"><%= month %></option>
+                <% end %>
+              </select>
+
+              <select required="required">
+                <option value="">Year</option>
+                <% 1995.downto(1900) do |year| %>
+                  <option value="<%= year %>"><%= year %></option>
+                <% end %>
+              </select>
+            </span>
+          </p>
+        </div>
+
+        <div class="field-unit">
+          <!-- Loan reason-->
+          <p class="">
+
+            <span class="label">Loan reason</span>
+            <span class="radiocheck">
+              <input data-automation="ZA.loan_purpose" id="applications_loan_apply_loan_purpose_car" name="applications_loan_apply[loan_purpose]" required="required" type="radio" value="CAR" />
+              <label for="applications_loan_apply_loan_purpose_car">Car</label>
+            </span>
+            <span class="radiocheck">
+              <input data-automation="ZA.loan_purpose" id="applications_loan_apply_loan_purpose_home_improvements" name="applications_loan_apply[loan_purpose]" required="required" type="radio" value="HOME_IMPROVEMENTS" />
+              <label for="applications_loan_apply_loan_purpose_home_improvements">Home improvements</label>
+            </span>
+            <span class="radiocheck">
+              <input data-automation="ZA.loan_purpose" id="applications_loan_apply_loan_purpose_consolidate" name="applications_loan_apply[loan_purpose]" required="required" type="radio" value="CONSOLIDATE" />
+              <label for="applications_loan_apply_loan_purpose_consolidate">Debt consolidation</label>
+            </span>
+          </p>
+
+          <p><a href="#additional-loan-purposes" class="show-more"><span>Show</span> more reasons</a></p>
+          <p id="additional-loan-purposes">
+            <span class="radiocheck">
+              <input data-automation="ZA.loan_purpose" id="applications_loan_apply_loan_purpose_pay_off_credit_cards" name="applications_loan_apply[loan_purpose]" required="required" type="radio" value="PAY_OFF_CREDIT_CARDS" />
+              <label for="applications_loan_apply_loan_purpose_pay_off_credit_cards">Credit cards</label>
+            </span>
+            <span class="radiocheck">
+              <input data-automation="ZA.loan_purpose" id="applications_loan_apply_loan_purpose_boat" name="applications_loan_apply[loan_purpose]" required="required" type="radio" value="BOAT" />
+              <label for="applications_loan_apply_loan_purpose_boat">Boat</label>
+            </span>
+            <span class="radiocheck">
+              <input data-automation="ZA.loan_purpose" id="applications_loan_apply_loan_purpose_business_purposes" name="applications_loan_apply[loan_purpose]" required="required" type="radio" value="BUSINESS_PURPOSES" />
+              <label for="applications_loan_apply_loan_purpose_business_purposes">Business</label>
+            </span>
+            <span class="radiocheck">
+              <input data-automation="ZA.loan_purpose" id="applications_loan_apply_loan_purpose_caravan" name="applications_loan_apply[loan_purpose]" required="required" type="radio" value="CARAVAN" />
+              <label for="applications_loan_apply_loan_purpose_caravan">Caravan</label>
+            </span>
+            <span class="radiocheck">
+              <input data-automation="ZA.loan_purpose" id="applications_loan_apply_loan_purpose_christmas_expenses" name="applications_loan_apply[loan_purpose]" required="required" type="radio" value="CHRISTMAS_EXPENSES" />
+              <label for="applications_loan_apply_loan_purpose_christmas_expenses">Christmas expenses</label>
+            </span>
+            <span class="radiocheck">
+              <input data-automation="ZA.loan_purpose" id="applications_loan_apply_loan_purpose_electrical_av_goods" name="applications_loan_apply[loan_purpose]" required="required" type="radio" value="ELECTRICAL_AV_GOODS" />
+              <label for="applications_loan_apply_loan_purpose_electrical_av_goods">Electronic goods</label>
+            </span>
+            <span class="radiocheck">
+              <input data-automation="ZA.loan_purpose" id="applications_loan_apply_loan_purpose_holiday" name="applications_loan_apply[loan_purpose]" required="required" type="radio" value="HOLIDAY" />
+              <label for="applications_loan_apply_loan_purpose_holiday">Holiday</label>
+            </span>
+            <span class="radiocheck">
+              <input data-automation="ZA.loan_purpose" id="applications_loan_apply_loan_purpose_holiday_home" name="applications_loan_apply[loan_purpose]" required="required" type="radio" value="HOLIDAY_HOME" />
+              <label for="applications_loan_apply_loan_purpose_holiday_home">Holiday home</label>
+            </span>
+            <span class="radiocheck">
+              <input data-automation="ZA.loan_purpose" id="applications_loan_apply_loan_purpose_house_deposit" name="applications_loan_apply[loan_purpose]" required="required" type="radio" value="HOUSE_DEPOSIT" />
+              <label for="applications_loan_apply_loan_purpose_house_deposit">House deposit</label>
+            </span>
+            <span class="radiocheck">
+              <input data-automation="ZA.loan_purpose" id="applications_loan_apply_loan_purpose_jewellery" name="applications_loan_apply[loan_purpose]" required="required" type="radio" value="JEWELLERY" />
+              <label for="applications_loan_apply_loan_purpose_jewellery">Jewellery</label>
+            </span>
+            <span class="radiocheck">
+              <input data-automation="ZA.loan_purpose" id="applications_loan_apply_loan_purpose_land_purchase" name="applications_loan_apply[loan_purpose]" required="required" type="radio" value="LAND_PURCHASE" />
+              <label for="applications_loan_apply_loan_purpose_land_purchase">Land purchase</label>
+            </span>
+            <span class="radiocheck">
+              <input data-automation="ZA.loan_purpose" id="applications_loan_apply_loan_purpose_motor_bike" name="applications_loan_apply[loan_purpose]" required="required" type="radio" value="MOTOR_BIKE" />
+              <label for="applications_loan_apply_loan_purpose_motor_bike">Motorbike</label>
+            </span>
+            <span class="radiocheck">
+              <input data-automation="ZA.loan_purpose" id="applications_loan_apply_loan_purpose_pay_off_loan" name="applications_loan_apply[loan_purpose]" required="required" type="radio" value="PAY_OFF_LOAN" />
+              <label for="applications_loan_apply_loan_purpose_pay_off_loan">Pay off relative or friend</label>
+            </span>
+            <span class="radiocheck">
+              <input data-automation="ZA.loan_purpose" id="applications_loan_apply_loan_purpose_repairs" name="applications_loan_apply[loan_purpose]" required="required" type="radio" value="REPAIRS" />
+              <label for="applications_loan_apply_loan_purpose_repairs">Repairs</label>
+            </span>
+            <span class="radiocheck">
+              <input data-automation="ZA.loan_purpose" id="applications_loan_apply_loan_purpose_stocks_and_shares" name="applications_loan_apply[loan_purpose]" required="required" type="radio" value="STOCKS_AND_SHARES" />
+              <label for="applications_loan_apply_loan_purpose_stocks_and_shares">Stocks and shares</label>
+            </span>
+            <span class="radiocheck">
+              <input data-automation="ZA.loan_purpose" id="applications_loan_apply_loan_purpose_school_fees" name="applications_loan_apply[loan_purpose]" required="required" type="radio" value="SCHOOL_FEES" />
+              <label for="applications_loan_apply_loan_purpose_school_fees">School fees</label>
+            </span>
+            <span class="radiocheck">
+              <input data-automation="ZA.loan_purpose" id="applications_loan_apply_loan_purpose_solar_panels" name="applications_loan_apply[loan_purpose]" required="required" type="radio" value="SOLAR_PANELS" />
+              <label for="applications_loan_apply_loan_purpose_solar_panels">Solar panels</label>
+            </span>
+            <span class="radiocheck">
+              <input data-automation="ZA.loan_purpose" id="applications_loan_apply_loan_purpose_tax_bill" name="applications_loan_apply[loan_purpose]" required="required" type="radio" value="TAX_BILL" />
+              <label for="applications_loan_apply_loan_purpose_tax_bill">Tax bill</label>
+            </span>
+            <span class="radiocheck">
+              <input data-automation="ZA.loan_purpose" id="applications_loan_apply_loan_purpose_wedding_expenses" name="applications_loan_apply[loan_purpose]" required="required" type="radio" value="WEDDING_EXPENSES" />
+              <label for="applications_loan_apply_loan_purpose_wedding_expenses">Wedding expenses</label>
+            </span>
+            <span class="radiocheck">
+              <input data-automation="ZA.loan_purpose" id="applications_loan_apply_loan_purpose_other" name="applications_loan_apply[loan_purpose]" required="required" type="radio" value="OTHER" />
+              <label for="applications_loan_apply_loan_purpose_other">Other</label>
+            </span>
+          </p>
+        </div>
+      </fieldset>
+
+      <h2>Address history</h2>
+
+      <p>We need your UK address history for the last 3 years</p>
+      <%= render '/_includes/components/address/address', locals: { history: 0 } %>
+
+      <h2>Your financial details</h2>
+
+      <fieldset>
+
+
+        <div class="field-unit">
+          <!--Employment status-->
+          <p class="">
+
+            <span class="label">Employment status</span>
+
+            <span class="radiocheck">
+              <input id="applications_loan_apply_employment_status_employed_full_time" name="applications_loan_apply[employment_status]" required="required" type="radio" value="EMPLOYED_FULL_TIME" />
+              <label for="applications_loan_apply_employment_status_employed_full_time">Employed full-time</label>
+            </span>
+            <span class="radiocheck">
+              <input id="applications_loan_apply_employment_status_self_employed" name="applications_loan_apply[employment_status]" required="required" type="radio" value="SELF_EMPLOYED" />
+              <label for="applications_loan_apply_employment_status_self_employed">Self employed</label>
+            </span>
+            <span class="radiocheck">
+              <input id="applications_loan_apply_employment_status_employed_part_time" name="applications_loan_apply[employment_status]" required="required" type="radio" value="EMPLOYED_PART_TIME" />
+              <label for="applications_loan_apply_employment_status_employed_part_time">Employed part-time</label>
+            </span>
+            <span class="radiocheck">
+              <input id="applications_loan_apply_employment_status_unemployed" name="applications_loan_apply[employment_status]" required="required" type="radio" value="UNEMPLOYED" />
+              <label for="applications_loan_apply_employment_status_unemployed">Currently unemployed</label>
+            </span>
+            <span class="radiocheck">
+              <input id="applications_loan_apply_employment_status_retired" name="applications_loan_apply[employment_status]" required="required" type="radio" value="RETIRED" />
+              <label for="applications_loan_apply_employment_status_retired">Retired, not working</label>
+            </span>
+            <span class="radiocheck">
+              <input id="applications_loan_apply_employment_status_homemaker" name="applications_loan_apply[employment_status]" required="required" type="radio" value="HOMEMAKER" />
+              <label for="applications_loan_apply_employment_status_homemaker">Housewife, househusband or homemaker</label>
+            </span>
+          </p>
+        </div>
+
+        <div class="field-unit">
+          <!-- Salary -->
+          <p class="">
+
+            <label for="applications_loan_apply_salary">Annual income before tax</label>
+            <input data-automation="ZA.salary" data-hint="You have entered $$." data-hinttype="currency" id="applications_loan_apply_salary" name="applications_loan_apply[salary]" placeholder="xx,xxx per year" required="required" type="number" />
+          </p>
+        </div>
+
+        <div class="field-unit">
+          <!-- Residential status-->
+          <p class="residential-status ">
+
+            <span class="label">Do you own your home?</span>
+
+            <span class="radiocheck">
+              <input data-residential-status="owner" id="applications_loan_apply_residential_status_owner_no_mortgage" name="applications_loan_apply[residential_status]" required="required" type="radio" value="OWNER_NO_MORTGAGE" />
+              <label for="applications_loan_apply_residential_status_owner_no_mortgage">Yes, outright owner</label>
+            </span>
+            <span class="radiocheck">
+              <input data-residential-status="mortgage" id="applications_loan_apply_residential_status_owner_with_mortgage" name="applications_loan_apply[residential_status]" required="required" type="radio" value="OWNER_WITH_MORTGAGE" />
+              <label for="applications_loan_apply_residential_status_owner_with_mortgage">Yes, with a mortgage</label>
+            </span>
+            <span class="radiocheck">
+              <input data-residential-status="rent" id="applications_loan_apply_residential_status_other" name="applications_loan_apply[residential_status]" required="required" type="radio" value="OTHER" />
+              <label for="applications_loan_apply_residential_status_other">No</label>
+            </span>
+          </p>
+
+          <!-- Rent/mortgage contributions -->
+          <p class="contribution ">
+
+            <label for="applications_loan_apply_rent">
+              Your monthly contribution to <span>rent/mortgage</span>
+            </label>
+            <input data-hint="You have entered $$." data-hinttype="currency"  name="applications_loan_apply[rent]" required="required" type="number" />
+
+          </p>
+        </div>
+      </fieldset>
+
+      <fieldset class="simple">
+        <!-- Member password -->
+        <div class="row">
+
+          <p class="">
+
+            <label for="member_password">
+              Create a password to access your details later
+              <span class="hint">Minimum 6 characters, should contain at least 1 number </span>
+            </label>
+            <input autocomplete="off" data-automation="ZA.password" id="member_password" name="member[password]" required="required" size="30" type="password" />
+          </p>
+          <script type="text/html" data-inline="true">
+            <p>
+              <span class="radiocheck">
+                <input class="password-toggle" data-target="member[password]" id="show_password" name="show_password" type="checkbox" />
+                <label for="show_password">Show password</label>
+              </span>
+            </p>
+          </script>
+
+        </div>
+      </fieldset>
+
+      <fieldset class="simple">
+        <div class="row">
+
+          <!-- Member accept principles -->
+          <p class="">
+
+            <span class="radiocheck">
+              <input name="member[accept_principles]" type="hidden" value="0" /><input data-automation="ZA.accept_principles" id="member_accept_principles" name="member[accept_principles]" required="required" type="checkbox" value="1" />
+              <label for="member_accept_principles">
+                I agree to the Zopa <a href="/principles?source=registration" target="_blank">Principles</a>
+                and <a href="http://brochureware.demo.ldn.zopa.com:8081/privacy-policy" target="_blank">Privacy Policy</a>
+              </label>                </span>
+          </p>
+
+          <!-- Member allow contact -->
+          <p class="">
+
+            <span class="radiocheck">
+              <input name="member[allow_contact]" type="hidden" value="0" /><input checked="checked" id="member_allow_contact" name="member[allow_contact]" type="checkbox" value="1" />
+              <label for="member_allow_contact">I would like to receive occasional updates from Zopa</label>
+            </span>
+          </p>
+
+        </div>
+      </fieldset>
+
+      <p class="action">
+        <input type="submit" value="Calculate your qute">
+      </p>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+</div>
+</div>
+
+
+<div class="contact section" id="contact">
+  <div class="group">
+    <h2>Got a question?</h2>
+
+
+
+    <div class="row group equalHeights">
+      <div class="col info box" id="borrower_contact">
+        <h3>Borrowers</h3>
+        <p class="hint">
+          Thinking of taking out a loan,<br />
+          or already have a Zopa loan?
+        </p>
+        <p>
+          Email: <a href="mailto:contactus@zopa.com">contactus@zopa.com</a>
+        </p>
+        <p>
+          Telephone: <strong>020&#xa0;7580&#xa0;6060</strong>
+        </p>
+        <p>
+          Calls may be monitored or recorded.
+          We can't take loan applications over the phone.
+        </p>
+      </div>
+
+      <div class="col info box" id="lender_contact">
+        <h3>Lenders</h3>
+        <p class="hint">
+          Thinking of lending your money,<br />
+          or are already a Zopa lender?
+        </p>
+        <p>
+          Email: <a href="mailto:contactus@zopa.com">contactus@zopa.com</a>
+        </p>
+        <p>
+          Telephone: <strong>020&#xa0;7291&#xa0;8331</strong>
+        </p>
+        <p>
+          Calls may be monitored or recorded.
+        </p>
+      </div>
+    </div>
+
+
+  </div>
+</div>

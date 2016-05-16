@@ -1,0 +1,125 @@
+<% @audience = :borrowers %>
+<% @pagetitle = 'Application form' %>
+
+
+
+<div class="section hero">
+  <div>
+
+    <h1>Application form</h1>
+    <p class="intro">To provide you with a quote, we check your details with a credit bureau using a ‘soft search’. This doesn’t impact your credit score.</p>
+
+    <h2>About you</h2>
+
+    <form accept-charset="UTF-8" action="thanks" class="bank-details v2" method="post">
+
+      <fieldset class="field-units">
+        <div>
+          <!-- Full name -->
+          <p class="">
+            <label for="applications_loan_apply_first_name">Full name</label>
+            <input id="applications_loan_apply_first_name" maxlength="20" name="applications_loan_apply[first_name]" required="required" size="20" type="text">
+          </p>
+        </div>
+      </fieldset>
+
+
+      <fieldset class="field-units">
+        <div>
+          <!-- Home phone number-->
+          <p class="">
+            <label for="applications_loan_apply_home_phone">Phone number
+              <span class="hint">We prefer your mobile phone number</span>
+            </label>
+            <input id="applications_loan_apply_home_phone" maxlength="11" name="applications_loan_apply[home_phone]" required="required" size="30" type="tel">
+          </p>
+        </div>
+      </fieldset>
+
+      <fieldset class="field-units">
+        <div>
+          <p class="sort-code col">
+            <label for="sort_code">Date of birth
+              <span class="hint">You must be over 20 years old</span>
+            </label>
+            <input autocomplete="off" id="dob_0" maxlength="2" pattern="[0-9]{2}" placeholder="DD" required="required" title="Enter your day of birth as a 2 digit number" type="tel">
+            /
+            <input autocomplete="off" id="dob_1" maxlength="2" pattern="[0-9]{2}" placeholder="MM" required="required" title="Enter your month of birth as a 2 digit number" type="tel">
+            /
+            <input autocomplete="off" id="dob_2" maxlength="4" pattern="[0-9]{2}" placeholder="YYYY" required="required" title="Enter your year of birth as a 4 digit number" type="tel">
+          </p>
+        </div>
+      </fieldset>
+
+
+
+      <h2>Bank account</h2>
+
+      <fieldset class="bank-account field-units">
+        <div>
+          <label for="direct_debit_account_number">Account number</label>
+          <input autocomplete="off" data-automation="ZA.account_number" id="direct_debit_account_number" maxlength="8" name="direct_debit[account_number]" pattern="[0-9]{8}" required="required" title="Enter an 8-digit bank account number" type="tel" value="">
+        </div>
+        <div class="sort-code">
+          <label for="sort_code">Sort code</label>
+          <input autocomplete="off" data-automation="ZA.account_sort_code_1" id="direct_debit_sort_code_0" maxlength="2" name="direct_debit[sort_code][0]" pattern="[0-9]{2}" placeholder="00" required="required" title="Enter the first 2 digits of your sort code" type="tel">
+          -
+          <input autocomplete="off" data-automation="ZA.account_sort_code_2" id="direct_debit_sort_code_1" maxlength="2" name="direct_debit[sort_code][1]" pattern="[0-9]{2}" placeholder="00" required="required" title="Enter the middle 2 digits of your sort code" type="tel">
+          -
+          <input autocomplete="off" data-automation="ZA.account_sort_code_3" id="direct_debit_sort_code_2" maxlength="2" name="direct_debit[sort_code][2]" pattern="[0-9]{2}" placeholder="00" required="required" title="Enter the last 2 digits of your sort code" type="tel">
+        </div>
+        <div>
+          <label for="direct_debit_account_holder_name">Name on account</label>
+          <input autocomplete="off" data-automation="ZA.account_holder_name" id="direct_debit_account_holder_name" maxlength="100" name="direct_debit[account_holder_name]" required="required" type="text">
+        </div>
+      </fieldset>
+
+      <p class="intro" style="margin-top: 1em;">
+        By submitting this application, you agree to the Zopa <a href="/principles?source=registration" target="_blank">Principles</a>
+        and <a href="https://www.uat.ldn.zopa.com/privacy-policy" target="_blank">Privacy Policy</a>
+      </p>
+
+      <p style="margin-bottom: 2em;">
+        <button class="secure" name="button" type="submit">Submit application</button>
+      </p>
+    </form>
+
+  </div>
+</div>
+
+
+<% content_for :scripts do %>
+  <%= javascript_include_tag "vendor/autotab" %>
+<% end %>
+
+
+<% content_for :styles do %>
+  <style>
+    @media screen {
+      .bank-account div {
+        margin-bottom: 0.625em;
+      }
+      .field-units {
+        margin-bottom: 0.2em;
+        padding-left: 1em;
+        padding-right: 5em;
+        padding-top: 0.7em;
+        padding-bottom: 0.7em;
+      }
+      .sort-code input {
+        width: 3em;
+        text-align: center;
+      }
+      #dob_2 {
+        width: 4em;
+      }
+    }
+    @media screen and (max-width: 375px) {
+      .field-units {
+        padding-right: 1em;
+        margin-left: -1em;
+        margin-right: -1em;
+      }
+    }
+  </style>
+<% end %>

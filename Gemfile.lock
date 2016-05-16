@@ -1,0 +1,67 @@
+GIT
+  remote: git://github.com/tka/serve.git
+  revision: 6bd59395ab9e6fa647d7f727daab10172012f514
+  specs:
+    serve (1.5.1)
+      activesupport (~> 3.2.12)
+      i18n
+      rack (~> 1.5.2)
+      rack-test (~> 0.6.2)
+      tilt (~> 1.3.3)
+      tzinfo
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (3.2.22)
+      i18n (~> 0.6, >= 0.6.4)
+      multi_json (~> 1.0)
+    chunky_png (1.3.4)
+    compass (1.0.3)
+      chunky_png (~> 1.2)
+      compass-core (~> 1.0.2)
+      compass-import-once (~> 1.0.5)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9)
+      sass (>= 3.3.13, < 3.5)
+    compass-core (1.0.3)
+      multi_json (~> 1.0)
+      sass (>= 3.3.0, < 3.5)
+    compass-import-once (1.0.5)
+      sass (>= 3.2, < 3.5)
+    daemons (1.2.3)
+    eventmachine (1.0.8)
+    ffi (1.9.10)
+    haml (4.0.7)
+      tilt
+    i18n (0.7.0)
+    multi_json (1.11.2)
+    rack (1.5.5)
+    rack-test (0.6.3)
+      rack (>= 1.0)
+    rb-fsevent (0.9.5)
+    rb-inotify (0.9.5)
+      ffi (>= 0.5.0)
+    rdiscount (2.1.8)
+    sass (3.4.17)
+    thin (1.6.3)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0)
+      rack (~> 1.0)
+    thread_safe (0.3.5)
+    tilt (1.3.7)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  compass
+  haml
+  rdiscount
+  serve!
+  thin
+
+BUNDLED WITH
+   1.11.2

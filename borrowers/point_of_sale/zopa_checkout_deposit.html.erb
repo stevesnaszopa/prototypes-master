@@ -1,0 +1,274 @@
+<!--STYLE-->
+    <style>
+    @media screen {
+      .block-label {
+        display: inline-block;
+        margin-right: .5em;
+      }
+      #find_address {
+        display: inline-block;
+        padding-top: 1.6em;
+      }
+      .select-group label {
+        position: absolute;
+        left: -99999em;
+        top: 0;
+      }
+
+      .loan-quote table {
+        width: 100%;
+        border: 0;
+        margin-bottom: 0;
+      }
+
+      .loan-quote table td {
+        text-align: right;
+        color: #8c9500;
+        font-weight: 600;
+        padding-right: 0;
+      }
+
+      .loan-quote .result.box {
+        padding-bottom: 0;
+        box-sizing:400px;
+      }
+
+      .loan-quote .explanation.box {
+        padding: 0;
+        display: flex;
+        align-items: content-box;
+        width:400px;
+      }
+
+      .loan-quote table tr.sum {
+        border-top: 2px solid #C5C6C1;
+      }
+
+      .loan-quote table th {
+        font-weight: normal;
+        padding-left: 0;
+      }
+
+      .loan-quote table td,
+      .loan-quote table th {
+        border: 0;
+        background-color: transparent;
+      }
+
+      .loan-quote .quote table th,
+      .loan-quote .quote table td {
+        border-bottom: 1px solid #fff;
+      }
+
+      .loan-quote .wrapper {
+        padding-left: 1.25em;
+        padding-right: 1.25em;
+
+        margin-left: -1.25em;
+        margin-right: -1.25em;
+      }
+
+      .loan-quote .wrapper.quote
+      { background-color: #F8FAEC; }
+      .loan-quote .result.box > div {
+        max-width: 25em;
+      }
+
+      .loan-quote + h1 {
+        margin-top: 2em;
+      }
+      /*New CSS */
+      .row .loan-quote{
+        margin-right:0em;
+      }
+      table tr#deposit{
+        font-size: 1.8em;
+        font-weight: 700;
+      }
+    }
+  </style>
+  <!--OPEN SECTION TAG-->
+<div class="section" style="width: 920px; margin: 0 auto; background: white !important;">
+  <div>
+    <h1>You've been approved!</h1>
+
+    <p class="intro">
+      Your 12-month <strong>0% interest</strong> installment plan has been approved. Just pay your deposit and you're almost done.
+      <br/>
+      <br/>
+    </p>
+
+    <div class="row group loan-quote equalHeights">
+    <div class="group" style="min-height">
+  </div>
+
+  <div id="bigform" style="min-height" class="col">
+      <!--FINANCIAL SUMMARY -->
+  <div id="summary-panel" style="width: 100%; max-width: 25em;">
+
+    <div class="totalPrice">
+
+      <h2>Your finance plan </h2>
+
+      <%= render "calculations" %>
+          <div class="calculation wrapper">
+              <table>
+                <tbody>
+                  <tr class="sum">
+                    <th>Total cost of holiday</th>
+                    <td>&pound;3,000.00</td>
+                  </tr>
+                  <tr>
+                    <th>Zopa finance</th>
+                    <td>- <%= number_to_currency @loan %></td>
+                  </tr>
+                  <tr>
+                    <th>APR</th>
+                    <td>0%</td>
+                  </tr>
+                  <tr>
+                    <th>Monthly installments (x12)</th>
+                    <td><%= number_to_currency @monthly %></td>
+                  </tr>
+                  <tr>
+                    <th> </th>
+                  </tr>
+                  <tr class="sum" id="deposit">
+                    <th><strong>Deposit to pay now</strong></th>
+                    <td>
+                      <span class="total">
+                        <span class="round_value"><%= number_to_currency @deposit %></span>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</div>
+
+  <div class="item open">
+    <form class="loan_application" novalidate="novalidate" method="get" action="zopa_checkout_approve.html">
+      <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✔"><input name="authenticity_token" type="hidden" value="b7GvR9nvkBWEghbKv463bQL76st4MwCQw7Yn5NCKrL8="></div>
+      <h3>Pay your deposit now</h3>
+      <div class="item-content">
+        <fieldset class="simple">
+          <input type="hidden" name="deposit" value="<%= params['deposit'] %>" />
+        <!-- Member email -->
+          <div class="row member-email">
+
+              <p class="">
+                <label for="member_email">Card number</label><br/>
+                <span class="hint">The long number on the front of your card</span><br/>
+                <input data-automation="ZA.email" data-remoteurl="/members/email_available" id="member_email" name="member[email]" required="required" size="30" type="email" value="0000 0000 0000 0000">
+              </p>
+
+          </div>
+
+          <div class="hidden">
+            <input id="applications_loan_apply_loan_amount" name="applications_loan_apply[loan_amount]" type="hidden" value="10000">
+            <input id="applications_loan_apply_loan_term" name="applications_loan_apply[loan_term]" type="hidden" value="60">
+            <input id="applications_loan_apply_zopa_uid" name="applications_loan_apply[zopa_uid]" type="hidden" value="db85370c22">
+            <input id="applications_loan_apply_source" name="applications_loan_apply[source]" type="hidden" value="referrer-organic">
+          </div>
+
+          <!-- Expiry date -->
+          <div class="row">
+            <p class="date ">
+              <label for="applications_loan_apply_date_of_birth">Expiry date</label><br/>
+              <span class="select-group">
+
+<select data-automation="ZA.date_of_birth" id="applications_loan_apply_date_of_birth_2i" name="applications_loan_apply[date_of_birth(2i)]" required="required">
+<option value="">Month</option>
+<option value="1">01</option>
+<option value="2">02</option>
+<option value="3">03</option>
+<option value="4">04</option>
+<option value="5">05</option>
+<option value="6">06</option>
+<option value="7">07</option>
+<option value="8">08</option>
+<option value="9">09</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+</select>
+<select data-automation="ZA.date_of_birth" id="applications_loan_apply_date_of_birth_1i" name="applications_loan_apply[date_of_birth(1i)]" required="required">
+<option value="">Year</option>
+<option value="2015">2015</option>
+<option value="2016">2016</option>
+<option value="2017">2017</option>
+<option value="2018">2018</option>
+</select>
+
+    </span>
+    </p>
+  </div>
+
+<!-- Name on card -->
+          <div class="row">
+            <p class="">
+              <label for="applications_loan_apply_first_name">Name on card</label><br/>
+              <input data-automation="ZA.first_name" id="applications_loan_apply_first_name" maxlength="25" name="applications_loan_apply[first_name]" required="required" size="25" type="text" value="Firstname Surname">
+            </p>
+          </div>
+
+          <div class="row">
+            <p class="">
+              <label for="applications_loan_apply_first_name">Security Code</label><br/>
+              <input data-automation="ZA.first_name" id="applications_loan_apply_first_name" maxlength="3" name="applications_loan_apply[first_name]" required="required" size="3" type="text" value="123">
+            </p>
+          </div>
+        </div>
+
+       <div class="bookHoliday" align="center">
+            <input class="button cta jumbo" type="submit" value="Submit" style="height:auto;"/>
+            <br/>
+       </div>
+
+      <br/>
+    </form>
+
+  </div>
+  </div>
+</div>
+<script type="text/javascript">
+    document.getElementById("to_approve").onclick = function () {
+    window.location.href = "./zopa_checkout_approve.html";
+    return false;
+    };
+
+  document.getElementById("to_cancel").onclick = function () {
+    window.location.href = "./index.htm";
+    return false;
+    };
+
+</script>
+
+
+
+    </div>
+  </div>
+  </div>
+
+
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    document.getElementById("to_approve").onclick = function () {
+		window.location.href = "./zopa_checkout_deposit.html";
+		return false;
+    };
+
+</script>
+
+
+
+    </div>
+  </div>

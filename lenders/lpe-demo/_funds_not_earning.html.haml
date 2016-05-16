@@ -1,0 +1,21 @@
+%div{:class => "#{'col ' if @isa_enabled == "true"}info box"}
+  %p
+    %span{:style => "text-decoration: underline;"} Funds not earning
+  %p
+    - if !params[:ha].nil?
+      £#{params[:ha]}
+    - else 
+      £500
+    in holding account
+  %span= link_to "Lend", "manage.html"
+  %span.pull.right= link_to "Withdraw", "manage.html"
+- if @isa_enabled == "true"
+  .col.info.box
+    %p
+      %span{:style => "text-decoration: underline;"} ISA funds not earning
+      = tooltip [:help, :account_summary], :not_offered, alignment: "center"
+    %p
+      = number_to_currency @isa_account_summary.amount_not_on_offer
+      in holding account
+    %span= link_to "Lend"
+    %span{:style => "float: right;"}= link_to "Withdraw"

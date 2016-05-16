@@ -1,0 +1,136 @@
+<% @bodyclass = 'has-hero' %>
+
+<div class="hero section">
+  <div class="group">
+    <h1>Your tailored quote selection</h1>
+    <p class="intro">Adjust amount and term and choose your loan.</p>
+
+      <%= render 'quote_terms2', locals: {
+        name: :excellent,
+        values: [
+          {term: '1 year',  apr: '12.9%', cost: '658.28', total: '7899.35' },
+          {term: '2 years', apr: '10.9%', cost: '342.93', total: '8230.38' },
+          {term: '3 years', apr: '10.9%', cost: '240.26', total: '8649.48' },
+          {term: '4 years', apr: '11.9%', cost: '192.45', total: '9237.78' },
+          {term: '5 years', apr: '12.9%', cost: '165.47', total: '9928.34' }
+        ],
+        minmax: [5000, 15000],
+        initial_amount: 7500,
+        initial_term: 48,
+        rep_apr: { loan: '#7,500',
+                   term: '5 Years',
+                   cost: '£150.74',
+                   apr: '7.9%',
+                   total_cost: '£9,044',
+                   interest: '£1,404',
+                   interest_rate: '7.1%',
+                   fee: '£140',
+                   total_credit: '£7,640' }}%>
+  </div>
+</div>
+
+<style>
+  html {
+    background-color: white;
+    font: 100%/1.28 "Open Sans",Arial,sans-serif;
+    overflow-x: auto;
+    overflow-y: scroll;
+  }
+
+  body {
+    background-image: url("background_loans.jpg");
+  }
+  @media screen{#loan-calculator{position:relative}#loan-calculator fieldset h3{margin:-.1em 0;font-weight:normal;font-size:1.6em}#loan-calculator fieldset h3 input.borrow-amount,#loan-calculator fieldset h3 select{margin-bottom:.25em}#loan-calculator fieldset h3 input.borrow-amount{width:4em;padding:0 .1em;margin-left:.1em}#loan-calculator fieldset h3 input.button{font-size:1.5em}#loan-calculator fieldset h3 select{width:auto;padding:0}#loan-calculator fieldset h3 .caption{color:#87847a}#loan-calculator fieldset h3 .hint{display:inline-block;line-height:1.1}#loan-calculator .loan-input{display:block;margin-top:0.2em;margin-bottom:0.2em}#loan-calculator .intro{font-size:1.2em}#loan-calculator abbr{border-bottom-width:0}#loan-calculator fieldset .content,#loan-calculator .box .content{background-color:#fff;border-radius:4px;padding:0.71em;position:relative}#loan-calculator fieldset{padding-left:.9em;padding-right:.9em}.dynamic.one_year span.plural{display:none}#loan-calculator .content .intro{color:#736357}#loan-calculator .simple-results .paragraph-group{float:left}#loan-calculator .simple-results input.button{margin-top:0.4em;margin-bottom:0.4em}#loan-calculator .caption{margin:.5em 0 -.21em;clear:both}.slider-container{position:relative;padding:0 30px 10px 30px}.slider-container .decrease,.slider-container .increase{position:absolute;border:none;top:5px;background:none;color:#444034;font-weight:bold;font-size:2em;width:30px;height:30px;padding:0;line-height:1;box-shadow:none}.slider-container .decrease{left:0}.slider-container .increase{right:0}.slider-container .decrease:active,.slider-container .increase:active,.slider-container .decrease:focus,.slider-container .increase:focus{background-color:#EAF6FC}.slider-container .range-slider{-webkit-appearance:none;background-color:#E1F2FB;background-color:rgba(255,255,255,0.3);border:0 none;box-shadow:none;padding:0 10px;width:100%;height:45px;cursor:pointer}.slider-container .range-slider:focus{outline:none;background-color:#EAF6FC;background-color:rgba(255,255,255,0.5)}.slider-container .range-slider::-webkit-slider-runnable-track{-webkit-appearance:none;height:7px;background-color:#A3A1A1;border-radius:3px;box-shadow:inset 2px 2px 2px 0px rgba(0,0,0,0.5),0px 1px 0px 1px rgba(255,255,255,0.5)}.slider-container .range-slider::-webkit-slider-thumb{-webkit-appearance:none;margin-top:-18px;box-shadow:inset 1px 1px 1px 0px rgba(255,255,255,0.5),2px 2px 2px 0px rgba(0,0,0,0.5);background:#2aa1df url('/_assets/img/content/slider-pound-sign.png') no-repeat center;width:38.25px;height:38.25px;border-radius:50%;border:none;cursor:pointer}.slider-container .range-slider:focus::-webkit-slider-runnable-track{background-color:#A3A1A1}.slider-container .range-slider::-moz-range-track{width:100%;height:7px;background-color:#A3A1A1;border-radius:3px;box-shadow:inset 2px 2px 2px 0px rgba(0,0,0,0.5),0px 1px 0px 1px rgba(255,255,255,0.5)}.slider-container .range-slider::-moz-range-thumb{box-shadow:inset 1px 1px 1px 0px rgba(255,255,255,0.5),2px 2px 2px 0px rgba(0,0,0,0.5);background:#2aa1df url('/_assets/img/content/slider-pound-sign.png') no-repeat center;width:38.25px;height:38.25px;border-radius:50%;border:none;cursor:pointer}.slider-container .range-slider::-moz-focusring{outline:1px solid white;outline-offset:-1px}.slider-container .range-slider::-ms-track{width:100%;height:45px;background-color:transparent;border:none;border-radius:3px;overflow:visible;color:transparent}.slider-container .range-slider::-ms-fill-lower{outline:none;background-color:#b8bc09;height:7px;border-radius:3px}.slider-container .range-slider::-ms-fill-upper{outline:none;background-color:#A3A1A1;height:7px;border-radius:3px}.slider-container .range-slider::-ms-thumb{box-shadow:inset 1px 1px 1px 0px rgba(255,255,255,0.5),2px 2px 2px 0px rgba(0,0,0,0.5);background:#2aa1df url('/_assets/img/content/slider-pound-sign.png') no-repeat center;width:38.25px;height:38.25px;border-radius:50%;border:none;cursor:pointer}.slider-container .rangeslider{width:auto;height:45px;background-color:#E1F2FB;background-color:rgba(255,255,255,0.3);border-radius:3px;position:relative;padding:0}.slider-container .rangeslider .rangeslider__fill{height:7px;top:18.75px;background-color:#b8bc09;position:relative;margin-left:10px;border-radius:3px;box-shadow:inset 2px 2px 2px 0px rgba(0,0,0,0.5),0px 1px 0px 1px rgba(255,255,255,0.5);z-index:9}.slider-container .rangeslider:after{position:absolute;display:block;content:'';left:0;width:auto;height:7px;top:11.25px;background-color:#A3A1A1;position:relative;margin-right:10px;margin-left:10px;border-radius:3px;box-shadow:inset 2px 2px 2px 0px rgba(0,0,0,0.5),0px 1px 0px 1px rgba(255,255,255,0.5);z-index:5}.slider-container .rangeslider .rangeslider__handle{top:0;position:absolute;box-shadow:inset 1px 1px 1px 0px rgba(255,255,255,0.5),2px 2px 2px 0px rgba(0,0,0,0.5);background:#2aa1df url('/_assets/img/content/slider-pound-sign.png') no-repeat center;width:38.25px;height:38.25px;border-radius:50%;border:none;cursor:pointer;z-index:10}#slider_calc table{margin-left:auto;margin-right:auto;vertical-align:middle;width:100%}#slider_calc.multi-options{text-align:center}#slider_calc.multi-options table th,#slider_calc.multi-options table td{vertical-align:middle;text-align:center;padding-right:0}#slider_calc.multi-options table td{border:0}#slider_calc.multi-options table tr{cursor:pointer}#slider_calc.multi-options table tr label{min-width:3.5em;text-align:left;padding-left:.2em}#slider_calc.multi-options table tr.selected{background:#E8E9B1;color:#000}#slider_calc.multi-options table td:first-child{padding-left:1em;border-radius:1em 0 0 1em;min-width:4.8em}#slider_calc.multi-options table td:last-child{padding-right:1em;border-radius:0 1em 1em 0}#slider_calc.multi-options .radiocheck input[type=radio]+label:before{top:5px}#slider_calc.multi-options .radiocheck input[type=radio]+label:after{top:12px}}
+
+
+  #loan-calculator fieldset .rep-apr h3 {
+    font-size: 1.25em;
+    margin: 1.25rem 0 0.625rem;
+  }
+  .nav-tabs .tooltip {
+    font-size: .6em;
+  }
+
+  .faq dt {
+    display: block;
+    width: 100%;
+  }
+  .slider-container button::before {
+    content: attr(data-amount);
+    font-size: 0.6em;
+    font-weight: normal;
+    position: absolute;
+    top: -1.2em;
+    color: #444034!important;
+  }
+  .slider-container button.decrease::before {
+  }
+  .slider-container button.increase::before {
+    left: -2.0em;
+  }
+  .submit-form {
+    text-align: center;
+  }
+
+  #amount-slider:focus {
+    border: 0;
+    outline: 0!important;
+  }
+
+</style>
+<% content_for :scripts do %>
+
+<script>
+  $().ready(function () {
+    var $calculators = $('#loan-calculator');
+    var $amountField = $('input.borrow-amount');
+    var $slider = $('input[type=range]');
+
+    $slider.on('input', function () {
+      $amountField.val($(this).val());
+    });
+
+    /* make slider term option rows full width selectable */
+    $calculators.each(function () {
+      var $loanCalculator = $(this),
+        $tableRows = $('tbody tr', $loanCalculator),
+        $submitLoanButton = $('.submit-loan-button', $loanCalculator),
+        reset_rows = function () { $tableRows.removeClass('selected'); };
+
+      $submitLoanButton.click(function () {
+        $(this).data('clicked', true);
+      });
+
+      // Suppress submission unless submit button was clicked
+      $loanCalculator.submit(function (event) {
+        if (!$submitLoanButton.data('clicked')) {
+          event.preventDefault();
+        }
+      });
+
+      reset_rows();
+
+      $tableRows.each(function () {
+        var $tr = $(this),
+          $radioCheck = $tr.find('input[type=radio]');
+        // end var
+
+        $radioCheck.filter(':checked').closest($tr).addClass('selected');
+
+        $radioCheck.on('change', function () {
+          reset_rows();
+          $tr.addClass('selected');
+        });
+
+        $tr.on('click', function () {
+          $radioCheck.prop('checked', true).trigger('change');
+        });
+      });
+    });
+
+
+  });
+
+</script>
+
+<% end %>

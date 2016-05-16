@@ -1,0 +1,229 @@
+<% @loggedin = true %>
+<% @audience = :lenders %>
+<% @pagetitle = 'Lending money through Zopa' %>
+
+<% content_for :subnav do %>
+ <ul>
+   <li><a href="dashboard.html">Dashboard</a></li>
+   <li><a href="statements.html">Statements</a></li>
+   <li class="active"><a href="lend.html">Lend</a></li>
+   <li><a href="withdraw.html">Withdraw</a></li>
+ </ul>
+<% end %>
+
+
+
+<div class="section hero">
+  <div>
+    <p class="back only-screensize-xs"><span class="a11y">Back to </span><a href="/lending/dashboard">Dashboard</a></p>
+    <h1>Lend money through Zopa</h1>
+
+    <div class="in-account">
+      <p class="intro">You have no money available in your holding account to lend</p>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="section">
+  <div>
+
+  <img src="img/lending-options.png" width="641" height="411" />
+<!--
+    <form accept-charset="UTF-8" action="/offer/update_term" autocomplete="off" class="lending-options" method="get">
+    <div style="margin:0;padding:0;display:inline">
+      <input name="utf8" type="hidden" value="&#x2713;" />
+    </div>
+      <fieldset class="done">
+        <h2>Your lending options</h2>
+
+        <div class="row group">
+
+          <div class="col choiceShorter unselected">
+            <div class="rate">
+              <h3><strong>3.8%</strong><span>Up to 3 year loans</span></h3>
+              <p>Projected return with re-lending on.</p>
+            </div>
+
+            <div class="action">
+              <input id="ref" name="ref" type="hidden" value="lend_moneys" />
+              <input id="term" name="term" type="hidden" value="Shorter" />
+              <button class="secondary" data-automation="ZA.try_safeguard" type="submit">
+                Switch to this rate
+                <em class="a11y">(up to 3 years)</em>
+              </button>
+            </div>
+
+            <div class="queue-info info box">
+              <h3>Speed of lending</h3>
+
+              <p class="funds">
+                <span class="bunch">
+                  There is currently <strong>£773k</strong> queued
+                </span>
+                <span class="bunch">to be lent in this market.</span>
+              </p>
+
+              <p>
+                <span class="bunch">We're lending out an average of</span>
+                <span class="bunch">
+                  <strong>£380k</strong> per business day.
+                  <span class="tooltip">
+                    <span class="top center">This is taken from an average of the last week.</span>
+                  </span>
+                </span>
+              </p>
+            </div>
+          </div>
+
+        <div class="col choiceLonger selected">
+          <div class="rate">
+            <h3><strong>5.0%</strong><span>Up to 5 year loans</span></h3>
+            <p>Projected return with re-lending on.</p>
+          </div>
+
+          <div class="action">
+            <span class="button-space success">
+              Selected
+              <em class="a11y">up to 5 years</em>
+            </span>
+          </div>
+
+          <div class="queue-info info box">
+            <h3>Speed of lending</h3>
+
+            <p class="funds">
+              <span class="bunch">
+                There is currently <strong>£2.29m</strong> queued
+              </span>
+              <span class="bunch">to be lent in this market.</span>
+            </p>
+
+            <p>
+              <span class="bunch">We're lending out an average of</span>
+              <span class="bunch">
+                <strong>£1.07m</strong> per business day.
+                <span class="tooltip">
+                  <span class="top center">This is taken from an average of the last week.</span>
+                </span>
+              </span>
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="details"><a href="/about_lending">View more about lending</a></p>
+      </fieldset>
+    </form>
+-->
+
+  </div>
+</div>
+
+
+
+<div class="section">
+  <div>
+    <h2>Transfer money into your Zopa account</h2>
+
+    <div class="row group">
+      <div class="col third2">
+        <p>Use these details to transfer money into Zopa or to set up a standing order with your bank.</p>
+
+        <table class="bankDetails plain">
+          <tr>
+            <th>Account name</th>
+            <td>Zopa Ltd.</td>
+          </tr>
+          <tr>
+            <th>Account number</th>
+            <td>10212420</td>
+          </tr>
+          <tr>
+            <th>Sort code</th>
+            <td>16-00-30</td>
+          </tr>
+          <tr class="highlight">
+            <th>Unique reference <span class="tooltip"><span class="left">Your unique reference enables us to allocate your money correctly, so it’s essential you include it in every bank transfer in order for the money to reach your Zopa account.</span></span></th>
+            <td><span class="dynamic">Z45274263</span></td>
+          </tr>
+        </table>
+
+        <p>You must include your unique reference, so we know where to allocate your money.</p>
+
+        <p>
+          <span class="button-row">
+            <a href="/404" class="button minor ">Print account details</a>
+            <a href="/404" class="button minor">Send to phone</a>
+          </span>
+        </p>
+      </div>
+
+      <div class="col third1 info box" style="background: whitesmoke;">
+        <ul class="ticked">
+          <li>Money you transfer should arrive in your Zopa account the same working day</li>
+          <li>We will then automatically put your money in a queue to be lent out to Zopa borrowers</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="section">
+  <div>
+    <h2>How to transfer money into your Zopa account</h2>
+
+    <p>
+      You need to set up Zopa as a new payee with your bank,
+      just like anyone else you transfer money to.
+    </p>
+
+    <p>Use online banking, telephone banking or visit a local branch to do so.</p>
+
+    <fieldset id="selectBank">
+      <p class="button-row">
+        <select class="select-bank" title="Select online bank" style="width: 15em;">
+          <option value="0">Choose your online bank…</option>
+          <option value="http://www.alliance-leicester.co.uk">Alliance &amp; Leicester</option>
+          <option value="http://www.bankofireland.co.uk">Bank of Ireland</option>
+          <option value="http://www.bankofscotland.co.uk">Bank of Scotland (HBOS)</option>
+          <option value="http://www.barclays.co.uk/">Barclays Bank</option>
+          <option value="http://www.citibank.co.uk/">Citibank</option>
+          <option value="http://www.cbonline.co.uk/">Clydesdale Bank</option>
+          <option value="http://www.co-operativebank.co.uk">Co-op Bank</option>
+          <option value="http://www.coutts.com/">Coutts Private Bank</option>
+          <option value="http://www.firstdirect.com">first direct</option>
+          <option value="http://www.halifax.co.uk">Halifax (HBOS)</option>
+          <option value="http://www.hsbc.co.uk">HSBC</option>
+          <option value="http://www.icicibank.co.uk">ICICI Bank</option>
+          <option value="http://www.lloydsbank.com">Lloyds Bank</option>
+          <option value="https://www.metrobankonline.co.uk">Metro Bank</option>
+          <option value="http://www.nationwide.co.uk">Nationwide</option>
+          <option value="http://www.natwest.com/personal.ashx">NatWest</option>
+          <option value="http://www.reliancebankltd.com">Reliance Bank</option>
+          <option value="http://www.rbs.co.uk">Royal Bank of Scotland</option>
+          <option value="http://www.santander.co.uk">Santander</option>
+          <option value="http://www.smile.co.uk">Smile</option>
+          <option value="http://www.privatebank.standardchartered.com">Standard Chartered</option>
+          <option value="http://www.tsb.co.uk/">TSB</option>
+          <option value="http://www.ulsterbank.com/ni/personal.ashx">Ulster Bank</option>
+          <option value="http://www.ybonline.co.uk">Yorkshire Bank</option>
+        </select>
+
+        <a href="/404" class="button" class='external'>Go to your bank</a>
+      </p>
+    </fieldset>
+
+    <div class="info box" id="extraBankInfo" style="display: none;">
+      With <strong class="bank">this bank</strong> you will need to create a <strong>‘Bill’ payment transfer</strong> so you can include your unique reference.
+    </div>
+
+    <p>You'll need to provide your Zopa details listed above and the amount you want to transfer.</p>
+
+  </div>
+</div>

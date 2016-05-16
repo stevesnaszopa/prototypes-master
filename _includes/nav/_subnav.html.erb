@@ -1,0 +1,10 @@
+<% if content_for?(:subnav) && !yield(:subnav).strip.empty? %>
+  <div class="subnav group">
+    <div class="area">
+      <h2 class="a11y show">Sub navigation</h2>
+      <%= yield :subnav %>
+    </div>
+  </div>
+<% else %>
+  <div class="empty subnav"></div>
+<% end %>

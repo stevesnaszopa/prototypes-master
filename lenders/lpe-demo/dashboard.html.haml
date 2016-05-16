@@ -1,0 +1,37 @@
+- @pagetitle = 'Dashboard || My Zopa'
+- content_for :mainnav do
+  = render "mainnav"
+- content_for :subnav do
+  = render "subnav", locals: {active_nav: "lending"}
+= render "demo_details"
+
+.dashboard.section
+  .row.group
+    %h1
+      Lending Summary
+    .a11y
+    %p.intro
+      %strong=params[:zt]? "£#{params[:zt]}"  : "£#{@aggregated_balance}"
+      Total money in Zopa
+      =link_to "Deposit", "manage.html?mv_ti=o", class: "button minor pull right"
+  .row.group
+    = render partial: "product_list", locals: {products: @active_products}
+  .row.group
+    = render partial: "funds_not_earning", locals: {products: @active_products}
+  .row.group
+    = render partial: "add_account"
+.section
+  %div
+    %h3 Loan book summary
+    #loanbook_pie
+    = link_to 'View loan book overview', "#", class: 'loanbook-link'
+.section
+  .row.group.equalHeights
+    .col.info.box
+      %h3 Tell your friends
+      %p Earn money by telling your friends about Zopa
+      %p= link_to 'Share your link', "#", class: 'button minor'
+    .col.info.box
+      %h3 Read our blog
+      %p Keep up to date with the latest news from Zopa
+      %p= link_to 'Go to blog', "#", class: 'button minor'

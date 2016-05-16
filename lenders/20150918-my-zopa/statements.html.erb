@@ -1,0 +1,217 @@
+<% @loggedin = true %>
+<% @audience = :lenders %>
+<% @pagetitle = 'Statements at Zopa' %>
+
+<% content_for :subnav do %>
+ <ul>
+   <li><a href="dashboard.html">Dashboard</a></li>
+   <li class="active"><a href="statements.html">Statements</a></li>
+   <li><a href="lend.html">Lend</a></li>
+   <li><a href="withdraw.html">Withdraw</a></li>
+ </ul>
+<% end %>
+
+
+
+<div class="section">
+  <div>
+    <h1>Statements</h1>
+
+    <form id="statements-nav" action="" method="post">
+      <p class="intro">Showing:
+        <select style="width: auto; margin-top: -4px;" onChange="window.location.replace(this.options[this.selectedIndex].value)" style="display: inline;">
+          <option selected="selected" disabled="disabled">August 2015 to date</option>
+          <option value="/404">July 2015</option>
+          <option value="/404">June 2015</option>
+          <option value="/404">May 2015</option>
+          <option value="/404">April 2015</option>
+          <option value="/404">March 2015</option>
+          <option value="/404">February 2015</option>
+          <option value="/404">January 2015</option>
+          <option value="statements-transactional.html">Older statements</option>
+        </select>
+      </p>
+    </form>
+
+
+    <div class="info box" style="margin-top: 30px;">
+      <h2 style="margin-left: 10px;">Account summary</h2>
+
+      <table id="statement" class="alt rows" style="width: 100%; font-size: 1.3em; margin-top: 10px;">
+        <tbody>
+        <tr>
+          <td>
+            <span style="color: #00913c;">Total carried over (1st August 2015)</span>
+          </td>
+          <td style="text-align: right;">
+            <b style="color: #00913c;">£32,128.42</b>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Earnings
+            <span style="font-size: 0.7em !important;"><a href="#interest-calc" class="show-more"><span>Show</span></a></span>
+
+            <div id="interest-calc">
+              <table id="statement" class="alt rows" style="font-size: 0.7em; background-color: white; margin-top: 10px; margin-left: 50px;">
+                <tr>
+                  <td style="">Interest earned from borrowers</td>
+                  <td style="text-align:right; "><b>£104.05</b></td>
+                </tr>
+                <tr>
+                  <td>Bonus: <a href="/404">Tell a friend</a></td>
+                  <td style="text-align:right;"><b>£0.00</b></td>
+                </tr>
+                <tr>
+                  <td>Bonus: Rate Promise</td>
+                  <td style="text-align:right;"><b>£18.40</b></td>
+                </tr>
+                <tr>
+                  <td>Bonus: Other</td>
+                  <td style="text-align:right;"><b>£3.93</b></td>
+                </tr>
+                <tr>
+                  <td>Bad debt not covered by Safeguard</td>
+                  <td style="text-align:right; color: #a04040;"><b>&minus; £1.99</b></td>
+                </tr>
+              </table>
+            </div>
+
+          </td>
+          <td style="text-align:right;"><b>+ £104.05</b></td>
+        </tr>
+
+        <tr>
+          <td>Deposits</td>
+          <td style="text-align:right;"><b>+ £0.00</b></td>
+        </tr>
+
+        <tr>
+          <td>Withdrawals</td>
+          <td style="text-align:right; color: #a04040;"><b>&minus; £0.00</b></td>
+        </tr>
+
+        <tr>
+          <td>
+            <p style="color: #00913c;">Total (17th August 2015)</p>
+          </td>
+          <td style="text-align: right;">
+            <b style="color: #00913c;">£32,336.52</b>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class="info box" style="margin-top: 20px;">
+      <h2 style="margin-left: 10px;">Loan book activity</h2>
+
+        <table id="statement" class="alt rows" style="width: 100%; font-size: 1.3em;">
+          <tbody>
+          <tr>
+            <td>Monthly repayments from borrowers
+                <span style="font-size: 0.7em !important;"><a href="#repayment-calc" class="show-more"><span>Show</span></a></span>
+
+                <div id="repayment-calc">
+                  <table id="statement" class="alt rows" style="font-size: 0.7em; background-color: white; margin-top: 10px; margin-left: 50px;">
+                    <tr>
+                      <td>Capital</td>
+                      <td style="text-align:right;">
+                        <b>£7,848.41</b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Interest</td>
+                      <td style="text-align:right;">
+                        <b>£1,023.65</b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Late payments</td>
+                      <td style="text-align:right; color: #a04040;">
+                        <b>&minus; £52.32</b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Repayments from Safeguard</td>
+                      <td style="text-align:right;"><b>£19.34</b></td>
+                    </tr>
+                  </table>
+                </div>
+
+
+            </td>
+            <td style="text-align:right;">
+              <b>£8,943.72</b>
+            </td>
+          </tr>
+          <!-- <tr>
+            <td>
+              <p>Loans defaulted</p>
+              <p style="font-size: 0.7em; margin-top: -10px; margin-bottom: 0;">Not covered by Safeguard</p>
+            </td>
+            <td style="text-align:right;">£1.99</b></td>
+          </tr> -->
+          <tr>
+            <td>Loans sold for withdrawal</td>
+            <td style="text-align:right;">£500.00</b></td>
+          </tr>
+          <tr>
+            <td>Lent out in new loans at 4.64%</td>
+            <td style="text-align:right; color: #a04040;">
+              <b>&minus; £9,978.27</b>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+    </div>
+
+    <p class="hint" style="margin-top: 0px;">Last transaction in this period: 16th August 2015 at 16:20</p>
+
+    <p style="margin-top: 30px;"><a href="/404"><img src="img/pdf_big.png" /> Download summary statement (PDF)</a></p>
+    <p><a href="/404"><img src="img/csv_big.png" /> Download detailed statement (CSV)</a></p>
+
+  </div>
+</div>
+
+
+
+
+<div class="section">
+  <div>
+    <h2>Other statements</h2>
+    <ul>
+      <li><a href="/404">Year to date (2015)</a></li>
+      <li><a href="statements-annual.html">Annual income statement (Tax year 2014/2015)</a></li>
+      <li><a href="/404">Rate promise summary</a></li>
+      <li><a href="/404">Weekly lender</a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+<% content_for :style do %>
+  <style>
+    /* pointer above */
+    .see-above {
+      position: relative;
+    }
+    .see-above:after {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      content: "";
+      height: 0;
+      width: 0;
+      border: solid transparent;
+      border-bottom-color: #f5f5f5;
+      border-width: 0.5em;
+      margin-left: -0.5em;
+    }
+    .see-above.left-corner:after {
+      left: 7%;
+    }
+  </style>
+<% end %>

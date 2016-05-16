@@ -1,0 +1,44 @@
+<% @loggedin = true %>
+
+<div class="section">
+  <div>
+
+    <h1>Change repayment day</h1>
+    <p class="intro">You currently repay £182.49 on the 15th of each month.</p>
+
+    <form action="confirm.html" method="get" id="change-day">
+      <fieldset>
+        <p>
+          <label for="repayment-day">Choose new monthly repayment day</label>
+          <select name="repayment-day" id="repayment-day" size="1" style="width: 7em;">
+            <% for i in (1..31) %>
+              <option value="<%= i %>"><%= i %></option>
+            <% end %>
+          </select>
+        </p>
+        <p>
+          <input type="submit" class="secure" value="Calculate new repayments" />
+        </p>
+      </fieldset>
+    </form>
+
+  </div>
+</div>
+
+<% content_for :scripts do %>
+  <script>
+    (function($) {
+      // simulate an error by changing form action to error page when selecting '31'
+      var $form = $('#change-day');
+      $('select', $form).change(function(){
+        console.log('test');
+        var $selectedOption = $('option:selected', $form);
+        if ($selectedOption.length && ($selectedOption.val() === "31")) {
+          $form.attr('action', 'error.html');
+        } else {
+          $form.attr('action', 'confirm.html');
+        }
+      });
+    })(jQuery);
+  </script>
+<% end %>

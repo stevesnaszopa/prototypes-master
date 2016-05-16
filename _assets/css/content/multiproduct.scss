@@ -1,0 +1,106 @@
+@import "variables";
+
+@mixin border-radius($radius){
+  -webkit-border-radius:$radius;
+  -moz-border-radius:$radius;
+  border-radius:$radius;
+}
+
+$default-padding: 1em;
+
+table.product-summary {
+  border-collapse: inherit;
+  td {
+    border-width: 0;
+    padding: 0.6em 1.5em 0.6em 0;
+    border-bottom-width: 1px;
+    padding-right: 10px;
+  }
+  td p {
+    padding-left: 10px;
+  }
+  tr:last-child td {
+    border-bottom-width: 0px;
+  }
+}
+.isa-balance {
+  padding: 0.3em 0;
+  background: $color-positive;
+  text-align: center;
+}
+
+.product-unit {
+  background-color: whitesmoke;
+  padding: 1em;
+  &:first-child{
+    @include border-radius(4px 4px 0 0);
+  }
+  &:last-child{
+    @include border-radius(0 0 4px 4px);
+  }
+  .product-basics{
+    > *{
+      float:left;
+      display:block;
+      margin: 0;
+    }
+    .product-title {
+      width: 50%;
+    }
+    .product-actions{
+      width: 25%;
+    }
+    .product-balance{
+      width: 25px;
+      text-align: right;
+    }
+  }
+}
+
+.allowance-box {
+  margin-top: 4px;
+  background-color: $color-bg-alternate;
+  padding:4px;
+}
+
+.progress_bar {
+    padding: 0.15em;
+    position: relative;
+    color: #fff;
+    font-size: 1.5em;
+    letter-spacing: -1px;
+    font-weight: 700;
+    display: block;
+    overflow: hidden;
+    -webkit-box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+    -moz-box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+    box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+
+    span {
+        display: block;
+        height: 100%;
+        background: #00913c;
+        padding-left: 0.1em;
+        -webkit-box-shadow: inset 0 2px 9px rgba(255,255,255,0.3), inset 0 -2px 6px rgba(0,0,0,0.4);
+        -moz-box-shadow: inset 0 2px 9px rgba(255,255,255,0.3), inset 0 -2px 6px rgba(0,0,0,0.4);
+        box-shadow: inset 0 2px 9px rgba(255,255,255,0.3), inset 0 -2px 6px rgba(0,0,0,0.4);
+        background-color: rgb(43,194,83);
+        background-image: linear-gradient(
+          center bottom,
+          rgb(43,194,83) 37%,
+          rgb(84,240,84) 69%
+        );
+        box-shadow:
+          inset 0 2px 9px  rgba(255,255,255,0.3),
+          inset 0 -2px 6px rgba(0,0,0,0.4);
+        position: relative;
+        overflow: hidden;
+        -webkit-animation:progressbar2 7s infinite;
+        animation:progressbar2 7s infinite
+    }
+}
+
+.queue_progress {
+  float: right;
+}
+.cB { clear: both; }

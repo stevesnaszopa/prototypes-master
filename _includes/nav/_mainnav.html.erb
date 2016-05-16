@@ -1,0 +1,40 @@
+<% if @loggedin %>
+  <% if content_for?(:mainnav) %>
+    <div class="mainnav group piazza-nav">
+      <div class="area">
+        <h2 class="a11y show">Navigation</h2>
+        <%= yield :mainnav %>
+      </div>
+    </div>
+  <% else %>
+
+  <div class="mainnav group piazza-nav">
+    <div class="area">
+      <h2 class="a11y show">Navigation</h2>
+      <ul class="nav group">
+        <!--<li class="borrower primary"><a href="/404.html">My Zopa loan</a></li>-->
+        <li class="lender primary"><a href="/404.html">My Zopa lending</a></li>
+        <li class="lenderIsa primary"><a href="/404.html">ISAs</a></li>
+        <li class="myzopa secondary"><a href="/404.html">My details</a></li>
+        <li class="signout secondary"><a href="/404.html"><span>Sign&#xa0;out</span></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <% end %>
+<% else %>
+
+  <div class="mainnav group">
+    <div class="area">
+      <h2 class="a11y show">Navigation</h2>
+      <ul class="nav group">
+        <li class="borrower primary"><a href="/404.html">Get a loan</a></li>
+        <li class="lender primary"><a href="/404.html">Lend your money</a></li>
+        <li class="signin secondary"><a href="/404.html"><span>Sign&#xa0;in</span></a></li>
+        <li class="signout secondary"><a href="/404.html"><span>Sign&#xa0;out</span></a></li>
+        <li class="myzopa secondary"><a href="/404.html">My Zopa</a></li>
+      </ul>
+    </div>
+  </div>
+
+<% end %>
